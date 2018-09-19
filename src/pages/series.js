@@ -3,8 +3,8 @@ import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import Container from 'components/Container/Container';
 import { graphql, Link } from 'gatsby';
-import './series.scss';
 import shortid from 'shortid';
+import './series.scss';
 
 const Series = ({ data }) => (
     <Layout section="series">

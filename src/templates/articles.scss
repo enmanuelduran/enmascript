@@ -48,6 +48,10 @@
         background: $white;
     }
 
+    :not(pre)>code[class*=language-] {
+        white-space: normal;
+    }
+
     pre {
         border-radius: 5px;
         position: relative;

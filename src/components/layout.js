@@ -7,7 +7,6 @@ import Footer from 'components/Footer/Footer';
 import Favicon16 from 'images/favicon-16x16.png';
 import Favicon32 from 'images/favicon-32x32.png';
 import AppleTouchIcon from 'images/apple-touch-icon.png';
-
 import './Common/global.scss';
 
 const Layout = ({ children, section, classes }) => {

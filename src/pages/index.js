@@ -4,8 +4,8 @@ import Container from 'components/Container/Container';
 import { graphql, Link } from 'gatsby';
 import Cover from 'components/Cover/Cover';
 import ArticleCard from 'components/ArticleCard/ArticleCard';
-import 'index.scss';
 import CoverImage from 'images/cover.jpeg';
+import 'index.scss';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;

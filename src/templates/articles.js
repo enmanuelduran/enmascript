@@ -4,7 +4,6 @@ import Container from 'components/Container/Container';
 import Layout from 'components/layout';
 import { graphql } from 'gatsby';
 import { Twitter, Facebook, LinkedIn } from 'components/Icons/SocialIcons';
-
 import './articles.scss';
 
 const ArticleTemplate = ({ data }) => {

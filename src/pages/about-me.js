@@ -3,8 +3,8 @@ import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import Container from 'components/Container/Container';
 import About from '../../content/about-me.json';
-import './about-me.scss';
 import shortid from 'shortid';
+import './about-me.scss';
 
 const AboutMe = () => (
     <Layout section="aboutme">
