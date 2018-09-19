@@ -1,0 +1,26 @@
+{
+    "intro":"My name is Enmanuel Durán. I'm a passionate web developer from Venezuela, I started developing websites when I was 13 years old, I’m currently 24 years old and my passion just keeps growing.",
+    "whatIDo": {
+        "title": "What I do",
+        "list": [
+            "I currently work as a Senior Software Engineer at <a href='https://www.olx.com/' target='_blank' rel='noopener noreferrer'>OLX</a>.",
+            "Founder behind <a href='http://somosprogramadores.com' target='_blank' rel='noopener noreferrer'>somosprogramadores</a> a platform where I teach people about programming and tech in Spanish.",
+            "Author of Enmanuel Duran Blog.",
+            "Conference and Meetup speaker from time to time.",
+            "I also contribute to <a href='https://developer.mozilla.org/' target='_blank' rel='noopener noreferrer'>Mozilla Developer Network (MDN)</a> documentation and some open source projects."
+        ]
+    },
+    "inThePast": {
+        "title": "In The Past",
+        "list": [
+            "Senior Software Engineer at <a href='https://consumeraffairs.com' target='_blank' rel='noopener noreferrer'>ConsumerAffairs</a>",
+            "Instructor at <a href='https://codigofacilito.com/' target='_blank' rel='noopener noreferrer'>CodigoFacilito</a>",
+            "Consultant"
+        ]
+    },
+    "more": {
+        "title": "More",
+        "text": "I'm a person who is very passionate about innovative tech no matter its source, my forte lies in the Front-End development world with HTML, CSS, JavaScript (including technologies like React, jQuery, Meteor…), in the Back-end side I’ve worked mostly with PHP, Python and Node.js."
+    },
+    "spareTime": "In my spare time I teach about technologies on <a href='https://youtube.com/somosprogramadores' target='_blank' rel='noopener noreferrer'>YouTube</a> or through articles/posts, also I’m a big physics lover so I  enjoy reading books about it and its applications."
+}

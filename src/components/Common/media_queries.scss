@@ -1,0 +1,41 @@
+$devices: (
+    phone: 480px,
+    tablet: 768px,
+    desktop: 992px,
+    large-desktop: 1200px
+);
+
+@mixin min-device($device: map-get($devices, "phone")) {
+    @if map-has-key($devices, $device) {
+        @media screen and (min-width: map-get($devices, $device)) {
+            @content;
+        }
+    }
+}
+
+@mixin max-device($device: map-get($devices, "phone")) {
+    @if map-has-key($devices, $device) {
+        @media screen and (max-width: map-get($devices, $device) - 1) {
+            @content;
+        }
+    }
+}
+
+@mixin only-device($device: map-get($devices, "phone")) {
+    @if map-has-key($devices, $device) {
+        @media screen and (min-width: map-get($devices, $device)) and (max-width: map-get($devices, $device) - 1) {
+            @content;
+        }
+    }
+}
+
+@mixin between-devices(
+    $min-device: map-get($devices, "phone"),
+    $max-device: map-get($devices, "tablet")
+) {
+    @if map-has-key($devices, $device) {
+        @media screen and (min-width: map-get($devices, $device)) and (max-width: map-get($devices, $device) - 1) {
+            @content;
+        }
+    }
+}

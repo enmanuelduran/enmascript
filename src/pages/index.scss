@@ -1,0 +1,53 @@
+@import "../components/Common/variables";
+@import "../components/Common/media_queries";
+
+.home {
+    &__cover {
+        position: relative;
+        background-size: cover;
+
+        &-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: $white;
+            font-weight: 200;
+            max-width: 750px;
+            text-align: center;
+            margin-top: -50px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            padding: 5px;
+
+            @include min-device("tablet") {
+                font-size: 32px;
+            }
+        }
+
+        a {
+            background: $dark-blue;
+            color: $white;
+            border-radius: 10px;
+            border-bottom: 3px solid $white;
+            padding: 10px 15px;
+            font-size: 18px;
+            transition: background 0.1s linear, color 0.1s linear;
+
+            &:hover {
+                background: $yellow;
+                color: $dark-blue;
+            }
+        }
+    }
+
+    &__container {
+        margin-top: -50px;
+        position: relative;
+        background: $white;
+        padding: 5px;
+    }
+}

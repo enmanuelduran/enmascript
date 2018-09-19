@@ -1,0 +1,18 @@
+@import "../components/Common/variables";
+
+.series {
+    &__card {
+        width: 100%;
+        background: $dark-blue;
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        display: flex;
+        width: 100%;
+        margin-top: 10px;
+        color: $white;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+    }
+}

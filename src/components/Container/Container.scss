@@ -1,0 +1,32 @@
+@import "../Common/media_queries";
+
+$page-width: 1000px;
+$articles-width: 750px;
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5px;
+
+    @include min-device("desktop") {
+        padding: 0;
+    }
+
+    &--page {
+        max-width: $page-width;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &--article {
+        max-width: $articles-width;
+    }
+
+    &--header {
+        align-items: center;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        max-width: $page-width;
+    }
+}

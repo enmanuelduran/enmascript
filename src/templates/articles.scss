@@ -1,0 +1,159 @@
+@import "../components/Common/variables";
+@import "../components/Common/media_queries";
+@import "../components/Common/prismjs-theme";
+
+.article {
+    padding: 20px 10px 0;
+
+    @include min-device("desktop") {
+        padding: 20px 0 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 30px;
+        margin: 0 0 1.5em;
+    }
+
+    li {
+        font-size: 18px;
+        padding: 0 0 10px;
+        line-height: 30px;
+    }
+
+    pre,
+    code {
+        font-size: 14px;
+        background: $white;
+    }
+
+    pre {
+        border-radius: 5px;
+        position: relative;
+        padding-top: 30px;
+        box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.15);
+
+        &:before {
+            background: $soft-blue;
+            height: 25px;
+            width: 100%;
+            font-family: "Raleway";
+            position: absolute;
+            left: 0;
+            content: "CODE EXAMPLE";
+            font-size: 11px;
+            font-weight: bold;
+            text-align: right;
+            top: -5px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px 5px 0 0;
+            box-sizing: border-box;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        td,
+        tr {
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background: $dark-blue;
+            color: $white;
+            padding: 5px;
+        }
+
+        tr:nth-child(even) {
+            background: $light-grey;
+        }
+    }
+
+    img {
+        border-radius: 5px;
+    }
+
+    &__author {
+        font-weight: bold;
+        border-radius: 10px;
+    }
+
+    &__date {
+        margin-left: 10px;
+    }
+
+    &__content {
+        margin-top: 40px;
+        position: relative;
+    }
+
+    .gatsby-highlight {
+        position: relative;
+        padding-bottom: 20px;
+    }
+
+    mark {
+        background: $yellow-mark;
+    }
+
+    &__share {
+        display: flex;
+
+        @include min-device("desktop") {
+            width: 40px;
+            position: fixed;
+            margin-left: 800px;
+            bottom: 120px;
+            flex-direction: column;
+        }
+
+        div {
+            cursor: pointer;
+            height: 70%;
+            width: auto;
+            display: block;
+            padding: 0 15px 10px 0;
+
+            @include min-device("desktop") {
+                padding: 5px 15px 0 0;
+            }
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+
+            path {
+                fill: $blue;
+            }
+        }
+    }
+}
