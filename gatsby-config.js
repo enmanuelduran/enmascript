@@ -23,9 +23,9 @@ module.exports = {
         `gatsby-transformer-remark`,
         'gatsby-plugin-offline',
         `gatsby-plugin-sass`,
-        `gatsby-plugin-catch-links`,
         `gatsby-link`,
         `gatsby-plugin-sharp`,
+        `gatsby-plugin-catch-links`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {

@@ -54,7 +54,7 @@ If we now try to add a property to EARTH like:
 EARTH = { type: "Planet", water: true; }
 ```
 
-We’ll get an error with something like,`Uncaught TypeError: Assignment to constant variable`, excellent, just what we wanted right?, hmm… but wait, what happens if instead, we do something like:
+We’ll get an error with something like, `Uncaught TypeError: Assignment to constant variable`, excellent, just what we wanted right?, hmm… but wait, what happens if instead, we do something like:
 
 ```javascript
 EARTH.water = false;
@@ -64,7 +64,7 @@ Ha!, now we don’t have any more water in our planet EARTH and we’re all gonn
 
 ## let
 
-We use  _let_  to declare variables that can change over time in our application,  _let_is a  _block-scoped_  declaration as well as  _const_.
+We use  _let_  to declare variables that can change over time in our application, _let_ is a  _block-scoped_  declaration as well as  _const_.
 
 **When to use:** As stated previously in const’s definition one implementation that is recommended and commonly used is to start declaring all your variables with  _const_  and if you realize later that one value needs to change during development, you change that declaration to use  _let,_  so the general rule would be to use  _const_ over _let_.
 
@@ -101,4 +101,4 @@ function favoriteAnimal(person) {
 }
 ```
 
-The function  `favoriteAnimal` simply logs the favorite type of animal for Jon, note how the animal variable is declared inside the  `if`  block but the  `console.log`  is executed outside of it and it can still access it without errors. In the other hand if you substitute the code above to use  _let_  instead, you’ll see how it will throw an error saying `animal is not defined`because it’s being scoped to the  `if`  block rather than the function.
+The function  `favoriteAnimal` simply logs the favorite type of animal for Jon, note how the animal variable is declared inside the  `if`  block but the  `console.log`  is executed outside of it and it can still access it without errors. In the other hand if you substitute the code above to use  _let_  instead, you’ll see how it will throw an error saying `animal is not defined` because it’s being scoped to the  `if`  block rather than the function.

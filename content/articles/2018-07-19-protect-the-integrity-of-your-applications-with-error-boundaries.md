@@ -60,6 +60,9 @@ Finally, let’s present error boundaries as they deserve to be presented (yes i
 
 I have created a CodePen below, in this example I created 4 box components, 2 of them are “bad” (red) boxes that throw an error intentionally when clicking them and these are wrapped with the  `<ErrorBoundary>`  component, 1 of them is a “good” (blue) box that simply works logging a message to the console when clicking it and the last box is an “Ultimate Box of Death” (black) that will cause the whole app to crash because it’s not wrapped by an error boundary.
 
+<iframe height='265' scrolling='no' title='Error Boundaries implementation example' src='//codepen.io/enmanuelduran/embed/preview/aKgMZx/?height=265&theme-id=dark&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/enmanuelduran/pen/aKgMZx/'>Error Boundaries implementation example</a> by Enmanuel Durán (<a href='https://codepen.io/enmanuelduran'>@enmanuelduran</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 Woohoo, awesome right?, yes, I know… there is something else that you need to know though, not all the error are caught by error boundaries, here are the exceptions:
 
 -   Event handlers

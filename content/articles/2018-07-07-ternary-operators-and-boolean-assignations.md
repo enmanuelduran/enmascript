@@ -7,7 +7,7 @@ featuredImage: "2018-07-07-ternary-operators.png"
 ---
 
 
-Hey developers of the future world, welcome to  _Javascript for native speakers,_ this series has been created for those developers that already have some experience working with Javascript and ES6, if you’re new to Javascript or programming in general, I recommend you to follow the series _[Learning to speak ES6 Javascript](http://enmanuelduran.com/learning-to-speak-basic-es6-javascript-const-let-and-var/),_ which is more focused on people starting on this world, ok, this is enough for an introduction, let’s start.
+Hey developers of the future, welcome, in this article I'm going to help you improve your coding technique by teaching you how to use ternary operators, I'm also going to explain to you why it is good and when you should and shoudln't use it so let's get started.
 
 ## Ternary Operator
 
@@ -52,7 +52,7 @@ Wait, what?, one line?, Holy CSS Sheet…
 
 Let me explain why this is so good, I can think of at least 3 things right away:
 
-1.  in the first example using the _if_  statement we had to declare `canDrive` using  _let_  because we needed to  _console.log_ the value out of the  _if’s_  _block-scope_ (Don’t know what  _block-scope_  means?, read  [this article](http://enmanuelduran.com/learning-to-speak-basic-es6-javascript-const-let-and-var/) where I explain it better), in the Ternary Operator’s case we were able to use  _const_  because the variable is not limited by any block, which means we have  _more flexibility_.
+1.  in the first example using the _if_  statement we had to declare `canDrive` using  _let_  because we needed to  _console.log_ the value out of the  _if’s_  _block-scope_ (Don’t know what  _block-scope_  means?, read  [this article](https://enmanuelduran.com/articles/2018/07/06/const-let-and-var) where I explain it better), in the Ternary Operator’s case we were able to use  _const_  because the variable is not limited by any block, which means we have  _more flexibility_.
 2.  _Less redundant_, look at the if’s statement case again and check how many times do you see the  `canDrive`  variable named?, 3 times right?, now look at the Ternary Operator implementation, just once…
 3.  _Fewer lines, Easy and faster to read_.
 

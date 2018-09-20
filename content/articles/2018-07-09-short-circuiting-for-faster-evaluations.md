@@ -86,4 +86,4 @@ Still don’t see what is the advantage of knowing this?, Based on the concepts 
 
 
 
-Did you like the article? in our previous article [Ternary operators and boolean assignations](http://enmanuelduran.com/javascript-for-native-speakers-ternary-operators-and-boolean-assignations/)  we covered a topic that could be very helpful if combined with what we’ve learned today, don’t forget to share it with your friends and support us by subscribing to our email list, see you in the next one.
+Did you like the article? in our previous article [Ternary operators and boolean assignations](https://enmanuelduran.com/articles/2018/07/07/ternary-operators-and-boolean-assignations)  we covered a topic that could be very helpful if combined with what we’ve learned today, don’t forget to share it with your friends and support us by subscribing to our email list, see you in the next one.
