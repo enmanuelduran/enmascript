@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
-import Container from 'components/Container/Container';
+import Container from 'components/Container';
 import About from '../../content/about-me.json';
 import shortid from 'shortid';
 import './about-me.scss';

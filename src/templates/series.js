@@ -1,8 +1,8 @@
 import React from 'react';
-import Container from 'components/Container/Container';
+import Container from 'components/Container';
 import Layout from 'components/layout';
 import { graphql } from 'gatsby';
-import ArticleCard from 'components/ArticleCard/ArticleCard';
+import ArticleCard from 'components/ArticleCard';
 import './articles.scss';
 
 const SeriesArticlesTemplate = ({ data }) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
-import Container from 'components/Container/Container';
+import Container from 'components/Container';
 import { graphql, Link } from 'gatsby';
 import shortid from 'shortid';
 import './series.scss';
