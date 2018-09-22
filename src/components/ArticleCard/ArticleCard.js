@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import './ArticleCard.scss';
 
 const ArticleCard = ({ image, title, slug }) => (
     <div className="article-card">

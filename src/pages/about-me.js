@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import Container from 'components/Container';
 import About from '../../content/about-me.json';
 import shortid from 'shortid';
-import './about-me.scss';
 
 const AboutMe = () => (
     <Layout section="aboutme">

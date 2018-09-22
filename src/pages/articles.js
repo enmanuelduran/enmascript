@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import Layout from 'components/layout';
 import Container from 'components/Container';
 import ArticleCard from 'components/ArticleCard';
-import './articles.scss';
 
 const Articles = ({ data }) => {
     const { edges: posts } = data.allMarkdownRemark;

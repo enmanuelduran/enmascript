@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Container from 'components/Container/Container';
 import Logo from './logo.png';
-import './Header.scss';
 
 const ACTIVE_CLASS = 'link--active';
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from 'components/layout';
 import Container from 'components/Container';
 import { graphql, Link } from 'gatsby';
 import Cover from 'components/Cover';
 import ArticleCard from 'components/ArticleCard';
 import CoverImage from 'images/cover.jpeg';
-import 'index.scss';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;

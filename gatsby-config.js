@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        url: 'http://enmanuelduran.com',
-        title: 'Enmanuel Durán Blog',
+        url: 'http://enmascript.com',
+        title: 'EnmaScript',
         author: 'Enmanuel Durán',
         twitter: 'https://twitter.com/duranenmanuel',
         series: 'none',
@@ -70,8 +70,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: 'Enmanuel Duran Blog',
-                short_name: 'Enmanuel Blog',
+                name: 'EnmaScript',
+                short_name: 'EnmaScript',
                 start_url: '/',
                 background_color: '#FFFFFF',
                 theme_color: '#FFFFFF',

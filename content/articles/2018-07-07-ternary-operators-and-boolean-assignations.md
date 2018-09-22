@@ -52,7 +52,7 @@ Wait, what?, one line?, Holy CSS Sheet…
 
 Let me explain why this is so good, I can think of at least 3 things right away:
 
-1.  in the first example using the _if_  statement we had to declare `canDrive` using  _let_  because we needed to  _console.log_ the value out of the  _if’s_  _block-scope_ (Don’t know what  _block-scope_  means?, read  [this article](https://enmanuelduran.com/articles/2018/07/06/const-let-and-var) where I explain it better), in the Ternary Operator’s case we were able to use  _const_  because the variable is not limited by any block, which means we have  _more flexibility_.
+1.  in the first example using the _if_  statement we had to declare `canDrive` using  _let_  because we needed to  _console.log_ the value out of the  _if’s_  _block-scope_ (Don’t know what  _block-scope_  means?, read  [this article](https://enmascript.com/articles/2018/07/06/const-let-and-var) where I explain it better), in the Ternary Operator’s case we were able to use  _const_  because the variable is not limited by any block, which means we have  _more flexibility_.
 2.  _Less redundant_, look at the if’s statement case again and check how many times do you see the  `canDrive`  variable named?, 3 times right?, now look at the Ternary Operator implementation, just once…
 3.  _Fewer lines, Easy and faster to read_.
 
