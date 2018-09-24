@@ -2,6 +2,8 @@
 @import "../components/Common/media_queries";
 
 .article {
+    $p: &;
+
     padding: 20px 10px 0;
 
     @include min-device("desktop") {
@@ -56,24 +58,6 @@
         position: relative;
         padding-top: 30px;
         box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.15);
-
-        &:before {
-            background: $soft-blue;
-            height: 25px;
-            width: 100%;
-            font-family: "Raleway";
-            position: absolute;
-            left: 0;
-            content: "CODE EXAMPLE";
-            font-size: 11px;
-            font-weight: bold;
-            text-align: right;
-            top: -5px;
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 5px 5px 0 0;
-            box-sizing: border-box;
-        }
     }
 
     table {
@@ -125,6 +109,25 @@
     .gatsby-highlight {
         position: relative;
         padding-bottom: 20px;
+
+        &:before {
+            background: $soft-blue;
+            height: 25px;
+            width: 100%;
+            font-family: "Raleway";
+            position: absolute;
+            left: 0;
+            content: "CODE EXAMPLE";
+            font-size: 11px;
+            font-weight: bold;
+            text-align: right;
+            top: -5px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px 5px 0 0;
+            box-sizing: border-box;
+            z-index: 1;
+        }
     }
 
     mark {
@@ -138,7 +141,7 @@
             width: 40px;
             position: fixed;
             margin-left: 800px;
-            bottom: 120px;
+            bottom: 400px;
             flex-direction: column;
         }
 
@@ -160,6 +163,41 @@
 
             path {
                 fill: $blue;
+            }
+        }
+    }
+
+    &__related {
+        @include max-device("desktop") {
+            padding: 0 10px;
+        }
+
+        &-title {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #{$p}-card {
+            padding: 0 0 5px;
+
+            @include min-device("tablet") {
+                &:first-child {
+                    padding-right: 5px;
+                }
+
+                &:last-child {
+                    padding-left: 5px;
+                }
+            }
+
+            h2 {
+                font-size: 20px;
             }
         }
     }

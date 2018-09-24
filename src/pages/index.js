@@ -26,20 +26,14 @@ const Index = ({ data }) => {
             <Container classes="home__container">
                 {posts
                     .filter(post => post.node.frontmatter.title.length > 0)
-                    .map(({ node: post }) => {
-                        const image = require(`../../content/images/${
-                            post.frontmatter.featuredImage
-                        }`);
-
-                        return (
-                            <ArticleCard
-                                title={post.frontmatter.title}
-                                image={image}
-                                slug={post.fields.slug}
-                                key={post.id}
-                            />
-                        );
-                    })}
+                    .map(({ node: post }) => (
+                        <ArticleCard
+                            title={post.frontmatter.title}
+                            image={post.frontmatter.featuredImage}
+                            slug={post.fields.slug}
+                            key={post.id}
+                        />
+                    ))}
             </Container>
         </Layout>
     );

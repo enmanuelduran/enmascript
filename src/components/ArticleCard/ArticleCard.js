@@ -8,7 +8,7 @@ const ArticleCard = ({ image, title, slug }) => (
             <article className="article-card__content">
                 <div
                     className="article-card__image"
-                    style={{ backgroundImage: `url(${image})` }}
+                    style={{ backgroundImage: `url(/images/${image})` }}
                 />
                 <div className="article-card__text-wrapper">
                     <h2>{title}</h2>

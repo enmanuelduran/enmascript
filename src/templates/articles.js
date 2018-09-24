@@ -4,18 +4,19 @@ import Container from 'components/Container/Container';
 import Layout from 'components/layout';
 import { graphql } from 'gatsby';
 import { Twitter, Facebook, LinkedIn } from 'components/Icons/SocialIcons';
+import ArticleCard from 'components/ArticleCard';
 
 const ArticleTemplate = ({ data }) => {
-    const post = data.article;
-    const metadata = data.metadata;
+    const { article: post, metadata, otherArticles  } = data;
     const url = metadata.siteMetadata.url + data.article.fields.slug;
+    const { title } = post.frontmatter;
 
     const shareOn = network => event => {
         event.preventDefault();
 
         const networks = {
             twitter:
-                `https://twitter.com/share?url=${url}`,
+                `https://twitter.com/share?url=${url}&text=${title}`,
             facebook:
                 `https://www.facebook.com/sharer/sharer.php?u=${url}`,
             linkedIn:
@@ -37,9 +38,7 @@ const ArticleTemplate = ({ data }) => {
         }
     };
 
-    const postImage = require(`../../content/images/${
-        post.frontmatter.featuredImage
-    }`);
+    const postImage = `/images/${post.frontmatter.featuredImage}`;
 
     return (
         <Layout section="articles">
@@ -50,14 +49,14 @@ const ArticleTemplate = ({ data }) => {
                         /* Facebook and LinkedIn*/
                         { name: 'og:title', content: post.frontmatter.title },
                         { name: 'og:description', content: post.frontmatter.summary },
-                        { name: 'og:image', content: postImage },
+                        { name: 'og:image', content: metadata.siteMetadata.url + postImage },
                         { name: 'og:url', content: url },
                         { name: 'og:site_name', content: metadata.siteMetadata.title },
 
                         /* Twitter */
                         { name: 'twitter:title', content: post.frontmatter.title },
                         { name: 'twitter:description', content: post.frontmatter.summary },
-                        { name: 'twitter:image', content: postImage },
+                        { name: 'twitter:image', content: metadata.siteMetadata.url + postImage },
                         { name: 'twitter:card', content: 'summary_large_image' }
                     ]}
                 />
@@ -90,6 +89,21 @@ const ArticleTemplate = ({ data }) => {
                         </div>
                     </div>
                 </div>
+                <div className="article__related">
+                    <div className="article__related-title">Other Articles</div>
+                    <div className="article__related-wrapper">
+                        {otherArticles.edges
+                            .filter(post => post.node.frontmatter.title.length > 0)
+                            .map(({ node: post }) => (
+                                <ArticleCard
+                                    title={post.frontmatter.title}
+                                    image={post.frontmatter.featuredImage}
+                                    slug={post.fields.slug}
+                                    key={post.id}
+                                />
+                            ))}
+                    </div>
+                </div>
             </Container>
         </Layout>
     );
@@ -115,6 +129,26 @@ export const pageQuery = graphql`
                 twitter
                 title
                 url
+            }
+        }
+        otherArticles:  allMarkdownRemark(
+            filter: {
+              fields: { slug: { ne: $slug } }
+            }
+            sort: { order: DESC, fields: [frontmatter___date] }
+            limit: 2
+        ) {
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        title
+                        featuredImage
+                    }
+                    fields {
+                        slug
+                    }
+                }
             }
         }
     }
