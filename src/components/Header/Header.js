@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Container from 'components/Container/Container';
-import Logo from './logo.png';
+import { Logo } from 'components/Icons/Logo';
 
 const ACTIVE_CLASS = 'link--active';
 
@@ -27,11 +27,7 @@ class Header extends React.Component {
             <header className="header">
                 <Container type="header">
                     <Link to="/" className="header__logo-link">
-                        <img
-                            src={Logo}
-                            className="header__logo"
-                            alt={this.props.title}
-                        />
+                        <Logo />
                     </Link>
                     <div
                         className="header__mobile-menu"

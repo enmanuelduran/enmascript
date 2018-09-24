@@ -46,6 +46,8 @@ const ArticleTemplate = ({ data }) => {
                 <Helmet
                     title={post.frontmatter.title}
                     meta={[
+                        { name: 'description', content: post.frontmatter.summary },
+
                         /* Facebook and LinkedIn*/
                         { name: 'og:title', content: post.frontmatter.title },
                         { name: 'og:description', content: post.frontmatter.summary },
@@ -58,8 +60,9 @@ const ArticleTemplate = ({ data }) => {
                         { name: 'twitter:description', content: post.frontmatter.summary },
                         { name: 'twitter:image', content: metadata.siteMetadata.url + postImage },
                         { name: 'twitter:card', content: 'summary_large_image' }
-                    ]}
-                />
+                    ]}>
+                    <link rel="canonical" href={url}></link>
+                </Helmet>
                 <div className="article">
                     <h1>{post.frontmatter.title}</h1>
                     <div className="">

@@ -1,9 +1,11 @@
 module.exports = {
     siteMetadata: {
-        url: 'http://enmascript.com',
+        url: 'https://enmascript.com',
         title: 'EnmaScript',
         author: 'Enmanuel Durán',
         twitter: 'https://twitter.com/duranenmanuel',
+        description: 'A place to learn about programming, web development and science (sometimes).',
+        logo: 'https://enmascript.com/favicons/enmascript.png',
         series: 'none',
         series_list: [
             {

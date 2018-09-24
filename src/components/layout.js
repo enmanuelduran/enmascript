@@ -16,6 +16,10 @@ const Layout = ({ children, section, classes }) => {
                     site {
                         siteMetadata {
                             title
+                            description
+                            author
+                            url
+                            logo
                         }
                     }
                 }
@@ -25,10 +29,25 @@ const Layout = ({ children, section, classes }) => {
                     <Helmet
                         title={data.site.siteMetadata.title}
                         meta={[
-                            { name: 'description', content: 'Sample' },
-                            { name: 'keywords', content: 'sample, something' }
+                            { name: 'description', content: data.site.siteMetadata.description },
+                            { name: 'author', content: data.site.siteMetadata.author },
+
+                            /* Facebook and LinkedIn*/
+                            { name: 'og:locale', content: 'en_US' },
+                            { name: 'og:title', content: data.site.siteMetadata.title },
+                            { name: 'og:description', content: data.site.siteMetadata.description },
+                            { name: 'og:image', content: data.site.siteMetadata.logo },
+                            { name: 'og:url', content: data.site.siteMetadata.url },
+                            { name: 'og:site_name', content: data.site.siteMetadata.title },
+
+                            /* Twitter */
+                            { name: 'twitter:title', content: data.site.siteMetadata.title },
+                            { name: 'twitter:description', content: data.site.siteMetadata.description },
+                            { name: 'twitter:image', content: data.site.siteMetadata.logo },
+                            { name: 'twitter:card', content: 'summary_large_image' }
                         ]}>
                         <html lang="en" />
+                        <link rel="canonical" href={data.site.siteMetadata.url}></link>
                         <link
                             href="https://fonts.googleapis.com/css?family=Raleway:400,700"
                             rel="stylesheet"
