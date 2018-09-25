@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from 'components/Container';
+import Helmet from 'react-helmet';
 import Layout from 'components/layout';
 import { graphql } from 'gatsby';
 import ArticleCard from 'components/ArticleCard';
@@ -9,6 +10,7 @@ const SeriesArticlesTemplate = ({ data }) => {
 
     return (
         <Layout section="series">
+            <Helmet title="Series" />
             <Container classes="articles">
                 {posts
                     .filter(post => post.node.frontmatter.title.length > 0)

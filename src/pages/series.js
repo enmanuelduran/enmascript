@@ -7,7 +7,12 @@ import shortid from 'shortid';
 
 const Series = ({ data }) => (
     <Layout section="series">
-        <Helmet title="Series" />
+        <Helmet title="Series">
+            <link
+                rel="canonical"
+                href={`${data.site.siteMetadata.url}/series`}
+            />
+        </Helmet>
         <Container classes="series">
             {data.site.siteMetadata.series_list.map(element => {
                 const image = require(`../../content/images/${

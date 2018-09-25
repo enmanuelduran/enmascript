@@ -5,9 +5,13 @@ import Container from 'components/Container';
 import About from '../../content/about-me.json';
 import shortid from 'shortid';
 
-const AboutMe = () => (
+const AboutMe = ({data}) => (
     <Layout section="aboutme">
-        <Helmet title="About me" />
+        <Helmet title="About me">
+            <link
+                rel="canonical"
+                href={`${data.site.siteMetadata.url}/about-me`} />
+        </Helmet>
         <Container classes="about-me">
             <p>{About.intro}</p>
 
@@ -35,5 +39,15 @@ const AboutMe = () => (
         </Container>
     </Layout>
 );
+
+export const AboutQuery = graphql`
+    query AboutQuery {
+        site {
+            siteMetadata {
+                url
+            }
+        }
+    }
+`;
 
 export default AboutMe;

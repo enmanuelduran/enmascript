@@ -168,8 +168,10 @@
     }
 
     &__related {
+        padding-bottom: 20px;
+
         @include max-device("desktop") {
-            padding: 0 10px;
+            padding: 0 10px 20px;
         }
 
         &-title {

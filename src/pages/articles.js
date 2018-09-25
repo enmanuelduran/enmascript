@@ -6,22 +6,25 @@ import Container from 'components/Container';
 import ArticleCard from 'components/ArticleCard';
 
 const Articles = ({ data }) => {
-    const { edges: posts } = data.allMarkdownRemark;
+    const { edges: posts } = data.articles;
 
     return (
         <Layout section="articles">
-            <Helmet title="Articles" />
+            <Helmet title="Articles">
+                <link
+                    rel="canonical"
+                    href={`${data.metadata.siteMetadata.url}/articles`}
+                />
+            </Helmet>
             <Container classes="articles">
-                {posts
-                    .filter(post => post.node.frontmatter.title.length > 0)
-                    .map(({ node: post }) => (
-                        <ArticleCard
-                            title={post.frontmatter.title}
-                            image={post.frontmatter.featuredImage}
-                            slug={post.fields.slug}
-                            key={post.id}
-                        />
-                    ))}
+                { posts.map(({ node: post }) => (
+                    <ArticleCard
+                        title={post.frontmatter.title}
+                        image={post.frontmatter.featuredImage}
+                        slug={post.fields.slug}
+                        key={post.id}
+                    />
+                ))}
             </Container>
         </Layout>
     );
@@ -29,7 +32,7 @@ const Articles = ({ data }) => {
 
 export const pageQuery = graphql`
     query ArticlesQuery {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        articles: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
             edges {
                 node {
                     id
@@ -41,6 +44,11 @@ export const pageQuery = graphql`
                         slug
                     }
                 }
+            }
+        }
+        metadata: site {
+            siteMetadata {
+                url
             }
         }
     }

@@ -24,48 +24,52 @@ const Layout = ({ children, section, classes }) => {
                     }
                 }
             `}
-            render={data => (
-                <>
-                    <Helmet
-                        title={data.site.siteMetadata.title}
-                        meta={[
-                            { name: 'description', content: data.site.siteMetadata.description },
-                            { name: 'author', content: data.site.siteMetadata.author },
+            render={data => {
+                const { title, author, description, logo, url } = data.site.siteMetadata;
 
-                            /* Facebook and LinkedIn*/
-                            { name: 'og:locale', content: 'en_US' },
-                            { name: 'og:title', content: data.site.siteMetadata.title },
-                            { name: 'og:description', content: data.site.siteMetadata.description },
-                            { name: 'og:image', content: data.site.siteMetadata.logo },
-                            { name: 'og:url', content: data.site.siteMetadata.url },
-                            { name: 'og:site_name', content: data.site.siteMetadata.title },
+                return (
+                    <React.Fragment>
+                        <Helmet
+                            title={title}
+                            meta={[
+                                { name: 'description', content: description },
+                                { name: 'author', content: author },
 
-                            /* Twitter */
-                            { name: 'twitter:title', content: data.site.siteMetadata.title },
-                            { name: 'twitter:description', content: data.site.siteMetadata.description },
-                            { name: 'twitter:image', content: data.site.siteMetadata.logo },
-                            { name: 'twitter:card', content: 'summary_large_image' }
-                        ]}>
-                        <html lang="en" />
-                        <link rel="canonical" href={data.site.siteMetadata.url}></link>
-                        <link
-                            href="https://fonts.googleapis.com/css?family=Raleway:400,700"
-                            rel="stylesheet"
-                        />
-                        <link rel="apple-touch-icon" sizes="180x180" href={AppleTouchIcon}></link>
-                        <link rel="icon" type="image/png" sizes="32x32" href={Favicon32} />
-                        <link rel="icon" type="image/png" sizes="16x16" href={Favicon16} />
-                    </Helmet>
-                    <div className={`main ${classes}`}>
-                        <Header
-                            title={data.site.siteMetadata.title}
-                            section={section}
-                        />
-                        {children}
-                    </div>
-                    <Footer />
-                </>
-            )}
+                                /* Facebook and LinkedIn*/
+                                { name: 'og:locale', content: 'en_US' },
+                                { name: 'og:title', content: title },
+                                { name: 'og:description', content: description },
+                                { name: 'og:image', content: logo },
+                                { name: 'og:url', content: url },
+                                { name: 'og:site_name', content: title },
+
+                                /* Twitter */
+                                { name: 'twitter:title', content: title },
+                                { name: 'twitter:description', content: description },
+                                { name: 'twitter:image', content: logo },
+                                { name: 'twitter:card', content: 'summary_large_image' }
+                            ]}>
+                            <html lang="en" />
+                            <link rel="canonical" href={url}></link>
+                            <link
+                                href="https://fonts.googleapis.com/css?family=Raleway:400,700"
+                                rel="stylesheet"
+                            />
+                            <link rel="apple-touch-icon" sizes="180x180" href={AppleTouchIcon}></link>
+                            <link rel="icon" type="image/png" sizes="32x32" href={Favicon32} />
+                            <link rel="icon" type="image/png" sizes="16x16" href={Favicon16} />
+                        </Helmet>
+                        <div className={`main ${classes}`}>
+                            <Header
+                                title={title}
+                                section={section}
+                            />
+                            {children}
+                        </div>
+                        <Footer />
+                    </React.Fragment>
+                );
+           }}
         />
     );
 };

@@ -1,6 +1,10 @@
 .about-me {
     padding: 15px;
 
+    @include min-device("desktop") {
+        padding: 0;
+    }
+
     h2 {
         width: 100%;
     }
