@@ -16,6 +16,7 @@
 
     &__image {
         height: 120px;
+        background-color: $article-card-background-color;
         background-size: cover;
         background-position: center;
     }
@@ -27,7 +28,7 @@
     h2 {
         margin: 0;
         font-weight: 200;
-        color: $dark-blue;
+        color: $article-card-title-color;
         font-size: 20px;
 
         @include min-device("desktop") {

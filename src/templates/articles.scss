@@ -46,7 +46,7 @@
     pre,
     code {
         font-size: 14px;
-        background: $white;
+        background: $code-box-background-color;
     }
 
     :not(pre) > code[class*="language-"] {
@@ -74,13 +74,13 @@
         }
 
         th {
-            background: $dark-blue;
-            color: $white;
+            background: $table-head-background-color;
+            color: $table-head-text-color;
             padding: 5px;
         }
 
         tr:nth-child(even) {
-            background: $light-grey;
+            background: $table-even-background;
         }
     }
 
@@ -111,10 +111,10 @@
         padding-bottom: 20px;
 
         &:before {
-            background: $soft-blue;
+            background: $code-box-header-background-color;
+            color: $code-box-header-text-color;
             height: 25px;
             width: 100%;
-            font-family: "Raleway";
             position: absolute;
             left: 0;
             content: "CODE EXAMPLE";
@@ -131,7 +131,7 @@
     }
 
     mark {
-        background: $yellow-mark;
+        background: $text-highlighted-color;
     }
 
     &__share {
@@ -162,7 +162,12 @@
             height: 40px;
 
             path {
-                fill: $blue;
+                fill: $share-icons-color;
+                transition: 0.15s fill linear;
+            }
+
+            &:hover path {
+                fill: $share-icons-active-color;
             }
         }
     }

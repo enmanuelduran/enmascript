@@ -3,14 +3,14 @@
 .series {
     &__card {
         width: 100%;
-        background: $dark-blue;
+        background: $series-card-background-color;
         background-size: cover;
         background-position: center;
+        border-radius: 10px;
         height: 200px;
         display: flex;
         width: 100%;
         margin-top: 10px;
-        color: $white;
         justify-content: center;
         align-items: center;
         font-size: 24px;

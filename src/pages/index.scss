@@ -14,7 +14,7 @@
         }
 
         h2 {
-            color: $white;
+            color: $cta-text-color;
             font-weight: 200;
             max-width: 750px;
             text-align: center;
@@ -29,17 +29,18 @@
         }
 
         a {
-            background: $dark-blue;
-            color: $white;
+            background: $button-background-color;
+            color: $button-text-color;
             border-radius: 10px;
-            border-bottom: 3px solid $white;
+            border-bottom: 3px solid $button-border-color;
             padding: 10px 15px;
             font-size: 18px;
             transition: background 0.1s linear, color 0.1s linear;
 
             &:hover {
-                background: $yellow;
-                color: $dark-blue;
+                background: $button-active-background-color;
+                color: $button-active-text-color;
+                border-bottom: 3px solid $button-active-border-color;
             }
         }
     }
@@ -47,7 +48,7 @@
     &__container {
         margin-top: -50px;
         position: relative;
-        background: $white;
+        background: $container-background-color;
         padding: 5px;
     }
 }

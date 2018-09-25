@@ -1,11 +1,14 @@
 @import "../Common/variables";
 
 .footer {
-    height: 100px;
-    background: $dark-blue;
-    color: $white;
+    height: $footer-height;
+    background: $footer-background-color;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
+
+    p {
+        color: $footer-text-color;
+    }
 }

@@ -1,19 +1,62 @@
-/* Primary colors */
+/*--- Color variables ---*/
+$dark-blue: #22262e;
 $blue: #00becc;
 $soft-blue: rgba($blue, 0.3);
 
-/* Darks colors */
-$dark-blue: #22262e;
-$yellow: #ffba1e;
+$yellow: #ffb300;
+$soft-yellow: #fff7b5;
 
-/* Neutral colors*/
 $white: #fff;
 $black: rgba(0, 0, 0, 1);
 $light-grey: #f9f9f9;
+$dark-grey: rgba($black, 0.75);
+
+/*--- Functional variables ---*/
+$container-background-color: $white;
 
 /* Text */
-$text-black: rgba(0, 0, 0, 0.75);
-$yellow-mark: #fff7b5;
+$text-line-height: 30px;
+$text-font-size: 18px;
+$text-font-family: "Raleway", sans-serif;
+$text-color: $dark-grey;
+$text-highlighted-color: $soft-yellow;
+$text-link-color: $blue;
+$cta-text-color: $white;
 
 /* header */
 $header-height: 50px;
+$header-background-color: $white;
+$menu-active-background-color: $dark-blue;
+$menu-active-text-color: $white;
+
+/* Footer */
+$footer-background-color: $dark-blue;
+$footer-text-color: $white;
+$footer-height: 100px;
+
+/* Cards */
+$article-card-title-color: $dark-blue;
+$article-card-background-color: $dark-blue;
+$series-card-background-color: $dark-blue;
+
+/* Buttons */
+$button-background-color: $yellow;
+$button-text-color: $dark-blue;
+$button-border-color: $white;
+$button-active-background-color: $blue;
+$button-active-text-color: $white;
+$button-active-border-color: $white;
+
+/* Table */
+$table-head-background-color: $dark-blue;
+$table-head-text-color: $white;
+$table-even-background: $light-grey;
+
+/* Share icons*/
+$share-icons-color: $yellow;
+$share-icons-active-color: $blue;
+
+/* Code Boxes */
+$code-box-header-background-color: $soft-blue;
+$code-box-header-text-color: $dark-blue;
+$code-box-background-color: $white;
