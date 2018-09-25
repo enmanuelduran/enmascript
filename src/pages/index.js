@@ -12,9 +12,7 @@ const Index = ({ data }) => {
 
     return (
         <Layout section="home" classes="home">
-            <Cover
-                image={CoverImage}
-                classes="home__cover">
+            <Cover image={CoverImage} classes="home__cover">
                 {coverPost.map(({ node: post }) => (
                     <Container key={post.id} classes="home__cover-container">
                         <h2>{post.frontmatter.title}</h2>

@@ -17,7 +17,7 @@ const Articles = ({ data }) => {
                 />
             </Helmet>
             <Container classes="articles">
-                { posts.map(({ node: post }) => (
+                {posts.map(({ node: post }) => (
                     <ArticleCard
                         title={post.frontmatter.title}
                         image={post.frontmatter.featuredImage}
@@ -32,7 +32,9 @@ const Articles = ({ data }) => {
 
 export const pageQuery = graphql`
     query ArticlesQuery {
-        articles: allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        articles: allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+        ) {
             edges {
                 node {
                     id

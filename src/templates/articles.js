@@ -7,7 +7,7 @@ import { Twitter, Facebook, LinkedIn } from 'components/Icons/SocialIcons';
 import ArticleCard from 'components/ArticleCard';
 
 const ArticleTemplate = ({ data }) => {
-    const { article: post, metadata, otherArticles  } = data;
+    const { article: post, metadata, otherArticles } = data;
     const url = metadata.siteMetadata.url + data.article.fields.slug;
     const { title } = post.frontmatter;
 
@@ -15,12 +15,9 @@ const ArticleTemplate = ({ data }) => {
         event.preventDefault();
 
         const networks = {
-            twitter:
-                `https://twitter.com/share?url=${url}&text=${title}`,
-            facebook:
-                `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-            linkedIn:
-                `https://www.linkedin.com/shareArticle?mini=true&url=${url}`
+            twitter: `https://twitter.com/share?url=${url}&text=${title}`,
+            facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+            linkedIn: `https://www.linkedin.com/shareArticle?mini=true&url=${url}`
         };
 
         if (!(network in networks)) {
@@ -46,22 +43,43 @@ const ArticleTemplate = ({ data }) => {
                 <Helmet
                     title={post.frontmatter.title}
                     meta={[
-                        { name: 'description', content: post.frontmatter.summary },
+                        {
+                            name: 'description',
+                            content: post.frontmatter.summary
+                        },
 
                         /* Facebook and LinkedIn*/
                         { name: 'og:title', content: post.frontmatter.title },
-                        { name: 'og:description', content: post.frontmatter.summary },
-                        { name: 'og:image', content: metadata.siteMetadata.url + postImage },
+                        {
+                            name: 'og:description',
+                            content: post.frontmatter.summary
+                        },
+                        {
+                            name: 'og:image',
+                            content: metadata.siteMetadata.url + postImage
+                        },
                         { name: 'og:url', content: url },
-                        { name: 'og:site_name', content: metadata.siteMetadata.title },
+                        {
+                            name: 'og:site_name',
+                            content: metadata.siteMetadata.title
+                        },
 
                         /* Twitter */
-                        { name: 'twitter:title', content: post.frontmatter.title },
-                        { name: 'twitter:description', content: post.frontmatter.summary },
-                        { name: 'twitter:image', content: metadata.siteMetadata.url + postImage },
+                        {
+                            name: 'twitter:title',
+                            content: post.frontmatter.title
+                        },
+                        {
+                            name: 'twitter:description',
+                            content: post.frontmatter.summary
+                        },
+                        {
+                            name: 'twitter:image',
+                            content: metadata.siteMetadata.url + postImage
+                        },
                         { name: 'twitter:card', content: 'summary_large_image' }
                     ]}>
-                    <link rel="canonical" href={url}></link>
+                    <link rel="canonical" href={url} />
                 </Helmet>
                 <div className="article">
                     <h1>{post.frontmatter.title}</h1>
@@ -78,7 +96,7 @@ const ArticleTemplate = ({ data }) => {
                         </span>
                     </div>
                     <div className="article__content">
-                        <div dangerouslySetInnerHTML={{ __html: post.html }}/>
+                        <div dangerouslySetInnerHTML={{ __html: post.html }} />
                         <div className="article__share">
                             <div onClick={shareOn('twitter')}>
                                 <Twitter />
@@ -96,7 +114,9 @@ const ArticleTemplate = ({ data }) => {
                     <div className="article__related-title">Other Articles</div>
                     <div className="article__related-wrapper">
                         {otherArticles.edges
-                            .filter(post => post.node.frontmatter.title.length > 0)
+                            .filter(
+                                post => post.node.frontmatter.title.length > 0
+                            )
                             .map(({ node: post }) => (
                                 <ArticleCard
                                     title={post.frontmatter.title}
@@ -134,10 +154,8 @@ export const pageQuery = graphql`
                 url
             }
         }
-        otherArticles:  allMarkdownRemark(
-            filter: {
-              fields: { slug: { ne: $slug } }
-            }
+        otherArticles: allMarkdownRemark(
+            filter: { fields: { slug: { ne: $slug } } }
             sort: { order: DESC, fields: [frontmatter___date] }
             limit: 2
         ) {

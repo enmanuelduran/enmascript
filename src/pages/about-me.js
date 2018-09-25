@@ -1,16 +1,18 @@
 import React from 'react';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 import Container from 'components/Container';
 import About from '../../content/about-me.json';
 import shortid from 'shortid';
 
-const AboutMe = ({data}) => (
+const AboutMe = ({ data }) => (
     <Layout section="aboutme">
         <Helmet title="About me">
             <link
                 rel="canonical"
-                href={`${data.site.siteMetadata.url}/about-me`} />
+                href={`${data.site.siteMetadata.url}/about-me`}
+            />
         </Helmet>
         <Container classes="about-me">
             <p>{About.intro}</p>

@@ -1,14 +1,14 @@
-@import 'Common/global';
+@import "Common/global";
 
-@import 'ArticleCard/ArticleCard';
-@import 'Container/Container';
-@import 'Header/Header';
-@import 'Footer/Footer';
-@import 'Cover/Cover';
+@import "ArticleCard/ArticleCard";
+@import "Container/Container";
+@import "Header/Header";
+@import "Footer/Footer";
+@import "Cover/Cover";
 
-@import '../pages/about-me';
-@import '../pages/articles';
-@import '../pages/index';
-@import '../pages/series';
+@import "../pages/about-me";
+@import "../pages/articles";
+@import "../pages/index";
+@import "../pages/series";
 @import "../components/Common/prismjs-theme";
-@import '../templates/articles';
+@import "../templates/articles";
