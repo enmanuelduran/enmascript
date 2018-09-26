@@ -14,9 +14,14 @@
         justify-content: center;
         align-items: center;
         font-size: 24px;
+        transition: 0.1s transform linear;
 
         &:last-child {
             margin-bottom: 10px;
+        }
+
+        &:hover {
+            transform: scale(1.02);
         }
     }
 }

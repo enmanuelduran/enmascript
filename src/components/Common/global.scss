@@ -21,6 +21,10 @@ li {
 a {
     text-decoration: none;
     color: $text-link-color;
+
+    &:hover {
+        color: $text-link-active-color;
+    }
 }
 
 h2,

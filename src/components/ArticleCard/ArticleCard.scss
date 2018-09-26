@@ -30,9 +30,16 @@
         font-weight: 200;
         color: $article-card-title-color;
         font-size: 20px;
+        transition: 0.1s color linear;
 
         @include min-device("desktop") {
             font-size: 24px;
+        }
+    }
+
+    &:hover {
+        h2 {
+            color: $text-link-color;
         }
     }
 }
