@@ -1,5 +1,5 @@
 ---
-date: '2018-09-26T17:12:33.962Z'
+date: '2018-09-28T17:12:33.962Z'
 title: 'Another approach to media queries with the power of Sass'
 summary: 'Learn about how media queries can make your development process faster and more efficient by using them correctly...'
 series: 'CSS, Styling and Preprocessors'
