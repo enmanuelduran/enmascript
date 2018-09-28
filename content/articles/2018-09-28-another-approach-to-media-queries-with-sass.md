@@ -39,7 +39,7 @@ There are many bad things going on in the example above:
 
 ## A step in the good direction
 
-If you are as terrified as I am of finding code similar to the one above in a code base, it means that you're good and that you have had enough of that pain in your life as a developer (which means that it's time to move on), the first thing you do is think about _how to organize your media quieries?_, _what standard to use?_, if you're developing a personal project you may have googled _"what are the most important breakpoints that a website should cover?_", (not that I did this in the past, _winking face_). The answer to this questions is not always straightforward, it really depends on what you are building and on identifying which are the most important sources of traffic/income for your site/business. A couple of the most popular approches are to divide your media queries by **screen sizes**:
+If you are as terrified as I am of finding code similar to the one above in a code base, it means that you're good and that you have had enough of that pain in your life as a developer (which means that it's time to move on), the first thing you do is think about _how to organize your media queries?_, _what standard to use?_, if you're developing a personal project you may have googled _"what are the most important breakpoints that a website should cover?_", (not that I did this in the past, _winking face_). The answer to these questions aren't always straightforward, it really depends on what you are building and on identifying which are the most important sources of traffic/income for your site/business. A couple of the most popular approches are to divide your media queries by **screen sizes**:
 
 -   _Extra small, small, medium, large._
 
@@ -140,16 +140,16 @@ $devices: (
 This approach will allow us to express media queries and breakpoints using a very simple and verbose approach, **here is how you'd use it**:
 
 ```scss
-/* To apply to devices with a higher screen than phone */
+/* Apply to devices with a higher screen than phone */
 @include min-device("phone") { ... }
 
-/* To apply to devices with screen sizes smaller than tablet */
+/* Apply to devices with screen sizes smaller than tablet */
 @include max-device("tablet") { ... }
 
-/* To apply to only desktop devices */
+/* Apply to only desktop devices */
 @include only-device("desktop") { ... }
 
-/* To apply to devices in a range, in this case, between tablet"and large-desktop */
+/* Apply to devices in a range, in this case, between tablet and large-desktop */
 @include between-devices("tablet", "large-desktop") { ... }
 ```
 
