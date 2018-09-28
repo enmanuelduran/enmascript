@@ -23,8 +23,20 @@ $devices: (
 
 @mixin only-device($device: map-get($devices, "phone")) {
     @if map-has-key($devices, $device) {
-        @media screen and (min-width: map-get($devices, $device)) and (max-width: map-get($devices, $device) - 1) {
-            @content;
+        $devices-length: length($devices);
+        $map-list: map-keys($devices);
+
+        @if index($map-list, $device) == $devices-length {
+            @include min-device($device) {
+                @content;
+            }
+        } @else {
+            $next-device-index: index($map-list, $device) + 1;
+            $next-device-key: nth($map-list, $next-device-index);
+
+            @media screen and (min-width: map-get($devices, $device)) and (max-width: map-get($devices, $next-device-key) - 1) {
+                @content;
+            }
         }
     }
 }
@@ -33,8 +45,10 @@ $devices: (
     $min-device: map-get($devices, "phone"),
     $max-device: map-get($devices, "tablet")
 ) {
-    @if map-has-key($devices, $device) {
-        @media screen and (min-width: map-get($devices, $device)) and (max-width: map-get($devices, $device) - 1) {
+    @if map-has-key($devices, $min-device) and
+        map-has-key($devices, $max-device)
+    {
+        @media screen and (min-width: map-get($devices, $min-device)) and (max-width: map-get($devices, $max-device) - 1) {
             @content;
         }
     }
