@@ -51,7 +51,8 @@ module.exports = {
                             inlineCodeMarker: null,
                             aliases: {}
                         }
-                    }
+                    },
+                    `gatsby-remark-autolink-headers`
                 ]
             }
         },
