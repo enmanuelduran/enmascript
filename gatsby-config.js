@@ -96,6 +96,13 @@ module.exports = {
                 anonymize: true,
                 respectDNT: true
             }
+        },
+        {
+            resolve: 'gatsby-plugin-mailchimp',
+            options: {
+                endpoint:
+                    'https://enmanuelduran.us11.list-manage.com/subscribe/post?u=f288b4ae1f9a7fc49eb3c8d59&amp;id=ab12b7f829'
+            }
         }
     ]
 };

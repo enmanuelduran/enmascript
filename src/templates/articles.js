@@ -5,6 +5,7 @@ import Layout from 'components/layout';
 import { graphql } from 'gatsby';
 import { Twitter, Facebook, LinkedIn } from 'components/Icons/SocialIcons';
 import ArticleCard from 'components/ArticleCard';
+import MailchimpWrapper from 'components/MailchimpWrapper';
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
@@ -110,6 +111,7 @@ const ArticleTemplate = ({ data }) => {
                         </div>
                     </div>
                 </div>
+                <MailchimpWrapper />
                 <div className="article__related">
                     <div className="article__related-title">Other Articles</div>
                     <div className="article__related-wrapper">

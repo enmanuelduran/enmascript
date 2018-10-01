@@ -89,7 +89,7 @@
             &.link--active {
                 background: $menu-active-background-color;
                 color: $menu-active-text-color;
-                border-radius: 10px;
+                border-radius: $border-radius;
             }
         }
     }

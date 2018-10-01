@@ -1,0 +1,98 @@
+.mailchimp {
+    background: $email-box-background-color;
+    border-radius: $border-radius;
+    margin-bottom: 20px;
+    padding: 20px;
+    min-height: 205px;
+    transition: background 0.2s linear;
+    position: relative;
+    overflow: hidden;
+
+    .success-container,
+    .form-container {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .form-container {
+        align-items: center;
+        position: relative;
+        transition: transform 0.2s ease-in-out, background 0.2s linear;
+        z-index: 1;
+        background: $email-box-background-color;
+    }
+
+    input {
+        border-radius: $border-radius;
+        padding: 15px;
+        outline: none;
+        font-size: $input-font-size;
+        border: 0;
+        max-width: 400px;
+        width: 100%;
+    }
+
+    button {
+        outline: none;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: $border-radius;
+        cursor: pointer;
+        border: 0;
+        border-bottom: 3px solid $button-border-color;
+        background-color: $button-background-color;
+        color: $button-text-color;
+        transition: background 0.1s linear, color 0.1s linear;
+
+        &:hover {
+            background: $dark-blue;
+            color: $button-active-text-color;
+            border-bottom: 3px solid $button-active-border-color;
+        }
+
+        &:disabled {
+            background-color: $button-disabled-background-color;
+        }
+    }
+
+    p {
+        margin-top: 0;
+        color: $white;
+    }
+
+    .success-container {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: 0;
+        text-align: center;
+        color: $white;
+        width: 100%;
+
+        svg {
+            margin: 0 auto;
+            width: 80px;
+            height: 80px;
+            color: $white;
+            margin-bottom: 20px;
+        }
+    }
+
+    &--success {
+        background: $success-green;
+
+        .form-container {
+            background: $success-green;
+            transform: translateY(-250px);
+        }
+    }
+
+    &-error {
+        background: $error-red;
+        color: $white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 5px;
+    }
+}

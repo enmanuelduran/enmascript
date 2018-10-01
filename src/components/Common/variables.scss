@@ -8,11 +8,16 @@ $soft-yellow: #fff7b5;
 
 $white: #fff;
 $black: rgba(0, 0, 0, 1);
+
 $light-grey: #f9f9f9;
+$grey: #ccc;
 $dark-grey: rgba($black, 0.75);
 
 /*--- Functional variables ---*/
 $container-background-color: $white;
+$border-radius: 10px;
+$success-green: #00cc81;
+$error-red: #de4338;
 
 /* Text */
 $text-line-height: 30px;
@@ -47,6 +52,10 @@ $button-border-color: $white;
 $button-active-background-color: $blue;
 $button-active-text-color: $white;
 $button-active-border-color: $white;
+$button-disabled-background-color: $grey;
+
+/* Forms */
+$input-font-size: 16px;
 
 /* Table */
 $table-head-background-color: $dark-blue;
@@ -61,3 +70,6 @@ $share-icons-active-color: $blue;
 $code-box-header-background-color: $soft-blue;
 $code-box-header-text-color: $dark-blue;
 $code-box-background-color: $white;
+
+/* Email Subscription box */
+$email-box-background-color: $blue;

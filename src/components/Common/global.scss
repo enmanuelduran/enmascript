@@ -32,6 +32,16 @@ h3 {
     margin: 1em 0 0.2em;
 }
 
+input,
+button {
+    font-family: $text-font-family;
+    font-size: $input-font-size;
+}
+
+input {
+    font-size: $input-font-size;
+}
+
 .main {
     min-height: 100vh;
     margin-bottom: -$footer-height;

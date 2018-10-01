@@ -31,7 +31,7 @@
         a {
             background: $button-background-color;
             color: $button-text-color;
-            border-radius: 10px;
+            border-radius: $border-radius;
             border-bottom: 3px solid $button-border-color;
             padding: 10px 15px;
             font-size: 18px;
