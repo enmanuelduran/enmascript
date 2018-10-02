@@ -1,12 +1,22 @@
 .mailchimp {
-    background: $email-box-background-color;
     border-radius: $border-radius;
     margin-bottom: 20px;
     padding: 20px;
     min-height: 205px;
-    transition: background 0.2s linear;
     position: relative;
     overflow: hidden;
+    background-size: cover;
+
+    &:before {
+        content: "";
+        width: 100%;
+        transition: background 0.2s linear;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        background: rgba($email-box-background-color, 0.9);
+    }
 
     .success-container,
     .form-container {
@@ -19,7 +29,6 @@
         position: relative;
         transition: transform 0.2s ease-in-out, background 0.2s linear;
         z-index: 1;
-        background: $email-box-background-color;
     }
 
     input {
@@ -80,10 +89,11 @@
     }
 
     &--success {
-        background: $success-green;
+        &:before {
+            background: rgba($success-green, 0.9);
+        }
 
         .form-container {
-            background: $success-green;
             transform: translateY(-250px);
         }
     }

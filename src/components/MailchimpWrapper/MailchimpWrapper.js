@@ -2,6 +2,7 @@ import React from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
 import { Rocket } from 'Icons/Icons';
 import { Form, Text } from 'informed';
+import formImage from 'images/form-background.png';
 
 const SUCCESS_CLASS = 'mailchimp--success';
 
@@ -45,7 +46,8 @@ class MailchimpWrapper extends React.Component {
             <Form
                 onSubmit={this.handleSubmit}
                 id="validate-form"
-                className={`mailchimp ${successClass}`}>
+                className={`mailchimp ${successClass}`}
+                style={{ backgroundImage: `url(${formImage})` }}>
                 {({ formState }) => {
                     return (
                         <React.Fragment>
