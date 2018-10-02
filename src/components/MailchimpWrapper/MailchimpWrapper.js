@@ -3,7 +3,6 @@ import addToMailchimp from 'gatsby-plugin-mailchimp';
 import { Rocket } from 'Icons/Icons';
 import { Form, Text } from 'informed';
 
-const ERROR_CLASS = 'mailchimp--error';
 const SUCCESS_CLASS = 'mailchimp--success';
 
 class MailchimpWrapper extends React.Component {
@@ -40,14 +39,13 @@ class MailchimpWrapper extends React.Component {
     };
 
     render() {
-        const errorClass = this.state.errors ? ERROR_CLASS : '';
         const successClass = this.state.subscribed ? SUCCESS_CLASS : '';
 
         return (
             <Form
                 onSubmit={this.handleSubmit}
                 id="validate-form"
-                className={`mailchimp ${successClass} ${errorClass}`}>
+                className={`mailchimp ${successClass}`}>
                 {({ formState }) => {
                     return (
                         <React.Fragment>
@@ -61,9 +59,11 @@ class MailchimpWrapper extends React.Component {
                                     placeholder="Enter your email"
                                     validate={this.validateInput}
                                 />
-                                {formState.errors.email && (
+                                {(formState.errors.email ||
+                                    this.state.errors) && (
                                     <div className="mailchimp-error">
-                                        {formState.errors.email}
+                                        {formState.errors.email ||
+                                            'An error ocurred'}
                                     </div>
                                 )}
                                 <button disabled={!formState.values.email}>
