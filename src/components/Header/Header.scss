@@ -90,6 +90,19 @@
                 background: $menu-active-background-color;
                 color: $menu-active-text-color;
                 border-radius: $border-radius;
+
+                svg path {
+                    fill: $menu-active-text-color;
+                }
+            }
+        }
+
+        .github-link {
+            display: flex;
+            align-items: center;
+
+            svg {
+                margin-right: 5px;
             }
         }
     }

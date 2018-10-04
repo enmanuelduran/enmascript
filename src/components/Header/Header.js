@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Container from 'components/Container/Container';
 import { Logo } from 'components/Icons/Logo';
+import { GitHub } from 'components/Icons/SocialIcons';
 
 const ACTIVE_CLASS = 'link--active';
 
@@ -69,6 +70,14 @@ class Header extends React.Component {
                             )}>
                             About me
                         </Link>
+                        <a
+                            className="github-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href="https://github.com/enmanuelduran/enmascript">
+                            <GitHub />
+                            GitHub
+                        </a>
                     </nav>
                 </Container>
             </header>
