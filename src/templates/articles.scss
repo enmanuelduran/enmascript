@@ -12,7 +12,8 @@
 
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
         padding: 20px 0;
         margin: 0;
     }
@@ -29,6 +30,10 @@
 
     h3 {
         font-size: 28px;
+    }
+
+    h4 {
+        font-size: 22px;
     }
 
     p {
@@ -90,6 +95,7 @@
 
     img {
         border-radius: 5px;
+        max-width: 100%;
     }
 
     &__author {
