@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Container from 'components/Container/Container';
 import Layout from 'components/layout';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Twitter, Facebook, LinkedIn } from 'components/Icons/SocialIcons';
 import ArticleCard from 'components/ArticleCard';
 import MailchimpWrapper from 'components/MailchimpWrapper';
@@ -34,6 +34,14 @@ const ArticleTemplate = ({ data }) => {
         if (networkWindow.focus) {
             networkWindow.focus();
         }
+    };
+
+    const getSeriesLink = () => {
+        const link = metadata.siteMetadata.series_list.find(elm => {
+            return elm.name === post.frontmatter.series;
+        });
+
+        return link.slug || '';
     };
 
     const postImage = `/images/${post.frontmatter.featuredImage}`;
@@ -84,7 +92,7 @@ const ArticleTemplate = ({ data }) => {
                 </Helmet>
                 <div className="article">
                     <h1>{post.frontmatter.title}</h1>
-                    <div className="">
+                    <div>
                         <a
                             href={metadata.siteMetadata.twitter}
                             className="article__author"
@@ -95,6 +103,14 @@ const ArticleTemplate = ({ data }) => {
                         <span className="article__date">
                             {post.frontmatter.date}
                         </span>
+                    </div>
+                    <div className="article__series">
+                        part of the{' '}
+                        <Link to={getSeriesLink()}>
+                            {' '}
+                            {post.frontmatter.series}{' '}
+                        </Link>
+                        series
                     </div>
                     <div className="article__content">
                         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -146,6 +162,7 @@ export const pageQuery = graphql`
                 title
                 summary
                 featuredImage
+                series
             }
         }
         metadata: site {
@@ -154,6 +171,10 @@ export const pageQuery = graphql`
                 twitter
                 title
                 url
+                series_list {
+                    name
+                    slug
+                }
             }
         }
         otherArticles: allMarkdownRemark(

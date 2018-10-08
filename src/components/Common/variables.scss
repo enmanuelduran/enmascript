@@ -16,12 +16,14 @@ $dark-grey: rgba($black, 0.75);
 /*--- Functional variables ---*/
 $container-background-color: $white;
 $border-radius: 10px;
+$soft-border-radius: 5px;
 $success-green: #00cc81;
 $error-red: #de4338;
 
 /* Text */
 $text-line-height: 30px;
 $text-font-size: 18px;
+$small-text-font-size: 12px;
 $text-font-family: "Raleway", sans-serif;
 $text-color: $dark-grey;
 $text-highlighted-color: $soft-yellow;
@@ -73,3 +75,7 @@ $code-box-background-color: $white;
 
 /* Email Subscription box */
 $email-box-background-color: $blue;
+
+/* Tag style */
+$tag-background-color: $dark-blue;
+$tag-text-color: $white;

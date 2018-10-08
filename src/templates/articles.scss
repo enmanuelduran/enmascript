@@ -59,7 +59,7 @@
     }
 
     pre {
-        border-radius: 5px;
+        border-radius: $soft-border-radius;
         position: relative;
         padding-top: 30px;
         box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.15);
@@ -68,7 +68,7 @@
     table {
         width: 100%;
         border-spacing: 0;
-        border-radius: 5px;
+        border-radius: $soft-border-radius;
         overflow: hidden;
         margin-bottom: 20px;
 
@@ -94,7 +94,7 @@
     }
 
     img {
-        border-radius: 5px;
+        border-radius: $soft-border-radius;
         max-width: 100%;
     }
 
@@ -107,7 +107,7 @@
     }
 
     &__content {
-        margin-top: 40px;
+        margin-top: 30px;
         position: relative;
     }
 
@@ -212,5 +212,16 @@
                 font-size: 20px;
             }
         }
+    }
+
+    &__series {
+        font-size: $small-text-font-size;
+        text-transform: uppercase;
+        margin-top: 10px;
+        display: inline-block;
+        border-radius: $soft-border-radius;
+        color: $tag-text-color;
+        padding: 5px;
+        background-color: $tag-background-color;
     }
 }
