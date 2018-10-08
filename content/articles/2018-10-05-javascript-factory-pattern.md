@@ -6,7 +6,7 @@ series: 'Javascript'
 featuredImage: '2018-10-07-factory-pattern.png'
 ---
 
-When creating features we often need to create instances based on parameters comming from an endpoint or a similar dynamic source. In this article I'll try to _give you an idea_ on how we can use the single factory pattern to approach such cases.
+When creating features we often need to create instances based on parameters coming from an endpoint or a similar dynamic source. In this article I'll try to _give you an idea_ on how we can use the single factory pattern to approach such cases.
 
 We'll refactor a piece of code to make it more scalable and understandable, Let's suppose we have this premise:
 
@@ -138,11 +138,11 @@ The factory pattern is a design pattern that's part of the _creational_ group, i
 1. Delegates the responsability of object creation to a class called "factory".
 1. Creates the instances by receiving the dynamic value in your entry point.
 
-Here a visual representation a created to demostrate how the factory works.
+Here is a visual representation I created to demonstrate how the factory works.
 
 ![](/images/2018-10-07-factory-pattern.png)
 
-Now we'll start by refactoring our "solution" above based on the list we've created above.
+Now we'll start by refactoring our "solution" based on the list we've created above.
 
 #### Isolate the objects to keep single responsabilities
 
@@ -171,9 +171,9 @@ export default class Email {
 }
 ```
 
-Notice that we're moving the validation and binding methods to the element's class, we would do the same for the other elements (_textarea_, _select_, ...), This will allow us to scale and keep the logic for each type of element isolated.
+Notice that we're moving the validation and binding methods to the element's class, we would do the same for the other elements (_textarea_, _select_, ...). This will allow us to scale and keep the logic for each type of element isolated.
 
-#### Delegates the responsability of object creation to a class called "factory"
+#### Delegate the responsability of object creation to a class called "factory"
 
 The factory does a couple of things:
 
@@ -245,8 +245,8 @@ To finish, here is a representation of our folder structure after refactoring
     └── textarea.js
 ```
 
-Cool, right? now every time you want to add a new element, it's just a matter of adding it to the `/formElements` folder and importing it in our factory so it can be instanciate it, also, if you want to remove an element it's just a matter of deleting the import line and the file from the `/formElements` folder.
+Cool, right? Now every time you want to add a new element, it's just a matter of adding it to the `/formElements` folder and importing it in our factory so it can be instantiated, Also, if you want to remove an element it's just a matter of deleting the import line and the file from the `/formElements` folder.
 
-Ok, I think that's it for this article guys, hope you were abble to understand a little more about the factory pattern, if you did remember to share it on twitter or facebook, also you can subscribe to our email list below.
+Ok, I think that's it for this article guys, hope you were able to understand a little more about the factory pattern, if you did remember to share it on twitter or facebook, you can also subscribe to our email list below.
 
 See you in the next one!
