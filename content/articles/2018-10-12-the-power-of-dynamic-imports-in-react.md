@@ -1,9 +1,9 @@
 ---
-date: '2018-10-10T17:12:33.962Z'
+date: '2018-10-12T17:12:33.962Z'
 title: 'The power of dynamic imports in Javascript and React'
 summary: "Dynamic imports are a very powerful feature, in this article I'll walk you through some of the most important concepts and practices."
 series: 'React'
-featuredImage: '2018-1012-dynamic-imports.png'
+featuredImage: '2018-10-12-dynamic-imports.png'
 ---
 
 Dynamic imports are great, they've been out there for a while and presume many improvements in the way we treat modules/components. In this article, I'm going to be explaining how they work, why they're so good and some of the things we could accomplish by using them.
