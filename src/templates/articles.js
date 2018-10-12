@@ -41,7 +41,7 @@ const ArticleTemplate = ({ data }) => {
             return elm.name === post.frontmatter.series;
         });
 
-        return link.slug || '';
+        return (link && link.slug) || '';
     };
 
     const postImage = `/images/${post.frontmatter.featuredImage}`;
