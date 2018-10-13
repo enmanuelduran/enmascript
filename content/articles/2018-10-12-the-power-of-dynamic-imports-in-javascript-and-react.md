@@ -12,7 +12,7 @@ If you read my previous article about [factory pattern in javascript](https://en
 
 ## Introducing Dynamic imports
 
-The Dynamic import() is a [javascript proposal currently on stage 3](https://github.com/tc39/proposal-dynamic-import), as we know ECMAScript modules are _static_ but thanks to this proposal they don't always have to be, in a nutshell, the dynamic import() syntax allow us to load modules on demand by using promises or the async/await syntax, an example/implementation for this would be:
+The Dynamic import() is a [javascript proposal currently on stage 3](https://github.com/tc39/proposal-dynamic-import), as we know ECMAScript modules are _static_ but thanks to this proposal they don't always have to be, in a nutshell, the dynamic import() syntax allows us to load modules on demand by using promises or the async/await syntax, an example/implementation for this would be:
 
 ```javascript
 import('./Module').then(Module => Module.method());
@@ -28,7 +28,7 @@ The evident impact of dynamic imports is found in the reduction of our bundle's 
 
 ## Implementation using React and async/await
 
-Imagine you have a component that could be lazy-loaded or fetched on a certain event (click), this component would need to be added into our app dynamically and will need to make use of a structure that allow us to update our react app in response to a change, I know, what a better structure than React's state?, it allows us to make dynamic changes in our app and more so let's go ahead and use it.
+Imagine you have a component that could be lazy-loaded or fetched on a certain event (click), this component would need to be added into our app dynamically and will need to make use of a structure that allows us to update our react app in response to a change, I know, what a better structure than React's state?, it allows us to make dynamic changes in our app and more so let's go ahead and use it.
 
 I'll basically make a very simple implementation that adds the link to our Github in the header dynamically when clicking a div.
 
