@@ -4442,9 +4442,9 @@ gatsby-cli@^2.0.0-rc.1:
     yargs "^11.1.0"
     yurnalist "^0.2.1"
 
-gatsby-cli@^2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.4.2.tgz#6a89a854c5fdc285d9a01f7874f96994ae24a2b4"
+gatsby-cli@next:
+  version "2.0.0-rc.6"
+  resolved "https://registry.yarnpkg.com/gatsby-cli/-/gatsby-cli-2.0.0-rc.6.tgz#91d8a2120aae8bcc7d67f58a803cf28757f390ee"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/runtime" "^7.0.0"
@@ -4483,11 +4483,11 @@ gatsby-plugin-catch-links@next:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-google-analytics@^1.0.31:
-  version "1.0.31"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.31.tgz#eaf16e1809461b10badf12c05038c429745783c0"
+gatsby-plugin-google-analytics@next:
+  version "2.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.0-rc.2.tgz#6ec18010a581c6f4258779a9ee6ea96626e60f31"
   dependencies:
-    babel-runtime "^6.26.0"
+    "@babel/runtime" "^7.0.0"
 
 "gatsby-plugin-mailchimp@https://github.com/benjaminhoffman/gatsby-plugin-mailchimp.git#gatsby-v2":
   version "3.3.0"
@@ -4497,13 +4497,13 @@ gatsby-plugin-google-analytics@^1.0.31:
     jsonp "^0.2.1"
     webpack "^1.15.0"
 
-gatsby-plugin-manifest@^1.0.27:
-  version "1.0.27"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-1.0.27.tgz#148327ebfaf9a0a6791012cc5b5363356ee16ddf"
+gatsby-plugin-manifest@next:
+  version "2.0.2-rc.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.2-rc.1.tgz#635cf3febe64b2d6420d6e6bbf3ade660dd5288a"
   dependencies:
-    babel-runtime "^6.26.0"
+    "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
-    sharp "^0.20.1"
+    sharp "^0.20.2"
 
 gatsby-plugin-offline@next:
   version "2.0.0-rc.5"
@@ -6873,9 +6873,9 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
-mediaquerysensor@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/mediaquerysensor/-/mediaquerysensor-1.0.6.tgz#717f5cd943347db42929f7b80440b4602a3676c4"
+mediaquerysensor@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/mediaquerysensor/-/mediaquerysensor-2.0.0.tgz#b8e181eccae4025bc35c4f3c878d20f3a891e7cb"
 
 mem@^1.1.0:
   version "1.1.0"
@@ -9452,7 +9452,7 @@ shallowequal@^1.0.1, shallowequal@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
 
-sharp@^0.20.0, sharp@^0.20.1:
+sharp@^0.20.0, sharp@^0.20.2:
   version "0.20.8"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.20.8.tgz#e853f10b53b730824f0c3c5e453c79fa0812a48b"
   dependencies:

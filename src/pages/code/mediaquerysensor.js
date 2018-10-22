@@ -45,17 +45,17 @@ class MediaQuerySensor extends React.Component {
 
             MQS.add({
                 ref: 'mobileSensor',
-                value: '(max-width: 767px)',
+                mediaQuery: '(max-width: 767px)',
                 action: this.mobileHandler
             });
             MQS.add({
                 ref: 'tabletSensor',
-                value: '(min-width: 768px) and (max-width: 990px)',
+                mediaQuery: '(min-width: 768px) and (max-width: 990px)',
                 action: this.tabletHandler
             });
             MQS.add({
                 ref: 'desktopSensor',
-                value: '(min-width: 991px)',
+                mediaQuery: '(min-width: 991px)',
                 action: this.desktopHandler
             });
         }
