@@ -24,6 +24,13 @@ module.exports = {
                 featuredImage: 'css_styling_preprocessors.png',
                 slug: '/series/css-styling-and-preprocessors'
             }
+        ],
+        code_list: [
+            {
+                name: 'MediaQuerySensor',
+                featuredImage: 'MQS.png',
+                slug: '/code/mediaquerysensor'
+            }
         ]
     },
     plugins: [

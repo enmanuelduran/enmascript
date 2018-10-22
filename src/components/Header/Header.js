@@ -63,6 +63,14 @@ class Header extends React.Component {
                             Series
                         </Link>
                         <Link
+                            to="/code"
+                            className={this.isMenuOptionActive(
+                                section,
+                                'code'
+                            )}>
+                            Code
+                        </Link>
+                        <Link
                             to="/about-me"
                             className={this.isMenuOptionActive(
                                 section,

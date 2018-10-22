@@ -21,6 +21,7 @@
         "gatsby-transformer-remark": "next",
         "gh-pages": "^2.0.0",
         "informed": "^1.10.5",
+        "mediaquerysensor": "^1.0.6",
         "prismjs": "^1.15.0",
         "react": "^16.4.2",
         "react-dom": "^16.4.2",
