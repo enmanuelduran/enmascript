@@ -2,7 +2,8 @@ import React from 'react';
 import Layout from 'components/layout';
 import Helmet from 'react-helmet';
 import Container from 'components/Container';
-import MQS from 'mediaquerysensor';
+
+let MQS = {};
 
 class MediaQuerySensor extends React.Component {
     state = {
@@ -39,21 +40,25 @@ class MediaQuerySensor extends React.Component {
     getActiveSensors = () => console.log(MQS.get());
 
     componentDidMount() {
-        MQS.add({
-            ref: 'mobileSensor',
-            value: '(max-width: 767px)',
-            action: this.mobileHandler
-        });
-        MQS.add({
-            ref: 'tabletSensor',
-            value: '(min-width: 768px) and (max-width: 990px)',
-            action: this.tabletHandler
-        });
-        MQS.add({
-            ref: 'desktopSensor',
-            value: '(min-width: 991px)',
-            action: this.desktopHandler
-        });
+        if (typeof window !== 'undefined') {
+            MQS = require('mediaquerysensor');
+
+            MQS.add({
+                ref: 'mobileSensor',
+                value: '(max-width: 767px)',
+                action: this.mobileHandler
+            });
+            MQS.add({
+                ref: 'tabletSensor',
+                value: '(min-width: 768px) and (max-width: 990px)',
+                action: this.tabletHandler
+            });
+            MQS.add({
+                ref: 'desktopSensor',
+                value: '(min-width: 991px)',
+                action: this.desktopHandler
+            });
+        }
     }
 
     componentWillUnmount() {
