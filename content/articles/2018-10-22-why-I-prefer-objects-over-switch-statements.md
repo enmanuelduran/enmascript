@@ -181,7 +181,7 @@ Looks great, right?, but wait, seems like we have a problem... what would happen
 
 1. It'll look for the key in the object.
 1. It'll see that the value of the vscode key is `false`.
-1. It'll try to return `false` but since `false || 'unknown'` is `unknown` we will endup returning an incorrect value.
+1. It'll try to return `false` but since `false || 'unknown'` is `unknown` we will end up returning an incorrect value.
 
 We'll have the same problem for the key `fakeEditor`.
 
@@ -307,7 +307,7 @@ And now we have an approach that:
 
 As expected all approaches have their downfalls and this one is not exception to the rule.
 
-1. since we're using objects we will be taking some temporal space in memory to store them, this space will be freed thanks to the garbage collector when the scope in which the object was defined is not longer accesible.
+1. Since we're using objects we will be taking some temporal space in memory to store them, this space will be freed thanks to the garbage collector when the scope in which the object was defined is no longer accesible.
 
 1. Objects approach could be less fast than switch statements when there are not many cases to evaluate, this could happen because we're creating a data structure and later accesing a key where in the switch we're just checking values and returning.
 
