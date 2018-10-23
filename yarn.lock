@@ -6873,9 +6873,9 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
-mediaquerysensor@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/mediaquerysensor/-/mediaquerysensor-2.0.0.tgz#b8e181eccae4025bc35c4f3c878d20f3a891e7cb"
+mediaquerysensor@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/mediaquerysensor/-/mediaquerysensor-2.0.1.tgz#865aa52a31ca09540fe2b5bbd660507e0c0da908"
 
 mem@^1.1.0:
   version "1.1.0"
