@@ -4,6 +4,7 @@ module.exports = {
         title: 'EnmaScript',
         author: 'Enmanuel Durán',
         twitter: 'https://twitter.com/duranenmanuel',
+        disqusShortName: 'enmascript-1',
         description:
             'A place to learn about programming, web development and science (sometimes).',
         logo: 'https://enmascript.com/favicons/enmascript.png',

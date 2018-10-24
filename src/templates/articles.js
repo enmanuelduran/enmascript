@@ -12,7 +12,6 @@ const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
     const url = metadata.siteMetadata.url + data.article.fields.slug;
     const { title } = post.frontmatter;
-    const disqusShortname = 'EnmaScript';
     const disqusConfig = { url, title, identifier: url };
 
     const shareOn = network => event => {
@@ -152,7 +151,7 @@ const ArticleTemplate = ({ data }) => {
                     Leave your comments!
                 </div>
                 <Disqus.DiscussionEmbed
-                    shortname={disqusShortname}
+                    shortname={metadata.siteMetadata.disqusShortName}
                     config={disqusConfig}
                 />
             </Container>
@@ -179,6 +178,7 @@ export const pageQuery = graphql`
             siteMetadata {
                 author
                 twitter
+                disqusShortName
                 title
                 url
                 series_list {
