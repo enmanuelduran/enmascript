@@ -6,11 +6,14 @@ import { graphql, Link } from 'gatsby';
 import { Twitter, Facebook, LinkedIn } from 'components/Icons/SocialIcons';
 import ArticleCard from 'components/ArticleCard';
 import MailchimpWrapper from 'components/MailchimpWrapper';
+import Disqus from 'disqus-react';
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
     const url = metadata.siteMetadata.url + data.article.fields.slug;
     const { title } = post.frontmatter;
+    const disqusShortname = 'EnmaScript';
+    const disqusConfig = { url, title, identifier: url };
 
     const shareOn = network => event => {
         event.preventDefault();
@@ -145,6 +148,13 @@ const ArticleTemplate = ({ data }) => {
                             ))}
                     </div>
                 </div>
+                <div className="article__related-title">
+                    Leave your comments!
+                </div>
+                <Disqus.DiscussionEmbed
+                    shortname={disqusShortname}
+                    config={disqusConfig}
+                />
             </Container>
         </Layout>
     );

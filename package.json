@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "author": "Enmanuel Durán <duranenmanuel@gmail.com>",
     "dependencies": {
+        "disqus-react": "^1.0.5",
         "gatsby": "next",
         "gatsby-cli": "next",
         "gatsby-plugin-catch-links": "next",
@@ -23,8 +24,8 @@
         "informed": "^1.10.5",
         "mediaquerysensor": "2.0.1",
         "prismjs": "^1.15.0",
-        "react": "^16.4.2",
-        "react-dom": "^16.4.2",
+        "react": "^16.6.0",
+        "react-dom": "^16.6.0",
         "react-helmet": "^5.2.0",
         "shortid": "^2.2.13"
     },
