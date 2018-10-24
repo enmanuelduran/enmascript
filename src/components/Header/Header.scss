@@ -74,8 +74,8 @@
         a {
             color: $text-color;
             padding: 5px;
-            font-size: 24px;
-            margin: 15px 0;
+            font-size: 21px;
+            margin: 12px 0;
 
             @include min-device("desktop") {
                 font-size: initial;
