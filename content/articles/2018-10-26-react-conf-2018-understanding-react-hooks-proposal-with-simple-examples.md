@@ -6,11 +6,11 @@ series: 'React'
 featuredImage: '2018-10-26-hooks-proposal.png'
 ---
 
-Yesterday, was the first day of the [React conf](https://conf.reactjs.org/), the community is very excited about the things that are happening with react (myself included), after watching some minutes of the conference we noticed a pattern, the word _hooks_ started to be recurrent, and the more it was used the more amazed and hyped we were. In this article, we're going to be explaining how _hooks_ work a little bit by identifying some key concepts and understanding a simple example of a counter that will be evolving progressively with the use of the different hooks (Ah, and you'll be reading the word _hooks_ a lot). Grab a soda, fasten your seatbelt and enjoy the ride.
+Yesterday was the first day of the [React conf](https://conf.reactjs.org/), the community is very excited about the things that are happening with react (myself included), after watching some minutes of the conference we noticed a pattern, the word _hooks_ started to be recurrent, and the more it was used the more amazed and hyped we were. In this article, we're going to be explaining how _hooks_ work a little bit by identifying some key concepts and understanding a simple example of a counter that will be progressively evolving with the use of the different hooks (Ah, and you'll be reading the word _hooks_ a lot). Grab a soda, fasten your seatbelt and enjoy the ride.
 
 ![](/images/2018-10-26-hooks-proposal.png)
 
-[React Hooks](https://reactjs.org/docs/hooks-intro.html) are a new proposal available in the version 16.7.0-alpha of React and is currently being discussed in [this RFC](https://github.com/reactjs/rfcs/pull/68). Basically with the introduction of _hooks_ you are no longer being forced to use _classes_ just to be able to make use of react core features such as the state, yes, you read that correctly, you can now manipulate the state by using a _function based component_, let me show you what I'm talking about with our first codepen example, take a look, don't panic, and then I'll explain what is going on, I promise, please don't panic:
+[React Hooks](https://reactjs.org/docs/hooks-intro.html) are a new proposal available in the version 16.7.0-alpha of React and is currently being discussed in [this RFC](https://github.com/reactjs/rfcs/pull/68). Basically with the introduction of _hooks_ you are no longer being forced to use _classes_ just to be able to make use of react core features such as the state, yes, you read that correctly, you can now manipulate the state by using a _function-based component_, let me show you what I'm talking about with our first codepen example, take a look, don't panic, and then I'll explain what is going on, I promise, please don't panic:
 
 <iframe height='265' scrolling='no' title='LgMomz' src='//codepen.io/enmanuelduran/embed/LgMomz/?height=265&theme-id=0&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/enmanuelduran/pen/LgMomz/'>LgMomz</a> by Enmanuel Durán (<a href='https://codepen.io/enmanuelduran'>@enmanuelduran</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
@@ -52,6 +52,8 @@ Here goes the same example of the counter but with an improved UI thanks to the 
 
 <iframe height='265' scrolling='no' title='GYPVbM' src='//codepen.io/enmanuelduran/embed/GYPVbM/?height=265&theme-id=0&default-tab=js,result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/enmanuelduran/pen/GYPVbM/'>GYPVbM</a> by Enmanuel Durán (<a href='https://codepen.io/enmanuelduran'>@enmanuelduran</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+Here we're just using the `useContext` hook to get the current theme and assign it to a variable, in this way we can access the properties (in this case the class property) and give some nice styling to our example.
 
 ## The useEffect Hook
 
