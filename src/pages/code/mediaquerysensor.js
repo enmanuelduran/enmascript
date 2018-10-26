@@ -137,11 +137,14 @@ class MediaQuerySensor extends React.Component {
                     <p>
                         <strong>Important Note:</strong> For this demo we're
                         using react because EnmaScript is based on it but you
-                        can use raw javascript or the framework/library of your
-                        preference. We have 3 functions and each of them is
-                        executed in a given breakpoint, these are the functions.
+                        can use MQS with raw javascript or the framework/library
+                        of your preference.
                     </p>
                     <h3>Adding the sensors</h3>
+                    <p>
+                        We have 3 functions and each of them is executed in a
+                        given breakpoint, these are the functions.
+                    </p>
                     <pre className="language-javascript">
                         <code className="language-javascript">
                             {`mobileHandler = () => {
