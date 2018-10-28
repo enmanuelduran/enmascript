@@ -19,7 +19,7 @@ I know, you're probably thinking: where is the `setState` call? where is my init
 
 ## The useState Hook
 
-```
+```javascript
 useState(initialState);
 ```
 
@@ -36,7 +36,7 @@ So, take a look at the code and check the beginning of the function, you see tha
 
 ## The useContext Hook
 
-```
+```javascript
 useContext(ContextObject)
 ```
 
@@ -57,7 +57,7 @@ Here we're just using the `useContext` hook to get the current theme and assign 
 
 ## The useEffect Hook
 
-```
+```javascript
 useEffect(() => {
     // Similar to componentDidMount
     // Subscribes, timers...
