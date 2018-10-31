@@ -1,5 +1,5 @@
 ---
-date: '2018-10-31T012:30:23.912Z'
+date: '2018-10-31T09:30:23.912Z'
 title: "The underestimated power behind window.matchMedia"
 summary: "In this article we're going to learn how to improve the performance by using an alternative to resize events"
 series: 'Javascript'
