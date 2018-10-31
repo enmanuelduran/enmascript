@@ -1,6 +1,6 @@
 ---
 date: '2018-10-31T09:30:23.912Z'
-title: "The underestimated power behind window.matchMedia"
+title: "The underestimated power behind matchMedia"
 summary: "In this article we're going to learn how to improve the performance by using an alternative to resize events"
 series: 'Javascript'
 featuredImage: '2018-10-31-window-matchmedia.png'
