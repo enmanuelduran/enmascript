@@ -10,7 +10,7 @@ Media query based interactions are a very important part of our applications for
 
 ```javascript
 // Do something for some specified breakpoints
-doSomething() {
+function doSomething() {
     if (window.innerWidth > 768) {
         /* do Something */
     }
@@ -30,7 +30,7 @@ But this is not all, since the `resize` event is an _expensive_ operation for th
 const mediaQueryListObject = window.matchMedia('(min-width: 768px)');
 
 // Define the code to execute
-doSomething() { /* Some code to execute */ }
+function doSomething() { /* Some code to execute */ }
 
 // Attach the event listener with the function to execute
 mediaQueryListObject.addListener(doSomething);
