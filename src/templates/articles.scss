@@ -56,6 +56,8 @@
 
     :not(pre) > code[class*="language-"] {
         white-space: normal;
+        background: $code-box-header-background-color;
+        color: $code-box-header-text-color;
     }
 
     pre {
