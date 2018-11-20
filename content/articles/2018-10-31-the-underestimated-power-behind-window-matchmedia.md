@@ -56,7 +56,10 @@ I want you to notice something, check the way we're passing the media query to t
 *Now, what if I tell you there is an alternative where you don't have to worry about these problems previously mentioned either?*
 
 ## MediaQuerySensor, a powerful and lightweight solution to the rescue
-![](/images/2018-10-31-MQS-demo-image.gif)
+<video autoplay loop muted playsinline>
+    <source src="/images/2018-10-31-MQS-demo-image.mp4" type="video/mp4">
+</video>
+
 [This demo page is available here](https://enmascript.com/code/mediaquerysensor).
 
 [MediaQuerySensor (MQS)](https://enmascript.com/code/mediaquerysensor) is a library that creates a wrapper around `matchMedia`, it takes care of all the extra responsibilities so that you can focus on what matters, you only have to specify a reference id to identify your listener, the media query breakpoint and an action to execute for the given media query, with this data it'll then create what we call a _sensor object_ that allows you to remove and verify the listener added from anywhere in your code, without having to worry about contexts, references, boilerplate and validations, Woohoo!

@@ -104,7 +104,11 @@ class Header extends React.Component {
 
 Very simple, here is a visual example of the implementation working, you'll notice that when clicking the yellow button the component that contains the Github link is added to the menu and is dynamically fetched as shown in the network request:
 
-![](/images/2018-10-11-dynamic-imports.gif)
+<p>
+    <video autoplay loop muted playsinline>
+        <source src="/images/2018-10-11-dynamic-imports.mp4" type="video/mp4">
+    </video>
+</p>
 
 This feature opens the door to many possibilities and improvements, not only on React but in Javascript in general, hopefully, after reading this article you already started to spot places in your code where dynamic imports could be added to make improvements. If you enjoyed this article please share it in your social networks or with your friends. You can find me/contact me on twitter with the user name [@duranenmanuel](https://twitter.com/duranenmanuel) or using my email <duranenmanuel@gmail.com>.
 
