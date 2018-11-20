@@ -47,6 +47,7 @@ const ArticleTemplate = ({ data }) => {
     };
 
     const postImage = `/images/${post.frontmatter.featuredImage}`;
+    const seriesLink = getSeriesLink();
 
     return (
         <Layout section="articles">
@@ -106,14 +107,14 @@ const ArticleTemplate = ({ data }) => {
                             {post.frontmatter.date}
                         </span>
                     </div>
-                    <div className="article__series">
+                    {seriesLink && <div className="article__series">
                         part of the{' '}
-                        <Link to={getSeriesLink()}>
+                        <Link to={seriesLink}>
                             {' '}
                             {post.frontmatter.series}{' '}
                         </Link>
                         series
-                    </div>
+                    </div>}
                     <div className="article__content">
                         <div dangerouslySetInnerHTML={{ __html: post.html }} />
                         <div className="article__share">
