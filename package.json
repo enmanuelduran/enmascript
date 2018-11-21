@@ -6,7 +6,7 @@
     "dependencies": {
         "disqus-react": "^1.0.5",
         "gatsby": "next",
-        "gatsby-cli": "next",
+        "gatsby-cli": "^2.0.0-rc.6",
         "gatsby-plugin-catch-links": "next",
         "gatsby-plugin-google-analytics": "next",
         "gatsby-plugin-mailchimp": "https://github.com/benjaminhoffman/gatsby-plugin-mailchimp.git#gatsby-v2",

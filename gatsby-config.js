@@ -24,6 +24,11 @@ module.exports = {
                 name: 'CSS, Styling and Preprocessors',
                 featuredImage: 'css_styling_preprocessors.png',
                 slug: '/series/css-styling-and-preprocessors'
+            },
+            {
+                name: 'Performance',
+                featuredImage: 'performance.png',
+                slug: '/series/performance'
             }
         ],
         code_list: [
