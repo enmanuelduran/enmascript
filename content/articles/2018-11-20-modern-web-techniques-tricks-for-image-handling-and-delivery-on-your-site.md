@@ -85,9 +85,11 @@ You probably know about this technique already but lazy loading images is probab
 
 You just have to add the `data-` prefixed attributes as well as the `lazyload` class and that's it, also this technique is applicable not only for images but for iframes, videos...
 
+<mark>**Advice:** If you're going to use a different module or you're thinking about building your own lazy loading script, make sure that the script uses [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) for this instead of scroll events, this will avoid performance issues and will provide a smoother experience.</mark>
+
 ### Extra recommendations:
 
-Compress your images with Lossy Compression, an ideal starting point is between 80-85% of the original image quality, this keeps most of the details and drops the file size between 30% and 40%, but this is not something that will work for all cases, many times you can compress images even further depending on the type and priority of the given image in your site.
+Compress your images with Lossy Compression, an ideal starting point is between 80-85% of the original image quality, this keeps most of the details and drops the file size between 30% and 40%, but this is not something that will work for all cases, many times you can compress images even further depending on the type and priority of the given image in your site. A module to help you with this task is [imagemin](https://github.com/imagemin/imagemin), it has plugins for lossy and lossless compression, it's always recommended to use lossy compression but depending on your case you might find lossless compression more adequate. 
 
 Ok guys I think that's it for this article, if you enjoyed it be sure to leave a comment and share it with your friends, remember that you can find me on twitter [@duranenmanuel](https://twitter.com/duranenmanuel) or just write me an email at <duranenmanuel@gmail.com>.
 
