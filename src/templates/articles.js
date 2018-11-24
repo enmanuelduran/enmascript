@@ -38,16 +38,14 @@ const ArticleTemplate = ({ data }) => {
         }
     };
 
-    const getSeriesLink = () => {
-        const link = metadata.siteMetadata.series_list.find(elm => {
-            return elm.name === post.frontmatter.series;
-        });
-
-        return (link && link.slug) || '';
+    const getSeries = () => {
+        return metadata.siteMetadata.series_list.filter(elm =>
+            post.frontmatter.series.includes(elm.name)
+        );
     };
 
     const postImage = `/images/${post.frontmatter.featuredImage}`;
-    const seriesLink = getSeriesLink();
+    const series = getSeries();
 
     return (
         <Layout section="articles">
@@ -107,14 +105,18 @@ const ArticleTemplate = ({ data }) => {
                             {post.frontmatter.date}
                         </span>
                     </div>
-                    {seriesLink && <div className="article__series">
-                        part of the{' '}
-                        <Link to={seriesLink}>
-                            {' '}
-                            {post.frontmatter.series}{' '}
-                        </Link>
-                        series
-                    </div>}
+                    {series.length > 0 && (
+                        <div className="article__series-container">
+                            <div className="article__series-head">
+                                Part of the Series:
+                            </div>
+                            {series.map(serie => (
+                                <div className="article__series">
+                                    <Link to={serie.slug}>{serie.name}</Link>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                     <div className="article__content">
                         <div dangerouslySetInnerHTML={{ __html: post.html }} />
                         <div className="article__share">

@@ -2,7 +2,7 @@
 date: '2018-07-07T17:12:33.962Z'
 title: 'Ternary operators and boolean assignations'
 summary: 'Ternary operators are a great way to improve the readability and simplicity of your code but they can be easily misunderstood, learn more about it...'
-series: 'Javascript'
+series: ['Javascript']
 featuredImage: '2018-07-07-ternary-operators.png'
 ---
 

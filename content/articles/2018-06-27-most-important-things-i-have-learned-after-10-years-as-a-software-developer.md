@@ -2,7 +2,7 @@
 date: "2018-06-27T17:12:33.962Z"
 title: "Most Important things I’ve learned after 10 years as a software developer"
 summary: "My journey as a software developer has taught me many valuablle lessons, in this article I share some of the lessons with you"
-series: "none"
+series: []
 featuredImage: "2018-06-27-most-important-things.png"
 ---
 

@@ -219,10 +219,23 @@
         }
     }
 
+    &__series-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    &__series-head {
+        color: $tag-background-color;
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 10px;
+    }
+
     &__series {
         font-size: $small-text-font-size;
         text-transform: uppercase;
-        margin-top: 10px;
+        margin-right: 5px;
         display: inline-block;
         border-radius: $soft-border-radius;
         color: $tag-text-color;

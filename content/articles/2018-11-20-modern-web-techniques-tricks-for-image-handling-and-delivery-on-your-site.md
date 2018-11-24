@@ -2,7 +2,7 @@
 date: '2018-11-11T15:30:23.912Z'
 title: "Modern web techniques/tricks for image handling and delivery on your site"
 summary: "In this article I'm going to share some of the best practices related to image handling and delivery in websites, if applied correctly these practices can make a huge impact in your site's performance."
-series: "Performance"
+series: ["Performance"]
 featuredImage: '2018-11-20-performant-image-techniques.png'
 ---
 

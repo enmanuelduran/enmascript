@@ -2,7 +2,7 @@
 date: '2018-10-22T01:10:23.912Z'
 title: 'Why I prefer objects over switch statements'
 summary: 'A different approach to handle your conditions.'
-series: 'Javascript'
+series: ['Javascript']
 featuredImage: '2018-10-22-objects-over-switch.png'
 ---
 
