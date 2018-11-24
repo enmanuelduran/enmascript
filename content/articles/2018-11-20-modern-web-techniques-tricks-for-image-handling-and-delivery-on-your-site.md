@@ -1,9 +1,9 @@
 ---
-date: '2018-11-20T15:30:23.912Z'
+date: "2018-11-20T15:30:23.912Z"
 title: "Modern web techniques/tricks for image handling and delivery on your site"
 summary: "In this article I'm going to share some of the best practices related to image handling and delivery in websites, if applied correctly these practices can make a huge impact in your site's performance."
 series: ["Performance"]
-featuredImage: '2018-11-20-performant-image-techniques.png'
+featuredImage: "2018-11-20-performant-image-techniques.png"
 ---
 
 Images are one of the three most used assets on the web alongside with _JavaScript_ and _CSS_. In today's world it has become almost indispensable to use images as part of content in order to make it easier for the user to digest, images are everywhere and should not be underestimated, in this article I'll be sharing with you some of the most known practices to optimize the delivery of assets as well as the most recent and important techniques applied by great companies such as Google, Twitter, and Facebook.
