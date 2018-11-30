@@ -1,16 +1,59 @@
 @import "../components/Common/variables";
 @import "../components/Common/media_queries";
 
+@function multiple-box-shadow($n) {
+    $value: "#{random(2000)}px #{random(2000)}px #FFF";
+
+    @for $i from 2 through $n {
+        $value: "#{$value} , #{random(2000)}px #{random(2000)}px #FFF";
+    }
+
+    @return unquote($value);
+}
+
+@keyframes animStar {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-2000px);
+    }
+}
+
+@mixin stars($size, $time, $amount, $opacity) {
+    height: $size;
+    width: $size;
+    background: transparent;
+    box-shadow: multiple-box-shadow($amount);
+    animation: animStar $time linear infinite;
+    border-radius: 50%;
+    opacity: $opacity;
+    z-index: 0;
+
+    &:after {
+        border-radius: 50%;
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: $size;
+        height: $size;
+        background: transparent;
+        box-shadow: multiple-box-shadow($amount);
+    }
+}
+
 .home {
     &__cover {
         position: relative;
         background-size: cover;
+        overflow: hidden;
 
         &-container {
             display: flex;
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            z-index: 1;
         }
 
         h2 {
@@ -42,6 +85,18 @@
                 color: $button-active-text-color;
                 border-bottom: 3px solid $button-active-border-color;
             }
+        }
+
+        &-stars {
+            @include stars(2px, 80s, 700, 0.4);
+        }
+
+        &-stars-2 {
+            @include stars(4px, 110s, 400, 0.6);
+        }
+
+        &-stars-3 {
+            @include stars(8px, 140s, 150, 0.5);
         }
     }
 

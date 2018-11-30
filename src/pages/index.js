@@ -4,7 +4,7 @@ import Container from 'components/Container';
 import { graphql, Link } from 'gatsby';
 import Cover from 'components/Cover';
 import ArticleCard from 'components/ArticleCard';
-import CoverImage from 'images/cover.jpg';
+import CoverImage from 'images/cover.png';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;
@@ -13,6 +13,10 @@ const Index = ({ data }) => {
     return (
         <Layout section="home" classes="home">
             <Cover image={CoverImage} classes="home__cover">
+                <div className="home__cover-stars" />
+                <div className="home__cover-stars-2" />
+                <div className="home__cover-stars-3" />
+
                 {coverPost.map(({ node: post }) => (
                     <Container key={post.id} classes="home__cover-container">
                         <h2>{post.frontmatter.title}</h2>
