@@ -1,9 +1,9 @@
 ---
-date: "2018-10-31T09:30:23.912Z"
-title: "The underestimated power behind matchMedia"
+date: '2018-10-31T09:30:23.912Z'
+title: 'The underestimated power behind matchMedia'
 summary: "In this article we're going to learn how to improve the performance by using an alternative to resize events"
-series: ["Javascript", "Performance"]
-featuredImage: "2018-10-31-window-matchmedia.png"
+series: ['Javascript', 'Performance']
+featuredImage: '2018-10-31-window-matchmedia.png'
 ---
 
 Media query based interactions are a very important part of our applications for several reasons, one of the most important ones is that they allow us to give our users better experiences based on the device they're using. Usually, when you want to show/hide or change something for certain devices you only define some media queries in _CSS_ and that's it, but... what happens when we need to make dynamic experiences with javascript in responsive sites? currently, the most popular answer to this question would be to use a resize event listener that executes some code when the `window.innerWidth` or `window.innerHeight` meets our condition, something like:
@@ -23,6 +23,7 @@ window.addEventListener('resize', doSomething);
 But this is not all, since the `resize` event is an _expensive_ operation for the browser, we would probably end up adding a _throttle_ or _debounce_ function to the handler in order to release some stress, this indirectly means having to use a library like _lodash_ or implement our own functions to achieve it, damn, if we only had an API to handle media queries in _JavaScript_ just like if it was _CSS_... without having to worry about extra validations for each breakpoint, debouncing and all of these absurd limitations...
 
 ## Introducing matchMedia API
+
 [matchMedia](https://developer.mozilla.org/es/docs/Web/API/Window/matchMedia) is an [amazingly well-supported API](https://caniuse.com/#feat=matchmedia) that allows us to basically attach listeners to media queries instead of the classic resize events, allowing us to only add the code that we want to execute and freeing us from all the extra validations. Also, it has a better performance than the traditional methods because it doesn't constantly execute checks or call functions, it does it only once when the media query condition is met. Excellent, it all sounds great, but, how can we implement it? say no more, here is an example:
 
 ```javascript
@@ -30,7 +31,9 @@ But this is not all, since the `resize` event is an _expensive_ operation for th
 const mediaQueryListObject = window.matchMedia('(min-width: 768px)');
 
 // Define the code to execute
-function doSomething() { /* Some code to execute */ }
+function doSomething() {
+    /* Some code to execute */
+}
 
 // Attach the event listener with the function to execute
 mediaQueryListObject.addListener(doSomething);
@@ -49,13 +52,15 @@ mediaQueryListObject.removeListener(doSomething);
 I want you to notice something, check the way we're passing the media query to the `matchMedia` function, `(min-width: 768px)`, just like if it was _CSS_, isn't this beautiful? this means that we can get as creative and specific with our media queries as we want and even better this would help us synchronize our CSS and JavaScript breakpoints together.
 
 ### Some tradeoffs to consider and a library that will make your life easier
+
 1. If you want to remove an event listener you now need to have access to the reference of both the `mediaQueryListObject` variable and the `doSomething` function, why is this a problem? because many times you want to remove listeners in a different scope than the one in which the listener was added, this will eventually force you to declare global variables or class properties that will open your application to mutations.
 
 1. If you check the code again, you'll realize that we now have a few more steps in order to execute the function and add the listener, this is probably not a big problem for you because we're getting a performance boost, but the cognitive load is something to take into account.
 
-*Now, what if I tell you there is an alternative where you don't have to worry about these problems previously mentioned either?*
+_Now, what if I tell you there is an alternative where you don't have to worry about these problems previously mentioned either?_
 
 ## MediaQuerySensor, a powerful and lightweight solution to the rescue
+
 <video autoplay loop muted playsinline>
     <source src="/images/2018-10-31-MQS-demo-image.mp4" type="video/mp4">
 </video>
@@ -78,7 +83,7 @@ MQS.add({
 
 That's it, you don't need to do anything else, you can add, remove and check sensors at will, here are some other functions available through MQS's API:
 
-```
+```javascript
 // Removes individual listeners, in this case the one with ref "uniqueId"
 MQS.remove('uniqueId');
 
@@ -97,4 +102,3 @@ As you see, we're only defining the things that matter and we have a very comple
 I hope this article was helpful to you, maybe you even identified some places in your code base where you could improve, if you enjoyed the article, please, share it with your friends and teammates, if you have something you want to share or add you can do it in the comments below, you can find me on twitter with [@duranenmanuel](https://twitter.com/duranenmanuel) and my email is <duranenmanuel@gmail.com>.
 
 See you in the next one dear developers of the future.
-
