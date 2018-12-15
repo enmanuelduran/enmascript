@@ -5,15 +5,17 @@ $soft-blue: rgba($blue, 0.3);
 
 $yellow: #ffb300;
 $soft-yellow: #fff7b5;
+$dark-yellow: #805a00;
 
 $white: #fff;
 $black: rgba(0, 0, 0, 1);
 
 $light-grey: #f9f9f9;
 $grey: #ccc;
-$dark-grey: rgba($black, 0.75);
+$dark-grey: #545454;
 
 /*--- Functional variables ---*/
+$background-color: $light-grey;
 $container-background-color: $white;
 $border-radius: 10px;
 $soft-border-radius: 5px;
@@ -44,17 +46,19 @@ $footer-height: 100px;
 
 /* Cards */
 $article-card-title-color: $dark-blue;
-$article-card-background-color: $dark-blue;
+$article-card-background-color: $white;
+$article-card-shadow: $grey;
 $series-card-background-color: $dark-blue;
 
 /* Buttons */
 $button-background-color: $yellow;
 $button-text-color: $dark-blue;
-$button-border-color: $white;
+$button-border-color: $dark-yellow;
 $button-active-background-color: $blue;
 $button-active-text-color: $white;
-$button-active-border-color: $white;
+$button-active-border-color: $dark-blue;
 $button-disabled-background-color: $grey;
+$button-disabled-border-color: $dark-grey;
 
 /* Forms */
 $input-font-size: 16px;

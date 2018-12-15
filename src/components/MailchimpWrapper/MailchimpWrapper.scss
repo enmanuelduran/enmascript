@@ -54,13 +54,12 @@
         transition: background 0.1s linear, color 0.1s linear;
 
         &:hover {
-            background: $dark-blue;
-            color: $button-active-text-color;
-            border-bottom: 3px solid $button-active-border-color;
+            background: lighten($button-background-color, 20%);
         }
 
         &:disabled {
             background-color: $button-disabled-background-color;
+            border-bottom: 3px solid $button-disabled-border-color;
         }
     }
 

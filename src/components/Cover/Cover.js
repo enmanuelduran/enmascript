@@ -5,7 +5,7 @@ const Cover = ({ children, image, classes }) => (
     <div
         className={`cover ${classes}`}
         style={{
-            backgroundImage: `url(${image}), linear-gradient(#2c0060, #000036)`
+            backgroundImage: `url(${image}), linear-gradient(#074cb3, #000036)`
         }}>
         {children}
     </div>
