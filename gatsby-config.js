@@ -65,7 +65,8 @@ module.exports = {
                             aliases: {}
                         }
                     },
-                    `gatsby-remark-autolink-headers`
+                    `gatsby-remark-autolink-headers`,
+                    `gatsby-remark-reading-time`
                 ]
             }
         },

@@ -18,6 +18,7 @@
         "gatsby-remark-autolink-headers": "^2.0.6",
         "gatsby-remark-images": "^1.5.67",
         "gatsby-remark-prismjs": "^2.0.5",
+        "gatsby-remark-reading-time": "^1.0.1",
         "gatsby-source-filesystem": "next",
         "gatsby-transformer-remark": "next",
         "gh-pages": "^2.0.0",

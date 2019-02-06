@@ -46,6 +46,9 @@ const ArticleTemplate = ({ data }) => {
 
     const postImage = `/images/${post.frontmatter.featuredImage}`;
     const series = getSeries();
+    const twitterDiscussionLink = `https://mobile.twitter.com/search?q=${encodeURIComponent(
+        url
+    )}`;
 
     return (
         <Layout section="articles">
@@ -102,7 +105,10 @@ const ArticleTemplate = ({ data }) => {
                             {metadata.siteMetadata.author}
                         </a>
                         <span className="article__date">
-                            {post.frontmatter.date}
+                            {post.frontmatter.date} •{' '}
+                            <span className="article__readingTime">
+                                {data.article.fields.readingTime.text}
+                            </span>
                         </span>
                     </div>
                     {series.length > 0 && (
@@ -132,6 +138,16 @@ const ArticleTemplate = ({ data }) => {
                         </div>
                     </div>
                 </div>
+                <p className="article__engage-text">
+                    <strong>Want to leave a comment?</strong> Do it{' '}
+                    <a href="#comment">below</a> or{' '}
+                    <a
+                        href={twitterDiscussionLink}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Join the discussion on twitter
+                    </a>
+                </p>
                 <MailchimpWrapper />
                 <div className="article__related">
                     <div className="article__related-title">Other Articles</div>
@@ -150,7 +166,7 @@ const ArticleTemplate = ({ data }) => {
                             ))}
                     </div>
                 </div>
-                <div className="article__related-title">
+                <div className="article__related-title" id="comment">
                     Leave your comments!
                 </div>
                 <Disqus.DiscussionEmbed
@@ -168,6 +184,9 @@ export const pageQuery = graphql`
             html
             fields {
                 slug
+                readingTime {
+                    text
+                }
             }
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
