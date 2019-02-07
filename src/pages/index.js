@@ -34,6 +34,8 @@ const Index = ({ data }) => {
                             image={post.frontmatter.featuredImage}
                             slug={post.fields.slug}
                             key={post.id}
+                            date={post.frontmatter.date}
+                            readingTime={post.fields.readingTime.text}
                         />
                     ))}
             </Container>
@@ -70,9 +72,13 @@ export const HomeQuery = graphql`
                     frontmatter {
                         title
                         featuredImage
+                        date(formatString: "MMMM DD, YYYY")
                     }
                     fields {
                         slug
+                        readingTime {
+                            text
+                        }
                     }
                 }
             }

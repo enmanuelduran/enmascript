@@ -20,6 +20,8 @@ const SeriesArticlesTemplate = ({ data }) => {
                             image={post.frontmatter.featuredImage}
                             slug={post.fields.slug}
                             key={post.id}
+                            date={post.frontmatter.date}
+                            readingTime={post.fields.readingTime.text}
                         />
                     ))}
             </Container>
@@ -36,9 +38,13 @@ export const seriesQuery = graphql`
                     frontmatter {
                         title
                         featuredImage
+                        date(formatString: "MMMM DD, YYYY")
                     }
                     fields {
                         slug
+                        readingTime {
+                            text
+                        }
                     }
                 }
             }

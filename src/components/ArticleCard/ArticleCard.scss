@@ -28,6 +28,7 @@
         height: 120px;
         background-size: cover;
         background-position: center;
+        position: relative;
     }
 
     &__text-wrapper {
@@ -54,6 +55,24 @@
     &:hover {
         h2 {
             color: $text-link-color;
+        }
+    }
+
+    &__info {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+
+        span {
+            padding: 5px;
+            border-radius: $soft-border-radius;
+            background: rgba($black, 0.6);
+            color: $white;
+            font-size: $small-text-font-size;
+
+            &:first-child {
+                margin-right: 5px;
+            }
         }
     }
 }

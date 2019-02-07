@@ -117,7 +117,9 @@ const ArticleTemplate = ({ data }) => {
                                 Part of the Series:
                             </div>
                             {series.map(serie => (
-                                <div className="article__series">
+                                <div
+                                    className="article__series"
+                                    key={serie.slug}>
                                     <Link to={serie.slug}>{serie.name}</Link>
                                 </div>
                             ))}
@@ -159,6 +161,8 @@ const ArticleTemplate = ({ data }) => {
                             .map(({ node: post }) => (
                                 <ArticleCard
                                     title={post.frontmatter.title}
+                                    date={post.frontmatter.date}
+                                    readingTime={post.fields.readingTime.text}
                                     image={post.frontmatter.featuredImage}
                                     slug={post.fields.slug}
                                     key={post.id}
@@ -220,9 +224,13 @@ export const pageQuery = graphql`
                     frontmatter {
                         title
                         featuredImage
+                        date(formatString: "MMMM DD, YYYY")
                     }
                     fields {
                         slug
+                        readingTime {
+                            text
+                        }
                     }
                 }
             }

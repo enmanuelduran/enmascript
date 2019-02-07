@@ -23,6 +23,8 @@ const Articles = ({ data }) => {
                         image={post.frontmatter.featuredImage}
                         slug={post.fields.slug}
                         key={post.id}
+                        date={post.frontmatter.date}
+                        readingTime={post.fields.readingTime.text}
                     />
                 ))}
             </Container>
@@ -39,11 +41,15 @@ export const pageQuery = graphql`
                 node {
                     id
                     frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
                         title
                         featuredImage
                     }
                     fields {
                         slug
+                        readingTime {
+                            text
+                        }
                     }
                 }
             }
