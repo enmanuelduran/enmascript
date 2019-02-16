@@ -120,7 +120,7 @@ export default class FormElement {
 }
 ```
 
-and we would instanciate the class in our **main.js** like:
+and we would instantiate the class in our **main.js** like:
 
 ```javascript
 const formElement = new FormElement('email');
@@ -131,11 +131,11 @@ This should work, right?, we're consuming the data, dynamically creating element
 
 ### Implementing Single Factory
 
-The factory pattern is a design pattern that's part of the _creational_ group, it basically deals with the issue of creating objects when the class that instanciates it needs to be dynamic, it also helps a lot on organizing your code, because:
+The factory pattern is a design pattern that's part of the _creational_ group, it basically deals with the issue of creating objects when the class that instantiates it needs to be dynamic, it also helps a lot on organizing your code, because:
 
 1. Isolates the objects that need to be created.
-1. Promotes small classes with less responsabilities.
-1. Delegates the responsability of object creation to a class called "factory".
+1. Promotes small classes with less responsibilities.
+1. Delegates the responsibility of object creation to a class called "factory".
 1. Creates the instances by receiving the dynamic value in your entry point.
 
 Here is a visual representation I created to demonstrate how the factory works.
@@ -144,7 +144,7 @@ Here is a visual representation I created to demonstrate how the factory works.
 
 Now we'll start by refactoring our "solution" based on the list we've created above.
 
-#### Isolate the objects to keep single responsabilities
+#### Isolate the objects to keep single responsibilities
 
 The form elements _select_, _email_, _textarea_ can be easily isolated by moving the logic that involves them to a folder called `/FormElements` or `/FormElementTypes` (you can give any name that makes sense):
 
@@ -173,14 +173,14 @@ export default class Email {
 
 Notice that we're moving the validation and binding methods to the element's class, we would do the same for the other elements (_textarea_, _select_, ...). This will allow us to scale and keep the logic for each type of element isolated.
 
-#### Delegate the responsability of object creation to a class called "factory"
+#### Delegate the responsibility of object creation to a class called "factory"
 
 The factory does a couple of things:
 
 1. Imports the types of elements.
 1. Creates an `ELEMENTS` object with the types of elements available.
 1. Creates a static method to be able to create instances directly by using the class name.
-1. Dynamically instanciates based on the type passed.
+1. Dynamically instantiates based on the type passed.
 
 Below we have the code representing this:
 
