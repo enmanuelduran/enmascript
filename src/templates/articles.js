@@ -6,13 +6,11 @@ import { graphql, Link } from 'gatsby';
 import { Twitter, Facebook, LinkedIn } from 'components/Icons/SocialIcons';
 import ArticleCard from 'components/ArticleCard';
 import MailchimpWrapper from 'components/MailchimpWrapper';
-import Disqus from 'disqus-react';
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
     const url = metadata.siteMetadata.url + data.article.fields.slug;
     const { title } = post.frontmatter;
-    const disqusConfig = { url, title, identifier: url };
 
     const shareOn = network => event => {
         event.preventDefault();
@@ -141,13 +139,12 @@ const ArticleTemplate = ({ data }) => {
                     </div>
                 </div>
                 <p className="article__engage-text">
-                    <strong>Want to leave a comment?</strong> Do it{' '}
-                    <a href="#comment">below</a> or{' '}
+                    <strong>Want to leave a comment?</strong> Do it on{' '}
                     <a
                         href={twitterDiscussionLink}
                         target="_blank"
                         rel="noopener noreferrer">
-                        Join the discussion on twitter
+                        twitter
                     </a>
                 </p>
                 <MailchimpWrapper />
@@ -170,13 +167,6 @@ const ArticleTemplate = ({ data }) => {
                             ))}
                     </div>
                 </div>
-                <div className="article__related-title" id="comment">
-                    Leave your comments!
-                </div>
-                <Disqus.DiscussionEmbed
-                    shortname={metadata.siteMetadata.disqusShortName}
-                    config={disqusConfig}
-                />
             </Container>
         </Layout>
     );
