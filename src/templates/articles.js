@@ -194,7 +194,6 @@ export const pageQuery = graphql`
             siteMetadata {
                 author
                 twitter
-                disqusShortName
                 title
                 url
                 series_list {
