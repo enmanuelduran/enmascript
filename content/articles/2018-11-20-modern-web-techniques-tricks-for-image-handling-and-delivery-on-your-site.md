@@ -19,7 +19,7 @@ Let's take the case of _Twitter_ and _Facebook_, when you upload a gif animation
 **Twitter**
 ![](/images/2018-11-20-twitter-case-study.gif)
 
-See how the videos even have a label saying "GIF" when they actually are videos? this of course with the end of letting users know that originally the user shared a _gif_. Now the fun part, let's see those numbers, I took the freedom of measuring how good is the impact on performance when having a **gif image in your site vs an MP4 video** and the results are great:
+See how the videos even have a label saying "GIF" when they actually are videos? this of course with the end of letting users know that originally the user shared a _gif_. Now the fun part, let's see those numbers, I took the freedom of measuring how good is the impact on performance when having a **gif image in your site vs an MP4 video** and the results are great.
 
 I recently [posted an article](https://enmascript.com/articles/2018/10/31/the-underestimated-power-behind-window-matchmedia#mediaquerysensor-a-powerful-and-lightweight-solution-to-the-rescue) using a gif to show an example and I recently changed it as well to be an MP4 video, check this:
 
