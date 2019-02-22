@@ -1,9 +1,9 @@
 ---
-date: "2018-10-07T17:12:33.962Z"
-title: "Creating objects dynamically with factory pattern in javascript"
+date: '2018-10-05T17:12:33.962Z'
+title: 'Creating objects dynamically with factory pattern in javascript'
 summary: "Let's learn how to take advantage of this creational pattern to organize and create objects dynamically in javascript."
-series: ["Javascript"]
-featuredImage: "2018-10-07-factory-pattern.png"
+series: ['Javascript']
+featuredImage: '2018-10-07-factory-pattern.png'
 ---
 
 When creating features we often need to create instances based on parameters coming from an endpoint or a similar dynamic source. In this article I'll try to _give you an idea_ on how we can use the single factory pattern to approach such cases.

@@ -47,6 +47,12 @@ const ArticleTemplate = ({ data }) => {
     const twitterDiscussionLink = `https://mobile.twitter.com/search?q=${encodeURIComponent(
         url
     )}`;
+    const githubUrl = `https://github.com/enmanuelduran/enmascript/edit/master/content/articles/${
+        post.frontmatter.dateGitHub
+    }-${post.fields.slug
+        .split('/')
+        .filter(el => el)
+        .pop()}.md`;
 
     return (
         <Layout section="articles">
@@ -147,6 +153,16 @@ const ArticleTemplate = ({ data }) => {
                         twitter
                     </a>
                 </p>
+
+                <p className="article__engage-text">
+                    <strong>Found something to fix in the article?</strong>{' '}
+                    <a
+                        href={githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Edit it and send a Pull Request on GitHub!
+                    </a>
+                </p>
                 <MailchimpWrapper />
                 <div className="article__related">
                     <div className="article__related-title">Other Articles</div>
@@ -183,7 +199,8 @@ export const pageQuery = graphql`
                 }
             }
             frontmatter {
-                date(formatString: "MMMM DD, YYYY")
+                date: date(formatString: "MMMM DD, YYYY")
+                dateGitHub: date(formatString: "YYYY-MM-DD")
                 title
                 summary
                 featuredImage
