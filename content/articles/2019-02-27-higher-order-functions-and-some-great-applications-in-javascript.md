@@ -16,9 +16,9 @@ If you are a developer that has worked with functional programming you probably 
 
 Let's say we have this requirement:
 
-<mark>Implement a function that counts from a given starting point to 100, if the given point is an odd number the function will count in intervals of 5, if in the contrary the number is even then it'll count in intervals of 10. Please, take into consideration that sometimes the user will require to trigger the counter right after providing the starting point _but it'll not always be the case_, an user might be able to provide a starting point and then require to trigger the counter at a later point in the flow (not immediatly after).</mark>
+<mark>Implement a function that counts from a given starting point to 100, if the given point is an odd number the function will count in intervals of 5, if in the contrary the number is even then it'll count in intervals of 10. Please, take into consideration that sometimes the user will require to trigger the counter right after providing the starting point _but it'll not always be the case_, a user might be able to provide a starting point and then require to trigger the counter at a later point in the flow (not immediately after).</mark>
 
-so, a first implementation for this without using higher order functions might look like this:
+so, the first implementation for this without using higher order functions might look like this:
 
 ```javascript
 const counterToOneHundred = startingPoint => {
@@ -34,9 +34,9 @@ const counterToOneHundred = startingPoint => {
 Excellent we got it... right? let's see our checklist:
 
 1.  [x] Receives a starting point
-2.  [x] If starting point is an odd number counts in intervals of 5
-3.  [x] If starting point is an even number counts in intervals of 10
-4.  [x] It's able to execute the counter immediatly after providing the starting point
+2.  [x] If the starting point is an odd number it counts in intervals of 5
+3.  [x] If the starting point is an even number it counts in intervals of 10
+4.  [x] It's able to execute the counter immediately after providing the starting point
 5.  [ ] It's able to execute the counter at a later point in the flow
 
 AH! we're missing one requirement, we almost got it, let's try and check that last element of our list:
@@ -58,7 +58,7 @@ Now because we took the `startingPoint` out of the function scope we're able to 
 
 5.  [x] It's able to execute the counter at a later point in the flow
 
-**Woohoo!** that wasn't so bad right? but wait there are a couple of things we're missing here:
+**Woohoo!** that wasn't so bad, right? but wait there are a couple of things we're missing here:
 
 1. To be able to define the `startingPoint` and execute the counter _independently_ we're exposing a variable outside of the implementation of the counter.
 2. We're calculating the intervals when we execute the function but the value required to make this calculation `startingPoint` is available way before, which means we could have calculated this in advance to avoid doing everything at once inside the function. We could achieve this by moving the definitions of variables `isOdd` and `interval` outside of the function but if we do it we'd be exposing more variables outside of the function.
@@ -72,7 +72,7 @@ I know this now looks like a sad story... but, **IT. IS. NOT.**
 
 ### Higher order functions to the rescue
 
-Less words, more code:
+Fewer words, more code:
 
 ```javascript
 const counterToOneHundred = startingPoint => {
@@ -92,14 +92,14 @@ const counterToOneHundred = startingPoint => {
 **Super powered checklist:**
 
 1.  [x] Receives a starting point: **Yes.** (Passed as an argument).
-2.  [x] If starting point is an odd number counts in intervals of 5: **Yes**.
-3.  [x] If starting point is an even number counts in intervals of 10: **Yes.**
-4.  [x] It's able to execute the counter immediatly after providing the starting point
+2.  [x] If the starting point is an odd number it counts in intervals of 5: **Yes**.
+3.  [x] If the starting point is an even number it counts in intervals of 10: **Yes.**
+4.  [x] It's able to execute the counter immediately after providing the starting point
 5.  [x] It's able to execute the counter at a later point in the flow
 6.  [x] It keeps the variables encapsulated, isolated from the outer scope.
 7.  [x] Makes the calculations for `interval` when needed.
 
-### Point 4. "It's able to execute the counter immediatly after providing the starting point"
+### Point 4. "It's able to execute the counter immediately after providing the starting point"
 
 **Yes.** When we execute our function like `counterToOneHundred(1)()` we're defining the variables and returning the anonymous function definition inside in the first function call and then executing the inner function in the second call.
 
@@ -128,7 +128,7 @@ Since all variables are inside the function scope, that is **Affirmative**.
 So, by making use of a HOF we were able to
 
 -   Encapsulate our data.
--   Increase the flexibility of our implemenetation.
+-   Increase the flexibility of our implementation.
 -   Optimize the code and order of execution of processes.
 
 not too shabby, right?
@@ -137,7 +137,7 @@ not too shabby, right?
 
 ### Error Catcher
 
-Allows you to catch javascript errors easily by passing a function definition, it automatically tries to execute it and if it fails then sends a fallback message, you can replace the fallback action with wathever you want.
+Allows you to catch javascript errors easily by passing a function definition, it automatically tries to execute it and if it fails then sends a fallback message, you can replace the fallback action with whatever you want.
 
 **Implementation**
 
@@ -194,7 +194,7 @@ function logger() {
 window.addEventListener('scroll', throttle(logger, 200));
 ```
 
-### A simple performance check of a function
+### A simple performance check for a function
 
 Checks the time a function takes to execute.
 
