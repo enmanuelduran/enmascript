@@ -220,6 +220,6 @@ function loop() {
 performance(loop);
 ```
 
-As you see Higher order functions are very useful, they're widely used and you may have been using them without noticing, they're applied in Object Oriented Programming when using the _decorator pattern_, they're also used in libraries like _express_ and `redux`.
+As you see Higher order functions are very useful, they're widely used and you may have been using them without noticing, they're applied in Object Oriented Programming when using the _decorator pattern_, they're also used in libraries like `express` and `redux`.
 
 I hope you found this article useful, if you did please share with your friends, also you can follow me on [Twitter](https://twitter.com/duranenmanuel), see you in the next one guys.
