@@ -133,7 +133,65 @@ So, by making use of a HOF we were able to
 
 not too shabby, right?
 
+### A more realistic example
+
+Now, it's enough of counters, let's use HOF for a better example, a more realistic one, <mark>Imagine we need to create three social share buttons to post our current page on twitter, facebook or Linkedin, these buttons will open a popup when clicking on them depending on the network clicked.</mark>
+
+The implementation of this could look something like:
+
+```javascript
+const share = () => {
+    /* We setup the data required here to be able to save it in advance */
+    const pageUrl = 'https://enmascript.com';
+    const pageTitle = 'A place to share about web development and science';
+    const networks = {
+        twitter: `https://twitter.com/share?url=${pageUrl}&text=${pageTitle}`,
+        facebook: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`,
+        linkedIn: `https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}`
+    };
+
+    /**
+     * We receive the network type and return a function
+     * with the event which is binded to the click.
+     */
+    return network => event => {
+        event.preventDefault();
+
+        /* if the network is not valid return */
+        if (!(network in networks)) {
+            return false;
+        }
+
+        /* open the popup with the selected network */
+        const networkWindow = window.open(
+            networks[network],
+            'network-popup',
+            'height=350,width=600'
+        );
+
+        /* Apply the focus to the popup window after opening it */
+        if (networkWindow.focus) {
+            networkWindow.focus();
+        }
+    };
+};
+```
+
+And the possible usage of this (let's say on _React_) would look something like:
+
+```javascript
+/* We setup the data once */
+const shareOn = share();
+
+/* We validate each network and open the popup on click */
+<div onClick={shareOn('twitter')}><Twitter /></div>
+<div onClick={shareOn('facebook')}><Facebook /></div>
+<div onClick={shareOn('linkedIn')}><LinkedIn /></div>
+```
+
 ## Great functionalities implemented with Higher Order Functions.
+
+There are many applications for higher order functions, below some functionalities implemented with this approach.
 
 ### Error Catcher
 

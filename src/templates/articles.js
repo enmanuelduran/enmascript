@@ -12,30 +12,33 @@ const ArticleTemplate = ({ data }) => {
     const url = metadata.siteMetadata.url + data.article.fields.slug;
     const { title } = post.frontmatter;
 
-    const shareOn = network => event => {
-        event.preventDefault();
-
+    const share = () => {
         const networks = {
             twitter: `https://twitter.com/share?url=${url}&text=${title}`,
             facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
             linkedIn: `https://www.linkedin.com/shareArticle?mini=true&url=${url}`
         };
 
-        if (!(network in networks)) {
-            return false;
-        }
+        return network => event => {
+            event.preventDefault();
 
-        const networkWindow = window.open(
-            networks[network],
-            'network-popup',
-            'height=350,width=600'
-        );
+            if (!(network in networks)) {
+                return false;
+            }
 
-        if (networkWindow.focus) {
-            networkWindow.focus();
-        }
+            const networkWindow = window.open(
+                networks[network],
+                'network-popup',
+                'height=350,width=600'
+            );
+            console.log('shared');
+            if (networkWindow.focus) {
+                networkWindow.focus();
+            }
+        };
     };
 
+    const shareOn = share();
     const getSeries = () => {
         return metadata.siteMetadata.series_list.filter(elm =>
             post.frontmatter.series.includes(elm.name)
