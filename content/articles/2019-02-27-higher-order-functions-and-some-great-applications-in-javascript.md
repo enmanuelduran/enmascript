@@ -189,6 +189,8 @@ const shareOn = share();
 <div onClick={shareOn('linkedIn')}><LinkedIn /></div>
 ```
 
+Cool, right?, on this implementation we're also making use of a concept called _Currying_, but that is a topic that I'd prefer to tackle in another article.
+
 ## Great functionalities implemented with Higher Order Functions.
 
 There are many applications for higher order functions, below some functionalities implemented with this approach.
