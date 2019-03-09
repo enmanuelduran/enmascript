@@ -350,6 +350,8 @@ export default DesignThreadObserver;
 
 So, in a nutshell Observers are subscribing when clicking on the subscribe button for each user, and they're subscribing to whatever is posted by the writers in the relevant threads.
 
+## Gluing all the pieces together
+
 Now, we are only missing one piece from the puzzle in order to connect all of this, our **main.js** file where we will be able to instanciate subjects and observers..
 
 ```javascript
