@@ -389,10 +389,10 @@ With all the implementation in place we now end up with this folder structure:
 ├── main.js
 ├── index.html
 ├── index.css
-├── observers/
+├── subjects//
 │   ├── TechThread.js
 │   └── DesignThread.js
-└── subjects/
+└── observers/
     ├── TechThreadObserver.js
     └── DesignThreadObserver.js
 ```
