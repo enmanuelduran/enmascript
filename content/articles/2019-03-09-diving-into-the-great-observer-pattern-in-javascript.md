@@ -410,6 +410,8 @@ First, subscribe one of the users to one thread, then make a post and see what h
   (<a href='https://codepen.io/enmanuelduran'>@enmanuelduran</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+Did you like this article about design patterns? if you did you'll probably like the implementation of the [factory pattern](https://enmascript.com/articles/2018/10/05/javascript-factory-pattern) we did some time ago.
+
 Ok great developers from the future, this is all for this article, if you enjoyed it I invite you to share it with your friends and coworkers... remember you can follow me on twitter [@duranenmanuel](https://twitter.com/duranenmanuel).
 
 See you in the next one!
