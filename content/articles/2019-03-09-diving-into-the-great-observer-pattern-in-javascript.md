@@ -1,5 +1,5 @@
 ---
-date: '2019-03-06T17:10:00.962Z'
+date: '2019-03-09T17:10:00.962Z'
 title: 'Diving into the great observer pattern in javascript'
 summary: "The observer pattern is widely used today in the Javascript world, in this article I'll explain how it works, how we can implement it and some good use cases."
 series: ['Javascript']
