@@ -391,7 +391,7 @@ With all the implementation in place we now end up with this folder structure:
 ├── main.js
 ├── index.html
 ├── index.css
-├── subjects//
+├── subjects/
 │   ├── TechThread.js
 │   └── DesignThread.js
 └── observers/
