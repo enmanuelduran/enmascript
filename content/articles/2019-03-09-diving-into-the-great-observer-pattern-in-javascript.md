@@ -350,6 +350,8 @@ export default DesignThreadObserver;
 
 So, in a nutshell Observers are subscribing when clicking on the subscribe button for each user, and they're subscribing to whatever is posted by the writers in the relevant threads.
 
+## Gluing all the pieces together
+
 Now, we are only missing one piece from the puzzle in order to connect all of this, our **main.js** file where we will be able to instanciate subjects and observers..
 
 ```javascript
@@ -389,7 +391,7 @@ With all the implementation in place we now end up with this folder structure:
 ├── main.js
 ├── index.html
 ├── index.css
-├── subjects//
+├── subjects/
 │   ├── TechThread.js
 │   └── DesignThread.js
 └── observers/
@@ -407,6 +409,8 @@ First, subscribe one of the users to one thread, then make a post and see what h
   See the Pen <a href='https://codepen.io/enmanuelduran/pen/GeEvJo/'>Observer Pattern, EnmaScript.com</a> by Enmanuel Durán
   (<a href='https://codepen.io/enmanuelduran'>@enmanuelduran</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
+
+Did you like this article about design patterns? if you did you'll probably like the implementation of the [factory pattern](https://enmascript.com/articles/2018/10/05/javascript-factory-pattern) we did some time ago.
 
 Ok great developers from the future, this is all for this article, if you enjoyed it I invite you to share it with your friends and coworkers... remember you can follow me on twitter [@duranenmanuel](https://twitter.com/duranenmanuel).
 
