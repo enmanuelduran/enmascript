@@ -9,6 +9,7 @@
         "gatsby-cli": "^2.0.0-rc.6",
         "gatsby-plugin-catch-links": "next",
         "gatsby-plugin-google-analytics": "next",
+        "gatsby-plugin-google-tagmanager": "^2.0.9",
         "gatsby-plugin-mailchimp": "https://github.com/benjaminhoffman/gatsby-plugin-mailchimp.git#gatsby-v2",
         "gatsby-plugin-manifest": "next",
         "gatsby-plugin-offline": "next",

@@ -29,6 +29,7 @@
     border-radius: 50%;
     opacity: $opacity;
     z-index: 0;
+    position: absolute;
 
     &:after {
         border-radius: 50%;
@@ -43,6 +44,77 @@
 }
 
 .home {
+    &__cta-article {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include min-device("tablet") {
+            max-width: 47%;
+        }
+    }
+
+    &__cta-content {
+        display: flex;
+        background: $header-background-color;
+        z-index: 1;
+        margin: 0 0 5px 0;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: $border-radius;
+
+        a {
+            background: $button-background-color;
+            color: $button-text-color;
+            border-radius: $border-radius;
+            border-bottom: 3px solid $button-border-color;
+            padding: 10px 15px;
+            font-size: 18px;
+            flex: 1 0 121px;
+            margin: 10px;
+            transition: background 0.1s linear, color 0.1s linear;
+
+            &:hover {
+                background: $button-active-background-color;
+                color: $button-active-text-color;
+                border-bottom: 3px solid $button-active-border-color;
+            }
+        }
+    }
+
+    &__promoted-ad {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        border-radius: $border-radius;
+        margin-top: -50px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-image: url("/images/promoted/promoted-2019-03-09.png");
+        border-bottom: 5px solid $tag-text-color;
+        max-width: 470px;
+
+        @include min-device("tablet") {
+            max-width: 47%;
+        }
+
+        &:before {
+            content: "promoted";
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+            background: $tag-background-color;
+            color: $tag-text-color;
+            font-size: $small-text-font-size;
+            padding: 5px;
+            border-radius: $border-radius;
+            margin: 5px;
+        }
+    }
+
     &__cover {
         position: relative;
         background-size: cover;
@@ -52,38 +124,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
             z-index: 1;
+            padding: 35px 10px;
+
+            @include min-device("tablet") {
+                justify-content: space-between;
+            }
+        }
+
+        img {
+            border-radius: $border-radius;
+            max-width: 450px;
+            width: 90%;
+            margin-top: -50px;
+            margin-bottom: -10px;
+            position: relative;
         }
 
         h2 {
             color: $cta-text-color;
+            background: $cta-text-background;
             font-weight: 200;
             max-width: 750px;
+            margin: 0;
+            font-size: 18px;
             text-align: center;
-            margin-top: -50px;
-            margin-bottom: 20px;
-            font-size: 24px;
-            padding: 5px;
+            padding: 10px;
 
             @include min-device("tablet") {
-                font-size: 32px;
-            }
-        }
-
-        a {
-            background: $button-background-color;
-            color: $button-text-color;
-            border-radius: $border-radius;
-            border-bottom: 3px solid $button-border-color;
-            padding: 10px 15px;
-            font-size: 18px;
-            transition: background 0.1s linear, color 0.1s linear;
-
-            &:hover {
-                background: $button-active-background-color;
-                color: $button-active-text-color;
-                border-bottom: 3px solid $button-active-border-color;
+                font-size: 21px;
             }
         }
 

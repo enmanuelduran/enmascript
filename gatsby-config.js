@@ -117,6 +117,13 @@ module.exports = {
                 endpoint:
                     'https://enmanuelduran.us11.list-manage.com/subscribe/post?u=f288b4ae1f9a7fc49eb3c8d59&amp;id=ab12b7f829'
             }
+        },
+        {
+            resolve: `gatsby-plugin-google-tagmanager`,
+            options: {
+                id: 'GTM-WKCMHK7',
+                includeInDevelopment: true
+            }
         }
     ]
 };

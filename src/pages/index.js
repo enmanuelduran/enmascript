@@ -17,12 +17,35 @@ const Index = ({ data }) => {
                 <div className="home__cover-stars-2" />
                 <div className="home__cover-stars-3" />
 
-                {coverPost.map(({ node: post }) => (
-                    <Container key={post.id} classes="home__cover-container">
-                        <h2>{post.frontmatter.title}</h2>
-                        <Link to={post.fields.slug}>Read More</Link>
-                    </Container>
-                ))}
+                <Container classes="home__cover-container">
+                    {coverPost.map(({ node: post }) => (
+                        <div className="home__cta-article" key={post.id}>
+                            <img
+                                src={`/images/${
+                                    post.frontmatter.featuredImage
+                                }`}
+                                alt={post.frontmatter.title}
+                            />
+                            <div className="home__cta-content">
+                                <h2>{post.frontmatter.title}</h2>
+                                <Link
+                                    data-gtm-track="article_cta_click"
+                                    to={post.fields.slug}>
+                                    Read More
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
+
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-gtm-track="promoted-cover-cta"
+                        className="home__promoted-ad"
+                        href="https://github.com/enmanuelduran/mediaquerysensor">
+                        <span />
+                    </a>
+                </Container>
             </Cover>
 
             <Container classes="home__container">
@@ -54,6 +77,7 @@ export const HomeQuery = graphql`
                     id
                     frontmatter {
                         title
+                        featuredImage
                     }
                     fields {
                         slug

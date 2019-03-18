@@ -152,7 +152,8 @@ const ArticleTemplate = ({ data }) => {
                     <a
                         href={twitterDiscussionLink}
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer"
+                        data-gtm-track="twitter-discussion">
                         twitter
                     </a>
                 </p>

@@ -76,7 +76,15 @@ class Header extends React.Component {
                                 section,
                                 'aboutme'
                             )}>
-                            About me
+                            About
+                        </Link>
+                        <Link
+                            to="/contact"
+                            className={this.isMenuOptionActive(
+                                section,
+                                'contact'
+                            )}>
+                            Contact
                         </Link>
                         <a
                             className="github-link"
@@ -84,7 +92,6 @@ class Header extends React.Component {
                             rel="noopener noreferrer"
                             href="https://github.com/enmanuelduran/enmascript">
                             <GitHub />
-                            GitHub
                         </a>
                     </nav>
                 </Container>
