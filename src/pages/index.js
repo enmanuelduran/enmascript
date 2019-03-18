@@ -29,7 +29,7 @@ const Index = ({ data }) => {
                             <div className="home__cta-content">
                                 <h2>{post.frontmatter.title}</h2>
                                 <Link
-                                    data-gtm-track="article_cta_click"
+                                    data-gtm-track="article-cover-cta-click"
                                     to={post.fields.slug}>
                                     Read More
                                 </Link>
@@ -40,7 +40,7 @@ const Index = ({ data }) => {
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        data-gtm-track="promoted-cover-cta"
+                        data-gtm-track="promoted-cover-cta-click"
                         className="home__promoted-ad"
                         href="https://github.com/enmanuelduran/mediaquerysensor">
                         <span />
