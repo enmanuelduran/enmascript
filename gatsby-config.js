@@ -1,6 +1,7 @@
 module.exports = {
     siteMetadata: {
         url: 'https://enmascript.com',
+        siteUrl: 'https://enmascript.com',
         title: 'EnmaScript',
         author: 'Enmanuel Durán',
         twitter: 'https://twitter.com/duranenmanuel',
@@ -47,6 +48,7 @@ module.exports = {
         `gatsby-link`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-catch-links`,
+        `gatsby-plugin-feed`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
