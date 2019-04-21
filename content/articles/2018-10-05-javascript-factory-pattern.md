@@ -6,9 +6,9 @@ series: ['Javascript']
 featuredImage: '2018-10-07-factory-pattern.png'
 ---
 
-When creating features we often need to create instances based on parameters coming from an endpoint or a similar dynamic source. In this article I'll try to _give you an idea_ on how we can use the single factory pattern to approach such cases.
+When creating features, we often need to create instances based on parameters coming from an endpoint or a similar dynamic source. In this article I'll try to _give you an idea_ of how we can use the single factory pattern to approach such cases.
 
-We'll refactor a piece of code to make it more scalable and understandable, Let's suppose we have this premise:
+We'll refactor a piece of code to make it more scalable and understandable. Let's suppose we have this premise:
 
 <mark>_Given an object of element's data, write an algorithm that allows users to provide a type of element to render it dynamically. Also, please validate the elements as required:_</mark>
 
@@ -55,9 +55,9 @@ export default {
 };
 ```
 
-### A non scalable approach
+### A non-scalable approach
 
-Now I'll write what could be a pseudo "solution" to dynamically create the types of form elements and validate them (Note that I'll only define the methods that matter for the purpose of this article):
+Now I'll write what could be a pseudo "solution" to dynamically create the types of form elements and validate them (note that I'll only define the methods that matter for the purpose of this article):
 
 ```javascript
 import config from './elementsData';
@@ -127,18 +127,18 @@ const formElement = new FormElement('email');
 formElement.renderFormElement();
 ```
 
-This should work, right?, we're consuming the data, dynamically creating elements and validating them... BUT, there are some things we're not seeing, I want you to think in the future, what would happen with this class when you or someone else needs to add more and more form elements?, the `renderFormElements` method will grow and we'll end up having a huge method with endless conditions, validation methods, and let's not even talk about the complexity and scalability.
+This should work, right? We're consuming the data, dynamically creating elements and validating them... BUT, there are some things we're not seeing. I want you to think: in the future, what would happen with this class when you or someone else needs to add more and more form elements? The `renderFormElements` method will grow, and we'll end up having a huge method with endless conditions and validation methods - and let's not even talk about the complexity and scalability.
 
 ### Implementing Single Factory
 
-The factory pattern is a design pattern that's part of the _creational_ group, it basically deals with the issue of creating objects when the class that instantiates it needs to be dynamic, it also helps a lot on organizing your code, because:
+The factory pattern is a design pattern that's part of the _creational_ group. It basically deals with the issue of creating objects when the class that instantiates it needs to be dynamic. It also helps a lot with organizing your code, because:
 
 1. Isolates the objects that need to be created.
 1. Promotes small classes with less responsibilities.
-1. Delegates the responsibility of object creation to a class called "factory".
+1. Delegates the responsibility of object creation to a class called "factory."
 1. Creates the instances by receiving the dynamic value in your entry point.
 
-Here is a visual representation I created to demonstrate how the factory works.
+Here is a visual representation I created to demonstrate how the factory works:
 
 ![](/images/2018-10-07-factory-pattern.png)
 
@@ -146,7 +146,7 @@ Now we'll start by refactoring our "solution" based on the list we've created ab
 
 #### Isolate the objects to keep single responsibilities
 
-The form elements _select_, _email_, _textarea_ can be easily isolated by moving the logic that involves them to a folder called `/FormElements` or `/FormElementTypes` (you can give any name that makes sense):
+The form elements _select_, _email_, and _textarea_ can be easily isolated by moving the logic that involves them to a folder called `/FormElements` or `/FormElementTypes` (you can give any name that makes sense):
 
 **/FormElements/email.js**
 
@@ -171,7 +171,7 @@ export default class Email {
 }
 ```
 
-Notice that we're moving the validation and binding methods to the element's class, we would do the same for the other elements (_textarea_, _select_, ...). This will allow us to scale and keep the logic for each type of element isolated.
+Notice that we're moving the validation and binding methods to the element's class, and we would do the same for the other elements (_textarea_, _select_, etc.). This will allow us to scale and keep the logic for each type of element isolated.
 
 #### Delegate the responsibility of object creation to a class called "factory"
 
@@ -207,9 +207,9 @@ export default class ElementsFactory {
 }
 ```
 
-#### Creates the instances by receiving the dynamic value in your entry point (our main.js in this case).
+#### Creates the instances by receiving the dynamic value in your entry point (our main.js, in this case).
 
-Nothing complex to explain here, we're just validating that the argument passed exists in our object of elements, if it does then we create an instance by using the factory method `createInstance`, we pass down the data needed and render the element with the `render` method, below you can see the code:
+Nothing complex to explain here, we're just validating that the argument passed exists in our object of elements, if it does then we create an instance by using the factory method `createInstance`, we pass down the data needed and render the element with the `render` method. You can see the code below:
 
 **main.js**
 
@@ -233,7 +233,7 @@ function Init() {
 Init();
 ```
 
-To finish, here is a representation of our folder structure after refactoring
+To finish, here is a representation of our folder structure after refactoring:
 
 ```
 ├── main.js
@@ -245,8 +245,8 @@ To finish, here is a representation of our folder structure after refactoring
     └── textarea.js
 ```
 
-Cool, right? Now every time you want to add a new element, it's just a matter of adding it to the `/formElements` folder and importing it in our factory so it can be instantiated, Also, if you want to remove an element it's just a matter of deleting the import line and the file from the `/formElements` folder.
+Cool, right? Now every time you want to add a new element, it's just a matter of adding it to the `/formElements` folder and importing it in our factory so it can be instantiated, Also, if you want to remove an element, it's just a matter of deleting the import line and the file from the `/formElements` folder.
 
-Ok, I think that's it for this article guys, hope you were able to understand a little more about the factory pattern, if you did remember to share it on twitter or facebook, you can also subscribe to our email list below.
+Ok, I think that's it for this article guys, and I hope you were able to understand a little more about the factory pattern. If you did, remember to share it on Twitter or Facebook. You can also subscribe to our email list below.
 
 See you in the next one!
