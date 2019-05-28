@@ -6,7 +6,7 @@
     "dependencies": {
         "disqus-react": "^1.0.5",
         "gatsby": "next",
-        "gatsby-cli": "^2.0.0-rc.6",
+        "gatsby-cli": "^2.6.2",
         "gatsby-plugin-catch-links": "next",
         "gatsby-plugin-feed": "^2.1.0",
         "gatsby-plugin-google-analytics": "next",

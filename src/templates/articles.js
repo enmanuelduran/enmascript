@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import Container from 'components/Container/Container';
 import Layout from 'components/layout';
 import { graphql, Link } from 'gatsby';
-import { Twitter, Facebook, LinkedIn } from 'components/Icons/SocialIcons';
+import { Twitter, Facebook, LinkedIn, Reddit } from 'components/Icons/SocialIcons';
 import ArticleCard from 'components/ArticleCard';
 import MailchimpWrapper from 'components/MailchimpWrapper';
 
@@ -31,7 +31,7 @@ const ArticleTemplate = ({ data }) => {
                 'network-popup',
                 'height=350,width=600'
             );
-            console.log('shared');
+
             if (networkWindow.focus) {
                 networkWindow.focus();
             }
@@ -144,6 +144,16 @@ const ArticleTemplate = ({ data }) => {
                             <div onClick={shareOn('linkedIn')}>
                                 <LinkedIn />
                             </div>
+                            {
+                                post.frontmatter.reddit &&
+                                <a
+                                    href={post.frontmatter.reddit}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="article__share--reddit">
+                                    <Reddit />
+                                </a>
+                            }
                         </div>
                     </div>
                 </div>
@@ -209,6 +219,7 @@ export const pageQuery = graphql`
                 summary
                 featuredImage
                 series
+                reddit
             }
         }
         metadata: site {

@@ -4,6 +4,7 @@ title: 'Diving into the great observer pattern in javascript'
 summary: "The observer pattern is widely used today in the Javascript world, in this article I'll explain how it works, how we can implement it and some good use cases."
 series: ['Javascript']
 featuredImage: '2019-03-09-observer-cover.png'
+reddit: 'https://www.reddit.com/r/javascript/comments/az442v/diving_into_the_great_observer_pattern_in/'
 ---
 
 Design patterns are an international language, they're also a great way of dealing with problems, sometimes you'll be able to notice when a specific pattern is useful and other times you'll have to think a little harder to figure out which one to use (or if you need to use one at all for that particular case). In this article, we're going to be exploring one of the most applied and powerful behavioral patterns, **the observer pattern**.

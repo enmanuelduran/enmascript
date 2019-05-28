@@ -179,6 +179,14 @@
                 fill: $share-icons-active-color;
             }
         }
+
+        &--reddit {
+            padding: 5px 15px 0 0;
+
+            svg path {
+                fill: #ff4500;
+            }
+        }
     }
 
     &__related {

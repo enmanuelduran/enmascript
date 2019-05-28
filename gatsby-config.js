@@ -10,6 +10,7 @@ module.exports = {
             'A place to learn about programming, web development and science (sometimes).',
         logo: 'https://enmascript.com/favicons/enmascript.png',
         series: 'none',
+        reddit: null,
         series_list: [
             {
                 name: 'React',

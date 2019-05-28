@@ -1,9 +1,9 @@
 ---
-date: "2018-07-09T17:12:33.962Z"
-title: "Short-circuiting for faster evaluations"
-summary: "Short-circuiting is just a fancy name we use to describe the interruption of conditional statements due to the fullfillment of truth table evaluations."
-series: ["Javascript"]
-featuredImage: "2018-07-09-short-circuiting.png"
+date: '2018-07-09T17:12:33.962Z'
+title: 'Short-circuiting for faster evaluations'
+summary: 'Short-circuiting is just a fancy name we use to describe the interruption of conditional statements due to the fullfillment of truth table evaluations.'
+series: ['Javascript']
+featuredImage: '2018-07-09-short-circuiting.png'
 ---
 
 
