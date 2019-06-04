@@ -46,7 +46,7 @@ const enabledElementClass = mainWrapper
 
 Then, the argument comes where a developer says, "we can avoid the extra variable for `document.querySelector('.inner-elm')`" and he/she calls this an optimization, your answer is that you like it more the first way because it is more declarative in comparison, and you spent 5 mins discussing this. What the code reviewer does not realize is that he is now defining `enabledInteractionClass` all the time, and he is using the variable `enabledElementClass` for something that does not require it, so where is the improvement? Was this a decision based on a solid foundation? How does this code make the codebase better? is it measurable?
 
-**Disclaimer: I'm in favor of well constructed/used ternary operators and [short-circuiting](https://enmascript.com/articles/2018/07/09/short-circuiting-for-faster-evaluations), this example just shows how _NOT_ to use a tool just for the sake of less lines of code or to defend a subjective point of view.
+**Disclaimer**: I'm in favor of well constructed/used ternary operators and [short-circuiting](https://enmascript.com/articles/2018/07/09/short-circuiting-for-faster-evaluations), this example just shows how _NOT_ to use a tool just for the sake of less lines of code or to defend a subjective point of view.
 
 ## There is a term for worthless micro-optimizations that end up in a waste of time.
 
