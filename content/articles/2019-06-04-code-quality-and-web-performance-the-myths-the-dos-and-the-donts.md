@@ -6,7 +6,7 @@ series: ['Javascript', 'Performance']
 featuredImage: '2019-06-04-webperf-code-quality-cover.png'
 ---
 
-Optimization is a word that englobes a significant scope of possibilities, especially in the world of software development. Developers always like to "optimize," but what is it _really_? -- This word is many times miss-used to excuse subjective point of views and other times it is used only to demonstrate "improvements" that are not sincerely necessary. In this article, we are going to be talking about the mistakes we make as developers when trying to improve our code bases by optimizing them, and, we are going to see which are some excellent ways to start doing this correctly.
+Optimization is a word that englobes a significant scope of possibilities, especially in the world of software development. Developers always like to "optimize," but what is it _really_? -- This word is many times miss-used to excuse subjective point of views, other times it is used only to demonstrate "improvements" that are not sincerely necessary. In this article, we are going to be talking about the mistakes we make as developers when trying to improve our code bases by "optimizing" them, and, we are going to see which are some excellent ways to start doing this correctly.
 
 ## Always measure first, quantify, and please... don't just blindly "optimize".
 
@@ -16,7 +16,7 @@ For example, there is a common belief that lines of code are somehow inversely r
 
 ![](/images/2019-06-03-common-belief.jpeg)
 
-Usually having less code means less surface area to cover, which means, more clarity and less possibility of bugs. However, this only applies if you have a "high quality" code base that is secure, consistent and is using the right tools for the right job.
+_Usually_ having less code means less surface area to cover, which means, more clarity and less possibility of bugs. However, this only applies if you have a "high quality" code base that is secure, consistent and is using the right tools for the right job.
 
 
 Let me elaborate a little bit, take the following piece of code:
@@ -44,7 +44,9 @@ const enabledElementClass = mainWrapper
     : mainWrapper.classList.add(enabledInteractionClass);
 ```
 
-Then, the argument comes where a developer says, "we can avoid the extra variable for `document.querySelector('.inner-elm')`" and he/she calls this an optimization, your answer is that you like it more the first way because it is more declarative in comparison, and you spent 5 mins discussing this. What the code reviewer does not realize is that he is now defining `enabledInteractionClass` all the time, and he is using the variable `enabledElementClass` for something that does require it, so where is the improvement? Was this a decision based on a solid foundation? How does this code make the codebase better? is it measurable?
+Then, the argument comes where a developer says, "we can avoid the extra variable for `document.querySelector('.inner-elm')`" and he/she calls this an optimization, your answer is that you like it more the first way because it is more declarative in comparison, and you spent 5 mins discussing this. What the code reviewer does not realize is that he is now defining `enabledInteractionClass` all the time, and he is using the variable `enabledElementClass` for something that does not require it, so where is the improvement? Was this a decision based on a solid foundation? How does this code make the codebase better? is it measurable?
+
+**Disclaimer: I'm in favor of well constructed/used ternary operators and [short-circuiting](https://enmascript.com/articles/2018/07/09/short-circuiting-for-faster-evaluations), this example just shows how _NOT_ to use a tool just for the sake of less lines of code or to defend a subjective point of view.
 
 ## There is a term for worthless micro-optimizations that end up in a waste of time.
 
@@ -69,7 +71,7 @@ Why to go through all this trouble instead of just increasing the time? because 
 This is just an example applied to scroll performance, but the same principle can be applied over any other circumstance by having the correct metric to measure.
 
 ## Improve the quality of your code base
-Some of the most common ways of optimizing code bases are linters, if you use javascript [ESLint](https://eslint.org/) is a good one, for your styles you could use [Stylelint](https://stylelint.io/), you can later add these two elements as required steps in your build process to create an extra layer of consistency, linters are a good way to promote consistency in your code base.
+Some of the most common ways of optimizing code bases are linters, if you use javascript [ESLint](https://eslint.org/) is a good one -- As for your styles, you could use [Stylelint](https://stylelint.io/). You can later add these two elements as required steps in your build process to create an extra layer of consistency, linters are a good way to promote consistency in your code base.
 
 Nevertheless, <mark>linters alone are not going to guarantee the quality of your code base</mark>, it heavily depends on the level of your team, you have to be aware of this before trying to push things too hard. Some recommendations to start increasing the quality of your codebase are:
 
@@ -81,7 +83,9 @@ Nevertheless, <mark>linters alone are not going to guarantee the quality of your
 
 1. **Think before you code**. Create a model about what you have to do, understand what is needed and the alternatives you have, never start writing code right away before analyzing the implementation.
 
-There is not a fixed formula for _code quality_, this is a progressive and subjective topic, it highly depends on the requirements of the company you are working on and your team.
+1. **Care about data structures and time/space complexity**. This point requires deeper knowledge on **how** algorithms work and **why**. I have personally noticed that the more experienced the team is the more they care about this, in the frontend world there is a miss-conception that data structures/time space complexity does not matter as much, but this is a mistake, these tools allow you to write scalable/performant modules, it is part of choosing the right tool for the right job.
+
+There is not a fixed formula for _code quality_, this is a progressive and subjective topic, it highly depends on the requirements of the company you are working on and your team. One last recommendation I could give you is to **cosider promoting declarative code**, give attention to the readability.
 
 ## Recommendations, tips and good practices to optimize your site (Performance):
 One excellent way to measure your site's performance is through the [RAIL model](https://developers.google.com/web/fundamentals/performance/rail). Below I have a list of some common problems that websites confront and some possible tools that could help you solve them, this list is not meant to solve your problems directly but to point you in the right direction:
