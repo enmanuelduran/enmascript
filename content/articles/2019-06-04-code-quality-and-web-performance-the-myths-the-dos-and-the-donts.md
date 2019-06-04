@@ -3,6 +3,7 @@ date: '2019-06-04T17:10:30.962Z'
 title: "Code quality and web performance, the myths, the do's and the don'ts"
 summary: "Performance optimizations are sometimes mistakenly executed, in this article we will explain some of the most common mistakes we make when we want to optimize an application, we will also go through alternatives a good ideas to take into consideration when applying optimization in our codebase."
 series: ['Javascript', 'Performance']
+reddit: 'https://www.reddit.com/r/javascript/comments/bwphrq/code_quality_and_web_performance_in_javascript/'
 featuredImage: '2019-06-04-webperf-code-quality-cover.png'
 ---
 
