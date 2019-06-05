@@ -27,7 +27,8 @@ const mainWrapper = document.querySelector('.wrapper');
 
 
 if (mainWrapper) {
-    const element = document.querySelector('.inner-box');
+    const enabledInteractionClass = 'enabled-box';
+    const element = document.querySelector('.inner-elm');
 
     element.classList.add(enabledInteractionClass);
     mainWrapper.classList.remove(enabledInteractionClass);
