@@ -11,6 +11,17 @@ module.exports = {
         logo: 'https://enmascript.com/favicons/enmascript.png',
         series: 'none',
         reddit: null,
+        descriptions: {
+            articles:
+                'Technical articles related to software development and performance',
+            code:
+                'Useful modules and functionalities ready to be used and installed in your projects',
+            series:
+                'Articles grouped by series like React, Performance, Javascript, Styling and more...',
+            contact:
+                'If you have any question or just want to talk, get it touch!',
+            about: 'Learn about the people behind the project'
+        },
         series_list: [
             {
                 name: 'React',

@@ -6,7 +6,22 @@ import Container from 'components/Container';
 
 const Contact = ({ data }) => (
     <Layout section="contact">
-        <Helmet title="Contact and Advertising">
+        <Helmet
+            title="Contact"
+            meta={[
+                {
+                    name: 'description',
+                    content: data.site.siteMetadata.descriptions.contact
+                },
+                {
+                    name: 'og:description',
+                    content: data.site.siteMetadata.descriptions.contact
+                },
+                {
+                    name: 'twitter:description',
+                    content: data.site.siteMetadata.descriptions.contact
+                }
+            ]}>
             <link
                 rel="canonical"
                 href={`${data.site.siteMetadata.url}/contact`}
@@ -41,6 +56,9 @@ export const ContactQuery = graphql`
         site {
             siteMetadata {
                 url
+                descriptions {
+                    contact
+                }
             }
         }
     }

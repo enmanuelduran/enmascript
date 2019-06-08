@@ -7,7 +7,22 @@ import shortid from 'shortid';
 
 const Code = ({ data }) => (
     <Layout section="code">
-        <Helmet title="Code">
+        <Helmet
+            title="Code"
+            meta={[
+                {
+                    name: 'description',
+                    content: data.site.siteMetadata.descriptions.code
+                },
+                {
+                    name: 'og:description',
+                    content: data.site.siteMetadata.descriptions.code
+                },
+                {
+                    name: 'twitter:description',
+                    content: data.site.siteMetadata.descriptions.code
+                }
+            ]}>
             <link rel="canonical" href={`${data.site.siteMetadata.url}/code`} />
         </Helmet>
         <Container classes="code">
@@ -37,6 +52,9 @@ export const CodeQuery = graphql`
                     name
                     slug
                     featuredImage
+                }
+                descriptions {
+                    code
                 }
             }
         }

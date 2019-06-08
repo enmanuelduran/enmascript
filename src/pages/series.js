@@ -7,7 +7,22 @@ import shortid from 'shortid';
 
 const Series = ({ data }) => (
     <Layout section="series">
-        <Helmet title="Series">
+        <Helmet
+            title="Series"
+            meta={[
+                {
+                    name: 'description',
+                    content: data.site.siteMetadata.descriptions.series
+                },
+                {
+                    name: 'og:description',
+                    content: data.site.siteMetadata.descriptions.series
+                },
+                {
+                    name: 'twitter:description',
+                    content: data.site.siteMetadata.descriptions.series
+                }
+            ]}>
             <link
                 rel="canonical"
                 href={`${data.site.siteMetadata.url}/series`}
@@ -40,6 +55,9 @@ export const SeriesQuery = graphql`
                     name
                     slug
                     featuredImage
+                }
+                descriptions {
+                    series
                 }
             }
         }

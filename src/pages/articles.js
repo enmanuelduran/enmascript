@@ -10,7 +10,25 @@ const Articles = ({ data }) => {
 
     return (
         <Layout section="articles">
-            <Helmet title="Articles">
+            <Helmet
+                title="Articles"
+                meta={[
+                    {
+                        name: 'description',
+                        content:
+                            data.metadata.siteMetadata.descriptions.articles
+                    },
+                    {
+                        name: 'og:description',
+                        content:
+                            data.metadata.siteMetadata.descriptions.articles
+                    },
+                    {
+                        name: 'twitter:description',
+                        content:
+                            data.metadata.siteMetadata.descriptions.articles
+                    }
+                ]}>
                 <link
                     rel="canonical"
                     href={`${data.metadata.siteMetadata.url}/articles`}
@@ -57,6 +75,9 @@ export const pageQuery = graphql`
         metadata: site {
             siteMetadata {
                 url
+                descriptions {
+                    articles
+                }
             }
         }
     }

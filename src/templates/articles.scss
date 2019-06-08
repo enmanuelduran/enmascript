@@ -1,6 +1,8 @@
 @import "../components/Common/variables";
 @import "../components/Common/media_queries";
 
+$reddit-color: #ff4500;
+
 .article {
     $p: &;
 
@@ -145,6 +147,7 @@
 
     &__share {
         display: flex;
+        align-items: center;
 
         @include min-device("desktop") {
             width: 40px;
@@ -159,10 +162,10 @@
             height: 70%;
             width: auto;
             display: block;
-            padding: 0 15px 10px 0;
+            padding: 0 10px 0 0;
 
             @include min-device("desktop") {
-                padding: 5px 15px 0 0;
+                padding: 5px 0 0;
             }
         }
 
@@ -181,10 +184,40 @@
         }
 
         &--reddit {
-            padding: 5px 15px 0 0;
+            padding: 2px 0 0 2px;
+            position: relative;
 
             svg path {
-                fill: #ff4500;
+                fill: $reddit-color;
+            }
+
+            span {
+                width: 58px;
+                position: absolute;
+                color: $reddit-color;
+                font-size: $medium-font-size;
+                top: 50%;
+                transform: translateY(-50%);
+                margin-left: 5px;
+                transition: .15s color;
+            }
+
+            @include min-device("desktop") {
+                padding: 5px 0 0 0;
+
+                span {
+                    top: auto;
+                    margin-left: auto;
+                    left: 50%;
+                    bottom: -17px;
+                    transform: translateX(-50%);
+                }
+            }
+
+            &:hover span,
+            &:hover svg path, {
+                color: $text-link-color;
+                fill: $text-link-color;
             }
         }
     }

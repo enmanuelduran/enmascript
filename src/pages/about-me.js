@@ -8,7 +8,22 @@ import shortid from 'shortid';
 
 const AboutMe = ({ data }) => (
     <Layout section="aboutme">
-        <Helmet title="About me">
+        <Helmet
+            title="About me"
+            meta={[
+                {
+                    name: 'description',
+                    content: data.site.siteMetadata.descriptions.about
+                },
+                {
+                    name: 'og:description',
+                    content: data.site.siteMetadata.descriptions.about
+                },
+                {
+                    name: 'twitter:description',
+                    content: data.site.siteMetadata.descriptions.about
+                }
+            ]}>
             <link
                 rel="canonical"
                 href={`${data.site.siteMetadata.url}/about-me`}
@@ -47,6 +62,9 @@ export const AboutQuery = graphql`
         site {
             siteMetadata {
                 url
+                descriptions {
+                    about
+                }
             }
         }
     }

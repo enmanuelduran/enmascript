@@ -152,6 +152,7 @@ const ArticleTemplate = ({ data }) => {
                                     rel="noopener noreferrer"
                                     className="article__share--reddit">
                                     <Reddit />
+                                    <span>Let's talk</span>
                                 </a>
                             }
                         </div>
