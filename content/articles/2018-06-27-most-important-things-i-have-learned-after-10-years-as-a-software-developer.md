@@ -1,7 +1,7 @@
 ---
 date: '2018-06-27T17:12:33.962Z'
 title: 'Most Important things I’ve learned after 10 years as a software developer'
-summary: 'My journey as a software developer has taught me many valuablle lessons, in this article I share some of the lessons with you'
+summary: 'My journey as a software developer has taught me many valuablle lessons, in this article I share some of the lessons with you...'
 series: []
 featuredImage: '2018-06-27-most-important-things.png'
 reddit: 'https://www.reddit.com/r/webdev/comments/aw4i9t/some_of_the_most_important_things_ive_learned/'

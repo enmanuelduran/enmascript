@@ -7,7 +7,7 @@ import About from '../../content/about-me.json';
 import shortid from 'shortid';
 
 const AboutMe = ({ data }) => (
-    <Layout section="aboutme">
+    <Layout section="aboutme" classes="articles__layout">
         <Helmet
             title="About me"
             meta={[

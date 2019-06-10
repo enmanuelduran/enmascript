@@ -39,14 +39,16 @@ const ArticleTemplate = ({ data }) => {
     };
 
     const shareOn = share();
-    const getSeries = () => {
-        return metadata.siteMetadata.series_list.filter(elm =>
+    const siteMetadata = metadata.siteMetadata;
+    const getSeries = post => {
+        return siteMetadata.series_list
+            && siteMetadata.series_list.filter(elm =>
             post.frontmatter.series.includes(elm.name)
         );
     };
 
     const postImage = `/images/${post.frontmatter.featuredImage}`;
-    const series = getSeries();
+    const series = getSeries(post);
     const twitterDiscussionLink = `https://mobile.twitter.com/search?q=${encodeURIComponent(
         url
     )}`;
@@ -58,8 +60,42 @@ const ArticleTemplate = ({ data }) => {
         .pop()}.md`;
 
     return (
-        <Layout section="articles">
-            <Container type="article">
+        <Layout section="articles" classes="articles__layout">
+            <div className="article" className="article article--hero">
+                <Container type="article">
+                    <h1>{post.frontmatter.title}</h1>
+                    <div>
+                        <a
+                            href={metadata.siteMetadata.twitter}
+                            className="article__author"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {metadata.siteMetadata.author}
+                        </a>
+                        <span className="article__date">
+                            {post.frontmatter.date} •{' '}
+                            <span className="article__readingTime">
+                                {data.article.fields.readingTime.text}
+                            </span>
+                        </span>
+                    </div>
+                    {series.length > 0 && (
+                        <div className="article__series-container">
+                            <div className="article__series-head">
+                                Part of the Series:
+                            </div>
+                            {series.map(serie => (
+                                <div
+                                    className="article__series"
+                                    key={serie.slug}>
+                                    <Link to={serie.slug}>#{serie.name}</Link>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </Container>
+            </div>
+            <Container type="article" classes="article">
                 <Helmet
                     title={post.frontmatter.title}
                     meta={[
@@ -101,61 +137,29 @@ const ArticleTemplate = ({ data }) => {
                     ]}>
                     <link rel="canonical" href={url} />
                 </Helmet>
-                <div className="article">
-                    <h1>{post.frontmatter.title}</h1>
-                    <div>
-                        <a
-                            href={metadata.siteMetadata.twitter}
-                            className="article__author"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            {metadata.siteMetadata.author}
-                        </a>
-                        <span className="article__date">
-                            {post.frontmatter.date} •{' '}
-                            <span className="article__readingTime">
-                                {data.article.fields.readingTime.text}
-                            </span>
-                        </span>
-                    </div>
-                    {series.length > 0 && (
-                        <div className="article__series-container">
-                            <div className="article__series-head">
-                                Part of the Series:
-                            </div>
-                            {series.map(serie => (
-                                <div
-                                    className="article__series"
-                                    key={serie.slug}>
-                                    <Link to={serie.slug}>{serie.name}</Link>
-                                </div>
-                            ))}
+                <div className="article__content">
+                    <div dangerouslySetInnerHTML={{ __html: post.html }} />
+                    <div className="article__share">
+                        <div onClick={shareOn('twitter')}>
+                            <Twitter />
                         </div>
-                    )}
-                    <div className="article__content">
-                        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                        <div className="article__share">
-                            <div onClick={shareOn('twitter')}>
-                                <Twitter />
-                            </div>
-                            <div onClick={shareOn('facebook')}>
-                                <Facebook />
-                            </div>
-                            <div onClick={shareOn('linkedIn')}>
-                                <LinkedIn />
-                            </div>
-                            {
-                                post.frontmatter.reddit &&
-                                <a
-                                    href={post.frontmatter.reddit}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="article__share--reddit">
-                                    <Reddit />
-                                    <span>Let's talk</span>
-                                </a>
-                            }
+                        <div onClick={shareOn('facebook')}>
+                            <Facebook />
                         </div>
+                        <div onClick={shareOn('linkedIn')}>
+                            <LinkedIn />
+                        </div>
+                        {
+                            post.frontmatter.reddit &&
+                            <a
+                                href={post.frontmatter.reddit}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="article__share--reddit">
+                                <Reddit />
+                                <span>Let's talk</span>
+                            </a>
+                        }
                     </div>
                 </div>
                 <p className="article__engage-text">
@@ -179,7 +183,9 @@ const ArticleTemplate = ({ data }) => {
                     </a>
                 </p>
                 <MailchimpWrapper />
-                <div className="article__related">
+            </Container>
+            <div className="article__related">
+                <Container type="article">
                     <div className="article__related-title">Other Articles</div>
                     <div className="article__related-wrapper">
                         {otherArticles.edges
@@ -194,11 +200,14 @@ const ArticleTemplate = ({ data }) => {
                                     image={post.frontmatter.featuredImage}
                                     slug={post.fields.slug}
                                     key={post.id}
+                                    summary={post.frontmatter.summary}
+                                    reddit={post.frontmatter.reddit}
+                                    series={getSeries(post)}
                                 />
                             ))}
                     </div>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </Layout>
     );
 };
@@ -247,6 +256,9 @@ export const pageQuery = graphql`
                         title
                         featuredImage
                         date(formatString: "MMMM DD, YYYY")
+                        summary
+                        reddit
+                        series
                     }
                     fields {
                         slug

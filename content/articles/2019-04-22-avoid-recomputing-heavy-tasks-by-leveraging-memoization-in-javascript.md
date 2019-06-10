@@ -1,7 +1,7 @@
 ---
 date: '2019-04-22T17:12:33.962Z'
 title: 'Avoid recomputing heavy tasks by leveraging memoization in javascript'
-summary: "Memoization is a technique that's not usually very used in javascript outside of the framework's scope. In this article we're going to dive in the concept and analyze some useful cases in which we can apply it."
+summary: "Memoization is a technique that's not usually very used in javascript outside of the framework's scope. In this article we're going to dive in the concept and analyze some useful cases in which we can apply it..."
 series: ['Javascript', 'Performance']
 featuredImage: '2019-04-20-memoizing-cover.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/bg1xl9/avoid_recomputing_heavy_tasks_by_leveraging/'

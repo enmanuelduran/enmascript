@@ -1,7 +1,7 @@
 ---
 date: '2019-03-09T17:10:00.962Z'
 title: 'Diving into the great observer pattern in javascript'
-summary: "The observer pattern is widely used today in the Javascript world, in this article I'll explain how it works, how we can implement it and some good use cases."
+summary: "The observer pattern is widely used today in the Javascript world, in this article I'll explain how it works, how we can implement it and some good use cases..."
 series: ['Javascript']
 featuredImage: '2019-03-09-observer-cover.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/az442v/diving_into_the_great_observer_pattern_in/'

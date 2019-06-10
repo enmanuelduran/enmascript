@@ -6,13 +6,10 @@ $reddit-color: #ff4500;
 .article {
     $p: &;
 
-    padding: 20px 10px 0;
-
     @include min-device("desktop") {
         padding: 20px 0 0;
     }
 
-    h1,
     h2,
     h3,
     h4 {
@@ -23,6 +20,8 @@ $reddit-color: #ff4500;
     h1 {
         font-size: 36px;
         line-height: 42px;
+        color: $white;
+        margin: 0 0 30px;
     }
 
     h2 {
@@ -103,17 +102,28 @@ $reddit-color: #ff4500;
         max-width: 100%;
     }
 
+    &--hero {
+        background: #22262e;
+        padding: 50px 0;
+    }
+
     &__author {
         font-weight: bold;
+        color: $yellow;
     }
 
     &__date {
         margin-left: 10px;
+        color: $white;
     }
 
     &__content {
         margin-top: 30px;
         position: relative;
+
+        @include min-device("desktop") {
+            margin-bottom: -200px;
+        }
     }
 
     .gatsby-highlight {
@@ -151,7 +161,7 @@ $reddit-color: #ff4500;
 
         @include min-device("desktop") {
             width: 40px;
-            position: fixed;
+            position: sticky;
             margin-left: 800px;
             bottom: 400px;
             flex-direction: column;
@@ -224,6 +234,7 @@ $reddit-color: #ff4500;
 
     &__related {
         padding-bottom: 20px;
+        background: $background-color;
 
         @include max-device("desktop") {
             padding: 0 10px 20px;
@@ -234,28 +245,35 @@ $reddit-color: #ff4500;
             font-size: 24px;
             font-weight: bold;
             padding: 20px 0;
+            color: $white;
         }
 
         &-wrapper {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: 1fr;
+
+            @include min-device("tablet") {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         #{$p}-card {
-            padding: 0 0 5px;
-
-            @include min-device("tablet") {
-                &:first-child {
-                    padding-right: 5px;
-                }
-
-                &:last-child {
-                    padding-left: 5px;
-                }
-            }
-
             h2 {
                 font-size: 18px;
+            }
+
+            &__title {
+                flex: 0 0 auto;
+            }
+
+            p {
+                font-size: 14px;
+                line-height: 21px;
+            }
+
+            &__image {
+                height: 100px;
             }
         }
     }
@@ -267,7 +285,7 @@ $reddit-color: #ff4500;
     }
 
     &__series-head {
-        color: $tag-background-color;
+        color: $white;
         font-weight: bold;
         display: inline-block;
         margin-right: 10px;
@@ -282,6 +300,12 @@ $reddit-color: #ff4500;
         color: $tag-text-color;
         padding: 5px;
         background-color: $tag-background-color;
+        border-radius: 10px;
+        border: 2px solid $yellow;
+
+        a {
+            color: $yellow;
+        }
     }
 
     .gatsby-resp-image-link,
@@ -292,7 +316,7 @@ $reddit-color: #ff4500;
     }
 
     &__readingTime {
-        color: $dark-grey;
+        color: $white;
     }
 }
 

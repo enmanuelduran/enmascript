@@ -22,6 +22,16 @@ module.exports = {
                 'If you have any question or just want to talk, get it touch!',
             about: 'Learn about the people behind the project'
         },
+        sponsored: [
+            {
+                priority: 1,
+                name: 'MediaQuerySensor',
+                image:
+                    'https://enmascript.com/images/promoted/promoted-2019-03-09.png',
+                text:
+                    'MediaQuerySensor is a lightweight library that helps you execute functions based on media query breakpoints instead of the every resize event.'
+            }
+        ],
         series_list: [
             {
                 name: 'React',

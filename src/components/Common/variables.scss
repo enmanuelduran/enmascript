@@ -15,7 +15,7 @@ $grey: #ccc;
 $dark-grey: #545454;
 
 /*--- Functional variables ---*/
-$background-color: $light-grey;
+$background-color: #343944;
 $container-background-color: $white;
 $border-radius: 10px;
 $soft-border-radius: 5px;
@@ -32,24 +32,21 @@ $text-color: $dark-grey;
 $text-highlighted-color: $soft-yellow;
 $text-link-color: $blue;
 $text-link-active-color: $yellow;
-$cta-text-color: $dark-blue;
+$cta-text-color: $grey;
 $cta-text-background: $yellow;
+$cta-text-font-size: 32px;
 
 /* header */
 $header-height: 50px;
-$header-background-color: $white;
-$menu-active-background-color: $dark-blue;
-$menu-active-text-color: $white;
+$header-background-color: #13161b;
+$menu-active-background-color: $yellow;
+$menu-active-text-color: $header-background-color;
 
 /* Footer */
 $footer-background-color: $dark-blue;
 $footer-text-color: $white;
 $footer-height: 100px;
 
-/* Cards */
-$article-card-title-color: $dark-blue;
-$article-card-background-color: $white;
-$article-card-shadow: $grey;
 $series-card-background-color: $dark-blue;
 
 /* Buttons */

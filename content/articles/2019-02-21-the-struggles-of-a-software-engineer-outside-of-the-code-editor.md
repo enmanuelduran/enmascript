@@ -1,7 +1,7 @@
 ---
 date: '2019-02-21T17:23:50.962Z'
 title: 'The struggles of a software developer outside of the code'
-summary: 'This article shows a different perspective of software developers by showing the challenges that they/we face outside of the code editor.'
+summary: 'This article shows a different perspective of software developers by showing the challenges that they/we face outside of the code editor...'
 series: []
 featuredImage: '2019-02-21-struggles.png'
 reddit: 'https://www.reddit.com/r/webdev/comments/aumv4d/some_of_the_struggles_of_a_software_developer/'

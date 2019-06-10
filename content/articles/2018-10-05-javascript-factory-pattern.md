@@ -1,7 +1,7 @@
 ---
 date: '2018-10-05T17:12:33.962Z'
 title: 'Creating objects dynamically with factory pattern in javascript'
-summary: "Let's learn how to take advantage of this creational pattern to organize and create objects dynamically in javascript."
+summary: "Let's learn how to take advantage of this creational pattern to organize and create objects dynamically in javascript..."
 series: ['Javascript']
 featuredImage: '2018-10-07-factory-pattern.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/ar9613/creating_objects_dynamically_with_factory_pattern/'

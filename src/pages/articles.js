@@ -7,6 +7,16 @@ import ArticleCard from 'components/ArticleCard';
 
 const Articles = ({ data }) => {
     const { edges: posts } = data.articles;
+    const siteMetadata = data.metadata.siteMetadata;
+    const getSeries = post => {
+        return siteMetadata.series_list
+            && siteMetadata.series_list.filter(elm =>
+            post.frontmatter.series.includes(elm.name)
+        );
+    };
+    const sponsoredHeroCta = siteMetadata.sponsored.find(
+        ad => ad.priority === 1
+    );
 
     return (
         <Layout section="articles">
@@ -34,17 +44,33 @@ const Articles = ({ data }) => {
                     href={`${data.metadata.siteMetadata.url}/articles`}
                 />
             </Helmet>
-            <Container classes="articles">
-                {posts.map(({ node: post }) => (
-                    <ArticleCard
-                        title={post.frontmatter.title}
-                        image={post.frontmatter.featuredImage}
-                        slug={post.fields.slug}
-                        key={post.id}
-                        date={post.frontmatter.date}
-                        readingTime={post.fields.readingTime.text}
-                    />
-                ))}
+
+            <Container classes="home__container articles__container">
+                <section className="home__articles">
+                    {posts
+                        .filter(post => post.node.frontmatter.title.length > 0)
+                        .map(({ node: post }) => {
+                            return <ArticleCard
+                                title={post.frontmatter.title}
+                                image={post.frontmatter.featuredImage}
+                                slug={post.fields.slug}
+                                key={post.id}
+                                date={post.frontmatter.date}
+                                readingTime={post.fields.readingTime.text}
+                                summary={post.frontmatter.summary}
+                                series={getSeries(post)}
+                                reddit={post.frontmatter.reddit}
+                            />
+                        })}
+                </section>
+                <section className="home__ads">
+                    <div className="home__ad">
+                        <img
+                            src={sponsoredHeroCta.image}
+                            alt={sponsoredHeroCta.name}
+                        />
+                    </div>
+                </section>
             </Container>
         </Layout>
     );
@@ -62,6 +88,9 @@ export const pageQuery = graphql`
                         date(formatString: "MMMM DD, YYYY")
                         title
                         featuredImage
+                        summary
+                        reddit
+                        series
                     }
                     fields {
                         slug
@@ -77,6 +106,16 @@ export const pageQuery = graphql`
                 url
                 descriptions {
                     articles
+                }
+                series_list {
+                    slug
+                    name
+                }
+                sponsored {
+                    priority
+                    name
+                    image
+                    text
                 }
             }
         }
