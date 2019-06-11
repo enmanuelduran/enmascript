@@ -3,6 +3,8 @@
 
 $relevant-flag-background: $yellow;
 $cover-background-color: $dark-blue;
+$home-tag-text-color: $white;
+$home-tags-background-color: #13161b;
 
 .home {
     $p: &;
@@ -32,8 +34,8 @@ $cover-background-color: $dark-blue;
 
     &__date,
     &__reading-time {
-        background: $background-color;
-        color: $tag-text-color;
+        background: $home-tags-background-color;
+        color: $home-tag-text-color;
         border-radius: $soft-border-radius;
         display: inline-block;
         font-size: $small-text-font-size;
@@ -143,7 +145,7 @@ $cover-background-color: $dark-blue;
     border-right: 5px solid #0d0f13;
     border-bottom: 5px solid #0d0f13;
     max-width: 470px;
-    background: #13161b;
+    background: $home-tags-background-color;
     margin: 50px auto 70px;
 
     @include min-device("desktop") {
@@ -157,7 +159,7 @@ $cover-background-color: $dark-blue;
         bottom: 0px;
         right: 0;
         background: $tag-background-color;
-        color: $tag-text-color;
+        color: $home-tag-text-color;
         font-size: $small-text-font-size;
         padding: 5px;
         border-radius: $border-radius;
