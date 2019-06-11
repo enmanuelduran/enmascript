@@ -61,7 +61,7 @@ const ArticleTemplate = ({ data }) => {
 
     return (
         <Layout section="articles" classes="articles__layout">
-            <div className="article" className="article article--hero">
+            <div className="article article--hero">
                 <Container type="article">
                     <h1>{post.frontmatter.title}</h1>
                     <div>

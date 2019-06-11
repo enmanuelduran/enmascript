@@ -1,6 +1,9 @@
 @import "../components/Common/variables";
 @import "../components/Common/media_queries";
 
+$relevant-flag-background: $yellow;
+$cover-background-color: $dark-blue;
+
 .home {
     $p: &;
 
@@ -20,26 +23,26 @@
     }
 
     &__relevant-flag {
-        background: $yellow;
+        background: $relevant-flag-background;
         display: inline-block;
-        font-size: 12px;
+        font-size: $small-text-font-size;
         padding: 2px 10px;
-        border-radius: 5px;
+        border-radius: $soft-border-radius;
     }
 
     &__date,
     &__reading-time {
         background: $background-color;
-        color: $white;
-        border-radius: 5px;
+        color: $tag-text-color;
+        border-radius: $soft-border-radius;
         display: inline-block;
-        font-size: 12px;
+        font-size: $small-text-font-size;
         padding: 2px 10px;
         margin-left: 5px;
     }
 
     &__cta-summary {
-        color: $grey;
+        color: $cta-text-color;
         font-size: $medium-font-size;
         line-height: 24px;
         margin-bottom: 0;
@@ -57,7 +60,7 @@
     &__cover {
         position: relative;
         background-size: cover;
-        background: $dark-blue;
+        background: $cover-background-color;
         height: auto;
 
         @include min-device("desktop") {
@@ -83,7 +86,7 @@
             font-weight: bold;
 
             a {
-                color: $white;
+                color: $cta-title-color;
 
                 &:hover {
                     color: $text-link-active-color;
@@ -117,10 +120,10 @@
         background: $dark-blue;
         height: 200px;
         top: 70px;
-        border-radius: 10px;
+        border-radius: $border-radius;
 
         img {
-            border-radius: 10px;
+            border-radius: $border-radius;
             position: absolute;
             margin: -5px 0 0 -5px;
             width: 100%;
