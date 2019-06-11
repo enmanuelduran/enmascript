@@ -108,7 +108,7 @@ $cover-background-color: $dark-blue;
         border-radius: $border-radius;
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 2rem;
+        grid-gap: 1rem;
 
         @include min-device("tablet") {
             grid-template-columns: 1fr  300px;
@@ -121,6 +121,7 @@ $cover-background-color: $dark-blue;
         height: 200px;
         top: 70px;
         border-radius: $border-radius;
+        margin-top: 5px;
 
         img {
             border-radius: $border-radius;

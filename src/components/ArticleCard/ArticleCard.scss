@@ -4,10 +4,10 @@
 $reddit-color: #ff4500;
 $reddit-background-color: $white;
 
-$article-card-title-color: $white;
-$article-card-background-color: $dark-blue;
+$article-card-title-color: $dark-blue;
+$article-card-background-color: $white;
 $article-card-shadow: $grey;
-$article-card-text: $white;
+$article-card-text: $dark-blue;
 
 .article-card {
     padding: 0;
@@ -25,11 +25,15 @@ $article-card-text: $white;
     }
 
     &__image {
-        height: 150px;
+        height: 115px;
         background-size: cover;
         background-position: center;
         position: relative;
         border-radius: $soft-border-radius $soft-border-radius 0 0;
+
+        @include min-device("desktop") {
+            height: 150px;
+        }
     }
 
     &__text-wrapper {
@@ -107,6 +111,7 @@ $article-card-text: $white;
     &__reddit {
         background: $reddit-background-color;
         border-radius: $strong-border-radius;
+        border: 2px solid $reddit-color;
         align-items: center;
         align-self: flex-start;
         padding: 0 10px 0 5px;
