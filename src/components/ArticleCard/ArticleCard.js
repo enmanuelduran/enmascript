@@ -3,7 +3,6 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Reddit } from 'components/Icons/SocialIcons';
 
-
 const ArticleCard = ({
     image,
     title,

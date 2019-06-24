@@ -6,11 +6,7 @@ $articles-width: 750px;
 .container {
     width: 100%;
     margin: 0 auto;
-    padding: 0 10px;
-
-    @include min-device("desktop") {
-        padding: 0;
-    }
+    padding: 0 20px;
 
     &--page {
         max-width: $page-width;
@@ -20,6 +16,27 @@ $articles-width: 750px;
 
     &--article {
         max-width: $articles-width;
+    }
+
+    &--template-article {
+        max-width: $page-width;
+        display: grid;
+        grid-template-columns: 100%;
+        max-width: 730px;
+        padding-top: 15px;
+
+        @include min-device("desktop") {
+            grid-template-columns: 1fr 250px;
+            grid-gap: 1.5rem;
+            max-width: 1000px;
+        }
+    }
+
+    &--template-article-no-padding {
+        @extend .container--template-article;
+
+        padding-top: 0;
+
     }
 
     &--header {

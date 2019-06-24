@@ -23,5 +23,41 @@
         &:hover {
             transform: scale(1.02);
         }
+
+        &--aside {
+            height: 80px;
+            overflow: hidden;
+            flex: 1 1 calc(50% - 10px);
+            margin: 5px;
+
+            @include min-device("tablet") {
+                flex: 1 1 auto;
+                height: 60px;
+                margin: 5px 0;
+            }
+
+            &:before {
+                content: attr(data-name);
+                background-color: rgba(0, 0, 0, .5);
+                color: $white;
+                top: 0;
+                text-align: center;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform: translateX(-100%);
+                transition: .15s ease-in-out transform;
+                font-size: $text-font-size;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &:hover {
+              &:before {
+                transform: translateX(0);
+              }
+            }
+        }
     }
 }

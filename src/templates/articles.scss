@@ -6,16 +6,14 @@ $reddit-color: #ff4500;
 .article {
     $p: &;
 
-    @include min-device("desktop") {
-        padding: 20px 0 0;
-    }
+    max-width: 686px;
 
     h2,
     h3,
     h4 {
         padding: 20px 0;
         margin: 0;
-    }
+      }
 
     h1 {
         font-size: 36px;
@@ -105,6 +103,12 @@ $reddit-color: #ff4500;
     &--hero {
         background: #22262e;
         padding: 50px 0;
+        background-size: cover;
+        background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.85), #100e17),
+        url("/images/article-cover.png");
+        background-color: $cover-background-color;
+        background-position: bottom center;
+        max-width: none;
     }
 
     &__author {
@@ -118,11 +122,22 @@ $reddit-color: #ff4500;
     }
 
     &__content {
-        margin-top: 30px;
         position: relative;
 
         @include min-device("desktop") {
-            margin-bottom: -200px;
+            padding: 0;
+
+            div#{$p}__share {
+                display: none;
+            }
+        }
+
+        #{$p}__share {
+            display: flex;
+            flex-direction: row;
+            background: none;
+            box-shadow: none;
+            padding: 15px 0;
         }
     }
 
@@ -156,15 +171,19 @@ $reddit-color: #ff4500;
     }
 
     &__share {
-        display: flex;
+        display: none;
         align-items: center;
+        margin-top: 10px;
+        flex-direction: row-reverse;
+        background: $white;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.15);
 
         @include min-device("desktop") {
-            width: 40px;
-            position: sticky;
-            margin-left: 800px;
-            bottom: 400px;
-            flex-direction: column;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
         }
 
         div {
@@ -233,8 +252,8 @@ $reddit-color: #ff4500;
     }
 
     &__related {
+      background: $header-background-color;
         padding-bottom: 20px;
-        background: $background-color;
 
         @include max-device("desktop") {
             padding: 0 10px 20px;

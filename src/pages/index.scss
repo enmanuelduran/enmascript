@@ -21,6 +21,7 @@ $home-tags-background-color: #13161b;
         .article-card__buttons {
             position: relative;
             right: 0;
+            flex-wrap: wrap;
         }
     }
 
@@ -61,9 +62,13 @@ $home-tags-background-color: #13161b;
 
     &__cover {
         position: relative;
-        background-size: cover;
-        background: $cover-background-color;
+        background-color: $cover-background-color;
         height: auto;
+        background-size: cover;
+        background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.75), #100e17),
+        url("/images/home-cover.png");
+        background-position: bottom center;
+        background-repeat: no-repeat;
 
         @include min-device("desktop") {
             height: 500px;
@@ -110,26 +115,11 @@ $home-tags-background-color: #13161b;
         border-radius: $border-radius;
         display: grid;
         grid-template-columns: 1fr;
-        grid-gap: 1rem;
+        grid-gap: 10px;
+        z-index: 1;
 
         @include min-device("tablet") {
             grid-template-columns: 1fr  300px;
-        }
-    }
-
-    &__ads {
-        position: sticky;
-        background: $dark-blue;
-        height: 200px;
-        top: 70px;
-        border-radius: $border-radius;
-        margin-top: 5px;
-
-        img {
-            border-radius: $border-radius;
-            position: absolute;
-            margin: -5px 0 0 -5px;
-            width: 100%;
         }
     }
 }
@@ -142,7 +132,6 @@ $home-tags-background-color: #13161b;
     background-size: cover;
     background-position: center;
     position: relative;
-    border-right: 5px solid #0d0f13;
     border-bottom: 5px solid #0d0f13;
     max-width: 470px;
     background: $home-tags-background-color;
@@ -171,7 +160,6 @@ $home-tags-background-color: #13161b;
         width: 100%;
         position: relative;
         display: block;
-        transform: translate(-10px, -10px);
         box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
     }
 

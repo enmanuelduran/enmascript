@@ -6,6 +6,7 @@ import Cover from 'components/Cover';
 import ArticleCard from 'components/ArticleCard';
 import CoverImage from 'images/cover.png';
 import { Reddit } from 'components/Icons/SocialIcons';
+import shortid from 'shortid';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;
@@ -28,9 +29,9 @@ const Index = ({ data }) => {
                     {coverPost.map(({ node: post }) => (
                         <div className="home__cta-article" key={post.id}>
                             <div className="home__cta-content">
-                                <div class="home__relevant-flag">Relevant now</div>
-                                <div class="home__date">{post.frontmatter.date}</div>
-                                <div class="home__reading-time">{post.fields.readingTime.text}</div>
+                                <div className="home__relevant-flag">Relevant now</div>
+                                <div className="home__date">{post.frontmatter.date}</div>
+                                <div className="home__reading-time">{post.fields.readingTime.text}</div>
                                 <h1>
                                     <Link
                                         data-gtm-track="article-cover-cta-click"
@@ -57,16 +58,14 @@ const Index = ({ data }) => {
                                         <span>Let's talk</span>
                                     </a>
                                 )}
-                                <div className="article-card__series">
                                     {getSeries(post).map(serie =>  (
-                                        <Link
-                                            key={serie.slug}
-                                            to={serie.slug}
-                                            className="article-card__serie">
-                                            #{serie.name}
-                                        </Link>
+                                        <div className="article__series" key={serie.slug}>
+                                            <Link
+                                                to={serie.slug}>
+                                                #{serie.name}
+                                            </Link>
+                                    </div>
                                     ))}
-                                </div>
                             </div>
                             </div>
                         </div>
@@ -104,15 +103,39 @@ const Index = ({ data }) => {
                                 reddit={post.frontmatter.reddit}
                             />
                         })}
-                </section>
-                <section className="home__ads">
-                    <div className="home__ad">
-                    <img
-                        src={sponsoredHeroCta.image}
-                        alt={sponsoredHeroCta.name}
-                    />
-                    </div>
-                </section>
+                    </section>
+                    <section className="aside">
+                        <div className="aside__ads">
+                            <Link target="_blank"
+                               rel="noopener noreferrer"
+                               className="aside__ad"
+                               to="/articles/2018/10/22/why-I-prefer-objects-over-switch-statements">
+                                <img
+                                    src={siteMetadata.sponsored[1].image}
+                                    alt={siteMetadata.sponsored[1].name}
+                                />
+                                <p className="sponsoredText">{siteMetadata.sponsored[1].text}</p>
+                            </Link>
+                        </div>
+                        <p className="aside__title">Popular Series</p>
+                        <div className="aside__series">
+                            {siteMetadata.series_list.map(element => {
+                                const image = require(`../../content/images/${
+                                    element.featuredImage
+                                }`);
+
+                                return (
+                                    <Link
+                                        key={shortid.generate()}
+                                        style={{ backgroundImage: `url(${image})` }}
+                                        className="series__card series__card--aside"
+                                        data-name={element.name}
+                                        to={element.slug}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </section>
             </Container>
         </Layout>
     );
@@ -181,6 +204,7 @@ export const HomeQuery = graphql`
                 series_list {
                     slug
                     name
+                    featuredImage
                 }
             }
         }
