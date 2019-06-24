@@ -1,7 +1,7 @@
 ---
 date: '2018-07-19T17:12:33.962Z'
 title: 'Protect the integrity of your applications with Error Boundaries'
-summary: 'Error Boundaries are one of the coolest and more powerful features that we have today in react, it allow us to protect our applications and add security layers to our project.'
+summary: 'Error Boundaries are one of the coolest and more powerful features that we have today in react, it allow us to protect our applications and add security layers to our project...'
 series: ['React']
 featuredImage: '2018-07-19-error-boundaries.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/aqmnl7/making_good_use_of_error_boundaries_in_react/'

@@ -1,7 +1,7 @@
 ---
 date: '2018-10-31T09:30:23.912Z'
 title: 'The underestimated power behind matchMedia'
-summary: "In this article we're going to learn how to improve the performance by using an alternative to resize events"
+summary: "In this article we're going to learn how to improve the performance by using an alternative to resize events..."
 series: ['Javascript', 'Performance']
 featuredImage: '2018-10-31-window-matchmedia.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/aqx02n/the_underestimated_power_behind_matchmedia_api/'

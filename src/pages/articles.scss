@@ -1,3 +1,11 @@
-.articles {
+div.articles {
     padding: 10px 0;
+
+    &__container {
+        margin-top: 10px;
+    }
+
+    &__layout {
+        background: #f9f9f9;
+    }
 }

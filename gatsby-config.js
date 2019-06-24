@@ -22,6 +22,24 @@ module.exports = {
                 'If you have any question or just want to talk, get it touch!',
             about: 'Learn about the people behind the project'
         },
+        sponsored: [
+            {
+                priority: 1,
+                name: 'MediaQuerySensor',
+                image:
+                    'https://enmascript.com/images/promoted/promoted-2019-03-09.png',
+                text:
+                    'MediaQuerySensor is a lightweight library that helps you execute functions based on media query breakpoints instead of the every resize event.'
+            },
+            {
+                priority: 1,
+                name: 'Why I prefer objects over switch statements',
+                image:
+                    'http://localhost:8000/images/2018-10-22-objects-over-switch.png',
+                text:
+                    'Explore a different and scalable way of treating multiple conditionals. No switch, no else if.'
+            }
+        ],
         series_list: [
             {
                 name: 'React',

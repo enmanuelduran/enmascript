@@ -1,7 +1,7 @@
 ---
 date: '2019-02-27T17:11:50.962Z'
 title: 'Higher order functions and some great applications in javascript'
-summary: "Higher order functions are one of the strongest arguments behind functional programming, in this article we're going to explore some interesting applications behind it."
+summary: "Higher order functions are one of the strongest arguments behind functional programming, in this article we're going to explore some interesting applications behind it..."
 series: ['Javascript']
 featuredImage: '2019-02-27-HOF.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/awihb1/higher_order_functions_and_some_great/'

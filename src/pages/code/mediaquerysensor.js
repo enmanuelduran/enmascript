@@ -67,7 +67,7 @@ class MediaQuerySensor extends React.Component {
 
     render() {
         return (
-            <Layout section="code">
+            <Layout section="code" classes="articles__layout">
                 <Helmet title="MediaQuerySensor">
                     <link rel="canonical" href="/code/mediaquerysensor" />
                 </Helmet>

@@ -1,7 +1,7 @@
 ---
 date: '2018-10-26T04:30:23.912Z'
 title: "React Conf 2018: Understanding React's hooks proposal with simple examples"
-summary: 'React Hooks are the future, a new way of building react components to interact with state is here'
+summary: 'React Hooks are the future, a new way of building react components to interact with state is here...'
 series: ['React']
 featuredImage: '2018-10-26-hooks-proposal.png'
 reddit: 'https://www.reddit.com/r/reactjs/comments/arzbc7/understanding_reacts_hooks_with_simple/'

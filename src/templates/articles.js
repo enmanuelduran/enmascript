@@ -11,6 +11,9 @@ const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
     const url = metadata.siteMetadata.url + data.article.fields.slug;
     const { title } = post.frontmatter;
+    const sponsoredHeroCta = metadata.siteMetadata.sponsored.find(
+        ad => ad.priority === 1
+    );
 
     const share = () => {
         const networks = {
@@ -39,14 +42,16 @@ const ArticleTemplate = ({ data }) => {
     };
 
     const shareOn = share();
-    const getSeries = () => {
-        return metadata.siteMetadata.series_list.filter(elm =>
+    const siteMetadata = metadata.siteMetadata;
+    const getSeries = post => {
+        return siteMetadata.series_list
+            && siteMetadata.series_list.filter(elm =>
             post.frontmatter.series.includes(elm.name)
         );
     };
 
     const postImage = `/images/${post.frontmatter.featuredImage}`;
-    const series = getSeries();
+    const series = getSeries(post);
     const twitterDiscussionLink = `https://mobile.twitter.com/search?q=${encodeURIComponent(
         url
     )}`;
@@ -58,8 +63,44 @@ const ArticleTemplate = ({ data }) => {
         .pop()}.md`;
 
     return (
-        <Layout section="articles">
-            <Container type="article">
+        <Layout section="articles" classes="articles__layout">
+            <div className="article article--hero">
+                <Container type="template-article-no-padding">
+                    <div>
+                        <h1>{post.frontmatter.title}</h1>
+                        <div>
+                            <a
+                                href={metadata.siteMetadata.twitter}
+                                className="article__author"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                {metadata.siteMetadata.author}
+                            </a>
+                            <span className="article__date">
+                                {post.frontmatter.date} •{' '}
+                                <span className="article__readingTime">
+                                    {data.article.fields.readingTime.text}
+                                </span>
+                            </span>
+                        </div>
+                        {series.length > 0 && (
+                            <div className="article__series-container">
+                                <div className="article__series-head">
+                                    Part of the Series:
+                                </div>
+                                {series.map(serie => (
+                                    <div
+                                        className="article__series"
+                                        key={serie.slug}>
+                                        <Link to={serie.slug}>#{serie.name}</Link>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+                </Container>
+            </div>
+            <Container type="template-article">
                 <Helmet
                     title={post.frontmatter.title}
                     meta={[
@@ -102,36 +143,6 @@ const ArticleTemplate = ({ data }) => {
                     <link rel="canonical" href={url} />
                 </Helmet>
                 <div className="article">
-                    <h1>{post.frontmatter.title}</h1>
-                    <div>
-                        <a
-                            href={metadata.siteMetadata.twitter}
-                            className="article__author"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            {metadata.siteMetadata.author}
-                        </a>
-                        <span className="article__date">
-                            {post.frontmatter.date} •{' '}
-                            <span className="article__readingTime">
-                                {data.article.fields.readingTime.text}
-                            </span>
-                        </span>
-                    </div>
-                    {series.length > 0 && (
-                        <div className="article__series-container">
-                            <div className="article__series-head">
-                                Part of the Series:
-                            </div>
-                            {series.map(serie => (
-                                <div
-                                    className="article__series"
-                                    key={serie.slug}>
-                                    <Link to={serie.slug}>{serie.name}</Link>
-                                </div>
-                            ))}
-                        </div>
-                    )}
                     <div className="article__content">
                         <div dangerouslySetInnerHTML={{ __html: post.html }} />
                         <div className="article__share">
@@ -156,30 +167,69 @@ const ArticleTemplate = ({ data }) => {
                                 </a>
                             }
                         </div>
-                    </div>
-                </div>
-                <p className="article__engage-text">
-                    <strong>Want to leave a comment?</strong> Do it on{' '}
-                    <a
-                        href={twitterDiscussionLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-gtm-track="twitter-discussion">
-                        twitter
-                    </a>
-                </p>
 
-                <p className="article__engage-text">
-                    <strong>Found something to fix in the article?</strong>{' '}
-                    <a
-                        href={githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Edit it and send a Pull Request on GitHub!
-                    </a>
-                </p>
-                <MailchimpWrapper />
-                <div className="article__related">
+                    </div>
+                    <p className="article__engage-text">
+                        <strong>Want to leave a comment?</strong> Do it on{' '}
+                        <a
+                            href={twitterDiscussionLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-gtm-track="twitter-discussion">
+                            twitter
+                        </a>
+                    </p>
+
+                    <p className="article__engage-text">
+                        <strong>Found something to fix in the article?</strong>{' '}
+                        <a
+                            href={githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Edit it and send a Pull Request on GitHub!
+                        </a>
+                    </p>
+                    <MailchimpWrapper />
+                </div>
+                <div className="aside">
+                    <section className="aside__ads">
+                        <a target="_blank"
+                           rel="noopener noreferrer"
+                           className="aside__ad"
+                           href="https://github.com/enmanuelduran/mediaquerysensor">
+                            <img
+                                src={sponsoredHeroCta.image}
+                                alt={sponsoredHeroCta.name}
+                            />
+                            <p className="sponsoredText">{sponsoredHeroCta.text}</p>
+                        </a>
+                    </section>
+                    <div className="article__share">
+                        <div onClick={shareOn('twitter')}>
+                            <Twitter />
+                        </div>
+                        <div onClick={shareOn('facebook')}>
+                            <Facebook />
+                        </div>
+                        <div onClick={shareOn('linkedIn')}>
+                            <LinkedIn />
+                        </div>
+                        {
+                            post.frontmatter.reddit &&
+                            <a
+                                href={post.frontmatter.reddit}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="article__share--reddit">
+                                <Reddit />
+                            </a>
+                        }
+                    </div>
+
+                </div>
+            </Container>
+            <div className="article__related">
+                <Container type="article">
                     <div className="article__related-title">Other Articles</div>
                     <div className="article__related-wrapper">
                         {otherArticles.edges
@@ -194,11 +244,14 @@ const ArticleTemplate = ({ data }) => {
                                     image={post.frontmatter.featuredImage}
                                     slug={post.fields.slug}
                                     key={post.id}
+                                    summary={post.frontmatter.summary}
+                                    reddit={post.frontmatter.reddit}
+                                    series={getSeries(post)}
                                 />
                             ))}
                     </div>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </Layout>
     );
 };
@@ -233,6 +286,13 @@ export const pageQuery = graphql`
                     name
                     slug
                 }
+                sponsored {
+                    priority
+                    name
+                    image
+                    text
+                }
+
             }
         }
         otherArticles: allMarkdownRemark(
@@ -247,6 +307,9 @@ export const pageQuery = graphql`
                         title
                         featuredImage
                         date(formatString: "MMMM DD, YYYY")
+                        summary
+                        reddit
+                        series
                     }
                     fields {
                         slug

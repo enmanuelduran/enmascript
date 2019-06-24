@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 
 const Cover = ({ children, image, classes }) => (
     <div
-        className={`cover ${classes}`}
-        style={{
-            backgroundImage: `url(${image}), linear-gradient(#074cb3, #000036)`
-        }}>
+        className={`cover ${classes}`}>
         {children}
     </div>
 );

@@ -1,7 +1,7 @@
 ---
 date: '2018-11-20T15:30:23.912Z'
 title: 'Modern web techniques/tricks for image handling and delivery on your site'
-summary: "In this article I'm going to share some of the best practices related to image handling and delivery in websites, if applied correctly these practices can make a huge impact in your site's performance."
+summary: "In this article I'm going to share some of the best practices related to image handling and delivery in websites, if applied correctly these practices can make a huge impact in your site's performance..."
 series: ['Performance']
 featuredImage: '2018-11-20-performant-image-techniques.png'
 reddit: 'https://www.reddit.com/r/webdev/comments/athdcd/modern_web_techniquestricks_for_image_handling/'

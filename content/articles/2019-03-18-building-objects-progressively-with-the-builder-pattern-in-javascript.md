@@ -1,7 +1,7 @@
 ---
 date: '2019-03-18T17:12:33.962Z'
 title: 'Building objects progressively with the builder pattern in javascript'
-summary: "The builder pattern allows us to create objects gradually as we consume or process information, in this article we'll be understanding how it works with some examples and definitions."
+summary: "The builder pattern allows us to create objects gradually as we consume or process information, in this article we'll be understanding how it works with some examples and definitions..."
 series: ['Javascript']
 featuredImage: '2019-03-18-builder-pattern-cover.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/b2ikoc/building_objects_progressively_with_the_builder/'

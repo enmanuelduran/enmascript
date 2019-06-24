@@ -2,7 +2,7 @@
 @import "../Common/media_queries";
 
 .header {
-    background: #fff;
+    background: $header-background-color;
     height: $header-height;
     box-shadow: 0px 2px 12px 1px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -72,7 +72,7 @@
         }
 
         a {
-            color: $text-color;
+            color: $white;
             padding: 5px;
             font-size: 21px;
             margin: 12px 0;
@@ -83,6 +83,10 @@
                 &:not(:last-child) {
                     margin: 0 15px;
                 }
+            }
+
+            svg path {
+                fill: $white;
             }
 
             &:hover,

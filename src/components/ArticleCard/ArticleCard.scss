@@ -1,14 +1,22 @@
 @import "../Common/variables";
 @import "../Common/media_queries";
 
+$reddit-color: #ff4500;
+$reddit-background-color: $white;
+
+$article-card-title-color: $dark-blue;
+$article-card-background-color: $white;
+$article-card-shadow: $grey;
+$article-card-text: $dark-blue;
+
 .article-card {
-    padding: 5px;
+    padding: 0;
     display: flex;
     flex: 1 1 378px;
-
-    @include min-device("tablet") {
-        max-width: 50%;
-    }
+    margin-bottom: 30px;
+    background: $article-card-background-color;
+    position: relative;
+    border-radius: 5px;
 
     &__content {
         display: flex;
@@ -16,28 +24,27 @@
         height: 100%;
     }
 
-    a {
-        flex: 1;
-        background-color: $article-card-background-color;
-        border-radius: $soft-border-radius;
-        overflow: hidden;
-        box-shadow: 0 1px 3px $article-card-shadow;
-    }
-
     &__image {
-        height: 120px;
+        height: 115px;
         background-size: cover;
         background-position: center;
         position: relative;
+        border-radius: $soft-border-radius $soft-border-radius 0 0;
+
+        @include min-device("desktop") {
+            height: 150px;
+        }
     }
 
     &__text-wrapper {
-        padding: 10px;
+        padding: 15px;
         display: flex;
-        text-align: center;
-        justify-content: center;
+        flex-direction: column;
         flex: 1;
-        align-items: center;
+
+        p {
+            color: $article-card-text;
+        }
     }
 
     h2 {
@@ -45,17 +52,16 @@
         font-weight: 200;
         color: $article-card-title-color;
         font-size: 20px;
+        font-weight: bold;
         transition: 0.1s color linear;
 
         @include min-device("desktop") {
-            font-size: 21px;
+            font-size: 30px;
         }
     }
 
-    &:hover {
-        h2 {
-            color: $text-link-color;
-        }
+    h2:hover {
+        color: $text-link-color;
     }
 
     &__info {
@@ -66,7 +72,7 @@
         span {
             padding: 5px;
             border-radius: $soft-border-radius;
-            background: rgba($black, 0.6);
+            background: rgba($black, .6);
             color: $white;
             font-size: $small-text-font-size;
 
@@ -74,5 +80,72 @@
                 margin-right: 5px;
             }
         }
+    }
+
+    &__title {
+        flex: 1;
+        border-radius: $soft-border-radius;
+        overflow: hidden;
+    }
+
+    &__series {
+        position:relative;
+        display: flex;
+    }
+
+    &__serie {
+        border-radius: $strong-border-radius;
+        border: 2px solid $yellow;
+        background: $white;
+        color: $yellow;
+        font-size: $small-text-font-size;
+        padding: 0 10px;
+        bottom: 0;
+        position: relative;
+        margin-right: 5px;
+        height: 35px;
+        align-items: center;
+        display: flex;
+    }
+
+    &__reddit {
+        background: $reddit-background-color;
+        border-radius: $strong-border-radius;
+        border: 2px solid $reddit-color;
+        align-items: center;
+        align-self: flex-start;
+        padding: 0 10px 0 5px;
+        display: flex;
+        height: 35px;
+        margin-right: 10px;
+
+        svg {
+            width: 27px;
+            height: 27px;
+        }
+
+        path {
+            fill: $reddit-color;
+        }
+
+        span {
+            color: $reddit-color;
+            font-size: $medium-font-size;
+            padding-left: 5px;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 15px;
+        bottom: -15px;
+    }
+
+    &__readmore {
+        padding-left: 5px;
+        display: inline-flex;
+        align-items: center;
     }
 }

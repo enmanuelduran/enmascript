@@ -1,7 +1,7 @@
 ---
 date: '2018-07-06T17:12:33.962Z'
 title: 'const, let and var'
-summary: 'const, let and var, when should I use which?, here some of the most remarkable differences and use cases for each of them.'
+summary: 'const, let and var, when should I use which?, here some of the most remarkable differences and use cases for each of them...'
 series: ['Javascript']
 featuredImage: '2018-07-06-const-let-and-var.png'
 ---

@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Container from 'components/Container';
 
 const Contact = ({ data }) => (
-    <Layout section="contact">
+    <Layout section="contact" classes="articles__layout">
         <Helmet
             title="Contact"
             meta={[

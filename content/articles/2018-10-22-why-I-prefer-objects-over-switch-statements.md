@@ -1,7 +1,7 @@
 ---
 date: '2018-10-22T01:10:23.912Z'
 title: 'Why I prefer objects over switch statements'
-summary: 'A different approach to handle your conditions.'
+summary: 'A different approach to handle your conditions...'
 series: ['Javascript']
 featuredImage: '2018-10-22-objects-over-switch.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/arkefh/an_alternative_approach_to_switch_statements_in/'
