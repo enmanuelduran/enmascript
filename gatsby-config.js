@@ -35,7 +35,7 @@ module.exports = {
                 priority: 1,
                 name: 'Why I prefer objects over switch statements',
                 image:
-                    'http://localhost:8000/images/2018-10-22-objects-over-switch.png',
+                    'https://enmascript.com/images/2018-10-22-objects-over-switch.png',
                 text:
                     'Explore a different and scalable way of treating multiple conditionals. No switch, no else if.'
             }
