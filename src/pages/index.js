@@ -4,23 +4,22 @@ import Container from 'components/Container';
 import { graphql, Link } from 'gatsby';
 import Cover from 'components/Cover';
 import ArticleCard from 'components/ArticleCard';
+import AsideAds from 'components/AsideAds';
+import AsideSeries from 'components/AsideSeries';
 import CoverImage from 'images/cover.png';
 import { Reddit } from 'components/Icons/SocialIcons';
-import shortid from 'shortid';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;
     const { edges: coverPost } = data.coverData;
     const siteMetadata = data.metadata.siteMetadata;
-    const sponsoredHeroCta = siteMetadata.sponsored.find(
-        ad => ad.priority === 1
-    );
     const getSeries = post => {
         return siteMetadata.series_list
             && siteMetadata.series_list.filter(elm =>
             post.frontmatter.series.includes(elm.name)
         );
     };
+    const [sponsoredHeroCta, ...sponsoredList] = siteMetadata.sponsored;
 
     return (
         <Layout section="home" classes="home">
@@ -102,39 +101,12 @@ const Index = ({ data }) => {
                                 series={getSeries(post)}
                                 reddit={post.frontmatter.reddit}
                             />
-                        })}
+                        })
+                    }
                     </section>
                     <section className="aside">
-                        <div className="aside__ads">
-                            <Link target="_blank"
-                               rel="noopener noreferrer"
-                               className="aside__ad"
-                               to="/articles/2018/10/22/why-I-prefer-objects-over-switch-statements">
-                                <img
-                                    src={siteMetadata.sponsored[1].image}
-                                    alt={siteMetadata.sponsored[1].name}
-                                />
-                                <p className="sponsoredText">{siteMetadata.sponsored[1].text}</p>
-                            </Link>
-                        </div>
-                        <p className="aside__title">Popular Series</p>
-                        <div className="aside__series">
-                            {siteMetadata.series_list.map(element => {
-                                const image = require(`../../content/images/${
-                                    element.featuredImage
-                                }`);
-
-                                return (
-                                    <Link
-                                        key={shortid.generate()}
-                                        style={{ backgroundImage: `url(${image})` }}
-                                        className="series__card series__card--aside"
-                                        data-name={element.name}
-                                        to={element.slug}
-                                    />
-                                );
-                            })}
-                        </div>
+                        <AsideAds data={sponsoredList} />
+                        <AsideSeries seriesList={siteMetadata.series_list} />
                     </section>
             </Container>
         </Layout>
@@ -200,6 +172,7 @@ export const HomeQuery = graphql`
                     name
                     image
                     text
+                    url
                 }
                 series_list {
                     slug

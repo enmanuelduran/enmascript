@@ -29,15 +29,17 @@ module.exports = {
                 image:
                     'https://enmascript.com/images/promoted/promoted-2019-03-09.png',
                 text:
-                    'MediaQuerySensor is a lightweight library that helps you execute functions based on media query breakpoints instead of the every resize event.'
+                    'MediaQuerySensor is a lightweight library that helps you execute functions based on media query breakpoints instead of the every resize event.',
+                url: 'https://github.com/enmanuelduran/mediaquerysensor',
             },
             {
-                priority: 1,
+                priority: 2,
                 name: 'Why I prefer objects over switch statements',
                 image:
                     'https://enmascript.com/images/2018-10-22-objects-over-switch.png',
                 text:
-                    'Explore a different and scalable way of treating multiple conditionals. No switch, no else if.'
+                    'Explore a different and scalable way of treating multiple conditionals. No switch, no else if.',
+                url: 'https://enmascript.com/articles/2018/10/22/why-I-prefer-objects-over-switch-statements',
             }
         ],
         series_list: [

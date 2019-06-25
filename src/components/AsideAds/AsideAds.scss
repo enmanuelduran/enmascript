@@ -12,6 +12,7 @@ $aside-cta-text-color: $white;
     &__ads {
         background: $dark-blue;
         border-radius: $border-radius;
+        margin-bottom: 5px;
 
         @include min-device("desktop") {
             max-height: 170px;

@@ -5,15 +5,13 @@ import Layout from 'components/layout';
 import { graphql, Link } from 'gatsby';
 import { Twitter, Facebook, LinkedIn, Reddit } from 'components/Icons/SocialIcons';
 import ArticleCard from 'components/ArticleCard';
+import AsideAds from 'components/AsideAds';
 import MailchimpWrapper from 'components/MailchimpWrapper';
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
     const url = metadata.siteMetadata.url + data.article.fields.slug;
     const { title } = post.frontmatter;
-    const sponsoredHeroCta = metadata.siteMetadata.sponsored.find(
-        ad => ad.priority === 1
-    );
 
     const share = () => {
         const networks = {
@@ -192,18 +190,7 @@ const ArticleTemplate = ({ data }) => {
                     <MailchimpWrapper />
                 </div>
                 <div className="aside">
-                    <section className="aside__ads">
-                        <a target="_blank"
-                           rel="noopener noreferrer"
-                           className="aside__ad"
-                           href="https://github.com/enmanuelduran/mediaquerysensor">
-                            <img
-                                src={sponsoredHeroCta.image}
-                                alt={sponsoredHeroCta.name}
-                            />
-                            <p className="sponsoredText">{sponsoredHeroCta.text}</p>
-                        </a>
-                    </section>
+                    <AsideAds data={siteMetadata.sponsored} />
                     <div className="article__share">
                         <div onClick={shareOn('twitter')}>
                             <Twitter />
@@ -291,6 +278,7 @@ export const pageQuery = graphql`
                     name
                     image
                     text
+                    url
                 }
 
             }
