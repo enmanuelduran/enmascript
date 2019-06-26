@@ -1,12 +1,14 @@
 import React from 'react';
 import shortid from 'shortid';
 import { Link } from 'gatsby';
+import styles from './AsideSeries.module.scss';
+import seriesCardStyles from 'components/SeriesCard/SeriesCard.module.scss';
 
 const AsideSeries = ({seriesList}) => {
     return (
-        <div className="aside__series">
-            <p className="aside__title">Popular Series</p>
-            <div className="aside__series">
+        <div>
+            <p className={styles.asideTitle}>Popular Series</p>
+            <div className={styles.asideSeries}>
                 {seriesList.map(element => {
                     const image = require(`content/images/${
                         element.featuredImage
@@ -16,7 +18,7 @@ const AsideSeries = ({seriesList}) => {
                         <Link
                             key={shortid.generate()}
                             style={{ backgroundImage: `url(${image})` }}
-                            className="series__card series__card--aside"
+                            className={`${seriesCardStyles.seriesCard} ${styles.asideSeriesCard}`}
                             data-name={element.name}
                             to={element.slug}
                         />

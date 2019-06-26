@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Reddit } from 'components/Icons/SocialIcons';
+import styles from './ArticleCard.module.scss';
 
 const ArticleCard = ({
     image,
@@ -13,46 +14,46 @@ const ArticleCard = ({
     reddit,
     series
 }) => (
-    <div className="article-card">
-        <article className="article-card__content">
+    <div className={styles.articleCard}>
+        <article className={styles.cardContent}>
             <Link
                 to={slug}
-                className="article-card__image"
+                className={styles.cardImage}
                 style={{ backgroundImage: `url(/images/${image})` }}>
-                <div className="article-card__info">
+                <div className={styles.cardInfo}>
                     <span>{date}</span>
                     <span>{readingTime}</span>
                 </div>
             </Link>
-            <div className="article-card__text-wrapper">
-                <Link to={slug} className="article-card__title">
+            <div className={styles.cardTextWrapper}>
+                <Link to={slug} className={styles.cardTitle}>
                     <h2>{title}</h2>
                 </Link>
                 <p>
                     {summary}
-                    <Link to={slug} className="article-card__readmore">
+                    <Link to={slug} className={styles.cardReadMore}>
                         Read more
                     </Link>
                 </p>
-                <div className="article-card__buttons">
+                <div className={styles.cardButtons}>
                     {reddit && (
                         <a
                             href={reddit}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="article-card__reddit">
+                            className={styles.cardReddit}>
                             <Reddit />
                             <span>Let's talk</span>
                         </a>
                     )}
 
-                    <div className="article-card__series">
+                    <div className={styles.cardSeries}>
                         {series.length > 0
                             && series.map(serie =>  (
                             <Link
                                 key={serie.slug}
                                 to={serie.slug}
-                                className="article-card__serie">
+                                className={styles.cardSerie}>
                                 #{serie.name}
                             </Link>
                         ))}

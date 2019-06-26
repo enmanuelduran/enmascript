@@ -1,0 +1,63 @@
+@import "../Common/media_queries";
+@import '../Common/variables';
+
+.aside {
+    position: sticky;
+    top: 60px;
+    padding-bottom: 10px;
+
+    @include min-device("desktop") {
+        height: 300px;
+    }
+
+}
+
+.asideSeries {
+    display: flex;
+    margin: 0 -5px;
+    flex-wrap: wrap;
+
+    @include min-device("tablet") {
+        margin: 0;
+    }
+}
+
+.asideTitle {
+    margin: 15px 0 0;
+}
+
+.asideSeriesCard {
+    height: 80px;
+    overflow: hidden;
+    flex: 1 1 calc(50% - 10px);
+    margin: 5px;
+
+    @include min-device("tablet") {
+        flex: 1 1 auto;
+        height: 60px;
+        margin: 5px 0;
+    }
+
+    &:before {
+        content: attr(data-name);
+        background-color: rgba(0, 0, 0, .5);
+        color: $white;
+        top: 0;
+        text-align: center;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        transition: .15s ease-in-out transform;
+        font-size: $text-font-size;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:hover {
+      &:before {
+        transform: translateX(0);
+      }
+    }
+}

@@ -103,11 +103,11 @@ const Index = ({ data }) => {
                             />
                         })
                     }
-                    </section>
-                    <section className="aside">
-                        <AsideAds data={sponsoredList} />
-                        <AsideSeries seriesList={siteMetadata.series_list} />
-                    </section>
+                </section>
+                <section className="aside">
+                    <AsideAds data={sponsoredList} />
+                    <AsideSeries seriesList={siteMetadata.series_list} />
+                </section>
             </Container>
         </Layout>
     );

@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Cover.module.scss';
 
-const Cover = ({ children, image, classes }) => (
+const Cover = ({ children, classes }) => (
     <div
-        className={`cover ${classes}`}>
+        className={`${styles.cover} ${classes}`}>
         {children}
     </div>
 );
 
 Cover.propTypes = {
-    image: PropTypes.string.isRequired,
     classes: PropTypes.string
 };
 

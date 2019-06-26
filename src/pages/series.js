@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import Container from 'components/Container';
 import { graphql, Link } from 'gatsby';
 import shortid from 'shortid';
+import styles from 'components/SeriesCard/SeriesCard.module.scss';
 
 const Series = ({ data }) => (
     <Layout section="series">
@@ -28,7 +29,7 @@ const Series = ({ data }) => (
                 href={`${data.site.siteMetadata.url}/series`}
             />
         </Helmet>
-        <Container classes="series">
+        <Container>
             {data.site.siteMetadata.series_list.map(element => {
                 const image = require(`../../content/images/${
                     element.featuredImage
@@ -38,7 +39,7 @@ const Series = ({ data }) => (
                     <Link
                         key={shortid.generate()}
                         style={{ backgroundImage: `url(${image})` }}
-                        className="series__card"
+                        className={styles.seriesCard}
                         to={element.slug}
                     />
                 );

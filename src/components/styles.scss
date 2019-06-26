@@ -1,17 +1,8 @@
 @import "Common/global";
 
-@import "ArticleCard/ArticleCard";
-@import "AsideAds/AsideAds";
-@import "Container/Container";
-@import "Header/Header";
-@import "Footer/Footer";
-@import "Cover/Cover";
-@import "MailchimpWrapper/MailchimpWrapper";
-
 @import "../pages/about-me";
 @import "../pages/articles";
 @import "../pages/index";
-@import "../pages/series";
 @import "../pages/code/mediaquerysensor";
 @import "../components/Common/prismjs-theme";
 @import "../templates/articles";

@@ -1,4 +1,5 @@
 @import "../Common/media_queries";
+@import '../Common/variables';
 
 $page-width: 1000px;
 $articles-width: 750px;
@@ -37,13 +38,5 @@ $articles-width: 750px;
 
         padding-top: 0;
 
-    }
-
-    &--header {
-        align-items: center;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        max-width: $page-width;
     }
 }
