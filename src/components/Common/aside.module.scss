@@ -1,0 +1,12 @@
+@import "../Common/media_queries";
+
+.aside {
+    position: sticky;
+    top: 60px;
+    padding-bottom: 10px;
+
+    @include min-device("desktop") {
+        height: 300px;
+    }
+
+}

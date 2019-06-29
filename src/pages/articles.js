@@ -6,6 +6,8 @@ import Container from 'components/Container';
 import ArticleCard from 'components/ArticleCard';
 import AsideAds from 'components/AsideAds';
 import AsideSeries from 'components/AsideSeries';
+import styles from './articles.module.scss';
+import asideStyles from 'components/Common/aside.module.scss';
 
 const Articles = ({ data }) => {
     const { edges: posts } = data.articles;
@@ -44,8 +46,8 @@ const Articles = ({ data }) => {
                 />
             </Helmet>
 
-            <Container classes="home__container articles__container">
-                <section className="home__articles">
+            <Container classes={styles.articlesContainer}>
+                <section>
                     {posts
                         .filter(post => post.node.frontmatter.title.length > 0)
                         .map(({ node: post }) => {
@@ -62,7 +64,7 @@ const Articles = ({ data }) => {
                             />
                         })}
                 </section>
-                <section className="aside">
+                <section className={asideStyles.aside}>
                     <AsideAds data={siteMetadata.sponsored} />
                     <AsideSeries seriesList={siteMetadata.series_list} />
             </section>

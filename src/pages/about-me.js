@@ -5,9 +5,10 @@ import { graphql } from 'gatsby';
 import Container from 'components/Container';
 import About from '../../content/about-me.json';
 import shortid from 'shortid';
+import styles from './about-me.module.scss';
 
 const AboutMe = ({ data }) => (
-    <Layout section="aboutme" classes="articles__layout">
+    <Layout section="aboutme" classes={styles.layout}>
         <Helmet
             title="About me"
             meta={[
@@ -29,7 +30,7 @@ const AboutMe = ({ data }) => (
                 href={`${data.site.siteMetadata.url}/about-me`}
             />
         </Helmet>
-        <Container classes="about-me">
+        <Container classes={styles.aboutMe}>
             <p>{About.intro}</p>
 
             <h2>{About.whatIDo.title}</h2>

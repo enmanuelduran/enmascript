@@ -1,17 +1,6 @@
 @import "../Common/media_queries";
 @import '../Common/variables';
 
-.aside {
-    position: sticky;
-    top: 60px;
-    padding-bottom: 10px;
-
-    @include min-device("desktop") {
-        height: 300px;
-    }
-
-}
-
 .asideSeries {
     display: flex;
     margin: 0 -5px;
@@ -26,7 +15,7 @@
     margin: 15px 0 0;
 }
 
-.asideSeriesCard {
+a.asideSeriesCard {
     height: 80px;
     overflow: hidden;
     flex: 1 1 calc(50% - 10px);

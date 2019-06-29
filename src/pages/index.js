@@ -8,6 +8,10 @@ import AsideAds from 'components/AsideAds';
 import AsideSeries from 'components/AsideSeries';
 import CoverImage from 'images/cover.png';
 import { Reddit } from 'components/Icons/SocialIcons';
+import styles from 'index.module.scss';
+import cardStyles from 'components/ArticleCard/ArticleCard.module.scss';
+import containerStyles from 'components/Container/Container.module.scss';
+import asideStyles from 'components/Common/aside.module.scss';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;
@@ -22,15 +26,15 @@ const Index = ({ data }) => {
     const [sponsoredHeroCta, ...sponsoredList] = siteMetadata.sponsored;
 
     return (
-        <Layout section="home" classes="home">
-            <Cover image={CoverImage} classes="home__cover">
-                <Container classes="home__cover-container">
+        <Layout section="home">
+            <Cover image={CoverImage} classes={styles.homeCover}>
+                <Container classes={`${styles.homeCoverContainer} ${containerStyles.containerPage}`}>
                     {coverPost.map(({ node: post }) => (
-                        <div className="home__cta-article" key={post.id}>
-                            <div className="home__cta-content">
-                                <div className="home__relevant-flag">Relevant now</div>
-                                <div className="home__date">{post.frontmatter.date}</div>
-                                <div className="home__reading-time">{post.fields.readingTime.text}</div>
+                        <div className={styles.homeCoverCtaArticle} key={post.id}>
+                            <div>
+                                <div className={styles.homeCoverCtaRelevantFlag}>Relevant now</div>
+                                <div className={styles.homeCoverCtaDate}>{post.frontmatter.date}</div>
+                                <div className={styles.homeCoverCtaReadingTime}>{post.fields.readingTime.text}</div>
                                 <h1>
                                     <Link
                                         data-gtm-track="article-cover-cta-click"
@@ -38,7 +42,7 @@ const Index = ({ data }) => {
                                         {post.frontmatter.title}
                                     </Link>
                                 </h1>
-                                <p className="home__cta-summary">
+                                <p className={styles.homeCoverCtaSummary}>
                                     {post.frontmatter.summary}
                                     <Link
                                         data-gtm-track="article-cover-cta-click"
@@ -46,19 +50,19 @@ const Index = ({ data }) => {
                                         Read more
                                     </Link>
                                 </p>
-                                <div className="article-card__buttons">
+                                <div className={`${styles.homeCoverCtabuttons} ${cardStyles.cardButtons}`}>
                                 {post.frontmatter.reddit && (
                                     <a
                                         href={post.frontmatter.reddit}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="article-card__reddit">
+                                        className={cardStyles.cardReddit}>
                                         <Reddit />
                                         <span>Let's talk</span>
                                     </a>
                                 )}
                                     {getSeries(post).map(serie =>  (
-                                        <div className="article__series" key={serie.slug}>
+                                        <div className={styles.homeArticleSeries} key={serie.slug}>
                                             <Link
                                                 to={serie.slug}>
                                                 #{serie.name}
@@ -73,7 +77,7 @@ const Index = ({ data }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-gtm-track="promoted-cover-cta-click"
-                        className="hero-promoted-ad"
+                        className={styles.heroPromotedAd}
                         href="https://github.com/enmanuelduran/mediaquerysensor">
                         <img
                             src={sponsoredHeroCta.image}
@@ -85,8 +89,8 @@ const Index = ({ data }) => {
                 </Container>
             </Cover>
 
-            <Container classes="home__container">
-                <section className="home__articles">
+            <Container classes={`${styles.homeContainer} ${containerStyles.containerPage}`}>
+                <section>
                     {posts
                         .filter(post => post.node.frontmatter.title.length > 0)
                         .map(({ node: post }) => {
@@ -104,7 +108,7 @@ const Index = ({ data }) => {
                         })
                     }
                 </section>
-                <section className="aside">
+                <section className={asideStyles.aside}>
                     <AsideAds data={sponsoredList} />
                     <AsideSeries seriesList={siteMetadata.series_list} />
                 </section>

@@ -106,7 +106,7 @@ nav {
         }
 
         &:hover,
-        .activeLink {
+        &.activeLink {
             background: $menu-active-background-color;
             color: $menu-active-text-color;
             border-radius: $border-radius;
@@ -117,3 +117,5 @@ nav {
         }
     }
 }
+
+

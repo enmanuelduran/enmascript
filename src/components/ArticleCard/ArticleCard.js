@@ -12,13 +12,16 @@ const ArticleCard = ({
     date,
     readingTime,
     reddit,
-    series
+    series,
+    classes,
+    titleClass,
+    imageClass
 }) => (
-    <div className={styles.articleCard}>
+    <div className={`${styles.articleCard} ${classes}`}>
         <article className={styles.cardContent}>
             <Link
                 to={slug}
-                className={styles.cardImage}
+                className={`${styles.cardImage} ${imageClass}`}
                 style={{ backgroundImage: `url(/images/${image})` }}>
                 <div className={styles.cardInfo}>
                     <span>{date}</span>
@@ -26,7 +29,7 @@ const ArticleCard = ({
                 </div>
             </Link>
             <div className={styles.cardTextWrapper}>
-                <Link to={slug} className={styles.cardTitle}>
+                <Link to={slug} className={`${styles.cardTitle} ${titleClass}`}>
                     <h2>{title}</h2>
                 </Link>
                 <p>

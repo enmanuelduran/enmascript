@@ -9,34 +9,33 @@ $articles-width: 750px;
     margin: 0 auto;
     padding: 0 20px;
 
-    &--page {
-        max-width: $page-width;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
     &--article {
         max-width: $articles-width;
     }
+}
 
-    &--template-article {
-        max-width: $page-width;
-        display: grid;
-        grid-template-columns: 100%;
-        max-width: 730px;
-        padding-top: 15px;
+.containerPage {
+    max-width: $page-width;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-        @include min-device("desktop") {
-            grid-template-columns: 1fr 250px;
-            grid-gap: 1.5rem;
-            max-width: 1000px;
-        }
+.templateArticle {
+    max-width: $page-width;
+    display: grid;
+    grid-template-columns: 100%;
+    max-width: 730px;
+    padding-top: 15px;
+
+    @include min-device("desktop") {
+        grid-template-columns: 1fr 250px;
+        grid-gap: 1.5rem;
+        max-width: 1000px;
     }
+}
 
-    &--template-article-no-padding {
-        @extend .container--template-article;
+.containerArticleNoPadding {
+    @extend .templateArticle;
 
-        padding-top: 0;
-
-    }
+    padding-top: 0;
 }

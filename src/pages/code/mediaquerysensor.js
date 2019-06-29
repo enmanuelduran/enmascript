@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from 'components/layout';
 import Helmet from 'react-helmet';
 import Container from 'components/Container';
+import styles from './mediaquerysensor.module.scss';
 
 let MQS = {};
 
@@ -67,11 +68,11 @@ class MediaQuerySensor extends React.Component {
 
     render() {
         return (
-            <Layout section="code" classes="articles__layout">
+            <Layout section="code" classes={styles.layout}>
                 <Helmet title="MediaQuerySensor">
                     <link rel="canonical" href="/code/mediaquerysensor" />
                 </Helmet>
-                <div className="mqs-cover">
+                <div className={styles.mqsCover}>
                     <Container>
                         <h2>MQS</h2>
                         <div>MediaQuerySensor</div>
@@ -109,21 +110,21 @@ class MediaQuerySensor extends React.Component {
                         horizontally from 360px to +1000px multiple times.
                     </p>
                     <div
-                        className="mqs-result"
+                        className={styles.mqsResult}
                         style={{ backgroundColor: this.state.color }}>
                         You are in <strong>{this.state.text}</strong>
                     </div>
-                    <button onClick={this.removeSensor('mobileSensor')}>
+                    <button className={styles.mqsDemoButton} onClick={this.removeSensor('mobileSensor')}>
                         Remove mobile sensor
                     </button>
-                    <button onClick={this.removeSensor('tabletSensor')}>
+                    <button className={styles.mqsDemoButton} onClick={this.removeSensor('tabletSensor')}>
                         Remove tablet sensor
                     </button>
-                    <button onClick={this.removeSensor('desktopSensor')}>
+                    <button className={styles.mqsDemoButton} onClick={this.removeSensor('desktopSensor')}>
                         Remove desktop sensor
                     </button>
-                    <button onClick={MQS.empty}>Remove All</button>
-                    <button onClick={this.getActiveSensors}>
+                    <button className={styles.mqsDemoButton} onClick={MQS.empty}>Remove All</button>
+                    <button className={styles.mqsDemoButton} onClick={this.getActiveSensors}>
                         Get Active Sensors
                     </button>
                     <p>
