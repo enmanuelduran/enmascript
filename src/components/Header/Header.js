@@ -36,7 +36,7 @@ class Header extends React.Component {
                         <span />
                         <span />
                     </div>
-                    <nav className={this.state.isOpen ? styles.open : ''}>
+                    <nav className={`${this.state.isOpen ? styles.open : ''} ${styles.headerNavigation}`}>
                         <Link
                             to="/"
                             className={this.isMenuOptionActive(
@@ -86,7 +86,7 @@ class Header extends React.Component {
                             Contact
                         </Link>
                         <a
-                            className={styles.githubLink}
+                            className={styles.headerGithubLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://github.com/enmanuelduran/enmascript">

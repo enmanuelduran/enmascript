@@ -58,13 +58,13 @@
     }
 }
 
-.successContainer,
-.formContainer {
+.mailchimpSuccessContainer,
+.mailchimpFormContainer {
     flex-direction: column;
     display: flex;
 }
 
-.formContainer {
+.mailchimpFormContainer {
     align-items: center;
     position: relative;
     transition: transform 0.2s ease-in-out, background 0.2s linear;
@@ -76,7 +76,7 @@
         background: rgba($success-green, 0.9);
     }
 
-    .formContainer {
+    .mailchimpFormContainer {
         transform: translateY(-250px);
     }
 }
@@ -89,7 +89,7 @@
     margin-top: 5px;
 }
 
-.successContainer {
+.mailchimpSuccessContainer {
     position: absolute;
     top: 50%;
     left: 0;

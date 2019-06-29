@@ -50,7 +50,7 @@ class MailchimpWrapper extends React.Component {
                 {({ formState }) => {
                     return (
                         <React.Fragment>
-                            <div className={styles.formContainer}>
+                            <div className={styles.mailchimpFormContainer}>
                                 <p>
                                     Want to be the first to receive our cool
                                     updates?
@@ -73,7 +73,7 @@ class MailchimpWrapper extends React.Component {
                             </div>
                             {this.state.subscribed &&
                                 !formState.errors.email && (
-                                    <div className={styles.successContainer}>
+                                    <div className={styles.mailchimpSuccessContainer}>
                                         <Rocket />
                                         Welcome aboard, Woohoo!
                                     </div>

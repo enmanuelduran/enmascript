@@ -45,7 +45,7 @@ $page-width: 1000px;
     }
 }
 
-.github-link {
+.headerGithubLink {
     display: flex;
     align-items: center;
 }
@@ -58,7 +58,7 @@ $page-width: 1000px;
     max-width: $page-width;
 }
 
-nav {
+.headerNavigation {
     height: 100%;
     width: 100%;
     position: fixed;
@@ -117,5 +117,4 @@ nav {
         }
     }
 }
-
 

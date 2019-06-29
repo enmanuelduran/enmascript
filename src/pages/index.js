@@ -12,17 +12,12 @@ import styles from 'index.module.scss';
 import cardStyles from 'components/ArticleCard/ArticleCard.module.scss';
 import containerStyles from 'components/Container/Container.module.scss';
 import asideStyles from 'components/Common/aside.module.scss';
+import { getSeries } from 'helpers/articles';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;
     const { edges: coverPost } = data.coverData;
     const siteMetadata = data.metadata.siteMetadata;
-    const getSeries = post => {
-        return siteMetadata.series_list
-            && siteMetadata.series_list.filter(elm =>
-            post.frontmatter.series.includes(elm.name)
-        );
-    };
     const [sponsoredHeroCta, ...sponsoredList] = siteMetadata.sponsored;
 
     return (
@@ -61,13 +56,13 @@ const Index = ({ data }) => {
                                         <span>Let's talk</span>
                                     </a>
                                 )}
-                                    {getSeries(post).map(serie =>  (
+                                    {getSeries(post, siteMetadata).map(serie =>  (
                                         <div className={styles.homeArticleSeries} key={serie.slug}>
                                             <Link
                                                 to={serie.slug}>
                                                 #{serie.name}
                                             </Link>
-                                    </div>
+                                        </div>
                                     ))}
                             </div>
                             </div>
@@ -77,7 +72,7 @@ const Index = ({ data }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-gtm-track="promoted-cover-cta-click"
-                        className={styles.heroPromotedAd}
+                        className={styles.homeCoverPromotedAd}
                         href="https://github.com/enmanuelduran/mediaquerysensor">
                         <img
                             src={sponsoredHeroCta.image}
@@ -102,7 +97,7 @@ const Index = ({ data }) => {
                                 date={post.frontmatter.date}
                                 readingTime={post.fields.readingTime.text}
                                 summary={post.frontmatter.summary}
-                                series={getSeries(post)}
+                                series={getSeries(post, siteMetadata)}
                                 reddit={post.frontmatter.reddit}
                             />
                         })

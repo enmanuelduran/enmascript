@@ -9,16 +9,11 @@ import AsideSeries from 'components/AsideSeries';
 import styles from './articles.module.scss';
 import asideStyles from 'components/Common/aside.module.scss';
 import containerStyles from 'components/Container/Container.module.scss';
+import { getSeries } from 'helpers/articles';
 
 const Articles = ({ data }) => {
     const { edges: posts } = data.articles;
     const siteMetadata = data.metadata.siteMetadata;
-    const getSeries = post => {
-        return siteMetadata.series_list
-            && siteMetadata.series_list.filter(elm =>
-                post.frontmatter.series.includes(elm.name)
-            );
-    };
 
     return (
         <Layout section="articles">
@@ -60,7 +55,7 @@ const Articles = ({ data }) => {
                                 date={post.frontmatter.date}
                                 readingTime={post.fields.readingTime.text}
                                 summary={post.frontmatter.summary}
-                                series={getSeries(post)}
+                                series={getSeries(post, siteMetadata)}
                                 reddit={post.frontmatter.reddit}
                             />
                         })}

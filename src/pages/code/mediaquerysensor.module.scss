@@ -2,10 +2,6 @@
 
 $mqs-red: #b0373b;
 
-.layout {
-    background: #f9f9f9;
-}
-
 .mqsCover {
     width: 100%;
     height: 300px;
@@ -15,7 +11,7 @@ $mqs-red: #b0373b;
     justify-content: center;
     color: $white;
 
-    .container {
+    .mqsContainer {
         display: flex;
         align-items: center;
         justify-content: center;

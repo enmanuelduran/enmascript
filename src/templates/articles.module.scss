@@ -4,10 +4,6 @@
 $reddit-color: #ff4500;
 $cover-background-color: $dark-blue;
 
-.layout {
-    background: #f9f9f9;
-}
-
 .articleHero {
     background: #22262e;
     padding: 50px 0;
@@ -168,50 +164,6 @@ div.articleShareMobile {
         color: $text-link-color;
         fill: $text-link-color;
     }
-}
-.related {
-    background: $header-background-color;
-    padding-bottom: 20px;
-
-    @include max-device("desktop") {
-        padding: 0 10px 20px;
-    }
-}
-
-.relatedTitle {
-    font-size: 24px;
-    font-weight: bold;
-    padding: 20px 0;
-    color: $white;
-}
-
-.relatedWrapper {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: 1fr;
-
-    @include min-device("tablet") {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.relatedCard {
-    h2 {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 14px;
-        line-height: 21px;
-    }
-}
-
-.relatedCardTitle {
-    flex: 0 0 auto;
-}
-
-.relatedImage {
-    height: 100px;
 }
 
 .articleWrapper {

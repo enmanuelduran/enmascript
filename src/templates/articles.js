@@ -4,12 +4,13 @@ import Container from 'components/Container/Container';
 import Layout from 'components/layout';
 import { graphql, Link } from 'gatsby';
 import { Twitter, Facebook, LinkedIn, Reddit } from 'components/Icons/SocialIcons';
-import ArticleCard from 'components/ArticleCard';
 import AsideAds from 'components/AsideAds';
 import MailchimpWrapper from 'components/MailchimpWrapper';
 import styles from './articles.module.scss';
 import containerStyles from 'components/Container/Container.module.scss';
 import asideStyles from 'components/Common/aside.module.scss';
+import RelatedArticles from 'components/RelatedArticles/RelatedArticles';
+import { getSeries } from 'helpers/articles';
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
@@ -44,15 +45,8 @@ const ArticleTemplate = ({ data }) => {
 
     const shareOn = share();
     const siteMetadata = metadata.siteMetadata;
-    const getSeries = post => {
-        return siteMetadata.series_list
-            && siteMetadata.series_list.filter(elm =>
-            post.frontmatter.series.includes(elm.name)
-        );
-    };
-
     const postImage = `/images/${post.frontmatter.featuredImage}`;
-    const series = getSeries(post);
+    const series = getSeries(post, siteMetadata);
     const twitterDiscussionLink = `https://mobile.twitter.com/search?q=${encodeURIComponent(
         url
     )}`;
@@ -64,7 +58,7 @@ const ArticleTemplate = ({ data }) => {
         .pop()}.md`;
 
     return (
-        <Layout section="articles" classes={styles.layout}>
+        <Layout section="articles">
             <div className={`${styles.article} ${styles.articleHero}`}>
                 <Container classes={containerStyles.containerArticleNoPadding}>
                     <div>
@@ -101,7 +95,7 @@ const ArticleTemplate = ({ data }) => {
                     </div>
                 </Container>
             </div>
-            <Container classes={containerStyles.templateArticle}>
+            <Container classes={containerStyles.containerTemplateArticle}>
                 <Helmet
                     title={post.frontmatter.title}
                     meta={[
@@ -215,36 +209,12 @@ const ArticleTemplate = ({ data }) => {
                             </a>
                         }
                     </div>
-
                 </div>
             </Container>
-            <div className={styles.related}>
-                <Container classes={containerStyles.containerArticle}>
-                    <div className={styles.relatedTitle}>Other Articles</div>
-                    <div className={styles.relatedWrapper}>
-                        {otherArticles.edges
-                            .filter(
-                                post => post.node.frontmatter.title.length > 0
-                            )
-                            .map(({ node: post }) => (
-                                <ArticleCard
-                                    title={post.frontmatter.title}
-                                    date={post.frontmatter.date}
-                                    readingTime={post.fields.readingTime.text}
-                                    image={post.frontmatter.featuredImage}
-                                    slug={post.fields.slug}
-                                    key={post.id}
-                                    summary={post.frontmatter.summary}
-                                    reddit={post.frontmatter.reddit}
-                                    series={getSeries(post)}
-                                    classes={styles.relatedCard}
-                                    titleClass={styles.relatedCardTitle}
-                                    imageClass={styles.relatedImage}
-                                />
-                            ))}
-                    </div>
-                </Container>
-            </div>
+            <RelatedArticles
+                articles={otherArticles}
+                siteMetadata={siteMetadata}
+            />
         </Layout>
     );
 };

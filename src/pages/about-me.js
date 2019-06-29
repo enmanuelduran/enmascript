@@ -9,7 +9,7 @@ import styles from './about-me.module.scss';
 import containerStyles from 'components/Container/Container.module.scss';
 
 const AboutMe = ({ data }) => (
-    <Layout section="aboutme" classes={styles.layout}>
+    <Layout section="aboutme">
         <Helmet
             title="About me"
             meta={[

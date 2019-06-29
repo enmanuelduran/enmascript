@@ -3,11 +3,10 @@ import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Container from 'components/Container';
-import styles from './contact.module.scss';
 import containerStyles from 'components/Container/Container.module.scss';
 
 const Contact = ({ data }) => (
-    <Layout section="contact" classes={styles.layout}>
+    <Layout section="contact">
         <Helmet
             title="Contact"
             meta={[

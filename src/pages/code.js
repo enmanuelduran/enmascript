@@ -2,10 +2,10 @@ import React from 'react';
 import Layout from 'components/layout';
 import Helmet from 'react-helmet';
 import Container from 'components/Container';
-import { graphql, Link } from 'gatsby';
-import shortid from 'shortid';
-import styles from 'components/SeriesCard/SeriesCard.module.scss';
+import { graphql } from 'gatsby';
+import SeriesCard from 'components/SeriesCard';
 import containerStyles from 'components/Container/Container.module.scss';
+import shortid from 'shortid';
 
 const Code = ({ data }) => (
     <Layout section="code">
@@ -28,20 +28,14 @@ const Code = ({ data }) => (
             <link rel="canonical" href={`${data.site.siteMetadata.url}/code`} />
         </Helmet>
         <Container classes={containerStyles.containerPage}>
-            {data.site.siteMetadata.code_list.map(element => {
-                const image = require(`../../content/images/${
-                    element.featuredImage
-                }`);
-
-                return (
-                    <Link
-                        key={shortid.generate()}
-                        style={{ backgroundImage: `url(${image})` }}
-                        className={styles.seriesCard}
-                        to={element.slug}
-                    />
-                );
-            })}
+            {data.site.siteMetadata.code_list.map(element => (
+                <SeriesCard
+                    key={shortid.generate()}
+                    image={element.featuredImage}
+                    name={element.name}
+                    slug={element.slug}
+                />
+            ))}
         </Container>
     </Layout>
 );

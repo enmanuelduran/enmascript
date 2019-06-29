@@ -105,40 +105,7 @@ $home-tags-background-color: #13161b;
     }
 }
 
-.homeArticleSeries {
-    font-size: $small-text-font-size;
-    text-transform: uppercase;
-    margin-right: 5px;
-    display: inline-block;
-    border-radius: $soft-border-radius;
-    color: $tag-text-color;
-    padding: 5px;
-    background-color: $tag-background-color;
-    border-radius: 10px;
-    border: 2px solid $yellow;
-
-    a {
-        color: $yellow;
-    }
-}
-
-.homeContainer {
-    margin-top: -50px;
-    position: relative;
-    padding: 10px;
-    background: $background-color;
-    border-radius: $border-radius;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-    z-index: 1;
-
-    @include min-device("tablet") {
-        grid-template-columns: 1fr  300px;
-    }
-}
-
-.heroPromotedAd {
+.homeCoverPromotedAd {
     width: 98%;
     height: 190px;
     align-self: center;
@@ -184,3 +151,37 @@ $home-tags-background-color: #13161b;
         color: $cta-text-color;
     }
 }
+
+.homeArticleSeries {
+    font-size: $small-text-font-size;
+    text-transform: uppercase;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: $soft-border-radius;
+    color: $tag-text-color;
+    padding: 5px;
+    background-color: $tag-background-color;
+    border-radius: 10px;
+    border: 2px solid $yellow;
+
+    a {
+        color: $yellow;
+    }
+}
+
+.homeContainer {
+    margin-top: -50px;
+    position: relative;
+    padding: 10px;
+    background: $background-color;
+    border-radius: $border-radius;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    z-index: 1;
+
+    @include min-device("tablet") {
+        grid-template-columns: 1fr  300px;
+    }
+}
+

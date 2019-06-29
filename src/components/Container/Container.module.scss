@@ -21,7 +21,7 @@ $articles-width: 750px;
     flex-wrap: wrap;
 }
 
-.templateArticle {
+.containerTemplateArticle {
     max-width: $page-width;
     display: grid;
     grid-template-columns: 100%;
@@ -36,7 +36,7 @@ $articles-width: 750px;
 }
 
 .containerArticleNoPadding {
-    @extend .templateArticle;
+    @extend .containerTemplateArticle;
 
     padding-top: 0;
 }
