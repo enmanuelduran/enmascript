@@ -5,6 +5,7 @@ import Container from 'components/Container';
 import { graphql, Link } from 'gatsby';
 import shortid from 'shortid';
 import styles from 'components/SeriesCard/SeriesCard.module.scss';
+import containerStyles from 'components/Container/Container.module.scss';
 
 const Series = ({ data }) => (
     <Layout section="series">
@@ -29,7 +30,7 @@ const Series = ({ data }) => (
                 href={`${data.site.siteMetadata.url}/series`}
             />
         </Helmet>
-        <Container>
+        <Container classes={containerStyles.containerPage}>
             {data.site.siteMetadata.series_list.map(element => {
                 const image = require(`../../content/images/${
                     element.featuredImage

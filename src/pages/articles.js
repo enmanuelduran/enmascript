@@ -8,6 +8,7 @@ import AsideAds from 'components/AsideAds';
 import AsideSeries from 'components/AsideSeries';
 import styles from './articles.module.scss';
 import asideStyles from 'components/Common/aside.module.scss';
+import containerStyles from 'components/Container/Container.module.scss';
 
 const Articles = ({ data }) => {
     const { edges: posts } = data.articles;
@@ -46,7 +47,7 @@ const Articles = ({ data }) => {
                 />
             </Helmet>
 
-            <Container classes={styles.articlesContainer}>
+            <Container classes={`${styles.articlesContainer} ${containerStyles.containerPage}`}>
                 <section>
                     {posts
                         .filter(post => post.node.frontmatter.title.length > 0)

@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Container from 'components/Container';
 import styles from './contact.module.scss';
+import containerStyles from 'components/Container/Container.module.scss';
 
 const Contact = ({ data }) => (
     <Layout section="contact" classes={styles.layout}>
@@ -28,7 +29,7 @@ const Contact = ({ data }) => (
                 href={`${data.site.siteMetadata.url}/contact`}
             />
         </Helmet>
-        <Container>
+        <Container classes={containerStyles.containerPage}>
             <h2>Contact</h2>
             <p>
                 I always try to connect with the people that contacts me, feel

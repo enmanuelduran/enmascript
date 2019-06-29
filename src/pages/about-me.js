@@ -6,6 +6,7 @@ import Container from 'components/Container';
 import About from '../../content/about-me.json';
 import shortid from 'shortid';
 import styles from './about-me.module.scss';
+import containerStyles from 'components/Container/Container.module.scss';
 
 const AboutMe = ({ data }) => (
     <Layout section="aboutme" classes={styles.layout}>
@@ -30,7 +31,7 @@ const AboutMe = ({ data }) => (
                 href={`${data.site.siteMetadata.url}/about-me`}
             />
         </Helmet>
-        <Container classes={styles.aboutMe}>
+        <Container classes={`${styles.aboutMe} ${containerStyles.containerPage}`}>
             <p>{About.intro}</p>
 
             <h2>{About.whatIDo.title}</h2>
