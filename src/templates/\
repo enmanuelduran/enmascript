@@ -85,7 +85,7 @@ const ArticleTemplate = ({ data }) => {
                             </span>
                         </div>
                         {series.length > 0 && (
-                            <div className={styles.articleSeriesContainer}>
+                            <div className={`${styles.articleSeriesContainer} ${styles.articleWrapper}`}>
                                 <div className={styles.articleSeriesHead}>
                                     Part of the Series:
                                 </div>
@@ -143,10 +143,10 @@ const ArticleTemplate = ({ data }) => {
                     ]}>
                     <link rel="canonical" href={url} />
                 </Helmet>
-                <div className={`${styles.articleWrapper} ${styles.article}`}>
+                <div className="article">
                     <div className={styles.articleContent}>
                         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                        <div className={`${styles.articleShareMobile} ${styles.articleShare} ${styles.articleContentShare}`}>
+                        <div className={`${styles.articleShareMobile} ${styles.articleContentShare}`}>
                             <div onClick={shareOn('twitter')}>
                                 <Twitter />
                             </div>
@@ -219,7 +219,7 @@ const ArticleTemplate = ({ data }) => {
                 </div>
             </Container>
             <div className={styles.related}>
-                <Container classes={containerStyles.containerArticle}>
+                <Container type="article">
                     <div className={styles.relatedTitle}>Other Articles</div>
                     <div className={styles.relatedWrapper}>
                         {otherArticles.edges
@@ -238,7 +238,7 @@ const ArticleTemplate = ({ data }) => {
                                     reddit={post.frontmatter.reddit}
                                     series={getSeries(post)}
                                     classes={styles.relatedCard}
-                                    titleClass={styles.relatedCardTitle}
+                                    titleClass={styles.relatedTitle}
                                     imageClass={styles.relatedImage}
                                 />
                             ))}

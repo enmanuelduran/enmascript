@@ -178,3 +178,32 @@ pre > code.highlight {
         rgba(32, 39, 70, 0)
     ) !important;
 }
+
+.gatsby-highlight {
+    position: relative;
+    padding-bottom: 20px;
+
+    &:before {
+        background: $code-box-header-background-color;
+        color: $code-box-header-text-color;
+        height: 25px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        content: "CODE EXAMPLE";
+        font-size: 11px;
+        font-weight: bold;
+        text-align: right;
+        top: -5px;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 5px 5px 0 0;
+        box-sizing: border-box;
+        z-index: 1;
+    }
+}
+
+.gatsby-resp-image-link {
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.2);
+    border-radius: $soft-border-radius;
+}
