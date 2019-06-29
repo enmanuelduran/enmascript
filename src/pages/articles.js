@@ -68,7 +68,7 @@ const Articles = ({ data }) => {
                 <section className={asideStyles.aside}>
                     <AsideAds data={siteMetadata.sponsored} />
                     <AsideSeries seriesList={siteMetadata.series_list} />
-            </section>
+                </section>
             </Container>
         </Layout>
     );

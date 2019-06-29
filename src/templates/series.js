@@ -6,6 +6,9 @@ import { graphql } from 'gatsby';
 import AsideAds from 'components/AsideAds';
 import AsideSeries from 'components/AsideSeries';
 import ArticleCard from 'components/ArticleCard';
+import containerStyles from 'components/Container/Container.module.scss';
+import asideStyles from 'components/Common/aside.module.scss';
+import styles from 'pages/articles.module.scss';
 
 const SeriesArticlesTemplate = ({ data }) => {
     const { edges: posts } = data.articles;
@@ -20,8 +23,8 @@ const SeriesArticlesTemplate = ({ data }) => {
     return (
         <Layout section="series">
             <Helmet title="Series" />
-            <Container classes="home__container articles__container">
-                <section className="home__articles">
+            <Container classes={`${styles.articlesContainer} ${containerStyles.containerPage}`}>
+                <section>
                     {posts
                         .filter(post => post.node.frontmatter.title.length > 0)
                         .map(({ node: post }) => {
@@ -38,7 +41,7 @@ const SeriesArticlesTemplate = ({ data }) => {
                             />
                         })}
                 </section>
-                <section className="aside">
+                <section className={asideStyles.aside}>
                     <AsideAds data={siteMetadata.sponsored} />
                     <AsideSeries seriesList={siteMetadata.series_list} />
                 </section>

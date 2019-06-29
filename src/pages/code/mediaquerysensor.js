@@ -3,6 +3,7 @@ import Layout from 'components/layout';
 import Helmet from 'react-helmet';
 import Container from 'components/Container';
 import styles from './mediaquerysensor.module.scss';
+import containerStyles from 'components/Container/Container.module.scss';
 
 let MQS = {};
 
@@ -73,12 +74,12 @@ class MediaQuerySensor extends React.Component {
                     <link rel="canonical" href="/code/mediaquerysensor" />
                 </Helmet>
                 <div className={styles.mqsCover}>
-                    <Container>
+                    <Container classes={`${containerStyles.containerPage} ${styles.container}`}>
                         <h2>MQS</h2>
                         <div>MediaQuerySensor</div>
                     </Container>
                 </div>
-                <Container type="article" classes="mqs">
+                <Container classes={`${styles.mqs} ${containerStyles.containerPage}`}>
                     <p>
                         MQS is a very simple event wrapper for the
                         <a
