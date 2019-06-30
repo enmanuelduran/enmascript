@@ -4,8 +4,15 @@
 $reddit-color: #ff4500;
 $cover-background-color: $dark-blue;
 
+$article-cover-author-color: $yellow;
+$article-cover-date-color: $white;
+$article-cover-series-color: $white;
+$articles-cover-serie-color: $yellow;
+$article-cover-title: $white;
+
+$article-share-background: $white;
+
 .articleHero {
-    background: #22262e;
     padding: 50px 0;
     background-size: cover;
     background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.85), #100e17),
@@ -17,16 +24,16 @@ $cover-background-color: $dark-blue;
 
 .articleAuthor {
     font-weight: bold;
-    color: $yellow;
+    color: $article-cover-author-color;
 }
 
 .articleDate {
     margin-left: 10px;
-    color: $white;
+    color: $article-cover-date-color;
 }
 
 .articleReadingTime {
-    color: $white;
+    color: $article-cover-date-color;
 }
 
 .articleSeriesContainer {
@@ -36,7 +43,7 @@ $cover-background-color: $dark-blue;
 }
 
 .articleSeriesHead {
-    color: $white;
+    color: $article-cover-series-color;
     font-weight: bold;
     display: inline-block;
     margin-right: 10px;
@@ -51,11 +58,11 @@ $cover-background-color: $dark-blue;
     color: $tag-text-color;
     padding: 5px;
     background-color: $tag-background-color;
-    border-radius: 10px;
-    border: 2px solid $yellow;
+    border-radius: $border-radius;
+    border: 2px solid $articles-cover-serie-color;
 
     a {
-        color: $yellow;
+        color: $articles-cover-serie-color;
     }
 }
 
@@ -90,8 +97,8 @@ div.articleShareMobile {
     align-items: center;
     margin-top: 10px;
     flex-direction: row-reverse;
-    background: $white;
-    border-radius: 15px;
+    background: $article-share-background;
+    border-radius: $strong-border-radius;
     padding: 15px;
     box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.15);
 
@@ -181,7 +188,7 @@ div.articleShareMobile {
     h1 {
         font-size: 36px;
         line-height: 42px;
-        color: $white;
+        color: $article-cover-title;
         margin: 0 0 30px;
     }
 
@@ -212,7 +219,7 @@ div.articleShareMobile {
 
     pre,
     code {
-        font-size: 14px;
+        font-size: $medium-font-size;
         background: $code-box-background-color;
     }
 

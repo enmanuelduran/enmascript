@@ -1,8 +1,11 @@
 @import "~components/Common/variables";
 @import "~components/Common/media_queries";
 
+$related-articles-background: $darkest-blue;
+$related-articles-title-color: $white;
+
 .related {
-    background: $header-background-color;
+    background: $related-articles-background;
     padding-bottom: 20px;
 
     @include max-device("desktop") {
@@ -14,7 +17,7 @@
     font-size: 24px;
     font-weight: bold;
     padding: 20px 0;
-    color: $white;
+    color: $related-articles-title-color;
 }
 
 .relatedWrapper {
@@ -33,7 +36,7 @@
     }
 
     p {
-        font-size: 14px;
+        font-size: $medium-font-size;
         line-height: 21px;
     }
 }

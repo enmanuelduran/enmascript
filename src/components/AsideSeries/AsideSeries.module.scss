@@ -1,6 +1,8 @@
 @import "../Common/media_queries";
 @import '../Common/variables';
 
+$aside-series-card-text: $white;
+
 .asideSeries {
     display: flex;
     margin: 0 -5px;
@@ -30,7 +32,7 @@ a.asideSeriesCard {
     &:before {
         content: attr(data-name);
         background-color: rgba(0, 0, 0, .5);
-        color: $white;
+        color: $aside-series-card-text;
         top: 0;
         text-align: center;
         left: 0;

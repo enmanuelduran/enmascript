@@ -3,10 +3,17 @@
 
 $reddit-color: #ff4500;
 $reddit-background-color: $white;
+
 $article-card-title-color: $dark-blue;
 $article-card-background-color: $white;
 $article-card-shadow: $grey;
 $article-card-text: $dark-blue;
+
+$article-card-label-background: $black;
+$article-card-label-text: $white;
+
+$article-card-series-background: $white;
+$article-card-series-text: $yellow;
 
 .articleCard {
     padding: 0;
@@ -15,7 +22,7 @@ $article-card-text: $dark-blue;
     margin-bottom: 30px;
     background: $article-card-background-color;
     position: relative;
-    border-radius: 5px;
+    border-radius: $soft-border-radius;
 }
 
 .cardContent {
@@ -44,8 +51,8 @@ $article-card-text: $dark-blue;
     span {
         padding: 5px;
         border-radius: $soft-border-radius;
-        background: rgba($black, .6);
-        color: $white;
+        background: rgba($article-card-label-background, .6);
+        color: $article-card-label-text;
         font-size: $small-text-font-size;
 
         &:first-child {
@@ -137,8 +144,8 @@ $article-card-text: $dark-blue;
 .cardSerie {
     border-radius: $strong-border-radius;
     border: 2px solid $yellow;
-    background: $white;
-    color: $yellow;
+    background: $article-card-series-background;
+    color: $article-card-series-text;
     font-size: $small-text-font-size;
     padding: 0 10px;
     bottom: 0;

@@ -3,6 +3,11 @@
 
 $page-width: 1000px;
 
+$header-background-color: $darkest-blue;
+
+$menu-active-background-color: $yellow;
+$menu-active-text-color: $darkest-blue;
+
 .header {
     background: $header-background-color;
     height: $header-height;

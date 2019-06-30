@@ -2,9 +2,10 @@
 @import '../Common/variables';
 
 $aside-cta-text-color: $white;
+$aside-ads-background: $dark-blue;
 
 .asideAds {
-    background: $dark-blue;
+    background: $aside-ads-background;
     border-radius: $border-radius;
     margin-bottom: 5px;
 

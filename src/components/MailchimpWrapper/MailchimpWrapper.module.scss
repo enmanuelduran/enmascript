@@ -1,5 +1,11 @@
 @import '../Common/variables';
 
+$email-box-background-color: $blue;
+$email-box-text-color: $white;
+
+$email-box-success-green: #00cc81;
+$email-box-error-red: #de4338;
+
 .mailchimp {
     border-radius: $border-radius;
     margin-bottom: 20px;
@@ -54,7 +60,7 @@
 
     p {
         margin-top: 0;
-        color: $white;
+        color: $email-box-text-color;
     }
 }
 
@@ -73,7 +79,7 @@
 
 .mailchimpSuccess {
     &:before {
-        background: rgba($success-green, 0.9);
+        background: rgba($email-box-success-green, 0.9);
     }
 
     .mailchimpFormContainer {
@@ -82,8 +88,8 @@
 }
 
 .mailchimpError {
-    background: $error-red;
-    color: $white;
+    background: $email-box-error-red;
+    color: $email-box-text-color;
     padding: 10px;
     border-radius: $border-radius;
     margin-top: 5px;
@@ -96,14 +102,13 @@
     transform: translateY(-50%);
     z-index: 0;
     text-align: center;
-    color: $white;
+    color: $email-box-text-color;
     width: 100%;
 
     svg {
         margin: 0 auto;
         width: 80px;
         height: 80px;
-        color: $white;
         margin-bottom: 20px;
     }
 }

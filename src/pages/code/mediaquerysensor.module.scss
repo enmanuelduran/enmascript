@@ -1,6 +1,7 @@
 @import "../../components/Common/variables";
 
 $mqs-red: #b0373b;
+$mqs-cover-text-color: $white;
 
 .mqsCover {
     width: 100%;
@@ -9,7 +10,7 @@ $mqs-red: #b0373b;
     text-align: center;
     display: flex;
     justify-content: center;
-    color: $white;
+    color: $mqs-cover-text-color;
 
     .mqsContainer {
         display: flex;
