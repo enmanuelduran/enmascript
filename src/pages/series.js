@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Helmet from 'react-helmet';
 import Container from 'components/Container';
@@ -42,6 +43,10 @@ const Series = ({ data }) => (
         </Container>
     </Layout>
 );
+
+Series.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export const SeriesQuery = graphql`
     query SeriesQuery {

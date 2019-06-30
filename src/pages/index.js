@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Container from 'components/Container';
 import { graphql, Link } from 'gatsby';
@@ -110,6 +111,10 @@ const Index = ({ data }) => {
             </Container>
         </Layout>
     );
+};
+
+Index.propTypes = {
+    data: PropTypes.object.isRequired
 };
 
 export const HomeQuery = graphql`

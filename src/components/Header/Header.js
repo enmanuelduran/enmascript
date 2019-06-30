@@ -100,7 +100,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    section: PropTypes.string.isRequired
 };
 
 export default Header;

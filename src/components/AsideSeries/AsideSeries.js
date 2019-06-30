@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './AsideSeries.module.scss';
 import SeriesCard from 'components/SeriesCard';
 import shortid from 'shortid';
+import PropTypes from 'prop-types';
 
 const AsideSeries = ({seriesList}) => {
     return (
@@ -20,6 +21,10 @@ const AsideSeries = ({seriesList}) => {
             </div>
         </div>
     );
+};
+
+AsideSeries.propTypes = {
+    seriesList: PropTypes.array.isRequired
 };
 
 export default AsideSeries;

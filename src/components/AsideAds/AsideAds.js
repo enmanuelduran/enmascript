@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './AsideAds.module.scss';
+import PropTypes from 'prop-types';
 
 const AsideAds = ({data}) => {
     return (
@@ -17,6 +18,10 @@ const AsideAds = ({data}) => {
             </div>
         ))
     );
+};
+
+AsideAds.propTypes = {
+    data: PropTypes.array.isRequired
 };
 
 export default AsideAds;

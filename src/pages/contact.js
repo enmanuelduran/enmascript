@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
@@ -51,6 +52,10 @@ const Contact = ({ data }) => (
         </Container>
     </Layout>
 );
+
+Contact.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export const ContactQuery = graphql`
     query ContactQuery {

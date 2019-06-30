@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Container from 'components/Container';
 import Helmet from 'react-helmet';
 import Layout from 'components/layout';
@@ -93,5 +94,9 @@ export const seriesQuery = graphql`
         }
     }
 `;
+
+SeriesArticlesTemplate.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export default SeriesArticlesTemplate;

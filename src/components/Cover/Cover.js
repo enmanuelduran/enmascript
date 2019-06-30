@@ -10,7 +10,8 @@ const Cover = ({ children, classes }) => (
 );
 
 Cover.propTypes = {
-    classes: PropTypes.string
+    classes: PropTypes.string,
+    children: PropTypes.node.isRequired
 };
 
 Cover.defaultProps = {

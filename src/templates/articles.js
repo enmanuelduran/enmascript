@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Container from 'components/Container/Container';
 import Layout from 'components/layout';
@@ -286,5 +287,9 @@ export const pageQuery = graphql`
         }
     }
 `;
+
+ArticleTemplate.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export default ArticleTemplate;

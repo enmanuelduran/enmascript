@@ -4,6 +4,7 @@ import Container from 'components/Container/Container';
 import styles from './RelatedArticles.module.scss';
 import containerStyles from 'components/Container/Container.module.scss';
 import { getSeries } from 'helpers/articles';
+import PropTypes from 'prop-types';
 
 const RelatedArticles = ({ articles, siteMetadata }) => (
     <div className={styles.related}>
@@ -31,5 +32,10 @@ const RelatedArticles = ({ articles, siteMetadata }) => (
         </Container>
     </div>
 );
+
+RelatedArticles.propTypes = {
+    articles: PropTypes.object.isRequired,
+    siteMetadata: PropTypes.object.isRequired
+};
 
 export default RelatedArticles;

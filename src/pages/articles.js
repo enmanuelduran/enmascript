@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from 'components/layout';
@@ -67,6 +68,10 @@ const Articles = ({ data }) => {
             </Container>
         </Layout>
     );
+};
+
+Articles.propTypes = {
+    data: PropTypes.object.isRequired
 };
 
 export const pageQuery = graphql`

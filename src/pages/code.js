@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from 'components/layout';
 import Helmet from 'react-helmet';
 import Container from 'components/Container';
@@ -39,6 +40,10 @@ const Code = ({ data }) => (
         </Container>
     </Layout>
 );
+
+Code.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export const CodeQuery = graphql`
     query CodeQuery {
