@@ -1,0 +1,41 @@
+@import "../Common/media_queries";
+@import '../Common/variables';
+
+$page-width: 1000px;
+$articles-width: 750px;
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.containerArticle {
+    max-width: $articles-width;
+}
+
+.containerPage {
+    max-width: $page-width;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.containerTemplateArticle {
+    max-width: $page-width;
+    display: grid;
+    grid-template-columns: 100%;
+    max-width: 730px;
+    padding-top: 15px;
+
+    @include min-device("desktop") {
+        grid-template-columns: 1fr 250px;
+        grid-gap: 1.5rem;
+        max-width: 1000px;
+    }
+}
+
+.containerArticleNoPadding {
+    @extend .containerTemplateArticle;
+
+    padding-top: 0;
+}

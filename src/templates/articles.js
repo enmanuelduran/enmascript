@@ -1,12 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Container from 'components/Container/Container';
-import Layout from 'components/layout';
+import Container from '../components/Container/Container';
+import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
-import { Twitter, Facebook, LinkedIn, Reddit } from 'components/Icons/SocialIcons';
-import ArticleCard from 'components/ArticleCard';
-import AsideAds from 'components/AsideAds';
-import MailchimpWrapper from 'components/MailchimpWrapper';
+import { Twitter, Facebook, LinkedIn, Reddit } from '../components/Icons/SocialIcons';
+import AsideAds from '../components/AsideAds';
+import MailchimpWrapper from '../components/MailchimpWrapper';
+import styles from './articles.module.scss';
+import containerStyles from '../components/Container/Container.module.scss';
+import asideStyles from '../components/Common/aside.module.scss';
+import RelatedArticles from '../components/RelatedArticles/RelatedArticles';
+import { getSeries } from '../helpers/articles';
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
@@ -41,15 +46,8 @@ const ArticleTemplate = ({ data }) => {
 
     const shareOn = share();
     const siteMetadata = metadata.siteMetadata;
-    const getSeries = post => {
-        return siteMetadata.series_list
-            && siteMetadata.series_list.filter(elm =>
-            post.frontmatter.series.includes(elm.name)
-        );
-    };
-
     const postImage = `/images/${post.frontmatter.featuredImage}`;
-    const series = getSeries(post);
+    const series = getSeries(post, siteMetadata);
     const twitterDiscussionLink = `https://mobile.twitter.com/search?q=${encodeURIComponent(
         url
     )}`;
@@ -61,34 +59,34 @@ const ArticleTemplate = ({ data }) => {
         .pop()}.md`;
 
     return (
-        <Layout section="articles" classes="articles__layout">
-            <div className="article article--hero">
-                <Container type="template-article-no-padding">
+        <Layout section="articles">
+            <div className={`${styles.article} ${styles.articleHero}`}>
+                <Container classes={containerStyles.containerArticleNoPadding}>
                     <div>
                         <h1>{post.frontmatter.title}</h1>
                         <div>
                             <a
                                 href={metadata.siteMetadata.twitter}
-                                className="article__author"
+                                className={styles.articleAuthor}
                                 target="_blank"
                                 rel="noopener noreferrer">
                                 {metadata.siteMetadata.author}
                             </a>
-                            <span className="article__date">
+                            <span className={styles.articleDate}>
                                 {post.frontmatter.date} •{' '}
-                                <span className="article__readingTime">
+                                <span className={styles.articleReadingTime}>
                                     {data.article.fields.readingTime.text}
                                 </span>
                             </span>
                         </div>
                         {series.length > 0 && (
-                            <div className="article__series-container">
-                                <div className="article__series-head">
+                            <div className={styles.articleSeriesContainer}>
+                                <div className={styles.articleSeriesHead}>
                                     Part of the Series:
                                 </div>
                                 {series.map(serie => (
                                     <div
-                                        className="article__series"
+                                        className={styles.articleSeries}
                                         key={serie.slug}>
                                         <Link to={serie.slug}>#{serie.name}</Link>
                                     </div>
@@ -98,7 +96,7 @@ const ArticleTemplate = ({ data }) => {
                     </div>
                 </Container>
             </div>
-            <Container type="template-article">
+            <Container classes={containerStyles.containerTemplateArticle}>
                 <Helmet
                     title={post.frontmatter.title}
                     meta={[
@@ -140,10 +138,10 @@ const ArticleTemplate = ({ data }) => {
                     ]}>
                     <link rel="canonical" href={url} />
                 </Helmet>
-                <div className="article">
-                    <div className="article__content">
+                <div className={`${styles.articleWrapper} ${styles.article}`}>
+                    <div className={styles.articleContent}>
                         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                        <div className="article__share">
+                        <div className={`${styles.articleShareMobile} ${styles.articleShare} ${styles.articleContentShare}`}>
                             <div onClick={shareOn('twitter')}>
                                 <Twitter />
                             </div>
@@ -159,7 +157,7 @@ const ArticleTemplate = ({ data }) => {
                                     href={post.frontmatter.reddit}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="article__share--reddit">
+                                    className={styles.articleShareReddit}>
                                     <Reddit />
                                     <span>Let's talk</span>
                                 </a>
@@ -167,7 +165,7 @@ const ArticleTemplate = ({ data }) => {
                         </div>
 
                     </div>
-                    <p className="article__engage-text">
+                    <p>
                         <strong>Want to leave a comment?</strong> Do it on{' '}
                         <a
                             href={twitterDiscussionLink}
@@ -178,7 +176,7 @@ const ArticleTemplate = ({ data }) => {
                         </a>
                     </p>
 
-                    <p className="article__engage-text">
+                    <p>
                         <strong>Found something to fix in the article?</strong>{' '}
                         <a
                             href={githubUrl}
@@ -189,9 +187,9 @@ const ArticleTemplate = ({ data }) => {
                     </p>
                     <MailchimpWrapper />
                 </div>
-                <div className="aside">
+                <div className={asideStyles.aside}>
                     <AsideAds data={siteMetadata.sponsored} />
-                    <div className="article__share">
+                    <div className={styles.articleShare}>
                         <div onClick={shareOn('twitter')}>
                             <Twitter />
                         </div>
@@ -207,38 +205,17 @@ const ArticleTemplate = ({ data }) => {
                                 href={post.frontmatter.reddit}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="article__share--reddit">
+                                className={styles.articleShareReddit}>
                                 <Reddit />
                             </a>
                         }
                     </div>
-
                 </div>
             </Container>
-            <div className="article__related">
-                <Container type="article">
-                    <div className="article__related-title">Other Articles</div>
-                    <div className="article__related-wrapper">
-                        {otherArticles.edges
-                            .filter(
-                                post => post.node.frontmatter.title.length > 0
-                            )
-                            .map(({ node: post }) => (
-                                <ArticleCard
-                                    title={post.frontmatter.title}
-                                    date={post.frontmatter.date}
-                                    readingTime={post.fields.readingTime.text}
-                                    image={post.frontmatter.featuredImage}
-                                    slug={post.fields.slug}
-                                    key={post.id}
-                                    summary={post.frontmatter.summary}
-                                    reddit={post.frontmatter.reddit}
-                                    series={getSeries(post)}
-                                />
-                            ))}
-                    </div>
-                </Container>
-            </div>
+            <RelatedArticles
+                articles={otherArticles}
+                siteMetadata={siteMetadata}
+            />
         </Layout>
     );
 };
@@ -310,5 +287,9 @@ export const pageQuery = graphql`
         }
     }
 `;
+
+ArticleTemplate.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export default ArticleTemplate;

@@ -1,36 +1,36 @@
 import React from 'react';
-import Layout from 'components/layout';
-import Container from 'components/Container';
+import PropTypes from 'prop-types';
+import Layout from '../components/layout';
+import Container from '../components/Container';
 import { graphql, Link } from 'gatsby';
-import Cover from 'components/Cover';
-import ArticleCard from 'components/ArticleCard';
-import AsideAds from 'components/AsideAds';
-import AsideSeries from 'components/AsideSeries';
-import CoverImage from 'images/cover.png';
-import { Reddit } from 'components/Icons/SocialIcons';
+import Cover from '../components/Cover';
+import ArticleCard from '../components/ArticleCard';
+import AsideAds from '../components/AsideAds';
+import AsideSeries from '../components/AsideSeries';
+import CoverImage from '../images/cover.png';
+import { Reddit } from '../components/Icons/SocialIcons';
+import styles from './index.module.scss';
+import cardStyles from '../components/ArticleCard/ArticleCard.module.scss';
+import containerStyles from '../components/Container/Container.module.scss';
+import asideStyles from '../components/Common/aside.module.scss';
+import { getSeries } from '../helpers/articles';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;
     const { edges: coverPost } = data.coverData;
     const siteMetadata = data.metadata.siteMetadata;
-    const getSeries = post => {
-        return siteMetadata.series_list
-            && siteMetadata.series_list.filter(elm =>
-            post.frontmatter.series.includes(elm.name)
-        );
-    };
     const [sponsoredHeroCta, ...sponsoredList] = siteMetadata.sponsored;
 
     return (
-        <Layout section="home" classes="home">
-            <Cover image={CoverImage} classes="home__cover">
-                <Container classes="home__cover-container">
+        <Layout section="home">
+            <Cover image={CoverImage} classes={styles.homeCover}>
+                <Container classes={`${styles.homeCoverContainer} ${containerStyles.containerPage}`}>
                     {coverPost.map(({ node: post }) => (
-                        <div className="home__cta-article" key={post.id}>
-                            <div className="home__cta-content">
-                                <div className="home__relevant-flag">Relevant now</div>
-                                <div className="home__date">{post.frontmatter.date}</div>
-                                <div className="home__reading-time">{post.fields.readingTime.text}</div>
+                        <div className={styles.homeCoverCtaArticle} key={post.id}>
+                            <div>
+                                <div className={styles.homeCoverCtaRelevantFlag}>Relevant now</div>
+                                <div className={styles.homeCoverCtaDate}>{post.frontmatter.date}</div>
+                                <div className={styles.homeCoverCtaReadingTime}>{post.fields.readingTime.text}</div>
                                 <h1>
                                     <Link
                                         data-gtm-track="article-cover-cta-click"
@@ -38,7 +38,7 @@ const Index = ({ data }) => {
                                         {post.frontmatter.title}
                                     </Link>
                                 </h1>
-                                <p className="home__cta-summary">
+                                <p className={styles.homeCoverCtaSummary}>
                                     {post.frontmatter.summary}
                                     <Link
                                         data-gtm-track="article-cover-cta-click"
@@ -46,24 +46,24 @@ const Index = ({ data }) => {
                                         Read more
                                     </Link>
                                 </p>
-                                <div className="article-card__buttons">
+                                <div className={`${styles.homeCoverCtabuttons} ${cardStyles.cardButtons}`}>
                                 {post.frontmatter.reddit && (
                                     <a
                                         href={post.frontmatter.reddit}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="article-card__reddit">
+                                        className={cardStyles.cardReddit}>
                                         <Reddit />
                                         <span>Let's talk</span>
                                     </a>
                                 )}
-                                    {getSeries(post).map(serie =>  (
-                                        <div className="article__series" key={serie.slug}>
+                                    {getSeries(post, siteMetadata).map(serie =>  (
+                                        <div className={styles.homeArticleSeries} key={serie.slug}>
                                             <Link
                                                 to={serie.slug}>
                                                 #{serie.name}
                                             </Link>
-                                    </div>
+                                        </div>
                                     ))}
                             </div>
                             </div>
@@ -73,7 +73,7 @@ const Index = ({ data }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-gtm-track="promoted-cover-cta-click"
-                        className="hero-promoted-ad"
+                        className={styles.homeCoverPromotedAd}
                         href="https://github.com/enmanuelduran/mediaquerysensor">
                         <img
                             src={sponsoredHeroCta.image}
@@ -85,8 +85,8 @@ const Index = ({ data }) => {
                 </Container>
             </Cover>
 
-            <Container classes="home__container">
-                <section className="home__articles">
+            <Container classes={`${styles.homeContainer} ${containerStyles.containerPage}`}>
+                <section>
                     {posts
                         .filter(post => post.node.frontmatter.title.length > 0)
                         .map(({ node: post }) => {
@@ -98,19 +98,23 @@ const Index = ({ data }) => {
                                 date={post.frontmatter.date}
                                 readingTime={post.fields.readingTime.text}
                                 summary={post.frontmatter.summary}
-                                series={getSeries(post)}
+                                series={getSeries(post, siteMetadata)}
                                 reddit={post.frontmatter.reddit}
                             />
                         })
                     }
-                    </section>
-                    <section className="aside">
-                        <AsideAds data={sponsoredList} />
-                        <AsideSeries seriesList={siteMetadata.series_list} />
-                    </section>
+                </section>
+                <section className={asideStyles.aside}>
+                    <AsideAds data={sponsoredList} />
+                    <AsideSeries seriesList={siteMetadata.series_list} />
+                </section>
             </Container>
         </Layout>
     );
+};
+
+Index.propTypes = {
+    data: PropTypes.object.isRequired
 };
 
 export const HomeQuery = graphql`

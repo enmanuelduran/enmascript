@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import Container from 'components/Container/Container';
-import { Logo } from 'components/Icons/Logo';
-import { GitHub } from 'components/Icons/SocialIcons';
-
-const ACTIVE_CLASS = 'link--active';
+import Container from '../Container/Container';
+import { Logo } from '../Icons/Logo';
+import { GitHub } from '../Icons/SocialIcons';
+import styles from './Header.module.scss';
 
 class Header extends React.Component {
     state = {
@@ -19,25 +18,25 @@ class Header extends React.Component {
     };
 
     isMenuOptionActive = (active, selected) =>
-        active === selected ? ACTIVE_CLASS : '';
+        active === selected ? styles.activeLink : '';
 
     render() {
         const { section } = this.props;
 
         return (
-            <header className="header">
-                <Container type="header">
-                    <Link to="/" className="header__logo-link">
+            <header className={styles.header}>
+                <Container classes={styles.headerContainer}>
+                    <Link to="/" className={styles.headerLogoLink}>
                         <Logo />
                     </Link>
                     <div
-                        className="header__mobile-menu"
+                        className={styles.headerMobileMenu}
                         onClick={this.toggleHamburguerState}>
                         <span />
                         <span />
                         <span />
                     </div>
-                    <nav className={this.state.isOpen ? 'open' : ''}>
+                    <nav className={`${this.state.isOpen ? styles.open : ''} ${styles.headerNavigation}`}>
                         <Link
                             to="/"
                             className={this.isMenuOptionActive(
@@ -87,7 +86,7 @@ class Header extends React.Component {
                             Contact
                         </Link>
                         <a
-                            className="github-link"
+                            className={styles.headerGithubLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             href="https://github.com/enmanuelduran/enmascript">
@@ -101,7 +100,8 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    section: PropTypes.string.isRequired
 };
 
 export default Header;

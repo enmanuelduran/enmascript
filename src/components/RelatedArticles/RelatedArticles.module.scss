@@ -1,0 +1,50 @@
+@import "../Common/variables";
+@import "../Common/media_queries";
+
+$related-articles-background: $darkest-blue;
+$related-articles-title-color: $white;
+
+.related {
+    background: $related-articles-background;
+    padding-bottom: 20px;
+
+    @include max-device("desktop") {
+        padding: 0 10px 20px;
+    }
+}
+
+.relatedTitle {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 0;
+    color: $related-articles-title-color;
+}
+
+.relatedWrapper {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+
+    @include min-device("tablet") {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.relatedCard {
+    h2 {
+        font-size: $text-font-size;
+    }
+
+    p {
+        font-size: $medium-font-size;
+        line-height: 21px;
+    }
+}
+
+.relatedCardTitle {
+    flex: 0 0 auto;
+}
+
+.relatedImage {
+    height: 100px;
+}

@@ -1,10 +1,9 @@
 import React from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-import { Rocket } from 'Icons/Icons';
+import { Rocket } from '../Icons/Icons';
 import { Form, Text } from 'informed';
-import formImage from 'images/form-background.png';
-
-const SUCCESS_CLASS = 'mailchimp--success';
+import formImage from '../../images/form-background.png';
+import styles from './MailchimpWrapper.module.scss';
 
 class MailchimpWrapper extends React.Component {
     state = {
@@ -40,18 +39,18 @@ class MailchimpWrapper extends React.Component {
     };
 
     render() {
-        const successClass = this.state.subscribed ? SUCCESS_CLASS : '';
+        const successClass = this.state.subscribed ? styles.mailchimpSuccess : '';
 
         return (
             <Form
                 onSubmit={this.handleSubmit}
                 id="validate-form"
-                className={`mailchimp ${successClass}`}
+                className={`${styles.mailchimp} ${successClass}`}
                 style={{ backgroundImage: `url(${formImage})` }}>
                 {({ formState }) => {
                     return (
                         <React.Fragment>
-                            <div className="form-container">
+                            <div className={styles.mailchimpFormContainer}>
                                 <p>
                                     Want to be the first to receive our cool
                                     updates?
@@ -63,7 +62,7 @@ class MailchimpWrapper extends React.Component {
                                 />
                                 {(formState.errors.email ||
                                     this.state.errors) && (
-                                    <div className="mailchimp-error">
+                                    <div className={styles.mailchimpError}>
                                         {formState.errors.email ||
                                             'An error ocurred'}
                                     </div>
@@ -74,7 +73,7 @@ class MailchimpWrapper extends React.Component {
                             </div>
                             {this.state.subscribed &&
                                 !formState.errors.email && (
-                                    <div className="success-container">
+                                    <div className={styles.mailchimpSuccessContainer}>
                                         <Rocket />
                                         Welcome aboard, Woohoo!
                                     </div>

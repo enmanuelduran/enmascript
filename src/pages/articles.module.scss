@@ -1,0 +1,22 @@
+@import "../components/Common/variables";
+@import "../components/Common/media_queries";
+
+.articles {
+    padding: 10px 0;
+}
+
+.articlesContainer {
+    margin-top: 10px;
+    position: relative;
+    padding: 10px;
+    background: $background-color;
+    border-radius: $border-radius;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    z-index: 1;
+
+    @include min-device("tablet") {
+        grid-template-columns: 1fr  300px;
+    }
+}

@@ -1,0 +1,26 @@
+@import "../Common/media_queries";
+@import '../Common/variables';
+
+.seriesCard {
+    width: 100%;
+    background: $series-card-background-color;
+    background-size: cover;
+    background-position: center;
+    border-radius: $border-radius;
+    height: 200px;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: 0.1s transform linear;
+
+    &:last-child {
+        margin-bottom: 10px;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+    }
+}

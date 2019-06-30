@@ -1,0 +1,283 @@
+@import "../components/Common/variables";
+@import "../components/Common/media_queries";
+
+$reddit-color: #ff4500;
+$cover-background-color: $dark-blue;
+
+$article-cover-author-color: $yellow;
+$article-cover-date-color: $white;
+$article-cover-series-color: $white;
+$articles-cover-serie-color: $yellow;
+$article-cover-title: $white;
+
+$article-share-background: $white;
+
+.articleHero {
+    padding: 50px 0;
+    background-size: cover;
+    background-image: radial-gradient(ellipse closest-side, rgba(15, 14, 22, 0.85), #100e17),
+    url("/images/article-cover.png");
+    background-color: $cover-background-color;
+    background-position: bottom center;
+    max-width: none;
+}
+
+.articleAuthor {
+    font-weight: bold;
+    color: $article-cover-author-color;
+}
+
+.articleDate {
+    margin-left: 10px;
+    color: $article-cover-date-color;
+}
+
+.articleReadingTime {
+    color: $article-cover-date-color;
+}
+
+.articleSeriesContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.articleSeriesHead {
+    color: $article-cover-series-color;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.articleSeries {
+    font-size: $small-text-font-size;
+    text-transform: uppercase;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: $soft-border-radius;
+    color: $tag-text-color;
+    padding: 5px;
+    background-color: $tag-background-color;
+    border-radius: $border-radius;
+    border: 2px solid $articles-cover-serie-color;
+
+    a {
+        color: $articles-cover-serie-color;
+    }
+}
+
+.articleContent {
+    position: relative;
+
+    @include min-device("desktop") {
+        padding: 0;
+    }
+}
+
+div.articleShareMobile {
+    display: flex;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+    padding: 15px 0;
+}
+
+@include min-device("desktop") {
+    div.articleContentShare{
+        display: none;
+    }
+
+    div.articleShareMobile {
+        display:none;
+    }
+}
+
+.articleShare {
+    display: none;
+    align-items: center;
+    margin-top: 10px;
+    flex-direction: row-reverse;
+    background: $article-share-background;
+    border-radius: $strong-border-radius;
+    padding: 15px;
+    box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.15);
+
+    @include min-device("desktop") {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div {
+        cursor: pointer;
+        height: 70%;
+        width: auto;
+        display: block;
+        padding: 0 10px 0 0;
+
+        @include min-device("desktop") {
+            padding: 5px 0 0;
+        }
+    }
+
+    svg {
+        width: 40px;
+        height: 40px;
+
+        path {
+            fill: $share-icons-color;
+            transition: 0.15s fill linear;
+        }
+
+        &:hover path {
+            fill: $share-icons-active-color;
+        }
+    }
+}
+
+.articleShareReddit {
+    padding: 2px 0 0 2px;
+    position: relative;
+
+    svg path {
+        fill: $reddit-color;
+    }
+
+    span {
+        width: 58px;
+        position: absolute;
+        color: $reddit-color;
+        font-size: $medium-font-size;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 5px;
+        transition: .15s color;
+    }
+
+    @include min-device("desktop") {
+        padding: 5px 0 0 0;
+
+        span {
+            top: auto;
+            margin-left: auto;
+            left: 50%;
+            bottom: -17px;
+            transform: translateX(-50%);
+        }
+    }
+
+    &:hover span,
+    &:hover svg path, {
+        color: $text-link-color;
+        fill: $text-link-color;
+    }
+}
+
+.articleWrapper {
+    max-width: 686px;
+}
+
+.article {
+    h2,
+    h3,
+    h4 {
+        padding: 20px 0;
+        margin: 0;
+      }
+
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+        color: $article-cover-title;
+        margin: 0 0 30px;
+    }
+
+    h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    p {
+        line-height: 30px;
+        margin: 0 0 1.5em;
+    }
+
+    li {
+        padding: 0 0 10px;
+        line-height: 30px;
+    }
+
+    pre,
+    code {
+        font-size: $medium-font-size;
+        background: $code-box-background-color;
+    }
+
+    :not(pre) > code[class*="language-"] {
+        white-space: normal;
+        background: $code-box-header-background-color;
+        color: $code-box-header-text-color;
+    }
+
+    pre {
+        border-radius: $soft-border-radius;
+        position: relative;
+        padding-top: 30px;
+        box-shadow: 0 2px 4px 0 rgba(50, 50, 93, 0.15);
+    }
+
+    table {
+        width: 100%;
+        border-spacing: 0;
+        border-radius: $soft-border-radius;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        td,
+        tr {
+            text-align: center;
+            padding: 10px;
+        }
+
+        th {
+            background: $table-head-background-color;
+            color: $table-head-text-color;
+            padding: 5px;
+        }
+
+        tr:nth-child(even) {
+            background: $table-even-background;
+        }
+    }
+
+    iframe {
+        margin-bottom: 1.5em;
+    }
+
+    img,
+    video {
+        border-radius: $soft-border-radius;
+        max-width: 100%;
+    }
+
+    mark {
+        background: $text-highlighted-color;
+        border-bottom: 2px solid darken($text-highlighted-color, 10%);
+    }
+
+
+    img,
+    video {
+        box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.2);
+        border-radius: $soft-border-radius;
+    }
+}
+

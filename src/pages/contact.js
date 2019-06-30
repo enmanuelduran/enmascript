@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Container from 'components/Container';
+import Container from '../components/Container';
+import containerStyles from '../components/Container/Container.module.scss';
 
 const Contact = ({ data }) => (
-    <Layout section="contact" classes="articles__layout">
+    <Layout section="contact">
         <Helmet
             title="Contact"
             meta={[
@@ -27,7 +29,7 @@ const Contact = ({ data }) => (
                 href={`${data.site.siteMetadata.url}/contact`}
             />
         </Helmet>
-        <Container classes="contact">
+        <Container classes={containerStyles.containerPage}>
             <h2>Contact</h2>
             <p>
                 I always try to connect with the people that contacts me, feel
@@ -50,6 +52,10 @@ const Contact = ({ data }) => (
         </Container>
     </Layout>
 );
+
+Contact.propTypes = {
+    data: PropTypes.object.isRequired
+};
 
 export const ContactQuery = graphql`
     query ContactQuery {

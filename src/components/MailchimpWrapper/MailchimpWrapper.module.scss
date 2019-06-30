@@ -1,3 +1,11 @@
+@import '../Common/variables';
+
+$email-box-background-color: $blue;
+$email-box-text-color: $white;
+
+$email-box-success-green: #00cc81;
+$email-box-error-red: #de4338;
+
 .mailchimp {
     border-radius: $border-radius;
     margin-bottom: 20px;
@@ -16,19 +24,6 @@
         top: 0;
         position: absolute;
         background: rgba($email-box-background-color, 0.9);
-    }
-
-    .success-container,
-    .form-container {
-        flex-direction: column;
-        display: flex;
-    }
-
-    .form-container {
-        align-items: center;
-        position: relative;
-        transition: transform 0.2s ease-in-out, background 0.2s linear;
-        z-index: 1;
     }
 
     input {
@@ -65,43 +60,55 @@
 
     p {
         margin-top: 0;
-        color: $white;
+        color: $email-box-text-color;
+    }
+}
+
+.mailchimpSuccessContainer,
+.mailchimpFormContainer {
+    flex-direction: column;
+    display: flex;
+}
+
+.mailchimpFormContainer {
+    align-items: center;
+    position: relative;
+    transition: transform 0.2s ease-in-out, background 0.2s linear;
+    z-index: 1;
+}
+
+.mailchimpSuccess {
+    &:before {
+        background: rgba($email-box-success-green, 0.9);
     }
 
-    .success-container {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        z-index: 0;
-        text-align: center;
-        color: $white;
-        width: 100%;
-
-        svg {
-            margin: 0 auto;
-            width: 80px;
-            height: 80px;
-            color: $white;
-            margin-bottom: 20px;
-        }
+    .mailchimpFormContainer {
+        transform: translateY(-250px);
     }
+}
 
-    &--success {
-        &:before {
-            background: rgba($success-green, 0.9);
-        }
+.mailchimpError {
+    background: $email-box-error-red;
+    color: $email-box-text-color;
+    padding: 10px;
+    border-radius: $border-radius;
+    margin-top: 5px;
+}
 
-        .form-container {
-            transform: translateY(-250px);
-        }
-    }
+.mailchimpSuccessContainer {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 0;
+    text-align: center;
+    color: $email-box-text-color;
+    width: 100%;
 
-    &-error {
-        background: $error-red;
-        color: $white;
-        padding: 10px;
-        border-radius: $border-radius;
-        margin-top: 5px;
+    svg {
+        margin: 0 auto;
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
     }
 }

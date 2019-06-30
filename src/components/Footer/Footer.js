@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './Footer.module.scss';
 
 const Footer = () => (
-    <footer className="footer">
+    <footer className={styles.footer}>
         <p>
             © Copyright EnmaScript 2017-2018. All code based on the
             <a href="http://opensource.org/licenses/MIT"> MIT license</a>.

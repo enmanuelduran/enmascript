@@ -1,4 +1,5 @@
 /*--- Color variables ---*/
+$darkest-blue: #13161b;
 $dark-blue: #22262e;
 $blue: #00becc;
 $soft-blue: rgba($blue, 0.3);
@@ -15,13 +16,11 @@ $grey: #ccc;
 $dark-grey: #545454;
 
 /*--- Functional variables ---*/
-$background-color: #f2f2f2;
+$background-color: $light-grey;
 $container-background-color: $white;
 $strong-border-radius: 15px;
 $border-radius: 10px;
 $soft-border-radius: 5px;
-$success-green: #00cc81;
-$error-red: #de4338;
 
 /* Text */
 $text-line-height: 30px;
@@ -40,9 +39,6 @@ $cta-text-font-size: 32px;
 
 /* header */
 $header-height: 50px;
-$header-background-color: #13161b;
-$menu-active-background-color: $yellow;
-$menu-active-text-color: $header-background-color;
 
 /* Footer */
 $footer-background-color: $dark-blue;
@@ -77,9 +73,6 @@ $share-icons-active-color: $blue;
 $code-box-header-background-color: $soft-blue;
 $code-box-header-text-color: $dark-blue;
 $code-box-background-color: $white;
-
-/* Email Subscription box */
-$email-box-background-color: $blue;
 
 /* Tag style */
 $tag-background-color: $dark-blue;

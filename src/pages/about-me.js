@@ -1,13 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Container from 'components/Container';
+import Container from '../components/Container';
 import About from '../../content/about-me.json';
 import shortid from 'shortid';
+import styles from './about-me.module.scss';
+import containerStyles from '../components/Container/Container.module.scss';
 
 const AboutMe = ({ data }) => (
-    <Layout section="aboutme" classes="articles__layout">
+    <Layout section="aboutme">
         <Helmet
             title="About me"
             meta={[
@@ -29,7 +32,7 @@ const AboutMe = ({ data }) => (
                 href={`${data.site.siteMetadata.url}/about-me`}
             />
         </Helmet>
-        <Container classes="about-me">
+        <Container classes={`${styles.aboutMe} ${containerStyles.containerPage}`}>
             <p>{About.intro}</p>
 
             <h2>{About.whatIDo.title}</h2>
@@ -56,6 +59,11 @@ const AboutMe = ({ data }) => (
         </Container>
     </Layout>
 );
+
+AboutMe.propTypes = {
+    data: PropTypes.object.isRequired
+};
+
 
 export const AboutQuery = graphql`
     query AboutQuery {
