@@ -4,8 +4,9 @@
     position: sticky;
     top: 60px;
     padding-bottom: 10px;
+    display: table;
 
-    @include min-device("desktop") {
+    @include min-device("tablet") {
         height: 300px;
     }
 }

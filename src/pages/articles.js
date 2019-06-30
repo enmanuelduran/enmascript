@@ -8,7 +8,7 @@ import ArticleCard from '../components/ArticleCard';
 import AsideAds from '../components/AsideAds';
 import AsideSeries from '../components/AsideSeries';
 import styles from './articles.module.scss';
-import asideStyles from '../components/Common/aside.module.scss';
+import Aside from '../components/Aside';
 import containerStyles from '../components/Container/Container.module.scss';
 import { getSeries } from '../helpers/articles';
 
@@ -61,10 +61,10 @@ const Articles = ({ data }) => {
                             />
                         })}
                 </section>
-                <section className={asideStyles.aside}>
+                <Aside>
                     <AsideAds data={siteMetadata.sponsored} />
                     <AsideSeries seriesList={siteMetadata.series_list} />
-                </section>
+                </Aside>
             </Container>
         </Layout>
     );

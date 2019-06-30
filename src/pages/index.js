@@ -12,7 +12,7 @@ import { Reddit } from '../components/Icons/SocialIcons';
 import styles from './index.module.scss';
 import cardStyles from '../components/ArticleCard/ArticleCard.module.scss';
 import containerStyles from '../components/Container/Container.module.scss';
-import asideStyles from '../components/Common/aside.module.scss';
+import Aside from '../components/Aside';
 import { getSeries } from '../helpers/articles';
 
 const Index = ({ data }) => {
@@ -104,10 +104,10 @@ const Index = ({ data }) => {
                         })
                     }
                 </section>
-                <section className={asideStyles.aside}>
+                <Aside>
                     <AsideAds data={sponsoredList} />
                     <AsideSeries seriesList={siteMetadata.series_list} />
-                </section>
+                </Aside>
             </Container>
         </Layout>
     );

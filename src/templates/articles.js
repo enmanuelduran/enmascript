@@ -9,7 +9,7 @@ import AsideAds from '../components/AsideAds';
 import MailchimpWrapper from '../components/MailchimpWrapper';
 import styles from './articles.module.scss';
 import containerStyles from '../components/Container/Container.module.scss';
-import asideStyles from '../components/Common/aside.module.scss';
+import Aside from '../components/Aside';
 import RelatedArticles from '../components/RelatedArticles/RelatedArticles';
 import { getSeries } from '../helpers/articles';
 
@@ -187,7 +187,7 @@ const ArticleTemplate = ({ data }) => {
                     </p>
                     <MailchimpWrapper />
                 </div>
-                <div className={asideStyles.aside}>
+                <Aside>
                     <AsideAds data={siteMetadata.sponsored} />
                     <div className={styles.articleShare}>
                         <div onClick={shareOn('twitter')}>
@@ -210,7 +210,7 @@ const ArticleTemplate = ({ data }) => {
                             </a>
                         }
                     </div>
-                </div>
+                </Aside>
             </Container>
             <RelatedArticles
                 articles={otherArticles}
