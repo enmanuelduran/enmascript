@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-import Header from 'components/Header/Header';
-import Footer from 'components/Footer/Footer';
-import Favicon16 from 'images/favicon-16x16.png';
-import Favicon32 from 'images/favicon-32x32.png';
-import AppleTouchIcon from 'images/apple-touch-icon.png';
-import styles from 'Layout.module.scss';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
+import Favicon16 from '../images/favicon-16x16.png';
+import Favicon32 from '../images/favicon-32x32.png';
+import AppleTouchIcon from '../images/apple-touch-icon.png';
+import styles from './Layout.module.scss';
 
 const Layout = ({ children, section, classes }) => (
     <StaticQuery

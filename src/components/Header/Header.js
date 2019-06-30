@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import Container from 'components/Container/Container';
-import { Logo } from 'components/Icons/Logo';
-import { GitHub } from 'components/Icons/SocialIcons';
-import styles from 'Header.module.scss';
+import Container from '../Container/Container';
+import { Logo } from '../Icons/Logo';
+import { GitHub } from '../Icons/SocialIcons';
+import styles from './Header.module.scss';
 
 class Header extends React.Component {
     state = {

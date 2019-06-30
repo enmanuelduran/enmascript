@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Reddit } from 'components/Icons/SocialIcons';
+import { Reddit } from '../Icons/SocialIcons';
 import styles from './ArticleCard.module.scss';
 
 const ArticleCard = ({

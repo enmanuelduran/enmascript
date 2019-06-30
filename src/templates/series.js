@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Container from 'components/Container';
+import Container from '../components/Container';
 import Helmet from 'react-helmet';
-import Layout from 'components/layout';
+import Layout from '../components/layout';
 import { graphql } from 'gatsby';
-import AsideAds from 'components/AsideAds';
-import AsideSeries from 'components/AsideSeries';
-import ArticleCard from 'components/ArticleCard';
-import containerStyles from 'components/Container/Container.module.scss';
-import asideStyles from 'components/Common/aside.module.scss';
-import styles from 'pages/articles.module.scss';
-import { getSeries } from 'helpers/articles';
+import AsideAds from '../components/AsideAds';
+import AsideSeries from '../components/AsideSeries';
+import ArticleCard from '../components/ArticleCard';
+import containerStyles from '../components/Container/Container.module.scss';
+import asideStyles from '../components/Common/aside.module.scss';
+import styles from '../pages/articles.module.scss';
+import { getSeries } from '../helpers/articles';
 
 const SeriesArticlesTemplate = ({ data }) => {
     const { edges: posts } = data.articles;

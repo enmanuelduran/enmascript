@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Layout from 'components/layout';
-import Container from 'components/Container';
+import Layout from '../components/layout';
+import Container from '../components/Container';
 import { graphql, Link } from 'gatsby';
-import Cover from 'components/Cover';
-import ArticleCard from 'components/ArticleCard';
-import AsideAds from 'components/AsideAds';
-import AsideSeries from 'components/AsideSeries';
-import CoverImage from 'images/cover.png';
-import { Reddit } from 'components/Icons/SocialIcons';
-import styles from 'index.module.scss';
-import cardStyles from 'components/ArticleCard/ArticleCard.module.scss';
-import containerStyles from 'components/Container/Container.module.scss';
-import asideStyles from 'components/Common/aside.module.scss';
-import { getSeries } from 'helpers/articles';
+import Cover from '../components/Cover';
+import ArticleCard from '../components/ArticleCard';
+import AsideAds from '../components/AsideAds';
+import AsideSeries from '../components/AsideSeries';
+import CoverImage from '../images/cover.png';
+import { Reddit } from '../components/Icons/SocialIcons';
+import styles from './index.module.scss';
+import cardStyles from '../components/ArticleCard/ArticleCard.module.scss';
+import containerStyles from '../components/Container/Container.module.scss';
+import asideStyles from '../components/Common/aside.module.scss';
+import { getSeries } from '../helpers/articles';
 
 const Index = ({ data }) => {
     const { edges: posts } = data.homeData;

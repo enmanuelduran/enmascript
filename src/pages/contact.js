@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Container from 'components/Container';
-import containerStyles from 'components/Container/Container.module.scss';
+import Container from '../components/Container';
+import containerStyles from '../components/Container/Container.module.scss';
 
 const Contact = ({ data }) => (
     <Layout section="contact">

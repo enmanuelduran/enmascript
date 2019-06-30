@@ -1,9 +1,9 @@
 import React from 'react';
-import ArticleCard from 'components/ArticleCard';
-import Container from 'components/Container/Container';
+import ArticleCard from '../ArticleCard';
+import Container from '../Container/Container';
 import styles from './RelatedArticles.module.scss';
-import containerStyles from 'components/Container/Container.module.scss';
-import { getSeries } from 'helpers/articles';
+import containerStyles from '../Container/Container.module.scss';
+import { getSeries } from '../../helpers/articles';
 import PropTypes from 'prop-types';
 
 const RelatedArticles = ({ articles, siteMetadata }) => (

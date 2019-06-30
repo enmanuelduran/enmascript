@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Layout from 'components/layout';
+import Layout from '../components/layout';
 import Helmet from 'react-helmet';
-import Container from 'components/Container';
+import Container from '../components/Container';
 import { graphql } from 'gatsby';
-import SeriesCard from 'components/SeriesCard';
-import containerStyles from 'components/Container/Container.module.scss';
+import SeriesCard from '../components/SeriesCard';
+import containerStyles from '../components/Container/Container.module.scss';
 import shortid from 'shortid';
 
 const Code = ({ data }) => (

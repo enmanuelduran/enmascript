@@ -4,7 +4,7 @@ import styles from './SeriesCard.module.scss';
 import { Link } from 'gatsby';
 
 const SeriesCard = ({ name, slug, image, classes}) => {
-    const getImage = require(`content/images/${image}`);
+    const getImage = require(`../../../content/images/${image}`);
 
     return (
         <Link

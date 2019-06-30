@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import Container from 'components/Container/Container';
-import Layout from 'components/layout';
+import Container from '../components/Container/Container';
+import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
-import { Twitter, Facebook, LinkedIn, Reddit } from 'components/Icons/SocialIcons';
-import AsideAds from 'components/AsideAds';
-import MailchimpWrapper from 'components/MailchimpWrapper';
+import { Twitter, Facebook, LinkedIn, Reddit } from '../components/Icons/SocialIcons';
+import AsideAds from '../components/AsideAds';
+import MailchimpWrapper from '../components/MailchimpWrapper';
 import styles from './articles.module.scss';
-import containerStyles from 'components/Container/Container.module.scss';
-import asideStyles from 'components/Common/aside.module.scss';
-import RelatedArticles from 'components/RelatedArticles/RelatedArticles';
-import { getSeries } from 'helpers/articles';
+import containerStyles from '../components/Container/Container.module.scss';
+import asideStyles from '../components/Common/aside.module.scss';
+import RelatedArticles from '../components/RelatedArticles/RelatedArticles';
+import { getSeries } from '../helpers/articles';
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;

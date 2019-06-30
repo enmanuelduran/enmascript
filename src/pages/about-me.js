@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import Container from 'components/Container';
+import Container from '../components/Container';
 import About from '../../content/about-me.json';
 import shortid from 'shortid';
 import styles from './about-me.module.scss';
-import containerStyles from 'components/Container/Container.module.scss';
+import containerStyles from '../components/Container/Container.module.scss';
 
 const AboutMe = ({ data }) => (
     <Layout section="aboutme">
