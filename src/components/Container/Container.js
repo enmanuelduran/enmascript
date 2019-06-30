@@ -7,7 +7,6 @@ const Container = ({ children, classes }) => (
 );
 
 Container.propTypes = {
-    type: PropTypes.string,
     classes: PropTypes.string,
     children: PropTypes.node.isRequired
 };

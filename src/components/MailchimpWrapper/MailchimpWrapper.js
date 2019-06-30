@@ -85,4 +85,5 @@ class MailchimpWrapper extends React.Component {
         );
     }
 }
+
 export default MailchimpWrapper;

@@ -69,4 +69,5 @@ export const ContactQuery = graphql`
         }
     }
 `;
+
 export default Contact;

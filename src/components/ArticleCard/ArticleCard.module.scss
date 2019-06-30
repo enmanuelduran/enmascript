@@ -143,7 +143,7 @@ $article-card-series-text: $yellow;
 
 .cardSerie {
     border-radius: $strong-border-radius;
-    border: 2px solid $yellow;
+    border: 2px solid $article-card-series-text;
     background: $article-card-series-background;
     color: $article-card-series-text;
     font-size: $small-text-font-size;
