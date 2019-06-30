@@ -79,7 +79,7 @@ class MediaQuerySensor extends React.Component {
                         <div>MediaQuerySensor</div>
                     </Container>
                 </div>
-                <Container classes={`${styles.mqs} ${containerStyles.containerArticle}`}>
+                <Container classes={containerStyles.containerArticle}>
                     <p>
                         MQS is a very simple event wrapper for the
                         <a

@@ -52,6 +52,7 @@ export const CodeQuery = graphql`
                 descriptions {
                     code
                 }
+                url
             }
         }
     }

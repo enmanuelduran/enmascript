@@ -55,6 +55,7 @@ export const SeriesQuery = graphql`
                 descriptions {
                     series
                 }
+                url
             }
         }
     }

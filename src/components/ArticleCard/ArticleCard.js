@@ -70,6 +70,9 @@ const ArticleCard = ({
 ArticleCard.defaultProps = {
     reddit: '',
     series: [],
+    classes: '',
+    titleClass: '',
+    imageClass: ''
 };
 
 ArticleCard.propTypes = {
@@ -80,7 +83,10 @@ ArticleCard.propTypes = {
     readingTime: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     reddit: PropTypes.string,
-    series: PropTypes.array
+    series: PropTypes.array,
+    classes: PropTypes.string,
+    titleClass: PropTypes.string,
+    imageClass: PropTypes.string
 };
 
 export default ArticleCard;
