@@ -44,3 +44,6 @@ input {
     font-size: $input-font-size;
 }
 
+[data-gtm-track] > * {
+    pointer-events: none;
+}

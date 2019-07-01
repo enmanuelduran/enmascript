@@ -52,7 +52,8 @@ const Index = ({ data }) => {
                                         href={post.frontmatter.reddit}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={cardStyles.cardReddit}>
+                                        className={cardStyles.cardReddit}
+                                        data-gtm-track="cover-card-article-reddit-discussion">
                                         <Reddit />
                                         <span>Let's talk</span>
                                     </a>

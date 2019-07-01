@@ -8,7 +8,8 @@ const AsideAds = ({data}) => {
             <div className={styles.asideAds} key={ad.name}>
                 <a target="_blank"
                    rel="noopener noreferrer"
-                   href={ad.url}>
+                   href={ad.url}
+                   data-gtm-track="promoted-aside-cta-click">
                     <img
                         src={ad.image}
                         alt={ad.name}

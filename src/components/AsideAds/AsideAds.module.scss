@@ -13,6 +13,10 @@ $aside-ads-background: $dark-blue;
         max-height: 170px;
     }
 
+    a {
+        display: block;
+    }
+
     img {
         border-radius: $border-radius $border-radius 0 0;
         position: relative;

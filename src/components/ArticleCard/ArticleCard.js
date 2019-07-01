@@ -44,7 +44,8 @@ const ArticleCard = ({
                             href={reddit}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={styles.cardReddit}>
+                            className={styles.cardReddit}
+                            data-gtm-track="article-card-reddit-discussion">
                             <Reddit />
                             <span>Let's talk</span>
                         </a>

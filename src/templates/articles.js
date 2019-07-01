@@ -157,7 +157,8 @@ const ArticleTemplate = ({ data }) => {
                                     href={post.frontmatter.reddit}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={styles.articleShareReddit}>
+                                    className={styles.articleShareReddit}
+                                    data-gtm-track="in-article-reddit-discussion">
                                     <Reddit />
                                     <span>Let's talk</span>
                                 </a>
@@ -205,7 +206,8 @@ const ArticleTemplate = ({ data }) => {
                                 href={post.frontmatter.reddit}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={styles.articleShareReddit}>
+                                className={styles.articleShareReddit}
+                                data-gtm-track="in-article-reddit-discussion">
                                 <Reddit />
                             </a>
                         }
