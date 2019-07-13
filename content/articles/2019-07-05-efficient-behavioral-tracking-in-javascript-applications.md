@@ -228,7 +228,7 @@ In this way all click tracked elements will pass over the click handler and we w
 - **Constraints are present.** Since this approach consist on tracking elements from the DOM not all the cases will be covered, you will find out that especial functionalities will still need to be tracked on its core code,  this means that in especial ocassions you will have to import the tracking module and decide which approach you want to take [In module tracking](#in-module-tracking) or [extended approach](#isolating-tracked-methods-by-extending-its-original-definition)
 
 
-## Tracking ashynchronous requests
+## Tracking asynchronous requests
 Generally you find yourself needing to track a form submission or a login event, for many reasons is not efficient to add the tracking to the button that submits the information (The login could fail or the form request could return an error) which means we would be tracking data incorrectly.
 
 For this you could simply use the [In module tracking](#in-module-tracking) approach by adding the tracking function to the `200` response, this would be fine but you will endup with multiple conditions for each request needed to be tracked.
@@ -250,7 +250,7 @@ function HTTPPost(url = '', data = {}) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-        },
+         },
         cache: 'no-cache',
         redirect: 'follow',
         referrer: 'no-referrer',
@@ -270,7 +270,36 @@ import HTTPPost from './http-client';
 
 HTTPPost('/api/login', {userId, password, source: 'modal' })
     .then(response => {
-        track.request(response)
+        Tracker.track({ type: 'successful-login', ...response })
     }
     .catch(error => console.error(error))
+```
+
+this is not actually bad but we will have to import the Tracker module in every file that will execute the successful asynchronous request which sometimes is something that will be a let down depending on the companies needs.
+
+## Centralizing Asynchronous tracking
+
+This will be the last approach we will be covering on this article and it is one that I really like. The fundaments of this approach relies on adding the tracking function once in the HTTPClient, then we can leverage a dictionary that will contain the URLs we want to track mapped to the model of properties each URL will require to be successfully tracked.
+
+Let's explain with code step by step:
+
+### 1) We add the tracking in the HTTPClient
+We basically take the code from the previous approach and add the tracking on the promise response:
+
+```javascript
+function HTTPPost(url = '', data = {}) {
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+         },
+        cache: 'no-cache',
+        redirect: 'follow',
+        referrer: 'no-referrer',
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json());
+}
+
+export default HTTPPost;
 ```
