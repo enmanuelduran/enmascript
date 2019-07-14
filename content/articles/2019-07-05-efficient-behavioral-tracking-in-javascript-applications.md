@@ -6,17 +6,17 @@ series: ['Javascript']
 featuredImage: '2019-06-04-webperf-code-quality-cover.png'
 ---
 
-Tracking is an essential part of product development, either for web development, mobile applications or any software you might be working on; it is crucial to understand your users to make your business growth.
+Tracking is an essential part of product development, either for web development, mobile applications, or any software you might be working on; it is crucial to understand your users to make your business growth.
 
 If you don't know what behavioral tracking is or you have not implemented tracking in your projects, I can compress the explanation in a single paragraph:
 
-Tracking is the way companies get valuable information about meaningful events that have taken place in their platform/applications; this is especially useful to understand how users behave and to identify potential downfalls and opportunities in specific flows.
+<mark>_**Behavioral tracking** is the way companies get valuable information about meaningful events that have taken place in their platform/applications; this is especially useful to understand how users behave and to identify potential downfalls and opportunities in specific flows._</mark>
 
-As you read in the simplistic definition above, it is all about getting valuable information from events, i.e., _call to action clicks, users logins..._ to achieve this as developers, we need a technical implementation that allows us to apply this in an efficient and scalable way, but as you will soon realize tracking comes with some technical challenges.
+As you read in the simplistic definition above, it is all about getting valuable information from events, i.e., _call to action clicks, users logins..._ to achieve this as developers, we need a technical implementation that allows us to apply this in an efficient and scalable manner, but, as you will soon realize, tracking comes with some technical challenges.
 
-## A potential implementation
+## A starting point
 
-Usually, you will find that it is reasonably common between codebases to have isolated modules dedicated for tracking, these modules are just simple encapsulated functionalities that allow you to send information to an endpoint that will serve to store the payload received from the users based on specific types of events.
+Usually, you find that it is reasonably common between codebases to have isolated modules dedicated for tracking, these modules are just simple encapsulated functionalities that allow you to send information to an endpoint that stores the payload received from the users based on specific types of events.
 
 Below a naive implementation of how a tracking module could look:
 
@@ -45,9 +45,9 @@ class Tracker {
 }
 ```
 
-As you can see above, we are just creating a class that contains a method that will allow us to post information to an endpoint; this example is overly simple but will be enough for the article, in a real world escenario you will/should have a model that validates the parameters you want to track and the type of data sent as the payload.
+As you can see above, we are just creating a class that contains a method that allows us to post information to an endpoint; this example is overly simple but is enough for this article's purpose, in a real world escenario you will/should have a model that validates the parameters you want to track and the type of data sent as the payload.
 
-<mark>For this article's purpose we are going to have as a target tracking a subscription button, this so that we can understand how many users are engaging with it.</mark>
+<mark>For this article's purpose, we are going to start by having as a target tracking a subscription button, this so that we can understand how many users are engaging with it.</mark>
 :
 
 ```html
@@ -56,12 +56,12 @@ As you can see above, we are just creating a class that contains a method that w
 </button>
 ```
 
-So we will see how we can apply different patterns to track this same element.
+Now let's see how we can apply different patterns to track this same element.
 
 ## In module tracking
 Consists of importing the tracking module in your application's modules and injecting the tracking function in the pieces of logic/relevant blocks of code. The implementation of this pattern would look something like this:
 
-```javascript
+```javascript{11-14}
 import Tracker from './Tracker';
 
 class SubscriptionButton {
@@ -91,17 +91,19 @@ class SubscriptionButton {
 Very simple and functional, this approach is widely used, it has some good and bad parts, lets analyze them:
 
 ### Pros:
-- **Flexibility**. since we are adding inside of the scripts functionality it is very easy to track pretty much any kind of events.
+- **Flexibility**. Since we are adding the tracking method inside of the scripts functionality it is effortless to add tracking pretty much any logic.
 - **Simplicity**. Adding trackers is a simple task since it is just a matter of adding the function to the logic that requires it.
-- **Unification**. The tracking code is in the same place as the original's script code, while this is bad on one side, it is good in the way that it will alloy you to be aware of it anytime you have to make a change on functionality.
+- **Unification**. The tracking code is in the same place as the original's script code, while this is bad on one side, it is good in the way that it allows you to be aware of it anytime you have to make a change on functionality.
 
 ### Const:
-- **Single responsibility is not respected**. Adding the tracking functionality inside of scripts core code violates the single responsibility principle because.
+- **Single responsibility is not respected**. Adding the tracking functionality inside of script's core code violates the single responsibility principle.
 - **Tracked elements are not easy to identify**. Each script contains the tracking functionality on its core which means that we need to go to its definition and look into the code where the tracking might be added
-- **Scalability risk**: Since this approach is very flexible it can easily get out of hand so it might be a good idea to stablish some ground rules.
+- **Scalability risk**: Since this approach is very flexiblea it can easily get out of hand so it might be a good idea to stablish some ground rules.
 
 ## Isolating tracked methods by extending its original definition
-This is another approach that tries to isolate the elements that are tracked out of the original's script functionality, the idea is to extend the original as an extra layer dedicate to track events, let's see an example:
+Extending the original class is another approach that tries to isolate the elements that are tracked out of the original's script functionality, the idea is to extend the code to create an extra layer dedicated to track events, let's see an example:
+
+We implement the script functionality:
 
 ```javascript
 class SubscriptionButton {
@@ -129,7 +131,7 @@ class SubscriptionButton {
 
 then we implement the tracking
 
-```javacript
+```javascript
 import Tracker from './Tracker';
 
 class TrackedSubscriptionButton extends SubscriptionButton {
@@ -160,7 +162,7 @@ class TrackedSubscriptionButton extends SubscriptionButton {
 }
 ```
 
-Notice how we are able to isolate the tracking related code in a different class, it is important that you know that you have to be careful to not duplicate the logic for the element you want to track, make sure the logic is trackeable and reusable from the original class, notice that in the case above we are using a new event listener and condition, but the condition is actually the same from the parent's class, we are just reusing the property that defines it.
+Notice how we are able to isolate the tracking related code in a different class, it is important that you realize that **we have to be careful to not duplicate the logic for the element you want to track**, make sure the logic is trackeable and reusable from the original class, notice that in the case above we are using a new event listener and condition, but the condition is actually the same from the parent's class, we are just reusing the property that defines it. This approach does not have to be implemented with inheritance, if you like to write functional and declarative code instead you can use a [Higher Order Function](https://enmascript.com/articles/2019/02/27/higher-order-functions-and-some-great-applications-in-javascript) that wraps the tracking functionality.
 
 ### Pros
 - **Tracking code is isolated**. Single responsibility principle is respected.
@@ -176,7 +178,7 @@ Notice how we are able to isolate the tracking related code in a different class
 Another way to keep tracking scalable and personalized is to create a custom centric tracking system, this pattern is very popular and I have seen it been used in multiple companies, it usually consists on tracking interactions based on dataset properties, in example let's say you want to track a click on an element:
 
 Elements to track:
-```html
+```html{1,5}
 <button data-click-tracking="subscription_button_left">
     Subscribe
 </button>
@@ -264,9 +266,8 @@ export default HTTPPost;
 
 and then we would be able to use it to track data like:
 
-```javascript
+```javascript{5}
 import HTTPPost from './http-client';
-
 
 HTTPPost('/api/login', {userId, password, source: 'modal' })
     .then(response => {
@@ -279,14 +280,16 @@ this is not actually bad but we will have to import the Tracker module in every 
 
 ## Centralizing Asynchronous tracking
 
-This will be the last approach we will be covering on this article and it is one that I really like. The fundaments of this approach relies on adding the tracking function once in the HTTPClient, then we can leverage a dictionary that will contain the URLs we want to track mapped to the model of properties each URL will require to be successfully tracked.
+This will be the last approach we will be covering on this article and it is one that I really like. The fundaments of this approach relies on adding the tracking function once in the HTTPClient, then we can leverage a dictionary that will contain the URLs we want to track, these will be mapped to a model of properties where each URL will require to be successfully tracked.
 
 Let's explain with code step by step:
 
 ### 1) We add the tracking in the HTTPClient
 We basically take the code from the previous approach and add the tracking on the promise response:
 
-```javascript
+```javascript{15}
+import Tracker from './Tracker';
+
 function HTTPPost(url = '', data = {}) {
     return fetch(url, {
         method: 'POST',
@@ -298,8 +301,66 @@ function HTTPPost(url = '', data = {}) {
         referrer: 'no-referrer',
         body: JSON.stringify(data),
     })
-    .then(response => response.json());
+    .then(response => response.json())
+    .then(response => Tracker.request(url, response));
 }
 
 export default HTTPPost;
 ```
+
+As you see we are executing `Tracker.request` on all requests, now we have to define which requests we actually want to track and which parameters are relevant to be tracked for those requests, so we can make use of a dictionary like this:
+
+```javascript
+const TRACKED_URLS = {
+    '/api/login': ['userId', 'source', 'url', 'type'],
+    '/api/logout': ['userId', 'time', 'type'],
+    'api/subscription': ['userId', 'source', 'type'],
+    ...
+};
+
+export default TRACKED_URLS;
+```
+
+<mark>In the example above we are using a list to store the valid properties just to make the example simpler, you can create a real model that properly validates the information that each tracked URL needs</mark>. After this the method in charge of tracking the requests could be added to the class we already had to track, we can do something like this:
+
+```javascript{23-35}
+import TRACKED_URLS from './tracked-urls';
+
+class Tracker {
+    static get ENDPOINT_URL() {
+        return "my.endpoint.domain/tracking"
+    }
+
+    async track(payload) {
+        const response = await fetch(
+            Tracker.ENDPOINT_URL,
+            {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json',
+                 },
+                 body: JSON.stringify(payload)
+            }
+        );
+
+        return response;
+    }
+
+    request(url, data) {
+        const URL_PROPERTIES = TRACKED_URLS[url];
+        const PAYLOAD_PROPERTIES = Object.keys(data);
+
+        const arePropertiesValid = URL_PROPERTIES
+            && URL_PROPERTIES.every(property => (
+                PAYLOAD_PROPERTIES.includes(property)
+            ));
+
+        if (!arePropertiesValid) return false;
+
+        this.track(data);
+    }
+}
+```
+
+Very simple, the `request` method just verifies that all the tracked elements have the correct properties passed, it serves as a centralized filter and as a centralized request's tracking dictionary, This approach is straight forward and scales very well because you have all the tracked URL's in a single place which allows you to add and delete on demand easily.
+
