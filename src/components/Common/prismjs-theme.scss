@@ -207,3 +207,17 @@ pre > code.highlight {
     box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.2);
     border-radius: $soft-border-radius;
 }
+
+.gatsby-highlight-code-line {
+    background-color: #feb;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid $yellow;
+    min-height: 20px;
+    line-height: 19.25px;
+}
+
+
