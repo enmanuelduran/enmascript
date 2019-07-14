@@ -1,14 +1,14 @@
 ---
-date: '2019-06-04T17:10:30.962Z'
+date: '2019-07-15T09:10:30.962Z'
 title: "Efficient behavioral tracking in javascript applications"
 summary: "Tracking is an essential part of product development, either for web development, mobile applications or any software you might be working on; it is crucial to understand your users and therefore to make your business growth."
 series: ['Javascript']
-featuredImage: '2019-06-04-webperf-code-quality-cover.png'
+featuredImage: '2019-07-15-behavioral-tracking-cover.png'
 ---
 
-Tracking is an essential part of product development, either for web development, mobile applications, or any software you might be working on; it is crucial to understand your users to make your business growth.
+Tracking is an essential part of product development, either for the web, mobile applications, or any software you might be working on; it is crucial to understand your users to make your business grow.
 
-If you don't know what behavioral tracking is or you have not implemented tracking in your projects, I can compress the explanation in a single paragraph:
+If you don't know what **behavioral tracking** is or you have not implemented tracking in your projects, I can compress the explanation in a single paragraph:
 
 <mark>_**Behavioral tracking** is the way companies get valuable information about meaningful events that have taken place in their platform/applications; this is especially useful to understand how users behave and to identify potential downfalls and opportunities in specific flows._</mark>
 
@@ -56,7 +56,7 @@ As you can see above, we are just creating a class that contains a method that a
 </button>
 ```
 
-Now let's see how we can apply different patterns to track this same element.
+Let's see how we can apply different patterns to track this same element.
 
 ## In module tracking
 Consists of importing the tracking module in your application's modules and injecting the tracking function in the pieces of logic/relevant blocks of code. The implementation of this pattern would look something like this:
@@ -91,7 +91,7 @@ class SubscriptionButton {
 Very simple and functional, this approach is widely used, it has some good and bad parts, lets analyze them:
 
 ### Pros:
-- **Flexibility**. Since we are adding the tracking method inside of the scripts functionality it is effortless to add tracking pretty much any logic.
+- **Flexibility**. Since we are adding the tracking method inside of the script's functionality it is effortless to add tracking to pretty much any logic.
 - **Simplicity**. Adding trackers is a simple task since it is just a matter of adding the function to the logic that requires it.
 - **Unification**. The tracking code is in the same place as the original's script code, while this is bad on one side, it is good in the way that it allows you to be aware of it anytime you have to make a change on functionality.
 
@@ -101,7 +101,7 @@ Very simple and functional, this approach is widely used, it has some good and b
 - **Scalability risk**: Since this approach is very flexiblea it can easily get out of hand so it might be a good idea to stablish some ground rules.
 
 ## Isolating tracked methods by extending its original definition
-Extending the original class is another approach that tries to isolate the elements that are tracked out of the original's script functionality, the idea is to extend the code to create an extra layer dedicated to track events, let's see an example:
+Extending the original class is another approach that seeks to isolate the elements that are tracked out of the original's script functionality, the idea is to extend the code to create an extra layer dedicated to track events, let's see an example:
 
 We implement the script functionality:
 
@@ -129,7 +129,7 @@ class SubscriptionButton {
 }
 ```
 
-then we implement the tracking
+then we implement the tracking:
 
 ```javascript
 import Tracker from './Tracker';
@@ -175,7 +175,7 @@ Notice how we are able to isolate the tracking related code in a different class
 - **Dangerous code and duplicated logic**. If you notice the isolated class, you will see we are adding a specific listener to track the click event, this can be dangerous especially if there is logic you need to add around the tracking (like a conditional). Also you will have to expose properties through `this` so that the parent class can inherited and use it.
 
 ### A Custom approach
-Another way to keep tracking scalable and personalized is to create a custom centric tracking system, this pattern is very popular and I have seen it been used in multiple companies, it usually consists on tracking interactions based on dataset properties, in example let's say you want to track a click on an element:
+Another way to keep tracking scalable and personalized is to create a customized centric tracking system, this pattern is very popular and I have seen it been used in multiple companies, it usually consists on tracking interactions based on dataset properties, in example let's say you want to track a click on an element:
 
 Elements to track:
 ```html{1,5}
@@ -280,7 +280,9 @@ this is not actually bad but we will have to import the Tracker module in every 
 
 ## Centralizing Asynchronous tracking
 
-This will be the last approach we will be covering on this article and it is one that I really like. The fundaments of this approach relies on adding the tracking function once in the HTTPClient, then we can leverage a dictionary that will contain the URLs we want to track, these will be mapped to a model of properties where each URL will require to be successfully tracked.
+This will be the last approach we will be covering on this article and it is one that I really like. The fundaments of this approach relies on adding the tracking function once in the HTTPClient, then we can leverage a dictionary that will contain the URLs we want to track, these will be mapped to a model of properties where each URL will require to be successfully tracked, something like this:
+
+![](/images/2019-07-15-behavioral-tracking-async.png)
 
 Let's explain with code step by step:
 
@@ -364,3 +366,6 @@ class Tracker {
 
 Very simple, the `request` method just verifies that all the tracked elements have the correct properties passed, it serves as a centralized filter and as a centralized request's tracking dictionary, This approach is straight forward and scales very well because you have all the tracked URL's in a single place which allows you to add and delete on demand easily.
 
+Ok guys that is it for this article, I hope you have enjoyed it, if you did remember that you can share it with your friends or leave a comment on reddit or twitter by clicking on the social links.
+
+See you in the next one!
