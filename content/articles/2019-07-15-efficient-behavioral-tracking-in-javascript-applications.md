@@ -6,7 +6,7 @@ series: ['Javascript']
 featuredImage: '2019-07-15-behavioral-tracking-cover.png'
 ---
 
-Tracking is an essential part of product development, either for the web, mobile applications, or any software you might be working on; it is crucial to understand your users to make your business grow.
+Tracking is an essential part of product development, either for the web, mobile applications, or any software you might be working on; it is crucial to understand your users to make your business grow. On this article, we are going to explore multiple alternatives and patterns to implement tracking using javascript.
 
 If you don't know what **behavioral tracking** is or you have not implemented tracking in your projects, I can compress the explanation in a single paragraph:
 
@@ -45,10 +45,9 @@ class Tracker {
 }
 ```
 
-As you can see above, we are just creating a class that contains a method that allows us to post information to an endpoint; this example is overly simple but is enough for this article's purpose, in a real world escenario you will/should have a model that validates the parameters you want to track and the type of data sent as the payload.
+As you can see above, we are just creating a class that contains a method that allows us to post information to an endpoint; this example is overly simple but is enough for this article's purpose, in a real-world escenario you will/should have a model that validates the parameters you want to track and the type of data sent as the payload.
 
 <mark>For this article's purpose, we are going to start by having as a target tracking a subscription button, this so that we can understand how many users are engaging with it.</mark>
-:
 
 ```html
 <button class="js-tracked-click subscription-button">
@@ -91,17 +90,17 @@ class SubscriptionButton {
 Very simple and functional, this approach is widely used, it has some good and bad parts, lets analyze them:
 
 ### Pros:
-- **Flexibility**. Since we are adding the tracking method inside of the script's functionality it is effortless to add tracking to pretty much any logic.
+- **Flexibility**. Since we are adding the tracking method inside of the script's functionality, it is effortless to add tracking to pretty much any logic.
 - **Simplicity**. Adding trackers is a simple task since it is just a matter of adding the function to the logic that requires it.
 - **Unification**. The tracking code is in the same place as the original's script code, while this is bad on one side, it is good in the way that it allows you to be aware of it anytime you have to make a change on functionality.
 
 ### Const:
 - **Single responsibility is not respected**. Adding the tracking functionality inside of script's core code violates the single responsibility principle.
 - **Tracked elements are not easy to identify**. Each script contains the tracking functionality on its core which means that we need to go to its definition and look into the code where the tracking might be added
-- **Scalability risk**: Since this approach is very flexiblea it can easily get out of hand so it might be a good idea to stablish some ground rules.
+- **Scalability risk**: Since this approach is very flexible it can quickly get out of hand so it might be a good idea to establish some ground rules.
 
 ## Isolating tracked methods by extending its original definition
-Extending the original class is another approach that seeks to isolate the elements that are tracked out of the original's script functionality, the idea is to extend the code to create an extra layer dedicated to track events, let's see an example:
+Extending the original class is another approach that seeks to isolate the elements that are tracked out of the original's script functionality, the idea is to extend the code to create an extra layer dedicated to tracking events, let's see an example:
 
 We implement the script functionality:
 
@@ -162,20 +161,20 @@ class TrackedSubscriptionButton extends SubscriptionButton {
 }
 ```
 
-Notice how we are able to isolate the tracking related code in a different class, it is important that you realize that **we have to be careful to not duplicate the logic for the element you want to track**, make sure the logic is trackeable and reusable from the original class, notice that in the case above we are using a new event listener and condition, but the condition is actually the same from the parent's class, we are just reusing the property that defines it. This approach does not have to be implemented with inheritance, if you like to write functional and declarative code instead you can use a [Higher Order Function](https://enmascript.com/articles/2019/02/27/higher-order-functions-and-some-great-applications-in-javascript) that wraps the tracking functionality.
+Notice how we are able to isolate the tracking related code in a different class, it is essential that you realize that **we have to be careful to not duplicate the logic for the element you want to track**, make sure the logic is trackable and reusable from the original class, notice that in the case above we are using a new event listener and condition, but the condition is actually the same from the parent's class, we are just reusing the property that defines it. This approach does not have to be implemented with inheritance; if you'd like to write functional and declarative code instead, you can use a [Higher Order Function](https://enmascript.com/articles/2019/02/27/higher-order-functions-and-some-great-applications-in-javascript) that wraps the tracking functionality.
 
 ### Pros
 - **Tracking code is isolated**. Single responsibility principle is respected.
-- **Tracked elements are easy to detect, modify and delete**. This is simple to achieve since everything is a single place per each module.
-- **Scalability**. If this approach is well applied you can scale your codebase easily.
+- **Tracked elements are natural to detect, modify, and delete**, this is simple to achieve since everything is a single place per each module.
+- **Scalability**. If this approach is well applied, you can scale your codebase easily.
 
 ### Const
-- **Flexible but with constraints.** We can add tracking to any element we want but we have to always keep the tracking class into mind.
+- **Flexible but with constraints.** We can add tracking to any element we want, but we always have to keep the tracking class into mind..
 - **Mindset change**. When using this approach you need to always have tracking in your mind in the same way you do with unit testing, you always need to make sure your code is trackable in the isolated class, this can be good but has to be well thought.
-- **Dangerous code and duplicated logic**. If you notice the isolated class, you will see we are adding a specific listener to track the click event, this can be dangerous especially if there is logic you need to add around the tracking (like a conditional). Also you will have to expose properties through `this` so that the parent class can inherited and use it.
+- **Dangerous code and duplicated logic**. If you notice the tracking class, you will see we are adding a specific listener to track the click event, this can be dangerous especially if there is logic you need to add around the tracking (like a conditional). Also, you will have to expose properties through `this` so that the parent class can be inherited and used.
 
 ### A Custom approach
-Another way to keep tracking scalable and personalized is to create a customized centric tracking system, this pattern is very popular and I have seen it been used in multiple companies, it usually consists on tracking interactions based on dataset properties, in example let's say you want to track a click on an element:
+Another way to keep tracking scalable and personalized is to create a customized centric tracking system, this pattern is prevalent and I have seen it been used in multiple companies, it usually consists on tracking interactions based on dataset properties, in example let's say you want to track a click on an element:
 
 Elements to track:
 ```html{1,5}
@@ -189,6 +188,7 @@ Elements to track:
 ```
 
 Unified click tracker functionality:
+
 ```javascript
 import Tracker from './Tracker';
 
@@ -219,23 +219,23 @@ class ClickTracker {
 }
 ```
 
-In this way all click tracked elements will pass over the click handler and we will identify them by using a custom id passed through the dataset property. A good example of companies using this approach is Google on [google tag manager](https://tagmanager.google.com/) where you can define custom classes or data properties to be tracked and send information to _Google Analytics_. I consider this approach  to be the best of the ones mentioned so far since you can apply this same pattern for other types of events like scroll events, it is not limited to clicks.
+In this way, all click tracked elements pass over the click handler and we are able to identify them by using a custom id passed through the dataset property. An excellent example of companies using this approach is Google on [google tag manager](https://tagmanager.google.com/) where you can define custom classes or data properties to be tracked and send information to _Google Analytics_. I consider this approach  to be the best of the ones mentioned so far since you can apply this same pattern for other types of events like scroll events, it is not limited to clicks.
 
 ### Pros
 - **Custom implementation**. Made for the specific needs of the company.
 - **Scalability.** A single script is in charge of the tracking so the other scripts remain untouched.
-- **Single Responsibility**. It is preserved because the tracking functionality is in a dedicated module.
+- **Single Responsibility**, it is preserved because the tracking functionality is in a dedicated module.
 
 ###  Cons
-- **Constraints are present.** Since this approach consist on tracking elements from the DOM not all the cases will be covered, you will find out that especial functionalities will still need to be tracked on its core code,  this means that in especial ocassions you will have to import the tracking module and decide which approach you want to take [In module tracking](#in-module-tracking) or [extended approach](#isolating-tracked-methods-by-extending-its-original-definition)
+- **Constraints are present.** Since this approach consist on tracking elements from the DOM, it wont be possible to cover all the cases, you will find out that especial functionalities still need to be tracked on its core code,  this means that in especial ocassions you will have to import the tracking module and decide which approach you want to take [In module tracking](#in-module-tracking) or [extended approach](#isolating-tracked-methods-by-extending-its-original-definition).
 
 
 ## Tracking asynchronous requests
-Generally you find yourself needing to track a form submission or a login event, for many reasons is not efficient to add the tracking to the button that submits the information (The login could fail or the form request could return an error) which means we would be tracking data incorrectly.
+Generally, you find yourself needing to track a form submission or a login event, for many reasons is not efficient to add the tracking to the button that submits the information (The login could fail, or the form request could return an error) which means we would be tracking data incorrectly.
 
-For this you could simply use the [In module tracking](#in-module-tracking) approach by adding the tracking function to the `200` response, this would be fine but you will endup with multiple conditions for each request needed to be tracked.
+For this, you could use the [In module tracking](#in-module-tracking) approach by adding the tracking function to the `200` response, this would be fine but we would endup with multiple conditions for each request needed to be tracked.
 
-let's say you have a centralized Http client that you use for all asynchronous request (which will almost always be the case), this client returns a promise so that you can execute some code per module, then we get assigned some tracking requirements as follow:
+let's say you have a centralized HTTP client that you use for all asynchronous request (which will almost always be the case); this client returns a promise so that you can execute some code per module, then we get assigned some tracking requirements as follow:
 
 <mark>We would like to track the following events to get some meaningful information about our users and to learn how we can improve their experience on the platform:</mark>
 
@@ -244,7 +244,7 @@ let's say you have a centralized Http client that you use for all asynchronous r
 - <mark>Logout events</mark>
 - <mark>Call to action clicks</mark>
 
-So we notice that the call to action click can be easily tracked with a click tracking event, but what about the other ones? All of them are different events using different URLs and needing different data to be tracked, so if we use a centralize http client it would look something like this:
+So we notice that the call to action click can be easily tracked with a click tracking event, but what about the other ones? All of them are different events using different URLs and needing different data to be tracked, so if we use a centralize HTTP client it would look something like this:
 
 ```javascript
 function HTTPPost(url = '', data = {}) {
@@ -276,11 +276,11 @@ HTTPPost('/api/login', {userId, password, source: 'modal' })
     .catch(error => console.error(error))
 ```
 
-this is not actually bad but we will have to import the Tracker module in every file that will execute the successful asynchronous request which sometimes is something that will be a let down depending on the companies needs.
+The approach above is not actually bad but we would have to import the Tracker module in every file that will execute the successful asynchronous request which sometimes is something that will be a let down depending on the company's policies.
 
 ## Centralizing Asynchronous tracking
 
-This will be the last approach we will be covering on this article and it is one that I really like. The fundaments of this approach relies on adding the tracking function once in the HTTPClient, then we can leverage a dictionary that will contain the URLs we want to track, these will be mapped to a model of properties where each URL will require to be successfully tracked, something like this:
+This will be the last approach we will cover on this article and it is one that I really like. The fundaments of this approach relies on adding the tracking function once in the `HTTPPost` method, then we can leverage a dictionary that will contain the URLs we want to track, these will be mapped to a model of properties where each URL will require to be successfully tracked, something like this:
 
 ![](/images/2019-07-15-behavioral-tracking-async.png)
 
@@ -323,7 +323,7 @@ const TRACKED_URLS = {
 export default TRACKED_URLS;
 ```
 
-<mark>In the example above we are using a list to store the valid properties just to make the example simpler, you can create a real model that properly validates the information that each tracked URL needs</mark>. After this the method in charge of tracking the requests could be added to the class we already had to track, we can do something like this:
+<mark>In the example above we are using a list to store the valid properties just to make the example simpler, you can create a real model that properly validates the information that each tracked URL needs</mark>. After this the method in charge of tracking the requests could be added to the tracking module, we can do something like this:
 
 ```javascript{23-35}
 import TRACKED_URLS from './tracked-urls';
@@ -364,8 +364,10 @@ class Tracker {
 }
 ```
 
-Very simple, the `request` method just verifies that all the tracked elements have the correct properties passed, it serves as a centralized filter and as a centralized request's tracking dictionary, This approach is straight forward and scales very well because you have all the tracked URL's in a single place which allows you to add and delete on demand easily.
+Very simple, the `request` method just verifies that all the tracked elements have the correct properties passed, it serves as a centralized filter and as a centralized request's tracking dictionary, This approach is straight forward and scales very well because you have all the tracked URL's in a single place which allows you to add and delete on demand quickly.
 
-Ok guys that is it for this article, I hope you have enjoyed it, if you did remember that you can share it with your friends or leave a comment on reddit or twitter by clicking on the social links.
+As stated at the beginning, this article's intention is to show the good and the bad parts of each tracking implementation so that you can decide which one is better for you and your team.
+
+That is it for now, I hope you have enjoyed it -- if you did, remember that you can share it with your friends or leave a comment on reddit or twitter by clicking on the social links.
 
 See you in the next one!
