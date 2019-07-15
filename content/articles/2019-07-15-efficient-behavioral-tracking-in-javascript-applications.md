@@ -149,7 +149,7 @@ class TrackedSubscriptionButton extends SubscriptionButton {
         if (super.elementHasClass) {
             super._button.addEventListener(
                 'click',
-                Tracker.track({
+                () => Tracker.track({
                     type: 'click',
                     element: 'Subscription_button_1'
                 });
