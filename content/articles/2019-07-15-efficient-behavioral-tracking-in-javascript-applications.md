@@ -174,7 +174,7 @@ Notice how we are able to isolate the tracking related code in a different class
 - **Dangerous code and duplicated logic**. If you notice the tracking class, you will see we are adding a specific listener to track the click event, this can be dangerous especially if there is logic you need to add around the tracking (like a conditional). Also, you will have to expose properties through `this` so that the parent class can be inherited and used.
 
 ### A Custom approach
-Another way to keep tracking scalable and personalized is to create a customized centric tracking system, this pattern is prevalent and I have seen it been used in multiple companies, it usually consists on tracking interactions based on dataset properties, in example let's say you want to track a click on an element:
+Another way to keep tracking scalable and personalized is to create a customized centric tracking system, this pattern is prevalent and I have seen it being used in multiple companies, it usually consists on tracking interactions based on dataset properties, for example let's say you want to track a click on an element:
 
 Elements to track:
 ```html{1,5}
@@ -323,7 +323,7 @@ const TRACKED_URLS = {
 export default TRACKED_URLS;
 ```
 
-<mark>In the example above we are using a list to store the valid properties just to make the example simpler, you can create a real model that properly validates the information that each tracked URL needs</mark>. After this the method in charge of tracking the requests could be added to the tracking module, we can do something like this:
+<mark>In the example above we are using a list to store the valid properties just to make the example simpler, you can create a real model that properly validates the information that each tracked URL needs</mark>. After this, the method in charge of tracking the requests could be added to the tracking module. We can do something like this:
 
 ```javascript{23-35}
 import TRACKED_URLS from './tracked-urls';
