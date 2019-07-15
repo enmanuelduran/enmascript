@@ -4,6 +4,7 @@ title: "Efficient behavioral tracking in javascript applications"
 summary: "Tracking is an essential part of product development, either for web development, mobile applications or any software you might be working on; it is crucial to understand your users and therefore to make your business growth."
 series: ['Javascript']
 featuredImage: '2019-07-15-behavioral-tracking-cover.png'
+reddit: 'https://www.reddit.com/r/javascript/comments/cdgvs3/efficient_behavioral_tracking_in_javascript/'
 ---
 
 Tracking is an essential part of product development, either for the web, mobile applications, or any software you might be working on; it is crucial to understand your users to make your business grow. On this article, we are going to explore multiple alternatives and patterns to implement tracking using javascript.
