@@ -4,7 +4,6 @@ title: 'Two exceptional use cases for the spread operator you may not know of'
 summary: 'Spread operator is one of the most commonly used elements in the javascript toolbox, this mini-article will show you a couple of highly productive and efficient uses for the spread operator.'
 series: ['Did You Know']
 featuredImage: '2019-09-20-spread-operator-uses.png'
-reddit: 'https://www.reddit.com/r/javascript/comments/cdgvs3/efficient_behavioral_tracking_in_javascript/'
 ---
 
 <mark>**#Did you know** is a new series of Enmascript where we write short and concise explanations about topics we consider might be relevant or underestimated, if you are looking for more complete in-depth articles check out our **[other series](/series)**.</mark>
