@@ -32,6 +32,8 @@ In this way, we can add the `woof` property conditionally without having to use 
 { key: 'value', woof: true };
 ```
 
+**Important note:** optional spreading like this only works inside an object, if we try to do this outside of it we would get a SyntaxError. 
+
 ## Copy objects and exclude selected properties
 
 Let's say we like the parts of certain CPU and we would like to keep most of them except for the ssd, because of course, we would like to have more space:
