@@ -209,7 +209,7 @@ pre > code.highlight {
 }
 
 .gatsby-highlight-code-line {
-    background-color: #feb;
+    background-image: linear-gradient(to right, #feb, #fff);
     display: block;
     margin-right: -1em;
     margin-left: -1em;
@@ -219,5 +219,3 @@ pre > code.highlight {
     min-height: 20px;
     line-height: 19.25px;
 }
-
-
