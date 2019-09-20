@@ -32,7 +32,7 @@ In this way, we can add the `woof` property conditionally without having to use 
 { key: 'value', woof: true };
 ```
 
-**Important note:** optional spreading like this only works inside an object, if we try to do this outside of it we would get a SyntaxError. 
+**Important note:** optional spreading like this only works inside an object, if we try to do this outside of it we would get a SyntaxError, if you want to understand a little more of why this happens you may want to check out [this conversation we had in reddit](https://www.reddit.com/r/javascript/comments/d6uot1/two_exceptional_use_cases_for_the_spread_operator/#t1_f0vnwpg)
 
 ## Copy objects and exclude selected properties
 
