@@ -1,6 +1,6 @@
 ---
 date: '2019-09-22T10:10:30.962Z'
-title: 'A different way of handing required arguments in javascript functions'
+title: 'A different way of handling required arguments in javascript functions'
 summary: 'Required parameters are everywhere in our codebase, in this short article we are going to explore a different way of handling them that might just be your new favorite approach.'
 series: ['Did You Know']
 featuredImage: '2019-09-22-required-function-arguments.png'
