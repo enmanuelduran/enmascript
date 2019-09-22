@@ -4,6 +4,7 @@ title: 'A different way of handling required arguments in javascript functions'
 summary: 'Required parameters are everywhere in our codebase, in this short article we are going to explore a different way of handling them that might just be your new favorite approach.'
 series: ['Did You Know']
 featuredImage: '2019-09-22-required-function-arguments.png'
+reddit: 'https://enmascript.com/articles/2019/09/22/a-different-way-of-handling-required-arguments-in-javascript-functions'
 ---
 
 <mark>**#Did you know** is a new series of Enmascript where we write short and concise explanations about topics we consider might be relevant or underestimated, if you are looking for more complete in-depth articles check out our **[other series](/series)**.</mark>
@@ -52,4 +53,4 @@ Passing the name of the parameter to the `required` function is only a preferenc
 
 This approach is not limited to this implementation, we can use this same principle to create our own argument's validators and reuse in our functions to enforce consistency and security.
 
-Do you have ideas that are similar or related to this topic? share them with us.
+Do you have ideas that are similar or related to this topic? [share them with us](https://enmascript.com/articles/2019/09/22/a-different-way-of-handling-required-arguments-in-javascript-functions).
