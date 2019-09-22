@@ -4,7 +4,7 @@ title: 'Two exceptional use cases for the spread operator you may not know of'
 summary: 'Spread operator is one of the most commonly used elements in the javascript toolbox, this mini-article will show you a couple of highly productive and efficient uses for the spread operator.'
 series: ['Did You Know']
 featuredImage: '2019-09-20-spread-operator-uses.png'
-reddit: 'https://www.reddit.com/r/javascript/comments/cdgvs3/efficient_behavioral_tracking_in_javascript/'
+reddit: 'https://www.reddit.com/r/javascript/comments/d6uot1/two_exceptional_use_cases_for_the_spread_operator/'
 ---
 
 <mark>**#Did you know** is a new series of Enmascript where we write short and concise explanations about topics we consider might be relevant or underestimated, if you are looking for more complete in-depth articles check out our **[other series](/series)**.</mark>
@@ -31,6 +31,8 @@ In this way, we can add the `woof` property conditionally without having to use 
 ```javascript
 { key: 'value', woof: true };
 ```
+
+**Important note:** optional spreading like this only works inside an object, if we try to do this outside of it we would get a SyntaxError, if you want to understand a little more of why this happens you may want to check out [this conversation we had in reddit](https://www.reddit.com/r/javascript/comments/d6uot1/two_exceptional_use_cases_for_the_spread_operator/#t1_f0vnwpg)
 
 ## Copy objects and exclude selected properties
 
