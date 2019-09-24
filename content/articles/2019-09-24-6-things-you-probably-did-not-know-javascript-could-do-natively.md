@@ -4,7 +4,7 @@ title: '6 Things you probably did not know javascript could do natively'
 summary: 'JavaScript is a language that evolves fast, for this reason it is sometimes hard to catch up with all its features and capabilities. On this short article we will explore some of the features that you may not know existed.'
 series: ['Did You Know', 'Javascript']
 featuredImage: '2019-09-24-6-native-javascript-things.png'
-reddit: 'https://www.reddit.com/r/javascript/comments/d8lwee/6_things_you_probably_did_not_know_javascript/'
+reddit: 'https://www.reddit.com/r/javascript/comments/d8njfy/6_things_you_probably_did_not_know_javascript/'
 ---
 
 <mark>**#Did you know** is a new series of Enmascript where we write short and concise explanations about topics we consider might be relevant or underestimated, if you are looking for more complete in-depth articles check out our **[other series](/series)**.</mark>
