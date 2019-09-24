@@ -1,5 +1,5 @@
 ---
-date: '2019-09-24T10:10:30.962Z'
+date: '2019-09-24T08:10:30.962Z'
 title: '6 Things you probably did not know javascript could do natively'
 summary: 'JavaScript is a language that evolves fast, for this reason it is sometimes hard to catch up with all its features and capabilities. On this short article we will explore some of the features that you may not know existed.'
 series: ['Did You Know', 'Javascript']
