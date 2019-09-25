@@ -89,7 +89,7 @@ immutableObject.name = 'Another name';
 
 Does the same as `Object.freeze` but it allows you to change the values of properties that were already defined in the object, this will enable you to \_control \_the properties declared in an object but not the definitions:
 
-```javascript
+```javascript{5}
 const controlledObject = {
     name: 'Barry Allen'
 };
