@@ -10,7 +10,7 @@ $aside-ads-background: $dark-blue;
     margin-bottom: 5px;
 
     @include min-device("desktop") {
-        height: 170px;
+        max-height: 170px;
     }
 
     a {
