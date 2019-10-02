@@ -1,23 +1,19 @@
 import React from 'react';
+import Adsense from 'react-adsense';
 import styles from './AsideAds.module.scss';
 import PropTypes from 'prop-types';
 
-const AsideAds = ({data}) => {
+const AsideAds = ({ data }) => {
     return (
-        data.map(ad => (
-            <div className={styles.asideAds} key={ad.name}>
-                <a target="_blank"
-                   rel="noopener noreferrer"
-                   href={ad.url}
-                   data-gtm-track="promoted-aside-cta-click">
-                    <img
-                        src={ad.image}
-                        alt={ad.name}
-                    />
-                    <p className={styles.adsText}>{ad.text}</p>
-                </a>
-            </div>
-        ))
+        <div className={styles.asideAds}>
+            <Adsense.Google
+                client="ca-pub-4858256894602983"
+                slot="1026138458"
+                format="auto"
+                style={{ display: 'block' }}
+                responsive="true"
+            />
+        </div>
     );
 };
 
