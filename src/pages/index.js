@@ -73,8 +73,8 @@ const Index = ({ data }) => {
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
-                        data-gtm-track="promoted-cover-cta-click"
-                        className={styles.homeCoverPromotedAd}
+                        data-gtm-track="cover-cta-click"
+                        className={styles.homeCoverCTA}
                         href="https://github.com/enmanuelduran/mediaquerysensor">
                         <img
                             src={sponsoredHeroCta.image}

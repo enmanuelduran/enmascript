@@ -27,7 +27,7 @@ module.exports = {
                 priority: 1,
                 name: 'MediaQuerySensor',
                 image:
-                    'https://enmascript.com/images/promoted/promoted-2019-03-09.png',
+                    '/images/cta/mqs-2019-03-09.png',
                 text:
                     'MediaQuerySensor is a lightweight library that helps you execute functions based on media query breakpoints instead of the every resize event.',
                 url: 'https://github.com/enmanuelduran/mediaquerysensor'

@@ -104,7 +104,7 @@ $home-tags-background-color: #13161b;
     }
 }
 
-.homeCoverPromotedAd {
+.homeCoverCTA {
     width: 98%;
     height: 190px;
     align-self: center;
@@ -120,19 +120,6 @@ $home-tags-background-color: #13161b;
     @include min-device("desktop") {
         width: 100%;
         margin: 25px auto 70px;
-    }
-
-    &:before {
-        content: "promoted";
-        position: absolute;
-        bottom: 0px;
-        right: 0;
-        background: $tag-background-color;
-        color: $home-tag-text-color;
-        font-size: $small-text-font-size;
-        padding: 5px;
-        border-radius: $border-radius;
-        margin: 5px;
     }
 
     img {
