@@ -5,6 +5,7 @@
     top: 60px;
     padding-bottom: 10px;
     display: table;
+    max-height: 700px;
 
     @include min-device("tablet") {
         height: 300px;

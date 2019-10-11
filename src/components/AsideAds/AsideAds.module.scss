@@ -8,6 +8,7 @@ $aside-ads-background: $dark-blue;
     background: $aside-ads-background;
     border-radius: $border-radius;
     margin-bottom: 5px;
+    overflow: hidden;
 
     @include min-device("desktop") {
         max-height: 170px;
