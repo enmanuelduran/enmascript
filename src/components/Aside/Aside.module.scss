@@ -4,10 +4,11 @@
     position: sticky;
     top: 60px;
     padding-bottom: 10px;
-    display: table;
     max-height: 500px;
+    max-width: 100%;
 
     @include min-device("tablet") {
         height: 300px;
+        display: table;
     }
 }
