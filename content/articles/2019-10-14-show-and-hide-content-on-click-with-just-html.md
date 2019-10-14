@@ -45,7 +45,7 @@ Multiple elements were introduced in HTML5 that are not yet widely known; one of
 
 ## Toggling content visually with just HTML
 
-I recently wrote an article on [how to create an onclick toggler without using javascript](/articles/2019/09/26/underrated-html-elements-that-allow-you-to-avoid-unnecessary-javascript) by leveraging the powerful CSS :target selector, but that is not the only/best way to achieve this.
+I recently wrote an article on [how to create an onclick toggler without using javascript](/articles/2019/09/26/toggle-content-on-click-without-javascript) by leveraging the powerful CSS :target selector, but that is not the only/best way to achieve this.
 
 The `<details>` element allows us to implement a disclosure widget that hides and shows information depending on its boolean state `open`. This allows us to toggle content interactively and natively:
 
