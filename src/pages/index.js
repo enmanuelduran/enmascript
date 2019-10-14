@@ -106,8 +106,8 @@ const Index = ({ data }) => {
                     }
                 </section>
                 <Aside>
-                    <AsideAds data={sponsoredList} />
                     <AsideSeries seriesList={siteMetadata.series_list} />
+                    <AsideAds data={sponsoredList} />
                 </Aside>
             </Container>
         </Layout>
