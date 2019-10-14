@@ -38,8 +38,8 @@ const SeriesArticlesTemplate = ({ data }) => {
                         })}
                 </section>
                 <Aside>
-                    <AsideAds data={siteMetadata.sponsored} />
                     <AsideSeries seriesList={siteMetadata.series_list} />
+                    <AsideAds data={siteMetadata.sponsored} />
                 </Aside>
             </Container>
         </Layout>
