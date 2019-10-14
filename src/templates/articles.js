@@ -189,7 +189,6 @@ const ArticleTemplate = ({ data }) => {
                     <MailchimpWrapper />
                 </div>
                 <Aside>
-                    <AsideAds data={siteMetadata.sponsored} />
                     <div className={styles.articleShare}>
                         <div onClick={shareOn('twitter')}>
                             <Twitter />
@@ -212,6 +211,7 @@ const ArticleTemplate = ({ data }) => {
                             </a>
                         }
                     </div>
+                    <AsideAds data={siteMetadata.sponsored} />
                 </Aside>
             </Container>
             <RelatedArticles
