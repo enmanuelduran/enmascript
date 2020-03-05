@@ -44,8 +44,7 @@
     },
     "devDependencies": {
         "node-sass": "^4.9.3",
-        "prettier": "^1.14.2",
-        "react-adsense": "^0.1.0"
+        "prettier": "^1.14.2"
     },
     "repository": {
         "type": "git",

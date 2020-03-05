@@ -142,13 +142,13 @@ const ArticleTemplate = ({ data }) => {
                     <div className={styles.articleContent}>
                         <div dangerouslySetInnerHTML={{ __html: post.html }} />
                         <div className={`${styles.articleShareMobile} ${styles.articleShare} ${styles.articleContentShare}`}>
-                            <div onClick={shareOn('twitter')}>
+                            <div onClick={shareOn('twitter')} onKeyDown={shareOn('twitter')} role="button" tabIndex={0}>
                                 <Twitter />
                             </div>
-                            <div onClick={shareOn('facebook')}>
+                            <div onClick={shareOn('facebook')} onKeyDown={shareOn('facebook')} role="button" tabIndex={0}>
                                 <Facebook />
                             </div>
-                            <div onClick={shareOn('linkedIn')}>
+                            <div onClick={shareOn('linkedIn')} onKeyDown={shareOn('linkedIn')} role="button" tabIndex={0}>
                                 <LinkedIn />
                             </div>
                             {
@@ -190,13 +190,13 @@ const ArticleTemplate = ({ data }) => {
                 </div>
                 <Aside>
                     <div className={styles.articleShare}>
-                        <div onClick={shareOn('twitter')}>
+                        <div onClick={shareOn('twitter')} onKeyDown={shareOn('twitter')} role="button" tabIndex={0}>
                             <Twitter />
                         </div>
-                        <div onClick={shareOn('facebook')}>
+                        <div onClick={shareOn('facebook')} onKeyDown={shareOn('facebook')} role="button" tabIndex={0}>
                             <Facebook />
                         </div>
-                        <div onClick={shareOn('linkedIn')}>
+                        <div onClick={shareOn('linkedIn')} onKeyDown={shareOn('linkedIn')} role="button" tabIndex={0}>
                             <LinkedIn />
                         </div>
                         {

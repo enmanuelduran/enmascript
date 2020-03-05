@@ -31,7 +31,10 @@ class Header extends React.Component {
                     </Link>
                     <div
                         className={styles.headerMobileMenu}
-                        onClick={this.toggleHamburguerState}>
+                        onClick={this.toggleHamburguerState}
+                        onKeyDown={this.toggleHamburguerState}
+                        role="button"
+                        tabIndex={0}>
                         <span />
                         <span />
                         <span />
