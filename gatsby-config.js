@@ -74,11 +74,6 @@ module.exports = {
                 name: 'MediaQuerySensor',
                 featuredImage: 'MQS.png',
                 slug: '/code/mediaquerysensor'
-            },
-            {
-                name: 'Binary Search Tree',
-                featuredImage: 'MQS.png',
-                slug: '/code/binarysearchtree'
             }
         ]
     },
