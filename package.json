@@ -5,7 +5,7 @@
     "author": "Enmanuel Durán <duranenmanuel@gmail.com>",
     "dependencies": {
         "gatsby": "next",
-        "gatsby-cli": "next",
+        "gatsby-cli": "^2.16.2",
         "gatsby-plugin-catch-links": "next",
         "gatsby-plugin-feed": "next",
         "gatsby-plugin-google-analytics": "next",
@@ -26,8 +26,8 @@
         "informed": "^1.10.5",
         "mediaquerysensor": "2.0.1",
         "prismjs": "^1.21.0",
-        "react": "^16.6.0",
-        "react-dom": "^16.6.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
         "react-helmet": "^5.2.0",
         "shortid": "^2.2.13"
     },

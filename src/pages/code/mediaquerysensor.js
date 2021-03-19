@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import Container from '../../components/Container';
 import styles from './mediaquerysensor.module.scss';
 import containerStyles from '../../components/Container/Container.module.scss';
+import coverStyles from './cover.module.scss';
 
 let MQS = {};
 
@@ -73,8 +74,8 @@ class MediaQuerySensor extends React.Component {
                 <Helmet title="MediaQuerySensor">
                     <link rel="canonical" href="/code/mediaquerysensor" />
                 </Helmet>
-                <div className={styles.mqsCover}>
-                    <Container classes={`${containerStyles.containerArticle} ${styles.mqsContainer}`}>
+                <div className={coverStyles.mqsCover}>
+                    <Container classes={`${containerStyles.containerArticle} ${coverStyles.mqsContainer}`}>
                         <h2>MQS</h2>
                         <div>MediaQuerySensor</div>
                     </Container>
