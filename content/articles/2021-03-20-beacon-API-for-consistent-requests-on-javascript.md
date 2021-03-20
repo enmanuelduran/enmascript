@@ -1,5 +1,5 @@
 ---
-date: '2021-03-19T08:10:30.962Z'
+date: '2021-03-20T08:10:30.962Z'
 title: 'Better ways of Tracking data in your web application that you may not know of!'
 summary: 'Tracking information in your application can be very challenging, especially when dealing when page unloads and users leaving before tracking requests finished, this article tries to teach you about some possible solutions to this challenges and more.'
 series: ['Javascript']
