@@ -33,7 +33,7 @@ This approach is good but it causes a delay in the user experience due to the re
 
 ## 3. Enters the Beacon API
 
-The [Beacon API](https://w3c.github.io/beacon/) allows us to also send asynchronous requests to a web server but with a key difference, **Beacon requests are _guaranteed_ to be sent**, yes, even after a page gets unloaded. This means that they are perfect to use for those cases in which:
+The [Beacon API](https://w3c.github.io/beacon/) allows us to also send asynchronous requests to a web server but with a key difference, <mark>**Beacon requests are _guaranteed_ to be sent**</mark>, yes, even after a page gets unloaded. This means that they are perfect to use for those cases in which:
 
 1. You may want to track clicks on links.
 2. When sending pivotal data in moments where users leave the site.
@@ -138,6 +138,6 @@ Now, you might be thinking: **this is great, but what about Firefox and browsers
 
 ![](/images/2021-03-19-enmascript-google-ping-firefox.png)
 
-The goal of this article is to open your mind to other possibilities to improve the consistency of your application specially on how to efficiently track data while giving users the best experience possible.
+The goal of this article is to open your mind to other possibilities to improve the consistency of your application specially on how to efficiently track data while giving users the best experience possible, remember to <mark>always take into consideration your users privacy and do not take this lightly</mark>, make sure to only track what is necessary and keep data anonimized.
 
-Hope you enjoy it!
+Hope you enjoyed it!
