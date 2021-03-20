@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Cover.module.scss';
+import * as styles from './Cover.module.scss';
 
 const Cover = ({ children, classes }) => (
     <div

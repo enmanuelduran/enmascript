@@ -7,9 +7,9 @@ import Container from '../components/Container';
 import ArticleCard from '../components/ArticleCard';
 import AsideAds from '../components/AsideAds';
 import AsideSeries from '../components/AsideSeries';
-import styles from './articles.module.scss';
+import * as styles from './articles.module.scss';
+import * as containerStyles from '../components/Container/Container.module.scss';
 import Aside from '../components/Aside';
-import containerStyles from '../components/Container/Container.module.scss';
 import { getSeries } from '../helpers/articles';
 
 const Articles = ({ data }) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './AsideSeries.module.scss';
+import * as styles from './AsideSeries.module.scss';
 import SeriesCard from '../SeriesCard';
 import shortid from 'shortid';
 import PropTypes from 'prop-types';

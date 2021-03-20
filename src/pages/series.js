@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import Container from '../components/Container';
 import { graphql } from 'gatsby';
 import SeriesCard from '../components/SeriesCard';
-import containerStyles from '../components/Container/Container.module.scss';
+import * as containerStyles from '../components/Container/Container.module.scss';
 import shortid from 'shortid';
 
 const Series = ({ data }) => (

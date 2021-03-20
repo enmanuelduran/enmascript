@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Reddit } from '../Icons/SocialIcons';
-import styles from './ArticleCard.module.scss';
+import * as styles from './ArticleCard.module.scss';
 
 const ArticleCard = ({
     image,

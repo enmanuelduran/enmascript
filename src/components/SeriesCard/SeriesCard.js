@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './SeriesCard.module.scss';
+import * as styles from './SeriesCard.module.scss';
 import { Link } from 'gatsby';
 
 const SeriesCard = ({ name, slug, image, classes}) => {
-    const getImage = require(`../../../content/images/${image}`);
+    const getImage = `/images/covers/${image}`;
 
     return (
         <Link

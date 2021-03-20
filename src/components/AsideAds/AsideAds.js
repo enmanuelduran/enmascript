@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './AsideAds.module.scss';
+import * as styles from './AsideAds.module.scss';
 import PropTypes from 'prop-types';
 
 const AsideAds = ({ data }) => {

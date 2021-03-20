@@ -3,7 +3,7 @@ import addToMailchimp from 'gatsby-plugin-mailchimp';
 import { Rocket } from '../Icons/Icons';
 import { Form, Text } from 'informed';
 import formImage from '../../images/form-background.png';
-import styles from './MailchimpWrapper.module.scss';
+import * as styles from './MailchimpWrapper.module.scss';
 
 class MailchimpWrapper extends React.Component {
     state = {

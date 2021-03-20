@@ -7,17 +7,18 @@ import { graphql } from 'gatsby';
 import AsideAds from '../components/AsideAds';
 import AsideSeries from '../components/AsideSeries';
 import ArticleCard from '../components/ArticleCard';
-import containerStyles from '../components/Container/Container.module.scss';
+import * as containerStyles from '../components/Container/Container.module.scss';
 import Aside from '../components/Aside';
-import styles from '../pages/articles.module.scss';
+import * as styles from '../pages/articles.module.scss';
 import { getSeries } from '../helpers/articles';
 
 const SeriesArticlesTemplate = ({ data }) => {
     const { edges: posts } = data.articles;
     const siteMetadata = data.metadata.siteMetadata;
-
     return (
         <Layout section="series">
+            { console.log({ data }) }
+            { console.log('HOLA') }
             <Helmet title="Series" />
             <Container classes={`${styles.articlesContainer} ${containerStyles.containerPage}`}>
                 <section>
