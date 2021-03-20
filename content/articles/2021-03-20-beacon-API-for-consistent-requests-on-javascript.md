@@ -31,7 +31,7 @@ Another popular way of tracking data nowadays is by leveraging redirects, this b
 
 This approach is good but it causes a delay in the user experience due to the redirection step that occurs synchronously, if the redirect takes long it may end up leading the user to leave the page, also if an unexpected error occurs in the redirecting layer the user might get stuck into this flow.
 
-## 2. Enters the Beacon API
+## 3. Enters the Beacon API
 
 The [Beacon API](https://w3c.github.io/beacon/) allows us to also send asynchronous requests to a web server but with a key difference, **Beacon requests are _guaranteed_ to be sent**, yes, even after a page gets unloaded. This means that they are perfect to use for those cases in which:
 
@@ -83,7 +83,7 @@ All this means that if we change a normal Fetch request for a Beacon based reque
 As you can see the request would not get canceled, it would get enqueued, then stalled for the necessary time and finally executed.
 
 
-## 3.The Ping Attribute, a curious case
+## 4.The Ping Attribute, a curious case
 
 Not many people know about this, but there is an HTML attribute used in anchor tags that is specifically created to help to track information asynchronously in a non-blocking manner.
 
