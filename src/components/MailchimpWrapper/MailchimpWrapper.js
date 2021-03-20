@@ -28,14 +28,13 @@ class MailchimpWrapper extends React.Component {
         this.setState({ subscribed: true });
     };
 
-    validateInput = state => {
-        const email = state;
+    validateInput = email => {
         const regex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         const validation = regex.test(String(email).toLowerCase())
             ? null
             : 'Please provide a valid email';
 
-        return validation;
+        if (validation) return validation;
     };
 
     render() {
@@ -67,7 +66,7 @@ class MailchimpWrapper extends React.Component {
                                             'An error ocurred'}
                                     </div>
                                 )}
-                                <button disabled={!formState.values.email}>
+                                <button type="submit" disabled={!formState.values.email}>
                                     Join our newsletter
                                 </button>
                             </div>
