@@ -17,8 +17,6 @@ const SeriesArticlesTemplate = ({ data }) => {
     const siteMetadata = data.metadata.siteMetadata;
     return (
         <Layout section="series">
-            { console.log({ data }) }
-            { console.log('HOLA') }
             <Helmet title="Series" />
             <Container classes={`${styles.articlesContainer} ${containerStyles.containerPage}`}>
                 <section>
