@@ -1,8 +1,8 @@
 import React from 'react';
 import ArticleCard from '../ArticleCard';
 import Container from '../Container/Container';
-import styles from './RelatedArticles.module.scss';
-import containerStyles from '../Container/Container.module.scss';
+import * as styles from './RelatedArticles.module.scss';
+import * as containerStyles from '../Container/Container.module.scss';
 import { getSeries } from '../../helpers/articles';
 import PropTypes from 'prop-types';
 

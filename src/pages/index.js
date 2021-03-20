@@ -9,9 +9,9 @@ import AsideAds from '../components/AsideAds';
 import AsideSeries from '../components/AsideSeries';
 import CoverImage from '../images/cover.png';
 import { Reddit } from '../components/Icons/SocialIcons';
-import styles from './index.module.scss';
-import cardStyles from '../components/ArticleCard/ArticleCard.module.scss';
-import containerStyles from '../components/Container/Container.module.scss';
+import * as styles from './index.module.scss';
+import * as cardStyles from '../components/ArticleCard/ArticleCard.module.scss';
+import * as containerStyles from '../components/Container/Container.module.scss';
 import Aside from '../components/Aside';
 import { getSeries } from '../helpers/articles';
 
