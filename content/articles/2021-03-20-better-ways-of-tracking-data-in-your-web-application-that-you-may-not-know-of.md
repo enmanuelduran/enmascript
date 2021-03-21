@@ -1,31 +1,31 @@
 ---
 date: '2021-03-20T08:10:30.962Z'
-title: 'Better ways of Tracking data in your web application that you may not know of!'
+title: 'Better ways of tracking data in your web application that you may not know of!'
 summary: 'Tracking information in your application can be very challenging, especially when dealing when page unloads and users leaving before tracking requests finished, this article tries to teach you about some possible solutions to this challenges and more.'
 series: ['Javascript']
 featuredImage: '2021-03-19-better-ways-tracking-cover.png'
 ---
 
-Tracking data in our applications nowadays is pivotal to business growth, if done properly it can provide fundamental insights for an application that will allow us to understand how to improve it, data help us understand our users which allows companies to understand their strengths and weaknesses better. Finally, good tracking marks the difference between success and failure, that's why getting it right is so important.
+Tracking data in our applications nowadays is pivotal to business growth, if done properly it can provide fundamental insights for an application that will allow us to understand how to improve it, data helps us understand our users which allows companies to understand their strengths and weaknesses better. Finally, good tracking marks the difference between success and failure, that's why getting it right is so important.
 
 ## 1.Why using XMLHttpRequest and Fetch is not always the right choice
-Usually, when we need to track actions in our applications in javascript, we will make use of an [XMLHttpRequest](https://www.w3.org/TR/2012/NOTE-XMLHttpRequest1-20120117/#introduction) or even better the [Fetch API](https://fetch.spec.whatwg.org/), this will allow us to make asynchronous requests which send valuable information to our servers or analytics services, this works very well for many types of tracking interactions, in example tracking when a user scroll passed a certain section of the page
+Usually, when we need to track actions in our applications in javaScript, we will make use of an [XMLHttpRequest](https://www.w3.org/TR/2012/NOTE-XMLHttpRequest1-20120117/#introduction) or even better the [Fetch API](https://fetch.spec.whatwg.org/), this will allow us to make asynchronous requests which send valuable information to our servers or analytics services, this works very well for many types of tracking interactions, for example tracking when a user scrolled past a certain section of the page
 or checking the behavior of users to understand why a call to action may not be performing well.
 
 In summary, asynchronous requests are used constantly for tracking, and with reason, they allow us to send information quietly and in parallel to avoid interrupting the user's flow, but, there are some edge cases in which they might not be as efficient, like tracking an element when the page is about to get unloaded.
 
-Suppose that you want to track certain data and send it but the user decides to leave the page and go somewhere else, if your request was still in-flight the data won't reach the server because it will get canceled when going away from your page, so in essence:
+Suppose that you want to track certain data and send it but the user decides to leave the page and go somewhere else, if your request is still in-flight the data will not reach the server because it will get canceled when going away from your page, so in essence:
 
 ![](/images/2021-03-16-fetch-tracking-example.png)
 
-The first click generates a request and since it has enough time to be processed it ends up being successful, in the other hand the second click happens right before the page gets unloaded which causes the request to be interrupted and therefore canceled, this right here is the reason why using rudimentary asynchronous request can't ensure the resolution of tracking requests.
+The first click generates a request and since it has enough time to be processed it ends up being successful, on the other hand the second click happens right before the page gets unloaded which causes the request to be interrupted and therefore canceled, this right here is the reason why using rudimentary asynchronous request can't ensure the resolution of tracking requests.
 
 ## 2. Why using redirects is not the golden standard
 Another popular way of tracking data nowadays is by leveraging redirects, this basically consists of a 3 steps process:
 
 ![](/images/2021-03-19-tracking-redirect.png)
 
-1. The user clicks a link, this link is not a direct connection to the destination URL, it is a link to an intermediary service.'
+1. The user clicks a link, this link is not a direct connection to the destination URL, it is a link to an intermediary service.
 2. The intermediary service receives the request with the information, it then processes it and sends it over to each service that may need the data (this includes sending data to the tracking services)
 3. The user is finally redirected to the destination URL by the intermediary service.
 
@@ -85,9 +85,9 @@ As you can see the request would not get canceled, it would get enqueued, then s
 
 ## 4.The Ping Attribute, a curious case
 
-Not many people know about this, but there is an HTML attribute used in anchor tags that is specifically created to help to track information asynchronously in a non-blocking manner.
+Not many people know about this, but there is an HTML attribute used in anchor tags that is specifically created to help track information asynchronously in a non-blocking manner.
 
-The [Ping attribute](https://html.spec.whatwg.org/multipage/links.html#ping) Allows you to execute a POST request to an URL or list of URLs specified, it sends the word PING as the request payload. This property is not supported by all browsers but the fact that [many popular browsers support it](https://html.spec.whatwg.org/multipage/links.html#ping) presents a great advantage.
+The [Ping attribute](https://html.spec.whatwg.org/multipage/links.html#ping) allows you to execute a POST request to an URL or list of URLs specified, it sends the word PING as the request payload. This property is not supported by all browsers but the fact that [many popular browsers support it](https://html.spec.whatwg.org/multipage/links.html#ping) presents a great advantage.
 
 It is used in the following way:
 
@@ -102,7 +102,7 @@ It is used in the following way:
 </a>
 ```
 
-When clicking the first link above it will take the user as usual to https://enmascript.com but in parallel it will make an asynchronous POST request to https://enmascript.com/api/tracking. You might be thinking what is the use of a POST request which request payload is a simple word called "PING"?, well, the answer is that you don't really need to send the data as a request payload.
+When clicking the first link above it will take the user as usual to https://enmascript.com but in parallel it will make an asynchronous POST request to https://enmascript.com/api/tracking. You might be thinking what is the use of a POST request in which request's payload is a simple word called "PING"?, well, the answer is that you don't really need to send the data as a request payload.
 
 ### You can use querystrings to send your data to a server
 ```html{3}
@@ -112,7 +112,7 @@ When clicking the first link above it will take the user as usual to https://enm
 </a>
 ```
 
-In this way you would only need to parse the URL to get the data, in _NodeJS_ in example you can use _Express_ and you will get access to the query string value through `req.query.url`, which would return `https://enmascript.com`.
+In this way you would only need to parse the URL to get the data, in _NodeJS_ for example, you can use _Express_ and you will get access to the query string value through `req.query.url`, which would return `https://enmascript.com`.
 
 ### You can send cookies
 
@@ -134,10 +134,10 @@ I you look closely you can see that google is sending data through query strings
 
 Now, you might be thinking: **this is great, but what about Firefox and browsers that do not support the attribute by default?**
 
-**Glad you asked**, you can fallback to use a Beacon request or use a good old server redirect (both already explained above), in google's case they decided to handle this by using the redirect approach, so if you search in Firefox you will see that they are not using the `ping` attribute anymore, instead, they change the anchor's `href` attribute to be their redirect URL which finally leads to the destination URL.
+**Glad you asked**, you can fallback to use a Beacon request or use a good old server redirect (both already explained above), in Google's case, they decided to handle this by using the redirect approach, so if you search in Firefox you will see that they are not using the `ping` attribute anymore, instead, they change the anchor's `href` attribute to be their redirect URL which finally leads to the destination URL.
 
 ![](/images/2021-03-19-enmascript-google-ping-firefox.png)
 
-The goal of this article is to open your mind to other possibilities to improve the consistency of your application specially on how to efficiently track data while giving users the best experience possible, remember to <mark>always take into consideration your users privacy and do not take this lightly</mark>, make sure to only track what is necessary and keep data anonimized.
+The goal of this article is to open your mind to other possibilities to improve the consistency of your application, specially on how to efficiently track data while giving users the best experience possible. Remember to <mark>always take into consideration your user's privacy and do not take this lightly</mark>, make sure to only track what is necessary and keep data anonymized.
 
 Hope you enjoyed it!
