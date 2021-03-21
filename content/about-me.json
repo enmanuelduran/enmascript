@@ -1,11 +1,12 @@
 {
-    "intro": "My name is Enmanuel Durán, Jesus follower. I'm a passionate web developer from Venezuela, I started developing websites when I was 13 years old, I’m currently 25 years old and my passion just keeps growing.",
+    "intro": "My name is Enmanuel Durán. I'm a passionate web developer from Venezuela, I started developing websites when I was 13 years old, I’m currently 25 years old and my passion just keeps growing.",
     "whatIDo": {
         "title": "What I do",
         "list": [
             "I currently work as a Frontend Team Lead at <a href='https://www.consumeraffairs.com/' target='_blank' rel='noopener noreferrer'>ConsumerAffairs</a>",
             "Founder behind <a href='http://somosprogramadores.com' target='_blank' rel='noopener noreferrer'>somosprogramadores</a> a platform where I teach people about programming and tech in Spanish.",
             "Author of EnmaScript.",
+            "Founder and developer of <a href='https://leenker.com' target='_blank' rel='noopener noreferrer'>Leenker</a>",
             "Conference and Meetup speaker from time to time.",
             "I also contribute to open source projects when possible."
         ]
