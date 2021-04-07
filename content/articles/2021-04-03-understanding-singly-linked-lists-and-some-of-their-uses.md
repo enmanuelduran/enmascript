@@ -10,7 +10,7 @@ featuredImage: '2021-04-07-linked-lists.png'
 
 Linked Lists are a fundamental data structure used to store information linearly, this information is not stored in contiguous places in memory rather linked lists use a pointer in each node that links to the next node that is stored.
 
-A node in a Linked List could be represented as follows:
+A node in a linked list could be represented as follows:
 
 ![](/images/2021-04-03-singly-linked-list-node.svg#image-type=no-border;width=auto)
 
@@ -46,9 +46,9 @@ class LinkedList {
 }
 ```
 
-## 1. Appending nodes to a Linked List
+## 1. Appending nodes to a linked list
 
-Let's start by creating a Linked List API, we already know how to represent a node and we know the basics, we know how we will represent the head and the tail, so we can start to define how we will append new nodes to the linked list, for this we need to consider that:
+Let's start by creating a linked list API, we already know how to represent a node and we know the basics, we know how we will represent the head and the tail, so we can start to define how we will append new nodes to the linked list, for this we need to consider that:
 
 1. If not head is defined the new node should be defined as the head and also the tail.
 2. If the head is defined we add the new node to the current tail's `next` property and we define the new node as the tail.
@@ -133,7 +133,7 @@ this is true for any node we want to append which makes this <mark>a constant **
 
 ## 2. Prepending nodes to a linked list
 
-Prepending an node is simpler, since we already have the `head` of the list stored, the only thing we need to do is assign the new node as the head of the list and define its `next` property with a reference to the previous head Node.
+Prepending a node is simpler since we already have the `head` of the list stored, the only thing we need to do is assign the new node as the head of the list and define its `next` property with a reference to the previous head Node.
 
 ```javascript{4-8}
 class LinkedList {
@@ -192,7 +192,7 @@ Knowing this we can stablish that accessing and searching an element would be <m
 
 ![](/images/2021-04-06-alg-o-n-complexity.svg#image-type=no-border-limied-width;)
 
-## 4. Removing nodes from a Linked List
+## 4. Removing nodes from a linked list
 
 Great, now as you can imagine, removing elements from a linked list is pretty straight forward:
 
@@ -271,9 +271,9 @@ Doing this will require us to iterate over the list until we find the element to
 ![](/images/2021-04-06-alg-o-n-complexity.svg#image-type=no-border-limied-width;)
 
 
-## Space Complexity of Linked Lists
+## Space Complexity of linked lists
 
-The space required for a linked list is directly correlated with the number of nodes that it holds, this means that the more nodes we have the more space we use and this grows linearly per node which makes linked lists <mark>O(n) for Space complexity.</mark>
+The space required for a linked list is directly correlated with the number of nodes that it holds, this means that the more nodes we have the more space we use and this grows linearly per node which makes linked lists <mark>**O(n)** for Space complexity.</mark>
 
 ## Use cases and why to learn about them
 
