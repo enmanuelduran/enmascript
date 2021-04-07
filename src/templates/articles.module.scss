@@ -285,5 +285,16 @@ div.articleShareMobile {
         padding-left: 10px;
         margin-left: 40px;
     }
+
+    img[data-image-type="no-border"],
+    img[data-image-type="no-border-limied-width"] {
+        margin: 0 auto;
+        display: block;
+        box-shadow: none;
+    }
+
+    img[data-image-type="no-border-limied-width"] {
+        max-width: 300px;
+    }
 }
 
