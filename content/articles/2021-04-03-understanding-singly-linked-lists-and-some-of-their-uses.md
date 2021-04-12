@@ -129,7 +129,7 @@ Appending an element to the end of the linked list requires us to modify the tai
 
 this is true for any node we want to append which makes this <mark>a constant **O(1)** operation</mark>.
 
-![](/images/2021-04-06-alg-o-1-complexity.svg#image-type=no-border-limied-width;)
+![](/images/o(1).svg#image-type=no-border-limied-width;)
 
 ## 2. Prepending nodes to a linked list
 
@@ -150,13 +150,13 @@ class LinkedList {
 
 It does not matter how many nodes the linked list has, it will always be the same process and complexity for prepending hence <mark>the time complexity of prepending is constant **O(1)**</mark>.
 
-![](/images/2021-04-06-alg-o-1-complexity.svg#image-type=no-border-limied-width;)
+![](/images/o(1).svg#image-type=no-border-limied-width;)
 
 ## 3. Accessing and Searching nodes
 
 The only way to access and search an element in a given linked list is through the iteration of the `next` property of all the nodes that come before the node we are looking for, it is important to note that if the element we are searching or trying to access is not found this would still require us to go through all the nodes in the list.
 
-```javascript{3,17}
+```javascript{4-20}
 class LinkedList {
     ...
 
@@ -190,7 +190,7 @@ i.e let's find the node 3 in the linked list below:
 
 Knowing this we can stablish that accessing and searching an element would be <mark>**O(n)** where **n = number of nodes in the list**</mark>, even though we don't always search the whole list the big O notation analizes algorithms by their trend and worst case scenario and so we arrive at this conclusion.
 
-![](/images/2021-04-06-alg-o-n-complexity.svg#image-type=no-border-limied-width;)
+![](/images/o(n).svg#image-type=no-border-limied-width;)
 
 ## 4. Removing nodes from a linked list
 
@@ -262,13 +262,13 @@ Which would modify the reference from the node with value 1 to be now the refere
 
 Deleting a node from the beginning of the list as [previously seen](#removing-nodes-from-a-linked-list) just requires us to change the `this.head` value to be `this.head.next` in this way we remove the reference to the first node, since this operation is constant no matter the size of the list it is considered <mark>**O(1)**</mark>.
 
-![](/images/2021-04-06-alg-o-1-complexity.svg#image-type=no-border-limied-width;)
+![](/images/o(1).svg#image-type=no-border-limied-width;)
 
 ### 4.2. Time complexity for Deleting the Tail or any node that's not the head
 
 Doing this will require us to iterate over the list until we find the element to delete ([Same that we need to search an node](#accessing-and-searching-element)), then we just remove the node as usual so the time complexity would be <mark>**O(n)** where **n = number of nodes in the list**</mark>.
 
-![](/images/2021-04-06-alg-o-n-complexity.svg#image-type=no-border-limied-width;)
+![](/images/o(n).svg#image-type=no-border-limied-width;)
 
 
 ## Space Complexity of linked lists
