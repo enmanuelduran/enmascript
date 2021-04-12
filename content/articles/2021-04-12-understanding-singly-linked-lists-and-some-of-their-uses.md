@@ -1,5 +1,5 @@
 ---
-date: '2021-04-04T08:10:30.962Z'
+date: '2021-04-12T08:10:30.962Z'
 title: 'Understanding Singly Linked Lists and some of their uses'
 summary: "Linked Lists are a fundamental data structure in the world of software development, in this article we will explore its implementation and its applications in today's world"
 series: ['Data Structures and Algorithms']
