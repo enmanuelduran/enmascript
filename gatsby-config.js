@@ -20,17 +20,16 @@ module.exports = {
                 'Articles grouped by series like React, Performance, Javascript, Styling and more...',
             contact:
                 'If you have any question or just want to talk, get it touch!',
-            about: 'Learn about the people behind the project'
+            about: 'Learn about the people behind the project',
         },
         sponsored: [
             {
                 priority: 1,
                 name: 'MediaQuerySensor',
-                image:
-                    '/images/cta/mqs-2019-03-09.png',
+                image: '/images/cta/mqs-2019-03-09.png',
                 text:
                     'MediaQuerySensor is a lightweight library that helps you execute functions based on media query breakpoints instead of the every resize event.',
-                url: 'https://github.com/enmanuelduran/mediaquerysensor'
+                url: 'https://github.com/enmanuelduran/mediaquerysensor',
             },
             {
                 priority: 2,
@@ -39,43 +38,48 @@ module.exports = {
                 text:
                     'Explore a different and scalable way of treating multiple conditionals. No switch, no else if.',
                 url:
-                    'https://enmascript.com/articles/2018/10/22/why-I-prefer-objects-over-switch-statements'
-            }
+                    'https://enmascript.com/articles/2018/10/22/why-I-prefer-objects-over-switch-statements',
+            },
         ],
         series_list: [
             {
                 name: 'React',
                 featuredImage: 'react.png',
-                slug: '/series/react'
+                slug: '/series/react',
             },
             {
                 name: 'Javascript',
                 featuredImage: 'javascript.png',
-                slug: '/series/javascript'
+                slug: '/series/javascript',
             },
             {
                 name: 'CSS, Styling and Preprocessors',
                 featuredImage: 'css_styling_preprocessors.png',
-                slug: '/series/css-styling-and-preprocessors'
+                slug: '/series/css-styling-and-preprocessors',
             },
             {
                 name: 'Performance',
                 featuredImage: 'performance.png',
-                slug: '/series/performance'
+                slug: '/series/performance',
             },
             {
                 name: 'Did You Know',
                 featuredImage: 'did_you_know.png',
-                slug: '/series/did-you-know'
-            }
+                slug: '/series/did-you-know',
+            },
+            {
+                name: 'Data Structures and Algorithms',
+                featuredImage: 'data_structures_algorithms.png',
+                slug: '/series/data-structures-and-algorithms',
+            },
         ],
         code_list: [
             {
                 name: 'MediaQuerySensor',
                 featuredImage: 'MQS.png',
-                slug: '/code/mediaquerysensor'
-            }
-        ]
+                slug: '/code/mediaquerysensor',
+            },
+        ],
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -93,21 +97,27 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-images`,
                         options: {
-                            maxWidth: 750
-                        }
+                            maxWidth: 750,
+                        },
+                    },
+                    {
+                        resolve: `gatsby-remark-image-attributes`,
+                        options: {
+                            dataAttributes: true
+                        },
                     },
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
                             classPrefix: 'language-',
                             inlineCodeMarker: null,
-                            aliases: {}
-                        }
+                            aliases: {},
+                        },
                     },
                     `gatsby-remark-autolink-headers`,
-                    `gatsby-remark-reading-time`
-                ]
-            }
+                    `gatsby-remark-reading-time`,
+                ],
+            },
         },
         {
             resolve: `gatsby-plugin-manifest`,
@@ -122,24 +132,24 @@ module.exports = {
                     {
                         src: `/favicons/icon-512x512.png`,
                         sizes: `512x512`,
-                        type: `image/png`
-                    }
-                ]
-            }
+                        type: `image/png`,
+                    },
+                ],
+            },
         },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'content',
-                path: `${__dirname}/content/`
-            }
+                path: `${__dirname}/content/`,
+            },
         },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
                 name: 'pages',
-                path: `${__dirname}/src/pages`
-            }
+                path: `${__dirname}/src/pages`,
+            },
         },
         {
             resolve: `gatsby-plugin-google-analytics`,
@@ -147,22 +157,22 @@ module.exports = {
                 trackingId: 'UA-35155594-7',
                 head: true,
                 anonymize: true,
-                respectDNT: true
-            }
+                respectDNT: true,
+            },
         },
         {
             resolve: 'gatsby-plugin-mailchimp',
             options: {
                 endpoint:
-                    'https://enmanuelduran.us11.list-manage.com/subscribe/post?u=f288b4ae1f9a7fc49eb3c8d59&amp;id=ab12b7f829'
-            }
+                    'https://enmanuelduran.us11.list-manage.com/subscribe/post?u=f288b4ae1f9a7fc49eb3c8d59&amp;id=ab12b7f829',
+            },
         },
         {
             resolve: `gatsby-plugin-google-tagmanager`,
             options: {
                 id: 'GTM-WKCMHK7',
-                includeInDevelopment: true
-            }
-        }
-    ]
+                includeInDevelopment: true,
+            },
+        },
+    ],
 };
