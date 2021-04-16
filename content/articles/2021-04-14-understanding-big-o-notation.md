@@ -71,7 +71,7 @@ In the for loop above we need to iterate over _each_ value until `i < n` is not 
 
 Linearithmic time complexity is a combination of linear time and logarithmic time hence **_O(n*log(n)_**
 
-A simple way to explain it in code could be the mixing up both algorithms we used before to describe both linear and logarithmic time:
+A simple way to explain it in code could be mixing up both algorithms we used before to describe both linear and logarithmic time:
 
 ```javascript
 let j = 1;
@@ -85,7 +85,36 @@ for (let i = 0; i < n; i++) {
 }
 ```
 
-We are executing the first loop in linear time and the second executes in logarithmic time which gives us **_O(n*log(n))_**
+We are executing the first loop in linear time and the second executes in logarithmic time which gives us **_O(n*log(n))_**, another good example to represent this type of complexity is the merge sort algorithm which I will explain in more detail in another article.
 
 
 ![](/images/o(nlog(n)).svg#image-type=no-border;width=auto)
+
+### Cuadratic Time: O(n²)
+
+An algorithm is cuadratic time when it grows proportionally to the squared value of the input given so:
+
+1. 1² = 1
+2. 2² = 4
+3. 3² = 9
+4. 4² - 16
+
+and so on...
+
+a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one:
+
+```javascript{4-10}
+const list = [1,2,3,4,3,5,3,6,7,2,3];
+let total = 0;
+
+for (let i = 0; i < list.length; i++) {
+    total += i;
+
+    for (let j = 0; j < list.length; j++){
+        total += j;
+    }
+}
+
+console.log(total);
+```
+
