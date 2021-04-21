@@ -13,7 +13,7 @@ import Aside from '../components/Aside';
 import RelatedArticles from '../components/RelatedArticles/RelatedArticles';
 import { getSeries } from '../helpers/articles';
 
-import "katex/dist/katex.min.css"
+import "katex/dist/katex.min.css";
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;

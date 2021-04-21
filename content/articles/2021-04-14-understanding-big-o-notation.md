@@ -101,7 +101,7 @@ An algorithm is cuadratic time when it grows proportionally to the squared value
 
 and so on...
 
-a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one:
+a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one: $a^2 + b^2 = c^2$
 
 ```javascript{4-10}
 const list = [1,2,3,4,3,5,3,6,7,2,3];
@@ -118,3 +118,9 @@ for (let i = 0; i < list.length; i++) {
 console.log(total);
 ```
 
+![](/images/o(n2).svg#image-type=no-border;width=auto)
+
+### Exponential Time: O(n²)
+
+
+![](/images/o(nn).svg#image-type=no-border;width=auto)
