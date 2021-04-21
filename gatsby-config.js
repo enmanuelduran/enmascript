@@ -107,12 +107,6 @@ module.exports = {
                         },
                     },
                     {
-                        resolve: `gatsby-remark-image-attributes`,
-                        options: {
-                            dataAttributes: true
-                        },
-                    },
-                    {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
                             classPrefix: 'language-',

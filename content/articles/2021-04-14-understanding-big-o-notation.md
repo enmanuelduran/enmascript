@@ -12,7 +12,7 @@ There are multiple ways of writing algorithms and so we need a way to understand
 
 ## Understanding Time Complexities
 
-### Constant Time: O(1)
+### Constant Time: $O(1)$
 
 Constant time or _**O(1)**_ makes reference to an algorithm that no matter the input size it will always take the same amount of time to perform a task (therefore it is constant throughout time when the input size grows), in example a function that validates if the first element of an array is a number:
 
@@ -26,7 +26,7 @@ No matter how large the input size is (the list's length) because we will only e
 
 ![](/images/o(1).svg#image-type=no-border;width=auto)
 
-### Logarithmic Time: O(log(n))
+### Logarithmic Time: $O(log(n))$
 
 As the name specifies, we determine this when a algorithm runs in a time that is proportional to the logarithm of the input size as it size grows.
 
@@ -51,7 +51,7 @@ With each iteration the value of `i` will _exponentially_ increase because we ar
 
 ![](/images/o(log(n)).svg#image-type=no-border;width=auto)
 
-### Linear Time: O(n)
+### Linear Time: $O(n)$
 
 An algorithm has a linear time complexity when it grows proportionally to the input, in other words when the grow rate is fixed when iterating over each input given:
 
@@ -67,7 +67,7 @@ In the for loop above we need to iterate over _each_ value until `i < n` is not 
 
 ![](/images/o(n).svg#image-type=no-border;width=auto)
 
-### Linearithmic time: O(n*log(n))
+### Linearithmic time: $O(n*log(n))$
 
 Linearithmic time complexity is a combination of linear time and logarithmic time hence **_O(n*log(n)_**
 
@@ -90,7 +90,7 @@ We are executing the first loop in linear time and the second executes in logari
 
 ![](/images/o(nlog(n)).svg#image-type=no-border;width=auto)
 
-### Cuadratic Time: O(n²)
+### Cuadratic Time: $O(n^2)$
 
 An algorithm is cuadratic time when it grows proportionally to the squared value of the input given so:
 
@@ -101,7 +101,11 @@ An algorithm is cuadratic time when it grows proportionally to the squared value
 
 and so on...
 
-a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one: $a^2 + b^2 = c^2$
+$$
+a^2 + b^2 = c^2
+$$
+
+a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one:
 
 ```javascript{4-10}
 const list = [1,2,3,4,3,5,3,6,7,2,3];
@@ -120,7 +124,7 @@ console.log(total);
 
 ![](/images/o(n2).svg#image-type=no-border;width=auto)
 
-### Exponential Time: O(n²)
+### Exponential Time: $O(n^n)$
 
 
 ![](/images/o(nn).svg#image-type=no-border;width=auto)
