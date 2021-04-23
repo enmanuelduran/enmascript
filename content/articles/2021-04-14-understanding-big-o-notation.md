@@ -12,9 +12,9 @@ There are multiple ways of writing algorithms and so we need a way to understand
 
 ## Understanding Time Complexities
 
-### Constant Time: O(1)
+### Constant Time
 
-Constant time or _**O(1)**_ makes reference to an algorithm that no matter the input size it will always take the same amount of time to perform a task (therefore it is constant throughout time when the input size grows), in example a function that validates if the first element of an array is a number:
+Constant time or $O(1)$ makes reference to an algorithm that no matter the input size it will always take the same amount of time to perform a task (therefore it is constant throughout time when the input size grows), in example a function that validates if the first element of an array is a number:
 
 ```javascript
 function isFirstElementNumeric(list) {
@@ -26,9 +26,9 @@ No matter how large the input size is (the list's length) because we will only e
 
 ![](/images/o(1).svg#image-type=no-border;width=auto)
 
-### Logarithmic Time: O(log(n))
+### Logarithmic Time
 
-As the name specifies, we determine this when a algorithm runs in a time that is proportional to the logarithm of the input size as it size grows.
+Also known as $O(log(n))$, As the name specifies, we determine logarithmic time when a algorithm runs in a time that is proportional to the logarithm of the input size as it size grows.
 
 So for example:
 
@@ -36,7 +36,7 @@ So for example:
 2. log(2) = ~0.301
 3. log(3) = ~0.477
 
-and so on... As you can see the grow rate is still small and not linear. Usually we are able to identify an algorithm that is _**O(log(n))**_ because it will divide itself in smaller and smaller pieces with each iteration or operation, the simplest example I can think of is the following:
+and so on... As you can see the grow rate is still small and not linear. Usually we are able to identify an algorithm that is $O(log(n))$ because it will divide itself in smaller and smaller pieces with each iteration or operation, the simplest example I can think of is the following:
 
 ```javascript
 let i = 1;
@@ -51,9 +51,9 @@ With each iteration the value of `i` will _exponentially_ increase because we ar
 
 ![](/images/o(log(n)).svg#image-type=no-border;width=auto)
 
-### Linear Time: O(n)
+### Linear Time
 
-An algorithm has a linear time complexity when it grows proportionally to the input, in other words when the grow rate is fixed when iterating over each input given:
+An algorithm has a linear $O(n)$ time complexity when it grows proportionally to the input, in other words when the grow rate is fixed when iterating over each input given:
 
 ```javascript
 const n = 100;
@@ -67,9 +67,9 @@ In the for loop above we need to iterate over _each_ value until `i < n` is not 
 
 ![](/images/o(n).svg#image-type=no-border;width=auto)
 
-### Linearithmic time: O(n*log(n))
+### Linearithmic time
 
-Linearithmic time complexity is a combination of linear time and logarithmic time hence **_O(n*log(n)_**
+Linearithmic time complexity is a combination of linear time and logarithmic time hence $O(n*log(n))$
 
 A simple way to explain it in code could be mixing up both algorithms we used before to describe both linear and logarithmic time:
 
@@ -85,23 +85,23 @@ for (let i = 0; i < n; i++) {
 }
 ```
 
-We are executing the first loop in linear time and the second executes in logarithmic time which gives us **_O(n*log(n))_**, another good example to represent this type of complexity is the merge sort algorithm which I will explain in more detail in another article.
+We are executing the first loop in linear time and the second executes in logarithmic time which gives us $O(n*log(n))$, another good example to represent this type of complexity is the merge sort algorithm which I will explain in more detail in another article.
 
 
 ![](/images/o(nlog(n)).svg#image-type=no-border;width=auto)
 
-### Cuadratic Time: O(n²)
+### Cuadratic Time
 
-An algorithm is cuadratic time when it grows proportionally to the squared value of the input given so:
+An algorithm is cuadratic time $O(n^2)$ when it grows proportionally to the squared value of the input given so:
 
-1. 1² = 1
-2. 2² = 4
-3. 3² = 9
-4. 4² - 16
+
+- For $1$ we define $1^2 = 1$
+- For $2$ we define $2^2 = 4$
+- For $3$ we define $3^2 = 9$
 
 and so on...
 
-a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one: $a^2 + b^2 = c^2$
+a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one.
 
 ```javascript{4-10}
 const list = [1,2,3,4,3,5,3,6,7,2,3];
@@ -120,7 +120,24 @@ console.log(total);
 
 ![](/images/o(n2).svg#image-type=no-border;width=auto)
 
-### Exponential Time: O(n²)
+### Exponential Time
+
+Also known as $O(a^n)$
 
 
 ![](/images/o(nn).svg#image-type=no-border;width=auto)
+
+### Factorial Time
+
+Factorial time $O(n!)$ is not an indicator of good performance in most cases but sometimes we can't really do better than that, to put you in to context let's remember its definition: The factorial of a non-negative integer number $n$ is the product of all positive integers **_less than_** or **_equal to_** $n$.
+
+so for example, the factorial of 4:
+
+$$
+4! = 4 \times 3 \times 2 \times 1
+$$
+
+A classic case scenario of this time complexity is the processing of every possible permutation of an array.
+
+
+![](/images/o(nfactorial).svg#image-type=no-border;width=auto)
