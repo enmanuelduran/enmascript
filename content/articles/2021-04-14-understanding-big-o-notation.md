@@ -122,14 +122,33 @@ console.log(total);
 
 ### Exponential Time
 
-Also known as $O(a^n)$
+Also known as $O(a^n)$ where a is a constant and n is variable.
 
+A simple example I can think of that takes **exponential** time is recursive fibonacci without memoization (If you don't know what memoization is take a look at one of my previous articles _[Avoid recomputing heavy tasks by leveraging memoization in javascript](/articles/2019/04/22/avoid-recomputing-heavy-tasks-by-leveraging-memoization-in-javascript)_).
+
+let's take a look at the code:
+
+```javascript{6}
+function fibonacci(num) {
+    if (num <= 1) {
+        return 1;
+    }
+
+    return fibonacci(num - 1) + fibonacci(num - 2);
+}
+```
+
+so why is it exponential? I think it is useful to look at a visualization to understand what is happening here:
+
+![](/images/2021-04-26-fibonacci.png#image-type=no-border;width=auto)
+
+For each new function call the function doubles the previous amount of executions.
 
 ![](/images/o(nn).svg#image-type=no-border;width=auto)
 
 ### Factorial Time
 
-Factorial time $O(n!)$ is not an indicator of good performance in most cases but sometimes we can't really do better than that, to put you in to context let's remember its definition: The factorial of a non-negative integer number $n$ is the product of all positive integers **_less than_** or **_equal to_** $n$.
+Factorial time $O(n!)$ is not an indicator of good performance but sometimes we can't really do better than that, to put you in to context let's remember its definition: The factorial of a non-negative integer number $n$ is the product of all positive integers **_less than_** or **_equal to_** $n$.
 
 so for example, the factorial of 4:
 
@@ -137,7 +156,9 @@ $$
 4! = 4 \times 3 \times 2 \times 1
 $$
 
-A classic case scenario of this time complexity is the processing of every possible permutation of an array where $n$ is the size of the array and so it is $n!$ because we need to make all the permutations possible up to $n$.
+A classic case scenario of this time complexity is the processing of every possible permutation of an array where $n$ is the size of the array and so it is $n!$ because we need to make all the permutations possible up to the length of $n$.
 
 
 ![](/images/o(nfactorial).svg#image-type=no-border;width=auto)
+
+Factorial algorithm's code examples deserve their own article so I will dedicate a proper article to them.
