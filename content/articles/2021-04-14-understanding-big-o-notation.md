@@ -10,6 +10,8 @@ featuredImage: '2021-04-07-linked-lists.png'
 
 There are multiple ways of writing algorithms and so we need a way to understand how they perform under different ocassions to determine which one works better based on our needs. <mark>**Big O** is a notatiaon that allows us to evaluate growth rates by analyzing how the **time complexity** (Time of execution) and **space complexity** (memory usage) scale for a given algorithm when larger input sizes are processed by it.
 
+Truth be told I believe that every time complexity needs its own article but I am going to do my best to explain them as simple as possible here (Maybe I will start a series to explain each time complexity in more detail and with multiple examples to evaluate instead of just one).
+
 ## Understanding Time Complexities
 
 ### Constant Time
@@ -25,6 +27,8 @@ function isFirstElementNumeric(list) {
 No matter how large the input size is (the list's length) because we will only evaluate the first element, so, even if the list has 1k elements it will take the same as if the list had only 1 element.
 
 ![](/images/o(1).svg#image-type=no-border;width=auto)
+
+The graph above represents how time complexity (Y Axis) gets affected when the input size (X Axis) grows, since time is constant time remains unchanged for any given input size.
 
 ### Logarithmic Time
 
@@ -47,7 +51,7 @@ while (i < 10000000) {
 }
 ```
 
-With each iteration the value of `i` will _exponentially_ increase because we are raising `i` to the power of 2 for each `i` iterated (you might be thinking "wait, exponentially?, aren't we talking about logarithmic time here?") yes, this is true but something important to notice is that <mark>logarithmic growth is the inverse of exponential growth</mark> meaning that if the loop's variable condition is increasing exponentially then the number of executions needed by the loop to finish decreases logarithmically, hence the runtime is logarithmic.
+With each iteration the value of `i` will _exponentially_ increase because we are multiplying `i` by 2 and in the next iteration the result * 2 and so on (you might be thinking "wait, exponentially?, aren't we talking about logarithmic time here?") yes, this is true but something important to notice is that <mark>logarithmic growth is the inverse of exponential growth</mark> meaning that if the loop's variable condition is increasing exponentially then the number of executions needed by the loop to finish decreases logarithmically, hence the runtime is logarithmic.
 
 ![](/images/o(log(n)).svg#image-type=no-border;width=auto)
 
@@ -90,7 +94,7 @@ and so on...
 a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one.
 
 ```javascript{4-10}
-const list = [1,2,3,4,3,5,3,6,7,2,3];
+const list = [1,2,3];
 let total = 0;
 
 for (let i = 0; i < list.length; i++) {
@@ -104,7 +108,9 @@ for (let i = 0; i < list.length; i++) {
 console.log(total);
 ```
 
-![](/images/o(n2).svg#image-type=no-border;width=auto)
+We have an outer loop that executes up to $n$ times where $n = 3$ (the length of `list`), inside of that loop we have another one that is doing the same thing, which means that for each element on the parent loop we are executing $n$ times the inner loop, so basically $n \times n$:
+
+![](/images/2021-04-n2.svg#image-type=no-border;width=auto)
 
 ### Exponential Time
 
