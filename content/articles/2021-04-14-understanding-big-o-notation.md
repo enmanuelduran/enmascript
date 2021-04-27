@@ -42,7 +42,7 @@ and so on... As you can see the grow rate is still small and not linear. Usually
 let i = 1;
 
 while (i < 10000000) {
-    i = Math.pow(i, 3);
+    i = i * 2;
     console.log(i)
 }
 ```
@@ -71,21 +71,7 @@ In the for loop above we need to iterate over _each_ value until `i < n` is not 
 
 Linearithmic time complexity is a combination of linear time and logarithmic time hence $O(n \cdot log(n))$
 
-A simple way to explain it in code could be mixing up both algorithms we used before to describe both linear and logarithmic time:
-
-```javascript
-let j = 1;
-
-for (let i = 0; i < n; i++) {
-    while (j < 10000000) {
-        j = Math.pow(j, 3);
-
-        console.log(j)
-    }
-}
-```
-
-We are executing the first loop in linear time and the second executes in logarithmic time which gives us $O(n \cdot log(n))$, another good example to represent this type of complexity is the merge sort algorithm which I will explain in more detail in another article.
+Linearithmic algorithms are slower than $O(n)$ algorithms but still better than cuadratic time algorithms, they are usually found in sorting algorithms such as Merge Sort and Heap Sort both of which we will see in another article.
 
 
 ![](/images/o(nlog(n)).svg#image-type=no-border;width=auto)
