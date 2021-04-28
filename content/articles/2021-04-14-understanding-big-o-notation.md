@@ -6,17 +6,40 @@ series: ['Data Structures and Algorithms']
 featuredImage: '2021-04-07-linked-lists.png'
 ---
 
+**Big O**, a highly popular notation that is often heard in the world of algorithms, performance and optimization, it is a hot topic for coding interviews in big companies such as Google, Amazon, Facebook... everybody says you should learn about it, but why? why would you or anyone learn about Big O if you are not taking interviews? In this article I will try to explain from my perspective about why it is useful and how you can apply it in your everyday basis to make you improve in your next implementations and code reviews.
+
 ## Definition
 
-There are multiple ways of writing algorithms and so we need a way to understand how they perform under different ocassions to determine which one works better based on our needs. <mark>**Big O** is a notatiaon that allows us to evaluate growth rates by analyzing how the **time complexity** (Time of execution) and **space complexity** (memory usage) scale for a given algorithm when larger input sizes are processed by it.
+There are multiple ways of writing algorithms, you can implement a feature in many different ways, everybody has a unique way of thinking and solving their way through problems, for this reason we need a way to understand how this different solutions perform under different scenarios to help us determine which one works better based on our needs, <mark>**Big O** is a notatiaon that allows us to evaluate this, specifically it allows us to evaluate growth rates by analyzing how the **time complexity** (Time of execution) and **space complexity** (memory usage) scale for a given algorithm when larger input sizes are processed by it</mark>.
 
-Truth be told I believe that every time complexity needs its own article but I am going to do my best to explain them as simple as possible here (Maybe I will start a series to explain each time complexity in more detail and with multiple examples to evaluate instead of just one).
+For a formal definition of Big O I would recommend you to read [the one from wikipedia](https://en.wikipedia.org/wiki/Big_O_notation#Formal_definition) which is actually pretty straight forward, if you have trouble understanding the formal definition **do not worry**, it is enough to understand the intuitive definition highlighted above.
 
-## Understanding Time Complexities
+## Understanding How to Evaluate Complexities
 
-### Constant Time
+To understand how to evaluate an algorithm or a piece of code we need to separate it in statements or operations and we need to understand how each of these affect the algorithm.
 
-Constant time or $O(1)$ makes reference to an algorithm that no matter the input size it will always take the same amount of time to perform a task (therefore it is constant throughout time when the input size grows), in example a function that validates if the first element of an array is a number:
+Let's define some important concepts before proceeding:
+
+1. **Complexity** and **Performance** are two different things, The former specifies how the required resources for a program scale and the latter specifies how much of those resources is used taking into consideration the environment (the machine) in which an algorithm is running, the code, the time... So Complexity affects Performance but this is unidirectional, performance _does not_ affect complexity.
+
+2. **Statements** are the units or simple instructions executed in a program in order to perform an action, they could in example:
+    - Defining a variable `let a = 1;`
+    - Making an arithmetic operation `3 + 2`
+    - A Function call `fn()`
+
+There are also **Compound Statements** which contain more than one instruction or operation, one example is: `for (let i = 0; i < 10; i++) {}` which is executing a loop but at the same time defining a variable `i`, making a comparison `i < 10` and incrementing the variable `i` by 1 in each iteration.
+
+The idea is that you understand that <mark>programs are a conjunction of **statements** that determine their **complexity**</mark>.
+
+Finally two more concepts, as previously mentioned there are two types of complexities relevant to Big O:
+
+3. **Time Complexity** evaluates how an algorithm will scale over time, helping us understand if it will be too slow or will be fast enough for our needs.
+
+4. **Space Complexity** evaluates how an algorithm makes use of space over its execution, in example, how many variables we are defining, how an array or object grows to ensure that we will not cause any issues with memory consumption given our needs...
+
+### Constant
+
+Constant or $O(1)$ Complexity makes reference to an algorithm that no matter the input size it will always take the same amount of time/space to perform a task (therefore it is constant when the input size grows), in example let's evaluate a function that validates if the first element of an array is a number:
 
 ```javascript
 function isFirstElementNumeric(list) {
@@ -24,11 +47,21 @@ function isFirstElementNumeric(list) {
 }
 ```
 
-No matter how large the input size is (the list's length) because we will only evaluate the first element, so, even if the list has 1k elements it will take the same as if the list had only 1 element.
+If we evaluate this by statements we understand that:
+
+- **Line 1:** We are creating a function called `isFirstElementNumeric`
+- **Line 1:** We are creating a variable called `list` to hold the input.
+- **Line 2:** We are returning a value
+- **Line 2:** We are getting the `typeof list[0]`
+- **Line 2:** We are making a comparison against `number`
+
+Notice how I have separated the lines into multiple statements, one line can have multiple statements, and some of those statements can be native implementations of the language like in this case when `typeof` is used, and this is important to understand, the inner implementation of native functionalities affects the complexity of an algorithm depending on how it is implemented by the language, so if you are evaluating an algorithm, you need to be careful to understand and account for the complexity of the inner works of the language.
+
+If we evaluate the Time Complexity of the previous algorithm knowing the concept of _constant_ we can determine that each statement is $O(1)$, why? because for all the statements of this function no matter how big the input is, it will always take the same amount of time to evaluate every statement of the function, because in this case even if the array has 1000 elements we are just taking index 0 and same goes for space, we are not defining new variables when executing this function, **and this next part is important**, yes, we are using a variable `list` to hold the input but <mark>when evaluating space complexity we don't take into consideration the input itself because that is the very premise upon which the algorithm evaluation itself is based on, if we took the input into consideration then for any function receiving a data structure capable of storing multiple properties it would be at least linear time</mark> (We will explain linear time in a bit).
+
+The graph below represents how time complexity (Y Axis) gets affected when the input size (X Axis) grows, since time is constant time remains unchanged for any given input size.
 
 ![](/images/o(1).svg#image-type=no-border;width=auto)
-
-The graph above represents how time complexity (Y Axis) gets affected when the input size (X Axis) grows, since time is constant time remains unchanged for any given input size.
 
 ### Logarithmic Time
 
@@ -89,7 +122,9 @@ An algorithm is cuadratic time $O(n^2)$ when it grows proportionally to the squa
 - For $2$ we define $2^2 = 4$
 - For $3$ we define $3^2 = 9$
 
-and so on...
+and so on... visually speaking cuadratic time would look something like this:
+
+![](/images/o(n2).svg#image-type=no-border;width=auto)
 
 a good example of this type is when we are dealing with nested loops (one level of nesting), it does not mean that all nested loops are cuadratic by any means, and I will explain this better below, but a typical case could be the next one.
 
