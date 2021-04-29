@@ -31,7 +31,7 @@ There are also **Compound Statements** that contain more than one instruction or
 
 The idea is that you understand that programs are a set of **statements** that determine their **complexity**. In Big O specifically, we care about the statements with higher complexity, where "higher" means less efficient, so after evaluating all the statements the one that will define the complexity of the algorithm is the less efficient complexity found, so:
 
-<mark>**Big O** = **max(**complexity(statement1),...,complexity(statementN)**)**</mark>
+<mark>**Big O** = **max(**complexity(statement1), ..., complexity(statementN)**)**</mark>
 
 Finally, two more concepts, as previously mentioned there are two types of complexities relevant to Big O:
 
@@ -305,6 +305,8 @@ One way to start practicing Big O notation is by thinking on the complexity of t
 When making a new implementation think in terms of scalability, feel free to do a naive implementation first and apply gradual improvements from there or take your time thinking on the implementation to get it right the first time, either way works, the important part is to think in terms of how each statement you are adding affects the algorithm as a whole.
 
 Code reviews are also a perfect place to put this into practice, understand the business application of the code that you are reviewing but also the complexity that is being added to the codebase and see _if_ it can be improved and if it is worth it.
+
+## Closing Thoughts
 
 I have to say, writing this article was a lot of fun, I hope that I was able to incentivize you to keep learning about algorithms and their complexities, this is just a little part of everything that involves Big O so please do not stop here, if you have any comments or wanna reach out feel free to do it, as always the information is below.
 
