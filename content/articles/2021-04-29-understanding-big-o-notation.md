@@ -314,6 +314,6 @@ Code reviews are also a perfect place to put this into practice, understand the 
 
 ## Closing Thoughts
 
-I have to say, writing this article was a lot of fun, I hope that I was able to incentivize you to keep learning about algorithms and their complexities, this is just a little part of everything that involves algorithm's complexities, in example besides Big O we also have Big Omega ($\Omega$) to evaluate the lower bound, and Big Theta ($\Theta$) to evaluate the average case, so please do not stop here, if you have any comments or wanna reach out feel free to do it, as always the information is below.
+I have to say, writing this article was a lot of fun, I hope that I was able to incentivize you to keep learning about algorithms and their complexities, this is just a little part of everything that involves algorithm's complexities, in example besides Big O (**O**) we also have Big Omega ($\Omega$) to evaluate the lower bound, and Big Theta ($\Theta$) to evaluate the average case, so please do not stop here, if you have any comments or wanna reach out feel free to do it, as always the information is below.
 
 See you next time!
