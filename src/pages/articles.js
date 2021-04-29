@@ -12,8 +12,6 @@ import * as containerStyles from '../components/Container/Container.module.scss'
 import Aside from '../components/Aside';
 import { getSeries } from '../helpers/articles';
 
-import "katex/dist/katex.min.css";
-
 const Articles = ({ data }) => {
     const { edges: posts } = data.articles;
     const siteMetadata = data.metadata.siteMetadata;
