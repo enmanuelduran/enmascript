@@ -223,8 +223,9 @@ div.articleShareMobile {
 
     :not(pre) > code[class*="language-"] {
         white-space: normal;
-        background: $code-box-header-background-color;
+        background: rgba($code-box-header-background-color, .4);
         color: $code-box-header-text-color;
+        padding: 3px;
     }
 
     pre {
