@@ -6,11 +6,12 @@ series: ['Data Structures and Algorithms']
 featuredImage: '2021-04-28-understanding-big-o.png'
 ---
 
-**Big O**, a highly popular notation that is often heard in the world of algorithms, performance and optimization. It is a pivotal topic for coding interviews at big companies such as Google, Amazon, Facebook... everybody says you should learn about it, but why? why would you or anyone learn about Big O if you are not taking interviews? In this article, I will try to explain from my perspective why it is useful and how you can apply it on your everyday basis to make you improve in your next implementations and code reviews.
+**Big O** is a highly popular notation that is often heard in the world of algorithms, performance and optimization. It is a pivotal topic for coding interviews at big companies such as Google, Amazon, Facebook... everybody says you should learn about it, but why? why would you or anyone learn about Big O if you are not taking interviews? In this article, I will try to explain from my perspective what Big O is, why it is useful and how you can apply it in an everyday basis to make you improve as a software developer.
 
 ## Definition
 
-There are multiple ways of writing algorithms, you can implement a feature using different approaches, everybody has a unique way of thinking and solving their way through problems, for this reason, we need a way to understand how these different solutions perform under different scenarios to help us determine which one works better based on our needs, <mark>**Big O** is a notation that allows us to evaluate this, specifically it allows us to evaluate growth rates by analyzing how the **time complexity** (Time of execution) and **space complexity** (memory usage) scale for a given algorithm when larger input sizes are processed by it</mark>.
+There are multiple ways of writing algorithms, you can implement a feature using different approaches, everybody has a unique way of thinking and solving their way through problems, for this reason, we need a way to understand how these different solutions perform under different scenarios to help us determine which one works better based on our needs, <mark>**Big O** is a notation that allows us to evaluate this, specifically it allows us to evaluate growth rates by analyzing how **time complexity** (Time of execution) and **space complexity** (memory usage) scale for a given algorithm when larger input sizes are processed by it. Big O is driven by the upper bound or higher complexity found in an algorithm so the worst case complexity will be the Big O representation of your code.</mark>.
+
 
 For a formal definition of Big O I would recommend you to read [the one from wikipedia](https://en.wikipedia.org/wiki/Big_O_notation#Formal_definition) which is pretty straightforward, if you have trouble understanding the formal definition **do not worry**, it is enough to understand the intuitive definition highlighted above.
 
@@ -240,7 +241,7 @@ As for the **space complexity** of our algorithm above it is constant $O(1)$ bec
 
 ### Exponential
 
-Also known as $O(a^n)$ where $a$ is constant and $n$ is variable, not to be confused with polynomial time where $a$ is variable and $n$ is constant.
+Also known as $O(a^n)$ where $a$ is constant and $n$ is variable, not to be confused with polynomial where it is the opposite.
 
 A simple example I can think of that takes **exponential** time is recursive _Fibonacci_ without memoization (If you don't know what memoization is take a look at one of my previous articles _[Avoid recomputing heavy tasks by leveraging memoization in javascript](/articles/2019/04/22/avoid-recomputing-heavy-tasks-by-leveraging-memoization-in-javascript)_).
 
@@ -286,6 +287,9 @@ $$
 
 A classic case scenario of this time complexity is the processing of every possible permutation of an array where $n$ is the size of the array and so it is $n!$ because we need to make all the permutations possible up to the length of $n$.
 
+- Permutations
+- Combinations
+
 ![](/images/o(nfactorial).svg#image-type=no-border;width=auto)
 
 Due to complexity I have decided that I will write a separated article to explain one example of factorial complexity.
@@ -295,6 +299,8 @@ Due to complexity I have decided that I will write a separated article to explai
 So after everything we have learned, we can define that for an $n$ large enough it holds that:
 
 $O(1) < O(log(n)) < O(n) < O(n \times log(n)) < O(n^2) < O(2^n) < O(n!)$
+
+Which means that if you are evaluating your code and you find that it has an statement that is $O(n)$ but there is another block of code that is $O(n^2)$ then your code is $O(n^2)$ because as previously mentioned, Big O cares about the upper bound.
 
 There are other complexities that we are not including in this article like in example cubic complexity, but the idea is not to name them all, instead, I want to help you understand how to analyze your code to determine how efficient it is and of course dig deeper into the topic if you are interested.
 
@@ -308,6 +314,6 @@ Code reviews are also a perfect place to put this into practice, understand the 
 
 ## Closing Thoughts
 
-I have to say, writing this article was a lot of fun, I hope that I was able to incentivize you to keep learning about algorithms and their complexities, this is just a little part of everything that involves Big O so please do not stop here, if you have any comments or wanna reach out feel free to do it, as always the information is below.
+I have to say, writing this article was a lot of fun, I hope that I was able to incentivize you to keep learning about algorithms and their complexities, this is just a little part of everything that involves algorithm's complexities, in example besides Big O we also have Big Omega ($\Omega$) to evaluate the lower bound, and Big Theta ($\Theta$) to evaluate the average case, so please do not stop here, if you have any comments or wanna reach out feel free to do it, as always the information is below.
 
 See you next time!
