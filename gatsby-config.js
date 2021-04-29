@@ -89,7 +89,72 @@ module.exports = {
         `gatsby-link`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-catch-links`,
-        `gatsby-plugin-feed`,
+        {
+            resolve: `gatsby-plugin-feed`,
+            options: {
+                query: `
+                {
+                  site {
+                    siteMetadata {
+                      title
+                      description
+                      siteUrl
+                      site_url: siteUrl
+                    }
+                  }
+                }
+              `,
+                feeds: [
+                    {
+                        serialize: ({ query: { site, allMarkdownRemark } }) => {
+                            return allMarkdownRemark.edges.map((edge) => {
+                                return Object.assign(
+                                    {},
+                                    edge.node.frontmatter,
+                                    {
+                                        description: edge.node.excerpt,
+                                        date: edge.node.frontmatter.date,
+                                        url:
+                                            site.siteMetadata.siteUrl +
+                                            edge.node.fields.slug,
+                                        guid:
+                                            site.siteMetadata.siteUrl +
+                                            edge.node.fields.slug,
+                                        custom_elements: [
+                                            {
+                                                'content:encoded':
+                                                    edge.node.html,
+                                            },
+                                        ],
+                                    }
+                                );
+                            });
+                        },
+                        query: `
+                    {
+                      allMarkdownRemark(
+                        sort: { order: DESC, fields: [frontmatter___date] },
+                      ) {
+                        edges {
+                          node {
+                            excerpt
+                            html
+                            fields { slug }
+                            frontmatter {
+                              title
+                              date
+                            }
+                          }
+                        }
+                      }
+                    }
+                  `,
+                        output: '/rss.xml',
+                        title: `Enmascript's RSS Feed`,
+                    },
+                ],
+            },
+        },
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -97,8 +162,8 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-katex`,
                         options: {
-                          strict: `ignore`
-                        }
+                            strict: `ignore`,
+                        },
                     },
                     {
                         resolve: `gatsby-remark-images`,
@@ -109,7 +174,7 @@ module.exports = {
                     {
                         resolve: `gatsby-remark-image-attributes`,
                         options: {
-                            dataAttributes: true
+                            dataAttributes: true,
                         },
                     },
                     {
