@@ -3,6 +3,7 @@ date: '2021-04-29T08:10:30.962Z'
 title: 'Understanding Big O Notation'
 summary: "Big O notation allows us to evaluate the performance of algorithms so that we can determine their efficiency and make decisions based on this determinations, let's try to understand how this notation works and how we can apply it in our lives as software developers."
 series: ['Data Structures and Algorithms']
+reddit: 'https://www.reddit.com/r/webdev/comments/n1ur9j/understanding_big_o_notation_as_a_software/'
 featuredImage: '2021-04-28-understanding-big-o.png'
 ---
 
