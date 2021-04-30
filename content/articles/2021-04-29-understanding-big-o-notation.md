@@ -109,7 +109,7 @@ How about **space complexity**? Good question, let's evaluate the statements in 
 1. `i = i * 2;` for the definition of the variable `i` inside of the while loop we can say that the space complexity is constant, why? because with each iteration the value of `i` is overwritten with the new value of `i * 2`, so this is not growing in space.
 2. `list.push(i)` this right here is the key to the space complexity of this algorithm, every time an iteration happens the array `list` grows in parallel with time complexity, hence the space complexity of this statement is logarithmic.
 
-Hence **space complexity** is logarithmic.
+And so the **space complexity** of this complete algorithm is logarithmic.
 
 
 ![](/images/o(log(n)).svg#image-type=no-border;width=auto)
