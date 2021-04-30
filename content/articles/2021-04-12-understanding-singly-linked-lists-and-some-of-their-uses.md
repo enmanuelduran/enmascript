@@ -127,7 +127,7 @@ This is excellent, you can see how the nodes connect with each other, they are j
 
 Appending an element to the end of the linked list requires us to modify the tail's `next` property and reassign the tail with the value of the new node.
 
-this is true for any node we want to append which makes this <mark>a constant **O(1)** operation</mark>.
+this is true for any node we want to append which makes this <mark>a [constant **O(1)**](/articles/2021/04/29/understanding-big-o-notation#constant) operation</mark>.
 
 ![](/images/o(1).svg#image-type=no-border-limied-width;)
 
@@ -148,7 +148,7 @@ class LinkedList {
 ```
 ### 2.1. Time complexity for prepending nodes
 
-It does not matter how many nodes the linked list has, it will always be the same process and complexity for prepending hence <mark>the time complexity of prepending is constant **O(1)**</mark>.
+It does not matter how many nodes the linked list has, it will always be the same process and complexity for prepending hence <mark>the time complexity of prepending is [constant **O(1)**](/articles/2021/04/29/understanding-big-o-notation#constant)</mark>.
 
 ![](/images/o(1).svg#image-type=no-border-limied-width;)
 
@@ -188,7 +188,7 @@ i.e let's find the node 3 in the linked list below:
 
 ### 3.1. Time complexity of accessing and searching nodes
 
-Knowing this we can stablish that accessing and searching an element would be <mark>**O(n)** where **n = number of nodes in the list**</mark>, even though we don't always search the whole list the big O notation analizes algorithms by their trend and worst case scenario and so we arrive at this conclusion.
+Knowing this we can stablish that accessing and searching an element would be <mark>[**O(n)**](/articles/2021/04/29/understanding-big-o-notation#linear) where **n = number of nodes in the list**</mark>, even though we don't always search the whole list the big O notation analizes algorithms by their trend and worst case scenario and so we arrive at this conclusion.
 
 ![](/images/o(n).svg#image-type=no-border-limied-width;)
 
@@ -260,20 +260,20 @@ Which would modify the reference from the node with value 1 to be now the refere
 
 ### 4.1. Time complexity for Deleting a node (From the beginning / Head node)
 
-Deleting a node from the beginning of the list as [previously seen](#removing-nodes-from-a-linked-list) just requires us to change the `this.head` value to be `this.head.next` in this way we remove the reference to the first node, since this operation is constant no matter the size of the list it is considered <mark>**O(1)**</mark>.
+Deleting a node from the beginning of the list as [previously seen](#removing-nodes-from-a-linked-list) just requires us to change the `this.head` value to be `this.head.next` in this way we remove the reference to the first node, since this operation is constant no matter the size of the list it is considered <mark>[**O(1)**](/articles/2021/04/29/understanding-big-o-notation#constant)</mark>.
 
 ![](/images/o(1).svg#image-type=no-border-limied-width;)
 
 ### 4.2. Time complexity for Deleting the Tail or any node that's not the head
 
-Doing this will require us to iterate over the list until we find the element to delete ([Same that we need to search an node](#accessing-and-searching-element)), then we just remove the node as usual so the time complexity would be <mark>**O(n)** where **n = number of nodes in the list**</mark>.
+Doing this will require us to iterate over the list until we find the element to delete ([Same that we need to search an node](#accessing-and-searching-element)), then we just remove the node as usual so the time complexity would be <mark>[**O(n)**](/articles/2021/04/29/understanding-big-o-notation#linear) where **n = number of nodes in the list**</mark>.
 
 ![](/images/o(n).svg#image-type=no-border-limied-width;)
 
 
 ## Space Complexity of linked lists
 
-The space required for a linked list is directly correlated with the number of nodes that it holds, this means that the more nodes we have the more space we use and this grows linearly per node which makes linked lists <mark>**O(n)** for Space complexity.</mark>
+The space required for a linked list is directly correlated with the number of nodes that it holds, this means that the more nodes we have the more space we use and this grows linearly per node which makes linked lists <mark>[**O(n)**](/articles/2021/04/29/understanding-big-o-notation#linear) for Space complexity.</mark>
 
 ## Use cases and why to learn about them
 
