@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: enmascript.com
+Token: db6812e3bff5f1529b3271d393e0aa03e200d14bc7a0248fd3b2015abc8d591d
