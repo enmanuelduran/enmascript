@@ -1,9 +1,9 @@
 {
-    "intro": "My name is Enmanuel Durán. I'm a passionate web developer from Venezuela, I started developing websites when I was 13 years old, I’m currently 26 years old and my passion just keeps growing.",
+    "intro": "My name is Enmanuel Durán. I'm a passionate software developer from Venezuela, I started developing websites when I was 13 years old, I’m currently (current year - 1994) years old and my passion just keeps growing.",
     "whatIDo": {
         "title": "What I do",
         "list": [
-            "I currently work as a Frontend Team Lead at <a href='https://www.consumeraffairs.com/' target='_blank' rel='noopener noreferrer'>ConsumerAffairs</a>",
+            "I currently work as a Frontend Engineer at Amazon (AWS)",
             "Founder behind <a href='http://somosprogramadores.com' target='_blank' rel='noopener noreferrer'>somosprogramadores</a> a platform where I teach people about programming and tech in Spanish.",
             "Author of EnmaScript.",
             "Founder and developer of <a href='https://leenker.com' target='_blank' rel='noopener noreferrer'>Leenker</a>",
@@ -14,6 +14,7 @@
     "inThePast": {
         "title": "In The Past",
         "list": [
+            "Frontend Team Lead at <a href='https://www.consumeraffairs.com/' target='_blank' rel='noopener noreferrer'>ConsumerAffairs</a>",
             "Senior Software Engineer at <a href='https://www.olx.com/' target='_blank' rel='noopener noreferrer'>OLX</a>.",
             "Instructor at <a href='https://codigofacilito.com/' target='_blank' rel='noopener noreferrer'>CodigoFacilito</a>",
             "Consultant"
