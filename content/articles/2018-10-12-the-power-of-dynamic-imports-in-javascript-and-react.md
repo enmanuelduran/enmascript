@@ -5,6 +5,7 @@ summary: "Dynamic imports are a very powerful feature, in this article I'll walk
 series: ['React', 'Performance', 'Javascript']
 featuredImage: '2018-10-12-dynamic-imports.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/atyzzo/a_simple_example_on_how_to_use_dynamic_imports/'
+leenker: 'https://leenker.com/leenk/17086/the-power-of-dynamic-imports-in-javascript-and-react'
 ---
 
 Dynamic imports are great, they've been out there for a while and presume many improvements in the way we treat modules/components. In this article, I'm going to be explaining how they work, why they're so good and some of the things we could accomplish by using them.

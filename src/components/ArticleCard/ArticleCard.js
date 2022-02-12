@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Reddit } from '../Icons/SocialIcons';
+import { Reddit, Leenker } from '../Icons/SocialIcons';
 import * as styles from './ArticleCard.module.scss';
 
 const ArticleCard = ({
@@ -15,7 +15,9 @@ const ArticleCard = ({
     series,
     classes,
     titleClass,
-    imageClass
+    imageClass,
+    leenker,
+    noSocialText
 }) => (
     <div className={`${styles.articleCard} ${classes}`}>
         <article className={styles.cardContent}>
@@ -47,7 +49,18 @@ const ArticleCard = ({
                             className={styles.cardReddit}
                             data-gtm-track="article-card-reddit-discussion">
                             <Reddit />
-                            <span>Let's talk</span>
+                            {!noSocialText && <span>Let's talk</span>}
+                        </a>
+                    )}
+                    {leenker && (
+                        <a
+                            href={leenker}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.cardLeenker}
+                            data-gtm-track="article-card-reddit-discussion">
+                            <Leenker />
+                            {!noSocialText && <span>Leenk it!</span>}
                         </a>
                     )}
 
@@ -73,7 +86,8 @@ ArticleCard.defaultProps = {
     series: [],
     classes: '',
     titleClass: '',
-    imageClass: ''
+    imageClass: '',
+    noSocialText: false,
 };
 
 ArticleCard.propTypes = {
@@ -87,7 +101,8 @@ ArticleCard.propTypes = {
     series: PropTypes.array,
     classes: PropTypes.string,
     titleClass: PropTypes.string,
-    imageClass: PropTypes.string
+    imageClass: PropTypes.string,
+    noSocialText: PropTypes.bool,
 };
 
 export default ArticleCard;

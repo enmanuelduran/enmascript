@@ -5,6 +5,7 @@ summary: "The builder pattern allows us to create objects gradually as we consum
 series: ['Javascript']
 featuredImage: '2019-03-18-builder-pattern-cover.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/b2ikoc/building_objects_progressively_with_the_builder/'
+leenker: 'https://leenker.com/leenk/17094/building-objects-progressively-with-the-builder-pattern-in-javascript'
 ---
 
 When working in javascript, one of the things that happen commonly is the construction of complex objects, these evolve or change with the passage of time, either when the application grows or when certain processes are executed. There are multiple ways of creating complex objects, in this article, I'm going to be explaining one design pattern that does it very well and we'll compare it with other approaches that are widely used.

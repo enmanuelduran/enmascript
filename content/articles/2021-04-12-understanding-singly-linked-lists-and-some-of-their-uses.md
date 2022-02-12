@@ -4,6 +4,7 @@ title: 'Understanding Singly Linked Lists and some of their uses'
 summary: "Linked Lists are a fundamental data structure in the world of software development, in this article we will explore its implementation and its applications in today's world"
 series: ['Data Structures and Algorithms']
 featuredImage: '2021-04-07-linked-lists.png'
+leenker: 'https://leenker.com/leenk/17104/understanding-singly-linked-lists-and-some-of-their-uses'
 ---
 
 ## Definition

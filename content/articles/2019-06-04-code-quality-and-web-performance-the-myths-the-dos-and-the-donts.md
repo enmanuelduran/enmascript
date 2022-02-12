@@ -5,6 +5,7 @@ summary: "Performance optimizations are sometimes mistakenly executed, in this a
 series: ['Javascript', 'Performance']
 reddit: 'https://www.reddit.com/r/javascript/comments/bwphrq/code_quality_and_web_performance_in_javascript/'
 featuredImage: '2019-06-04-webperf-code-quality-cover.png'
+leenker: 'https://leenker.com/leenk/17096/code-quality-and-web-performance-the-myths-the-dos-and-the-donts'
 ---
 
 Optimization is a word that englobes a significant scope of possibilities, especially in the world of software development. Developers always like to "optimize," but what is it _really_? -- This word is many times miss-used to excuse subjective point of views, other times it is used only to demonstrate "improvements" that are not sincerely necessary. In this article, we are going to be talking about the mistakes we make as developers when trying to improve our code bases by "optimizing" them, and, we are going to see which are some excellent ways to start doing this correctly.

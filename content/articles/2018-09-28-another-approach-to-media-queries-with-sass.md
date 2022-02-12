@@ -5,6 +5,7 @@ summary: 'Learn about how media queries can make your development process faster
 series: ['CSS, Styling and Preprocessors']
 featuredImage: 'media_queries_mixins_sass.png'
 reddit: 'https://www.reddit.com/r/webdev/comments/asopyy/another_approach_to_media_queries_with_the_power/'
+leenker: 'https://leenker.com/leenk/17084/another-approach-to-media-queries-with-the-power-of-sass'
 ---
 
 When you've been working developing websites and layouts [as long as I've been](https://enmascript.com/articles/2018/06/27/most-important-things-i-have-learned-after-10-years-as-a-software-developer), you learn one thing, _having dynamic not defined breakpoints and media queries is not a good idea_, why?, because they give you more problems than they solve... take a look at the following code for instance:

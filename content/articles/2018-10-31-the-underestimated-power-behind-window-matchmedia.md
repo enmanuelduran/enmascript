@@ -5,6 +5,7 @@ summary: "In this article we're going to learn how to improve the performance by
 series: ['Javascript', 'Performance']
 featuredImage: '2018-10-31-window-matchmedia.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/aqx02n/the_underestimated_power_behind_matchmedia_api/'
+leenker: 'https://leenker.com/leenk/17089/the-underestimated-power-behind-matchmedia'
 ---
 
 Media query based interactions are a very important part of our applications for several reasons, one of the most important ones is that they allow us to give our users better experiences based on the device they're using. Usually, when you want to show/hide or change something for certain devices you only define some media queries in _CSS_ and that's it, but... what happens when we need to make dynamic experiences with javascript in responsive sites? currently, the most popular answer to this question would be to use a resize event listener that executes some code when the `window.innerWidth` or `window.innerHeight` meets our condition, something like:

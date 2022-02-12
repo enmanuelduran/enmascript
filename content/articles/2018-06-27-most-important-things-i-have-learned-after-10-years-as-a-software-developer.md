@@ -5,6 +5,7 @@ summary: 'My journey as a software developer has taught me many valuablle lesson
 series: []
 featuredImage: '2018-06-27-most-important-things.png'
 reddit: 'https://www.reddit.com/r/webdev/comments/aw4i9t/some_of_the_most_important_things_ive_learned/'
+leenker: 'https://leenker.com/leenk/17079/most-important-things-ive-learned-after-10-years-as-a-software-developer'
 ---
 
 One of the things that I’ve realized with the passage of time is that <mark>no matter how good or talented you are at something, there are many things that you’ll only learn from experience</mark>, things you probably wish you knew before. In this article, I’m focusing on the things I consider to be most important after all these years as a software developer.

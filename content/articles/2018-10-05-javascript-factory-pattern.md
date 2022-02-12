@@ -5,6 +5,7 @@ summary: "Let's learn how to take advantage of this creational pattern to organi
 series: ['Javascript']
 featuredImage: '2018-10-07-factory-pattern.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/ar9613/creating_objects_dynamically_with_factory_pattern/'
+leenker: 'https://leenker.com/leenk/17085/creating-objects-dynamically-with-factory-pattern-in-javascript'
 ---
 
 When creating features, we often need to create instances based on parameters coming from an endpoint or a similar dynamic source. In this article I'll try to _give you an idea_ of how we can use the single factory pattern to approach such cases.

@@ -5,6 +5,7 @@ summary: 'Required parameters are everywhere in our codebase, in this short arti
 series: ['Did You Know']
 featuredImage: '2019-09-22-required-function-arguments.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/d7pvw7/a_different_way_of_handling_required_arguments_in/'
+leenker: 'https://leenker.com/leenk/17099/a-different-way-of-handling-required-arguments-in-javascript-functions'
 ---
 
 <mark>**#Did you know** is a new series of Enmascript where we write short and concise explanations about topics we consider might be relevant or underestimated, if you are looking for more complete in-depth articles check out our **[other series](/series)**.</mark>

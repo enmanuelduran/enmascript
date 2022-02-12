@@ -4,6 +4,7 @@ title: 'Better ways of tracking data in your web application that you may not kn
 summary: 'Tracking information in your application can be very challenging, especially when dealing when page unloads and users leaving before tracking requests finished, this article tries to teach you about some possible solutions to this challenges and more.'
 series: ['Javascript']
 featuredImage: '2021-03-19-better-ways-tracking-cover.png'
+leenker: 'https://leenker.com/leenk/17103/better-ways-of-tracking-data-in-your-web-application-that-you-may-not-know-of'
 ---
 
 Tracking data in our applications nowadays is pivotal to business growth, if done properly it can provide fundamental insights for an application that will allow us to understand how to improve it, data helps us understand our users which allows companies to understand their strengths and weaknesses better. Finally, good tracking marks the difference between success and failure, that's why getting it right is so important.

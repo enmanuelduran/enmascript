@@ -4,6 +4,7 @@ title: 'Show and hide content on click with just HTML'
 summary: 'There are multiple elements that were introduced in HTML5 that are not used/known enough, on this article we are going to be covering <details>, one powerful element that will hopefully introduce you to some new ways of handling specific UI toggling interactions such as accordions or dropdowns.'
 series: ['Did You Know']
 featuredImage: '2019-10-14-details-element.png'
+leenker: 'https://leenker.com/leenk/17102/show-and-hide-content-on-click-with-just-html'
 ---
 
 <style>
