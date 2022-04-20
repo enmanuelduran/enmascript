@@ -4,7 +4,6 @@ title: 'const, let and var'
 summary: 'const, let and var, when should I use which?, here some of the most remarkable differences and use cases for each of them...'
 series: ['Javascript']
 featuredImage: '2018-07-06-const-let-and-var.png'
-leenker: 'https://leenker.com/leenk/17080/const-let-and-var'
 ---
 
 JavaScript is an amazing and powerful programming language, it allows us to create amazing websites, applications, and way more things than we can imagine in today’s world.

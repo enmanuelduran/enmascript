@@ -5,7 +5,6 @@ summary: 'This article shows a different perspective of software developers by s
 series: []
 featuredImage: '2019-02-21-struggles.png'
 reddit: 'https://www.reddit.com/r/webdev/comments/aumv4d/some_of_the_struggles_of_a_software_developer/'
-leenker: 'https://leenker.com/leenk/17091/the-struggles-of-a-software-developer-outside-of-the-code'
 ---
 
 As developers we're people that are constantly looking forward to optimizing code, write the best, most performant, readable algorithms possible in order to have a clean codebase that's understandable and scalable, we don't always succeed on this task in the first attempt but we constantly evolve and learn in order to get to a good consistent spot where we can feel comfortable, however, being a software developer is _far more complex_ than just writing code and optimizing algorithms, sometimes it can be overwhelming, not everything we do is inside a code editor and in this article I'm going to be talking a little about these _outside of the code_ experiences and about how we can get better integrally as professionals and approach situations in our job environments that are not solved with an algorithm.

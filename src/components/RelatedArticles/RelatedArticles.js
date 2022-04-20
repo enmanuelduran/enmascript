@@ -22,12 +22,10 @@ const RelatedArticles = ({ articles, siteMetadata }) => (
                             key={post.id}
                             summary={post.frontmatter.summary}
                             reddit={post.frontmatter.reddit}
-                            leenker={post.frontmatter.leenker}
                             series={getSeries(post, siteMetadata)}
                             classes={styles.relatedCard}
                             titleClass={styles.relatedCardTitle}
                             imageClass={styles.relatedImage}
-                            noSocialText
                         />
                     ))}
             </div>

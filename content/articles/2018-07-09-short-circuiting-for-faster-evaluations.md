@@ -4,7 +4,6 @@ title: 'Short-circuiting for faster evaluations'
 summary: 'Short-circuiting is just a fancy name we use to describe the interruption of conditional statements due to the fullfillment of truth table evaluations...'
 series: ['Javascript']
 featuredImage: '2018-07-09-short-circuiting.png'
-leenker: 'https://leenker.com/leenk/17082/short-circuiting-for-faster-evaluations'
 ---
 
 

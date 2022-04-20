@@ -5,7 +5,6 @@ summary: "Higher order functions are one of the strongest arguments behind funct
 series: ['Javascript']
 featuredImage: '2019-02-27-HOF.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/awihb1/higher_order_functions_and_some_great/'
-leenker: 'https://leenker.com/leenk/17092/higher-order-functions-and-some-great-applications-in-javascript'
 ---
 
 ## What are Higher order functions?

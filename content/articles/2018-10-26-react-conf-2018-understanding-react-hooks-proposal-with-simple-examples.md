@@ -5,7 +5,6 @@ summary: 'React Hooks are the future, a new way of building react components to 
 series: ['React']
 featuredImage: '2018-10-26-hooks-proposal.png'
 reddit: 'https://www.reddit.com/r/reactjs/comments/arzbc7/understanding_reacts_hooks_with_simple/'
-leenker: 'https://leenker.com/leenk/17088/react-conf-2018-understanding-reacts-hooks-proposal-with-simple-examples'
 ---
 
 Yesterday was the first day of the [React conf](https://conf.reactjs.org/), the community is very excited about the things that are happening with react (myself included), after watching some minutes of the conference we noticed a pattern, the word _hooks_ started to be recurrent, and the more it was used the more amazed and hyped we were. In this article, we're going to be explaining how _hooks_ work a little bit by identifying some key concepts and understanding a simple example of a counter that will be progressively evolving with the use of the different hooks (Ah, and you'll be reading the word _hooks_ a lot). Grab a soda, fasten your seatbelt and enjoy the ride.

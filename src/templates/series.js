@@ -33,7 +33,6 @@ const SeriesArticlesTemplate = ({ data }) => {
                                 summary={post.frontmatter.summary}
                                 series={getSeries(post, siteMetadata)}
                                 reddit={post.frontmatter.reddit}
-                                leenker={post.frontmatter.leenker}
                             />
                         })}
                 </section>
@@ -61,7 +60,6 @@ export const seriesQuery = graphql`
                         featuredImage
                         summary
                         reddit
-                        leenker
                         series
                     }
                     fields {

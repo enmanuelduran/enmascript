@@ -5,7 +5,6 @@ summary: 'A different approach to handle your conditions...'
 series: ['Javascript']
 featuredImage: '2018-10-22-objects-over-switch.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/arkefh/an_alternative_approach_to_switch_statements_in/'
-leenker: 'https://leenker.com/leenk/17087/why-i-prefer-objects-over-switch-statements'
 ---
 
 Recently (or not so recently, depending on when you read this article), I was having a debate with some teammates about how to handle conditions that require multiple evaluations, usually for such cases people love to use a switch statement or a huge `if` with multiple `else if` conditions. In this article I'm going to focus on a third way (the approach I prefer), we're going to make use of objects for quick lookups.

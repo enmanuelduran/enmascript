@@ -5,7 +5,6 @@ summary: "Memoization is a technique that's not usually very used in javascript 
 series: ['Javascript', 'Performance']
 featuredImage: '2019-04-20-memoizing-cover.png'
 reddit: 'https://www.reddit.com/r/javascript/comments/bg1xl9/avoid_recomputing_heavy_tasks_by_leveraging/'
-leenker: 'https://leenker.com/leenk/17095/avoid-recomputing-heavy-tasks-by-leveraging-memoization-in-javascript'
 ---
 
 Javascript is an _wonderful_ dynamic language; it allows us to do many things either on the backend layer with Node or the frontend of our application. One of the things that we do the most in javascript is endpoint calls that are later used to compute information and finally show it to the user in a friendly and polished way. We usually try to avoid at all cost additional requests and computations so that our application performs at its best. On this article, we're going to be exploring a technique that will help us improve on this matter, so without further ado let's get into it.

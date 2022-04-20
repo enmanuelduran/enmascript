@@ -4,7 +4,6 @@ title: 'Toggle content on click without javascript (Yes you read that right)'
 summary: 'Usually every time we want to toggle content on a website on click we use javascript. In this article, we are going to explore a different way of doing this by just using CSS capabilities.'
 series: ['Did You Know', 'CSS, Styling and Preprocessors']
 featuredImage: '2019-09-26-toggle-content-on-click.png'
-leenker: 'https://leenker.com/leenk/17101/toggle-content-on-click-without-javascript-yes-you-read-that-right'
 ---
 
 Usually every time we want to toggle content on a website on click we use javascript. In this article, we are going to explore a different way of doing this by just using CSS capabilities.

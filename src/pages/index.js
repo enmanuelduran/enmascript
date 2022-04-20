@@ -8,7 +8,7 @@ import ArticleCard from '../components/ArticleCard';
 import AsideAds from '../components/AsideAds';
 import AsideSeries from '../components/AsideSeries';
 import CoverImage from '../images/cover.png';
-import { Reddit, Leenker } from '../components/Icons/SocialIcons';
+import { Reddit } from '../components/Icons/SocialIcons';
 import * as styles from './index.module.scss';
 import * as cardStyles from '../components/ArticleCard/ArticleCard.module.scss';
 import * as containerStyles from '../components/Container/Container.module.scss';
@@ -58,25 +58,14 @@ const Index = ({ data }) => {
                                         <span>Let's talk</span>
                                     </a>
                                 )}
-                                {post.frontmatter.leenker && (
-                                    <a
-                                        href={post.frontmatter.leenker}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={cardStyles.cardLeenker}
-                                        data-gtm-track="cover-card-article-leenker-discussion">
-                                        <Leenker />
-                                        <span>Leenk it!</span>
-                                    </a>
-                                )}
-                                {getSeries(post, siteMetadata).map(serie =>  (
-                                    <div className={styles.homeArticleSeries} key={serie.slug}>
-                                        <Link
-                                            to={serie.slug}>
-                                            #{serie.name}
-                                        </Link>
-                                    </div>
-                                ))}
+                                    {getSeries(post, siteMetadata).map(serie =>  (
+                                        <div className={styles.homeArticleSeries} key={serie.slug}>
+                                            <Link
+                                                to={serie.slug}>
+                                                #{serie.name}
+                                            </Link>
+                                        </div>
+                                    ))}
                             </div>
                             </div>
                         </div>
@@ -112,7 +101,6 @@ const Index = ({ data }) => {
                                 summary={post.frontmatter.summary}
                                 series={getSeries(post, siteMetadata)}
                                 reddit={post.frontmatter.reddit}
-                                leenker={post.frontmatter.leenker}
                             />
                         })
                     }
@@ -145,7 +133,6 @@ export const HomeQuery = graphql`
                         date(formatString: "MMMM DD, YYYY")
                         summary
                         reddit
-                        leenker
                         series
                     }
                     fields {
@@ -171,7 +158,6 @@ export const HomeQuery = graphql`
                         date(formatString: "MMMM DD, YYYY")
                         summary
                         reddit
-                        leenker
                         series
                     }
                     fields {

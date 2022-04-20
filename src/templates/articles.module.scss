@@ -1,8 +1,6 @@
 @import "../components/Common/variables";
 @import "../components/Common/media_queries";
 
-$leenker-color: #FFC900;
-$leenker-color-bg: #242526;
 $reddit-color: #ff4500;
 $cover-background-color: $dark-blue;
 
@@ -115,9 +113,6 @@ div.articleShareMobile {
         height: 70%;
         width: auto;
         display: block;
-    }
-
-    > *:not(:last-child) {
         padding: 0 10px 0 0;
 
         @include min-device("desktop") {
@@ -172,61 +167,9 @@ div.articleShareMobile {
     }
 
     &:hover span,
-    &:hover svg path {
+    &:hover svg path, {
         color: $text-link-color;
         fill: $text-link-color;
-    }
-}
-
-.articleShareLeenker {
-    position: relative;
-    color: $leenker-color;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    background: $leenker-color-bg;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.15s background linear;
-
-    svg {
-        width: 32px;
-        height: 18px;
-    }
-
-    &:hover {
-        background: $text-link-color;
-
-        path {
-            fill: white;
-        }
-    }
-
-    span {
-        width: 65px;
-        position: absolute;
-        left: 40px;
-        font-size: $medium-font-size;
-        top: 50%;
-        transform: translateY(-50%);
-        margin-left: 5px;
-        transition: .15s color;
-        color: $leenker-color-bg;
-    }
-
-    @include min-device("desktop") {
-        span {
-            top: auto;
-            margin-left: auto;
-            left: 50%;
-            bottom: -17px;
-            transform: translateX(-50%);
-        }
-    }
-
-    &:hover span {
-        color: $text-link-color;
     }
 }
 

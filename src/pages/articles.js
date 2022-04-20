@@ -58,7 +58,6 @@ const Articles = ({ data }) => {
                                 summary={post.frontmatter.summary}
                                 series={getSeries(post, siteMetadata)}
                                 reddit={post.frontmatter.reddit}
-                                leenker={post.frontmatter.leenker}
                             />
                         })}
                 </section>
@@ -89,7 +88,6 @@ export const pageQuery = graphql`
                         featuredImage
                         summary
                         reddit
-                        leenker
                         series
                     }
                     fields {

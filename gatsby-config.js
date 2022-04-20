@@ -11,7 +11,6 @@ module.exports = {
         logo: 'https://enmascript.com/favicons/enmascript.png',
         series: 'none',
         reddit: null,
-        leenker: null,
         descriptions: {
             articles:
                 'Technical articles related to software development and performance',
