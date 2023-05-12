@@ -76,48 +76,46 @@ Articles.propTypes = {
 
 export const pageQuery = graphql`
     query ArticlesQuery {
-        articles: allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-        ) {
-            edges {
-                node {
-                    id
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                        title
-                        featuredImage
-                        summary
-                        reddit
-                        series
-                    }
-                    fields {
-                        slug
-                        readingTime {
-                            text
-                        }
-                    }
+        articles: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
+        edges {
+            node {
+            id
+            frontmatter {
+                date(formatString: "MMMM DD, YYYY")
+                title
+                featuredImage
+                summary
+                reddit
+                series
+            }
+            fields {
+                slug
+                readingTime {
+                text
                 }
+            }
             }
         }
+        }
         metadata: site {
-            siteMetadata {
-                url
-                descriptions {
-                    articles
-                }
-                series_list {
-                    slug
-                    name
-                    featuredImage
-                }
-                sponsored {
-                    priority
-                    name
-                    image
-                    text
-                    url
-                }
+        siteMetadata {
+            url
+            descriptions {
+            articles
             }
+            series_list {
+            slug
+            name
+            featuredImage
+            }
+            sponsored {
+            priority
+            name
+            image
+            text
+            url
+            }
+        }
         }
     }
 `;

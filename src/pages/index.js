@@ -24,13 +24,23 @@ const Index = ({ data }) => {
     return (
         <Layout section="home">
             <Cover image={CoverImage} classes={styles.homeCover}>
-                <Container classes={`${styles.homeCoverContainer} ${containerStyles.containerPage}`}>
+                <Container
+                    classes={`${styles.homeCoverContainer} ${containerStyles.containerPage}`}>
                     {coverPost.map(({ node: post }) => (
-                        <div className={styles.homeCoverCtaArticle} key={post.id}>
+                        <div
+                            className={styles.homeCoverCtaArticle}
+                            key={post.id}>
                             <div>
-                                <div className={styles.homeCoverCtaRelevantFlag}>Relevant now</div>
-                                <div className={styles.homeCoverCtaDate}>{post.frontmatter.date}</div>
-                                <div className={styles.homeCoverCtaReadingTime}>{post.fields.readingTime.text}</div>
+                                <div
+                                    className={styles.homeCoverCtaRelevantFlag}>
+                                    Relevant now
+                                </div>
+                                <div className={styles.homeCoverCtaDate}>
+                                    {post.frontmatter.date}
+                                </div>
+                                <div className={styles.homeCoverCtaReadingTime}>
+                                    {post.fields.readingTime.text}
+                                </div>
                                 <h1>
                                     <Link
                                         data-gtm-track="article-cover-cta-click"
@@ -46,27 +56,33 @@ const Index = ({ data }) => {
                                         Read more
                                     </Link>
                                 </p>
-                                <div className={`${styles.homeCoverCtabuttons} ${cardStyles.cardButtons}`}>
-                                {post.frontmatter.reddit && (
-                                    <a
-                                        href={post.frontmatter.reddit}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={cardStyles.cardReddit}
-                                        data-gtm-track="cover-card-article-reddit-discussion">
-                                        <Reddit />
-                                        <span>Let's talk</span>
-                                    </a>
-                                )}
-                                    {getSeries(post, siteMetadata).map(serie =>  (
-                                        <div className={styles.homeArticleSeries} key={serie.slug}>
-                                            <Link
-                                                to={serie.slug}>
-                                                #{serie.name}
-                                            </Link>
-                                        </div>
-                                    ))}
-                            </div>
+                                <div
+                                    className={`${styles.homeCoverCtabuttons} ${cardStyles.cardButtons}`}>
+                                    {post.frontmatter.reddit && (
+                                        <a
+                                            href={post.frontmatter.reddit}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={cardStyles.cardReddit}
+                                            data-gtm-track="cover-card-article-reddit-discussion">
+                                            <Reddit />
+                                            <span>Let's talk</span>
+                                        </a>
+                                    )}
+                                    {getSeries(post, siteMetadata).map(
+                                        (serie) => (
+                                            <div
+                                                className={
+                                                    styles.homeArticleSeries
+                                                }
+                                                key={serie.slug}>
+                                                <Link to={serie.slug}>
+                                                    #{serie.name}
+                                                </Link>
+                                            </div>
+                                        )
+                                    )}
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -86,24 +102,28 @@ const Index = ({ data }) => {
                 </Container>
             </Cover>
 
-            <Container classes={`${styles.homeContainer} ${containerStyles.containerPage}`}>
+            <Container
+                classes={`${styles.homeContainer} ${containerStyles.containerPage}`}>
                 <section>
                     {posts
-                        .filter(post => post.node.frontmatter.title.length > 0)
+                        .filter(
+                            (post) => post.node.frontmatter.title.length > 0
+                        )
                         .map(({ node: post }) => {
-                            return <ArticleCard
-                                title={post.frontmatter.title}
-                                image={post.frontmatter.featuredImage}
-                                slug={post.fields.slug}
-                                key={post.id}
-                                date={post.frontmatter.date}
-                                readingTime={post.fields.readingTime.text}
-                                summary={post.frontmatter.summary}
-                                series={getSeries(post, siteMetadata)}
-                                reddit={post.frontmatter.reddit}
-                            />
-                        })
-                    }
+                            return (
+                                <ArticleCard
+                                    title={post.frontmatter.title}
+                                    image={post.frontmatter.featuredImage}
+                                    slug={post.fields.slug}
+                                    key={post.id}
+                                    date={post.frontmatter.date}
+                                    readingTime={post.fields.readingTime.text}
+                                    summary={post.frontmatter.summary}
+                                    series={getSeries(post, siteMetadata)}
+                                    reddit={post.frontmatter.reddit}
+                                />
+                            );
+                        })}
                 </section>
                 <Aside>
                     <AsideAds data={sponsoredList} />
@@ -115,13 +135,13 @@ const Index = ({ data }) => {
 };
 
 Index.propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
 };
 
 export const HomeQuery = graphql`
     query HomeQuery {
         coverData: allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
+            sort: { frontmatter: { date: DESC } }
             limit: 1
         ) {
             edges {
@@ -145,7 +165,7 @@ export const HomeQuery = graphql`
             }
         }
         homeData: allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
+            sort: { frontmatter: { date: DESC } }
             skip: 1
             limit: 5
         ) {

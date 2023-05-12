@@ -18,22 +18,27 @@ const SeriesArticlesTemplate = ({ data }) => {
     return (
         <Layout section="series">
             <Helmet title="Series" />
-            <Container classes={`${styles.articlesContainer} ${containerStyles.containerPage}`}>
+            <Container
+                classes={`${styles.articlesContainer} ${containerStyles.containerPage}`}>
                 <section>
                     {posts
-                        .filter(post => post.node.frontmatter.title.length > 0)
+                        .filter(
+                            (post) => post.node.frontmatter.title.length > 0
+                        )
                         .map(({ node: post }) => {
-                            return <ArticleCard
-                                title={post.frontmatter.title}
-                                image={post.frontmatter.featuredImage}
-                                slug={post.fields.slug}
-                                key={post.id}
-                                date={post.frontmatter.date}
-                                readingTime={post.fields.readingTime.text}
-                                summary={post.frontmatter.summary}
-                                series={getSeries(post, siteMetadata)}
-                                reddit={post.frontmatter.reddit}
-                            />
+                            return (
+                                <ArticleCard
+                                    title={post.frontmatter.title}
+                                    image={post.frontmatter.featuredImage}
+                                    slug={post.fields.slug}
+                                    key={post.id}
+                                    date={post.frontmatter.date}
+                                    readingTime={post.fields.readingTime.text}
+                                    summary={post.frontmatter.summary}
+                                    series={getSeries(post, siteMetadata)}
+                                    reddit={post.frontmatter.reddit}
+                                />
+                            );
                         })}
                 </section>
                 <Aside>
@@ -49,7 +54,7 @@ export const seriesQuery = graphql`
     query ArticlesBySeries($name: String!) {
         articles: allMarkdownRemark(
             filter: { frontmatter: { series: { eq: $name } } }
-            sort: { order: DESC, fields: [frontmatter___date] }
+            sort: { frontmatter: { date: DESC } }
         ) {
             edges {
                 node {
@@ -95,7 +100,7 @@ export const seriesQuery = graphql`
 `;
 
 SeriesArticlesTemplate.propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
 };
 
 export default SeriesArticlesTemplate;

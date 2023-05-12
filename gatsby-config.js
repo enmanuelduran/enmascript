@@ -223,12 +223,17 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-google-analytics`,
+            resolve: `gatsby-plugin-google-gtag`,
             options: {
-                trackingId: 'UA-35155594-7',
-                head: true,
-                anonymize: true,
-                respectDNT: true,
+                // You can add multiple tracking ids and a pageview event will be fired for all of them.
+                trackingIds: [
+                    'UA-35155594-7',
+                    'G-DF8TSMEGY1',
+                ],
+                pluginConfig: {
+                    // Puts tracking script in the head instead of the body
+                    head: true,
+                },
             },
         },
         {

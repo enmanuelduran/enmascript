@@ -4,7 +4,12 @@ import Helmet from 'react-helmet';
 import Container from '../components/Container/Container';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
-import { Twitter, Facebook, LinkedIn, Reddit } from '../components/Icons/SocialIcons';
+import {
+    Twitter,
+    Facebook,
+    LinkedIn,
+    Reddit,
+} from '../components/Icons/SocialIcons';
 import AsideAds from '../components/AsideAds';
 import MailchimpWrapper from '../components/MailchimpWrapper';
 import * as styles from './articles.module.scss';
@@ -13,7 +18,7 @@ import Aside from '../components/Aside';
 import RelatedArticles from '../components/RelatedArticles/RelatedArticles';
 import { getSeries } from '../helpers/articles';
 
-import "katex/dist/katex.min.css";
+import 'katex/dist/katex.min.css';
 
 const ArticleTemplate = ({ data }) => {
     const { article: post, metadata, otherArticles } = data;
@@ -24,10 +29,10 @@ const ArticleTemplate = ({ data }) => {
         const networks = {
             twitter: `https://twitter.com/share?url=${url}&text=${title}`,
             facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-            linkedIn: `https://www.linkedin.com/shareArticle?mini=true&url=${url}`
+            linkedIn: `https://www.linkedin.com/shareArticle?mini=true&url=${url}`,
         };
 
-        return network => event => {
+        return (network) => (event) => {
             event.preventDefault();
 
             if (!(network in networks)) {
@@ -57,7 +62,7 @@ const ArticleTemplate = ({ data }) => {
         post.frontmatter.dateGitHub
     }-${post.fields.slug
         .split('/')
-        .filter(el => el)
+        .filter((el) => el)
         .pop()}.md`;
 
     return (
@@ -86,11 +91,13 @@ const ArticleTemplate = ({ data }) => {
                                 <div className={styles.articleSeriesHead}>
                                     Part of the Series:
                                 </div>
-                                {series.map(serie => (
+                                {series.map((serie) => (
                                     <div
                                         className={styles.articleSeries}
                                         key={serie.slug}>
-                                        <Link to={serie.slug}>#{serie.name}</Link>
+                                        <Link to={serie.slug}>
+                                            #{serie.name}
+                                        </Link>
                                     </div>
                                 ))}
                             </div>
@@ -104,57 +111,72 @@ const ArticleTemplate = ({ data }) => {
                     meta={[
                         {
                             name: 'description',
-                            content: post.frontmatter.summary
+                            content: post.frontmatter.summary,
                         },
 
                         /* Facebook and LinkedIn*/
                         { name: 'og:title', content: post.frontmatter.title },
                         {
                             name: 'og:description',
-                            content: post.frontmatter.summary
+                            content: post.frontmatter.summary,
                         },
                         {
                             name: 'og:image',
-                            content: metadata.siteMetadata.url + postImage
+                            content: metadata.siteMetadata.url + postImage,
                         },
                         { name: 'og:url', content: url },
                         {
                             name: 'og:site_name',
-                            content: metadata.siteMetadata.title
+                            content: metadata.siteMetadata.title,
                         },
 
                         /* Twitter */
                         {
                             name: 'twitter:title',
-                            content: post.frontmatter.title
+                            content: post.frontmatter.title,
                         },
                         {
                             name: 'twitter:description',
-                            content: post.frontmatter.summary
+                            content: post.frontmatter.summary,
                         },
                         {
                             name: 'twitter:image',
-                            content: metadata.siteMetadata.url + postImage
+                            content: metadata.siteMetadata.url + postImage,
                         },
-                        { name: 'twitter:card', content: 'summary_large_image' }
+                        {
+                            name: 'twitter:card',
+                            content: 'summary_large_image',
+                        },
                     ]}>
                     <link rel="canonical" href={url} />
                 </Helmet>
                 <div className={`${styles.articleWrapper} ${styles.article}`}>
                     <div className={styles.articleContent}>
                         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-                        <div className={`${styles.articleShareMobile} ${styles.articleShare} ${styles.articleContentShare}`}>
-                            <div onClick={shareOn('twitter')} onKeyDown={shareOn('twitter')} role="button" tabIndex={0}>
+                        <div
+                            className={`${styles.articleShareMobile} ${styles.articleShare} ${styles.articleContentShare}`}>
+                            <div
+                                onClick={shareOn('twitter')}
+                                onKeyDown={shareOn('twitter')}
+                                role="button"
+                                tabIndex={0}>
                                 <Twitter />
                             </div>
-                            <div onClick={shareOn('facebook')} onKeyDown={shareOn('facebook')} role="button" tabIndex={0}>
+                            <div
+                                onClick={shareOn('facebook')}
+                                onKeyDown={shareOn('facebook')}
+                                role="button"
+                                tabIndex={0}>
                                 <Facebook />
                             </div>
-                            <div onClick={shareOn('linkedIn')} onKeyDown={shareOn('linkedIn')} role="button" tabIndex={0}>
+                            <div
+                                onClick={shareOn('linkedIn')}
+                                onKeyDown={shareOn('linkedIn')}
+                                role="button"
+                                tabIndex={0}>
                                 <LinkedIn />
                             </div>
-                            {
-                                post.frontmatter.reddit &&
+                            {post.frontmatter.reddit && (
                                 <a
                                     href={post.frontmatter.reddit}
                                     target="_blank"
@@ -164,9 +186,8 @@ const ArticleTemplate = ({ data }) => {
                                     <Reddit />
                                     <span>Let's talk</span>
                                 </a>
-                            }
+                            )}
                         </div>
-
                     </div>
                     <p>
                         <strong>Want to leave a comment?</strong> Do it on{' '}
@@ -192,17 +213,28 @@ const ArticleTemplate = ({ data }) => {
                 </div>
                 <Aside>
                     <div className={styles.articleShare}>
-                        <div onClick={shareOn('twitter')} onKeyDown={shareOn('twitter')} role="button" tabIndex={0}>
+                        <div
+                            onClick={shareOn('twitter')}
+                            onKeyDown={shareOn('twitter')}
+                            role="button"
+                            tabIndex={0}>
                             <Twitter />
                         </div>
-                        <div onClick={shareOn('facebook')} onKeyDown={shareOn('facebook')} role="button" tabIndex={0}>
+                        <div
+                            onClick={shareOn('facebook')}
+                            onKeyDown={shareOn('facebook')}
+                            role="button"
+                            tabIndex={0}>
                             <Facebook />
                         </div>
-                        <div onClick={shareOn('linkedIn')} onKeyDown={shareOn('linkedIn')} role="button" tabIndex={0}>
+                        <div
+                            onClick={shareOn('linkedIn')}
+                            onKeyDown={shareOn('linkedIn')}
+                            role="button"
+                            tabIndex={0}>
                             <LinkedIn />
                         </div>
-                        {
-                            post.frontmatter.reddit &&
+                        {post.frontmatter.reddit && (
                             <a
                                 href={post.frontmatter.reddit}
                                 target="_blank"
@@ -211,7 +243,7 @@ const ArticleTemplate = ({ data }) => {
                                 data-gtm-track="in-article-reddit-discussion">
                                 <Reddit />
                             </a>
-                        }
+                        )}
                     </div>
                     <AsideAds data={siteMetadata.sponsored} />
                 </Aside>
@@ -261,12 +293,11 @@ export const pageQuery = graphql`
                     text
                     url
                 }
-
             }
         }
         otherArticles: allMarkdownRemark(
             filter: { fields: { slug: { ne: $slug } } }
-            sort: { order: DESC, fields: [frontmatter___date] }
+            sort: { frontmatter: { date: DESC } }
             limit: 2
         ) {
             edges {
@@ -293,7 +324,7 @@ export const pageQuery = graphql`
 `;
 
 ArticleTemplate.propTypes = {
-    data: PropTypes.object.isRequired
+    data: PropTypes.object.isRequired,
 };
 
 export default ArticleTemplate;

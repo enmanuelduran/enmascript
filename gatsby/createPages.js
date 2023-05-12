@@ -7,7 +7,7 @@ module.exports = async ({ actions, graphql }) => {
     const articles = await graphql(`
         {
             allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] }
+                sort: { frontmatter: { date: DESC } }
                 limit: 1000
             ) {
                 edges {
@@ -40,8 +40,8 @@ module.exports = async ({ actions, graphql }) => {
             path: node.fields.slug,
             component: articlesTemplate,
             context: {
-                slug: node.fields.slug
-            }
+                slug: node.fields.slug,
+            },
         });
     });
 
@@ -66,13 +66,13 @@ module.exports = async ({ actions, graphql }) => {
         throw Error(series.errors);
     }
 
-    series.data.site.siteMetadata.series_list.forEach(serie => {
+    series.data.site.siteMetadata.series_list.forEach((serie) => {
         createPage({
             path: serie.slug,
             component: seriesTemplate,
             context: {
-                name: serie.name
-            }
+                name: serie.name,
+            },
         });
     });
 };
