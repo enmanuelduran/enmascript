@@ -4,12 +4,7 @@ import Helmet from 'react-helmet';
 import Container from '../components/Container/Container';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
-import {
-    Twitter,
-    Facebook,
-    LinkedIn,
-    Reddit,
-} from '../components/Icons/SocialIcons';
+import { Twitter, Facebook, LinkedIn, Reddit, Leenker } from '../components/Icons/SocialIcons';
 import AsideAds from '../components/AsideAds';
 import MailchimpWrapper from '../components/MailchimpWrapper';
 import * as styles from './articles.module.scss';
@@ -176,7 +171,7 @@ const ArticleTemplate = ({ data }) => {
                                 tabIndex={0}>
                                 <LinkedIn />
                             </div>
-                            {post.frontmatter.reddit && (
+                            {post.frontmatter.reddit &&
                                 <a
                                     href={post.frontmatter.reddit}
                                     target="_blank"
@@ -184,9 +179,20 @@ const ArticleTemplate = ({ data }) => {
                                     className={styles.articleShareReddit}
                                     data-gtm-track="in-article-reddit-discussion">
                                     <Reddit />
-                                    <span>Let's talk</span>
                                 </a>
-                            )}
+                            }
+                            {
+                                post.frontmatter.leenker &&
+                                <a
+                                    href={post.frontmatter.leenker}
+                                    target="_blank"
+                                    rel="noopener"
+                                    className={styles.articleShareLeenker}
+                                    data-gtm-track="in-article-leenker-discussion">
+                                    <Leenker />
+                                    <span>Let's talk!</span>
+                                </a>
+                            }
                         </div>
                     </div>
                     <p>
@@ -234,7 +240,7 @@ const ArticleTemplate = ({ data }) => {
                             tabIndex={0}>
                             <LinkedIn />
                         </div>
-                        {post.frontmatter.reddit && (
+                        {post.frontmatter.reddit &&
                             <a
                                 href={post.frontmatter.reddit}
                                 target="_blank"
@@ -243,7 +249,18 @@ const ArticleTemplate = ({ data }) => {
                                 data-gtm-track="in-article-reddit-discussion">
                                 <Reddit />
                             </a>
-                        )}
+                        }
+                        {
+                            post.frontmatter.leenker &&
+                            <a
+                                href={post.frontmatter.leenker}
+                                target="_blank"
+                                rel="noopener"
+                                className={styles.articleShareLeenker}
+                                data-gtm-track="in-article-leenker-discussion">
+                                <Leenker />
+                            </a>
+                        }
                     </div>
                     <AsideAds data={siteMetadata.sponsored} />
                 </Aside>
@@ -274,6 +291,7 @@ export const pageQuery = graphql`
                 featuredImage
                 series
                 reddit
+                leenker
             }
         }
         metadata: site {
@@ -309,6 +327,7 @@ export const pageQuery = graphql`
                         date(formatString: "MMMM DD, YYYY")
                         summary
                         reddit
+                        leenker
                         series
                     }
                     fields {

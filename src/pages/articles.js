@@ -58,6 +58,7 @@ const Articles = ({ data }) => {
                                 summary={post.frontmatter.summary}
                                 series={getSeries(post, siteMetadata)}
                                 reddit={post.frontmatter.reddit}
+                                leenker={post.frontmatter.leenker}
                             />
                         })}
                 </section>
@@ -77,45 +78,46 @@ Articles.propTypes = {
 export const pageQuery = graphql`
     query ArticlesQuery {
         articles: allMarkdownRemark(sort: {frontmatter: {date: DESC}}) {
-        edges {
-            node {
-            id
-            frontmatter {
-                date(formatString: "MMMM DD, YYYY")
-                title
-                featuredImage
-                summary
-                reddit
-                series
-            }
-            fields {
-                slug
-                readingTime {
-                text
+            edges {
+                node {
+                    id
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        title
+                        featuredImage
+                        summary
+                        reddit
+                        leenker
+                        series
+                    }
+                    fields {
+                        slug
+                        readingTime {
+                            text
+                        }
+                    }
                 }
             }
-            }
-        }
         }
         metadata: site {
-        siteMetadata {
-            url
-            descriptions {
-            articles
+            siteMetadata {
+                url
+                descriptions {
+                    articles
+                }
+                series_list {
+                    slug
+                    name
+                    featuredImage
+                }
+                sponsored {
+                    priority
+                    name
+                    image
+                    text
+                    url
+                }
             }
-            series_list {
-            slug
-            name
-            featuredImage
-            }
-            sponsored {
-            priority
-            name
-            image
-            text
-            url
-            }
-        }
         }
     }
 `;

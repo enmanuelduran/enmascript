@@ -26,19 +26,18 @@ const SeriesArticlesTemplate = ({ data }) => {
                             (post) => post.node.frontmatter.title.length > 0
                         )
                         .map(({ node: post }) => {
-                            return (
-                                <ArticleCard
-                                    title={post.frontmatter.title}
-                                    image={post.frontmatter.featuredImage}
-                                    slug={post.fields.slug}
-                                    key={post.id}
-                                    date={post.frontmatter.date}
-                                    readingTime={post.fields.readingTime.text}
-                                    summary={post.frontmatter.summary}
-                                    series={getSeries(post, siteMetadata)}
-                                    reddit={post.frontmatter.reddit}
-                                />
-                            );
+                            return <ArticleCard
+                                title={post.frontmatter.title}
+                                image={post.frontmatter.featuredImage}
+                                slug={post.fields.slug}
+                                key={post.id}
+                                date={post.frontmatter.date}
+                                readingTime={post.fields.readingTime.text}
+                                summary={post.frontmatter.summary}
+                                series={getSeries(post, siteMetadata)}
+                                reddit={post.frontmatter.reddit}
+                                leenker={post.frontmatter.leenker}
+                            />
                         })}
                 </section>
                 <Aside>
@@ -65,6 +64,7 @@ export const seriesQuery = graphql`
                         featuredImage
                         summary
                         reddit
+                        leenker
                         series
                     }
                     fields {
